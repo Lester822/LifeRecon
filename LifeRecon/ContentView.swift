@@ -12,6 +12,7 @@ struct ContentView: View {
     @State var current_view = "home"
     @State var button_text = "Start"
     @State var current_game: ActiveGame
+    @State var game_started = false
     var body: some View {
         VStack {
             if current_view == "home" {
@@ -27,7 +28,10 @@ struct ContentView: View {
                 current_view = "home"
                 button_text = "Start"
             } else if current_view == "home" {
-                current_game = ActiveGame(player_count: 4)
+                if game_started == false {
+                    current_game = ActiveGame(player_count: 4)
+                    game_started = true
+                }
                 current_view = "life"
                 button_text = "Go Home"
                 
