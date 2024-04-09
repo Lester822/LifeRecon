@@ -12,6 +12,7 @@
 		F82E08F22BC599CF00C651AE /* LifeBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82E08F12BC599CF00C651AE /* LifeBlock.swift */; };
 		F82E08F42BC5A56000C651AE /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82E08F32BC5A56000C651AE /* Player.swift */; };
 		F82E08F62BC5A57900C651AE /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82E08F52BC5A57900C651AE /* Game.swift */; };
+		F82E08F82BC5C0B600C651AE /* Test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F82E08F72BC5C0B600C651AE /* Test.storyboard */; };
 		F8B234632BC57ED7009D6962 /* LifeReconApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B234622BC57ED7009D6962 /* LifeReconApp.swift */; };
 		F8B234652BC57ED7009D6962 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B234642BC57ED7009D6962 /* ContentView.swift */; };
 		F8B234672BC57ED8009D6962 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8B234662BC57ED8009D6962 /* Assets.xcassets */; };
@@ -44,6 +45,7 @@
 		F82E08F12BC599CF00C651AE /* LifeBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeBlock.swift; sourceTree = "<group>"; };
 		F82E08F32BC5A56000C651AE /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		F82E08F52BC5A57900C651AE /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		F82E08F72BC5C0B600C651AE /* Test.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Test.storyboard; sourceTree = "<group>"; };
 		F8B2345F2BC57ED7009D6962 /* LifeRecon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LifeRecon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8B234622BC57ED7009D6962 /* LifeReconApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeReconApp.swift; sourceTree = "<group>"; };
 		F8B234642BC57ED7009D6962 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 		F8B234562BC57ED7009D6962 = {
 			isa = PBXGroup;
 			children = (
+				F82E08F72BC5C0B600C651AE /* Test.storyboard */,
 				F8B234612BC57ED7009D6962 /* LifeRecon */,
 				F8B234722BC57ED9009D6962 /* LifeReconTests */,
 				F8B2347C2BC57ED9009D6962 /* LifeReconUITests */,
@@ -246,6 +249,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F82E08F82BC5C0B600C651AE /* Test.storyboard in Resources */,
 				F8B2346A2BC57ED8009D6962 /* Preview Assets.xcassets in Resources */,
 				F8B234672BC57ED8009D6962 /* Assets.xcassets in Resources */,
 			);

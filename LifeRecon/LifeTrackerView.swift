@@ -31,8 +31,7 @@ struct LifeTrackerView: View {
             })
             .padding(-10)
             Button {
-                current_game.players[0].life_total += 1
-                current_game.players = current_game.players
+                print("CLICK")
             } label: {
                 Image("MenuIcon")
                     .resizable(resizingMode: .stretch)
@@ -41,6 +40,12 @@ struct LifeTrackerView: View {
                     .foregroundStyle(.tint)
                     .rotationEffect(Angle(degrees: 90))
             }
+            .simultaneousGesture(
+                LongPressGesture(minimumDuration: 0.1).onEnded({_ in
+                    print("WOW")
+                }))
+            
+            
             
 
         })
