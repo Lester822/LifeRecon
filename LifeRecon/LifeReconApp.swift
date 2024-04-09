@@ -2,7 +2,7 @@
 //  LifeReconApp.swift
 //  LifeRecon
 //
-//  Created by Michael Stang on 4/9/24.
+//  Created by Recon Dev on 4/9/24.
 //
 
 import SwiftUI
