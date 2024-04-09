@@ -11,7 +11,7 @@ import SwiftUI
 struct LifeReconApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(current_game: ActiveGame(player_count: 1))
         }
     }
 }

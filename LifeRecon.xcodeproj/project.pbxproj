@@ -10,6 +10,8 @@
 		F82E08EE2BC58A8E00C651AE /* Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82E08ED2BC58A8E00C651AE /* Loading.swift */; };
 		F82E08F02BC58BE500C651AE /* LifeTrackerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82E08EF2BC58BE400C651AE /* LifeTrackerView.swift */; };
 		F82E08F22BC599CF00C651AE /* LifeBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82E08F12BC599CF00C651AE /* LifeBlock.swift */; };
+		F82E08F42BC5A56000C651AE /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82E08F32BC5A56000C651AE /* Player.swift */; };
+		F82E08F62BC5A57900C651AE /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82E08F52BC5A57900C651AE /* Game.swift */; };
 		F8B234632BC57ED7009D6962 /* LifeReconApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B234622BC57ED7009D6962 /* LifeReconApp.swift */; };
 		F8B234652BC57ED7009D6962 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B234642BC57ED7009D6962 /* ContentView.swift */; };
 		F8B234672BC57ED8009D6962 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8B234662BC57ED8009D6962 /* Assets.xcassets */; };
@@ -40,6 +42,8 @@
 		F82E08ED2BC58A8E00C651AE /* Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loading.swift; sourceTree = "<group>"; };
 		F82E08EF2BC58BE400C651AE /* LifeTrackerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeTrackerView.swift; sourceTree = "<group>"; };
 		F82E08F12BC599CF00C651AE /* LifeBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeBlock.swift; sourceTree = "<group>"; };
+		F82E08F32BC5A56000C651AE /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		F82E08F52BC5A57900C651AE /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		F8B2345F2BC57ED7009D6962 /* LifeRecon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LifeRecon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8B234622BC57ED7009D6962 /* LifeReconApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeReconApp.swift; sourceTree = "<group>"; };
 		F8B234642BC57ED7009D6962 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -101,6 +105,8 @@
 			isa = PBXGroup;
 			children = (
 				F8B234622BC57ED7009D6962 /* LifeReconApp.swift */,
+				F82E08F32BC5A56000C651AE /* Player.swift */,
+				F82E08F52BC5A57900C651AE /* Game.swift */,
 				F8B234642BC57ED7009D6962 /* ContentView.swift */,
 				F82E08ED2BC58A8E00C651AE /* Loading.swift */,
 				F82E08EF2BC58BE400C651AE /* LifeTrackerView.swift */,
@@ -268,8 +274,10 @@
 			files = (
 				F8B234652BC57ED7009D6962 /* ContentView.swift in Sources */,
 				F82E08EE2BC58A8E00C651AE /* Loading.swift in Sources */,
+				F82E08F62BC5A57900C651AE /* Game.swift in Sources */,
 				F82E08F02BC58BE500C651AE /* LifeTrackerView.swift in Sources */,
 				F8B234632BC57ED7009D6962 /* LifeReconApp.swift in Sources */,
+				F82E08F42BC5A56000C651AE /* Player.swift in Sources */,
 				F82E08F22BC599CF00C651AE /* LifeBlock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
