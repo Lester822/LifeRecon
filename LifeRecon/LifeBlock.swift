@@ -42,32 +42,8 @@ struct LifeBlock: View {
                 .padding(.horizontal)
                 .rotationEffect(Angle(degrees: 90))
                 .gesture(LongPressGesture(minimumDuration: 0.3).onEnded { _ in
-                    self.user_input = ""
-                    self.showing_alert = true
+                    print("TEST")
                 })
-                .alert("Enter Number", isPresented: $showing_alert, actions: {
-                    
-                    TextField("Number", text: $user_input)
-                        .keyboardType(.numberPad)
-                    Button("OK") {
-                        // Handle the user input here
-                        if user_input.starts(with: "+") || user_input.starts(with: "-") {
-                            if let life_total = Int(user_input) {
-                                player.life_total = player.life_total + life_total
-                            }
-                        } else if user_input.starts(with: "x") || user_input.starts(with: "*") {
-                            user_input.removeFirst()
-                            if let life_total = Int(user_input) {
-                                player.life_total = player.life_total * life_total
-                            }
-                        } else if let life_total = Int(user_input) {
-                            player.life_total = life_total
-                        }
-                    }
-                }, message: {
-                    Text("Please enter a number.")
-                })
-
             
         })
     }

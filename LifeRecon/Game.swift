@@ -15,7 +15,7 @@ class ActiveGame: ObservableObject {
         self.player_count = player_count
         self.players = []
         for i in 1...player_count {
-            self.players.append(Player(life_total: 32))
+            self.players.append(Player(life_total: 40))
         }
     }
 }
