@@ -17,7 +17,7 @@ struct LargeKey: View {
 //                .frame(width: 65, height: 40)
 //                .foregroundColor(.black)
             RoundedRectangle(cornerRadius: 10)
-                .frame(width: 120, height: 35)
+                .frame(width: 100, height: 35)
                 .foregroundColor(background)
             Text(given_text)
                 .font(.title3)

@@ -11,7 +11,7 @@
 		F81AC3D42BC6E88200D65AB4 /* KeypadKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81AC3D32BC6E88200D65AB4 /* KeypadKey.swift */; };
 		F81AC3D82BC831BE00D65AB4 /* LargeKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81AC3D72BC831BE00D65AB4 /* LargeKey.swift */; };
 		F82E08EE2BC58A8E00C651AE /* Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82E08ED2BC58A8E00C651AE /* Loading.swift */; };
-		F82E08F02BC58BE500C651AE /* LifeTrackerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82E08EF2BC58BE400C651AE /* LifeTrackerView.swift */; };
+		F82E08F02BC58BE500C651AE /* FourPlayerGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82E08EF2BC58BE400C651AE /* FourPlayerGame.swift */; };
 		F82E08F22BC599CF00C651AE /* LifeBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82E08F12BC599CF00C651AE /* LifeBlock.swift */; };
 		F82E08F42BC5A56000C651AE /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82E08F32BC5A56000C651AE /* Player.swift */; };
 		F82E08F62BC5A57900C651AE /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82E08F52BC5A57900C651AE /* Game.swift */; };
@@ -47,7 +47,7 @@
 		F81AC3D32BC6E88200D65AB4 /* KeypadKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeypadKey.swift; sourceTree = "<group>"; };
 		F81AC3D72BC831BE00D65AB4 /* LargeKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeKey.swift; sourceTree = "<group>"; };
 		F82E08ED2BC58A8E00C651AE /* Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loading.swift; sourceTree = "<group>"; };
-		F82E08EF2BC58BE400C651AE /* LifeTrackerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeTrackerView.swift; sourceTree = "<group>"; };
+		F82E08EF2BC58BE400C651AE /* FourPlayerGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourPlayerGame.swift; sourceTree = "<group>"; };
 		F82E08F12BC599CF00C651AE /* LifeBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeBlock.swift; sourceTree = "<group>"; };
 		F82E08F32BC5A56000C651AE /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		F82E08F52BC5A57900C651AE /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
@@ -121,7 +121,7 @@
 				F81AC3D12BC6E6B700D65AB4 /* SetLifeKeypad.swift */,
 				F81AC3D72BC831BE00D65AB4 /* LargeKey.swift */,
 				F81AC3D32BC6E88200D65AB4 /* KeypadKey.swift */,
-				F82E08EF2BC58BE400C651AE /* LifeTrackerView.swift */,
+				F82E08EF2BC58BE400C651AE /* FourPlayerGame.swift */,
 				F82E08F12BC599CF00C651AE /* LifeBlock.swift */,
 				F8B234662BC57ED8009D6962 /* Assets.xcassets */,
 				F8B234682BC57ED8009D6962 /* Preview Content */,
@@ -289,7 +289,7 @@
 				F8B234652BC57ED7009D6962 /* ContentView.swift in Sources */,
 				F82E08EE2BC58A8E00C651AE /* Loading.swift in Sources */,
 				F82E08F62BC5A57900C651AE /* Game.swift in Sources */,
-				F82E08F02BC58BE500C651AE /* LifeTrackerView.swift in Sources */,
+				F82E08F02BC58BE500C651AE /* FourPlayerGame.swift in Sources */,
 				F81AC3D82BC831BE00D65AB4 /* LargeKey.swift in Sources */,
 				F81AC3D42BC6E88200D65AB4 /* KeypadKey.swift in Sources */,
 				F8B234632BC57ED7009D6962 /* LifeReconApp.swift in Sources */,

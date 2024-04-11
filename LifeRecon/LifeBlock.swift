@@ -43,13 +43,18 @@ struct LifeBlock: View {
                 .font(.system(size: 80))
                 .fontWeight(.bold)
                 .foregroundColor(Color.white)
-                .padding(.horizontal)
+                .minimumScaleFactor(0.1)
+                .lineLimit(1)
+                .padding()
                 .rotationEffect(Angle(degrees: 90))
-                .gesture(LongPressGesture(minimumDuration: 0.3).onEnded { _ in
-                    game.showing_keypad = true
-                    game.caller = self.player
-                    print("Click!")
+                .gesture(LongPressGesture(minimumDuration: 0.1).onEnded { _ in
+                    withAnimation(.easeInOut(duration: 0.2)) {
+                        game.showing_keypad = true
+                        game.caller = self.player
+                        print("Click!")
+                    }
                 })
+                
             
         })
     }

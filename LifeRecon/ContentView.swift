@@ -18,27 +18,31 @@ struct ContentView: View {
         VStack {
             if current_view == "home" {
                 Loading()
-                Button(button_text) {
-                    if current_view == "life" {
-                        current_view = "home"
-                        button_text = "Start"
-                    } else if current_view == "home" {
-                        if game_started == false {
-                            game_started = true
+                Button {
+                    withAnimation(.easeInOut(duration: 0.2)) {
+                        if current_view == "life" {
+                            current_view = "home"
+                            button_text = "Start"
+                        } else if current_view == "home" {
+                            if game_started == false {
+                                game_started = true
+                            }
+                            current_view = "life"
                         }
-                        current_view = "life"
-                        button_text = "Go Home"
-                        
                     }
+                } label: {
+                    LargeKey(given_text: "Start", color: .white, background: .green)
                 }
-                .padding()
-                .buttonStyle(.borderedProminent)
+
+
             }
             if current_view == "life" {
                 ZStack (content: {
-                    LifeTrackerView(current_game: current_game)
+                    FourPlayerGame(current_game: current_game)
                     Button {
-                        current_view = "home"
+                        withAnimation(.easeInOut(duration: 0.2)) {
+                            current_view = "home"
+                        }
                     } label: {
                         Image("MenuIcon")
                             .resizable(resizingMode: .stretch)
@@ -49,7 +53,6 @@ struct ContentView: View {
                     }
                     if self.current_game.showing_keypad == true {
                         SetLifeKeypad(current_text: "", current_game: self.current_game)
-                            //.background(Color.black.opacity(0.4))
                     }
                 })
                 

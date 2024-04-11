@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct LifeTrackerView: View {
+struct FourPlayerGame: View {
     @ObservedObject var current_game: ActiveGame
     var body: some View {
             VStack (alignment: .center, spacing: 0.0, content: {
@@ -34,5 +34,5 @@ struct LifeTrackerView: View {
 }
 
 #Preview {
-    LifeTrackerView(current_game: ActiveGame(player_count: 4))
+    FourPlayerGame(current_game: ActiveGame(player_count: 4))
 }

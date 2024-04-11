@@ -16,7 +16,8 @@ struct SetLifeKeypad: View {
 //                .frame(width: 285.0, height: 415.0)
 //                .foregroundColor(.black)
             RoundedRectangle(cornerRadius: 30.0)
-                .frame(width: 280.0, height: 390.0)
+                .frame(width: 350.0, height: 350.0)
+                .frame(width: 350.0, height: 350.0)
                 .foregroundColor(.white)
                 .opacity(0.97)
                 .blur(radius: 1.0)
@@ -30,6 +31,7 @@ struct SetLifeKeypad: View {
                         .foregroundColor(Color(hue: 1.0, saturation: 0.0, brightness: 0.835))
                     Text(current_text)
                         .font(.largeTitle)
+                        .minimumScaleFactor(0.1)
                         .bold()
                         .foregroundColor(.black)
                     
@@ -37,6 +39,8 @@ struct SetLifeKeypad: View {
                 Spacer()
                     .frame(height: 20.0)
                 HStack(content: {
+                    Spacer()
+                        .frame(width: 60.0)
                     VStack(content: {
                         Button {
                             if current_text.count < 8 {
@@ -61,10 +65,10 @@ struct SetLifeKeypad: View {
                         }
                         Button {
                             if current_text.count < 8 {
-                                current_text = current_text + "+"
+                                print("BLANK")
                             }
                         } label: {
-                            KeypadKey(given_text: "+", color: .black, background: Color(hue: 1.0, saturation: 0.0, brightness: 0.835))
+                            KeypadKey(given_text: "", color: .black, background: .white)
                         }
                     })
                     VStack(content: {
@@ -120,22 +124,35 @@ struct SetLifeKeypad: View {
                             KeypadKey(given_text: "9", color: .black, background: Color(hue: 1.0, saturation: 0.0, brightness: 0.835))
                         }
                         Button {
+                            print("blank")
+                        } label: {
+                            KeypadKey(given_text: "", color: .black, background: .white)
+                        }
+                        
+
+                    })
+                    VStack (content: {
+                        Button {
+                            if current_text.count < 8 {
+                                current_text = current_text + "+"
+                            }
+                        } label: {
+                            KeypadKey(given_text: "+", color: .white, background: Color(hue: 1.0, saturation: 0.0, brightness: 0))
+                        }
+                        Button {
                             if current_text.count < 8 {
                                 current_text = current_text + "-"
                             }
                         } label: {
-                            KeypadKey(given_text: "-", color: .black, background: Color(hue: 1.0, saturation: 0.0, brightness: 0.835))
+                            KeypadKey(given_text: "-", color: .white, background: Color(hue: 1.0, saturation: 0.0, brightness: 0))
                         }
-
-                    })
-                    
-                })
-//                Spacer()
-//                    .frame(height: 30)
-                VStack (content: {
-                    HStack (content: {
-                        Spacer()
-                            .frame(width: 140.0)
+                        Button {
+                            if current_text.count < 8 {
+                                current_text = current_text + "*"
+                            }
+                        } label: {
+                            KeypadKey(given_text: "x", color: .white, background: Color(hue: 1.0, saturation: 0.0, brightness: 0))
+                        }
                         Button {
                             if current_text.count > 0 {
                                 current_text.removeLast()
@@ -144,6 +161,13 @@ struct SetLifeKeypad: View {
                             KeypadKey(given_text: "←", color: .black, background: .white)
                         }
                     })
+                    
+                    
+                })
+//                Spacer()
+//                    .frame(height: 30)
+                VStack (content: {
+
                     HStack (content: {
                         Button {
                             self.current_game.showing_keypad = false
@@ -158,6 +182,13 @@ struct SetLifeKeypad: View {
                                     print("'\(current_text)' is not a valid integer.")
                                 }
 
+                            } else if current_text.first == "*" {
+                                let real_text = current_text.dropFirst()
+                                    if let given_number = Int(real_text) {
+                                        self.current_game.caller.life_total = self.current_game.caller.life_total * given_number
+                                    } else {
+                                        print("'\(current_text)' is not a valid integer.")
+                                    }
                             } else {
                                 if let given_number = Int(current_text) {
                                     self.current_game.caller.life_total = given_number
