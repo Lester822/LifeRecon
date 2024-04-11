@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct KeypadKey: View {
+struct LargeKey: View {
     let given_text: String
     let color: Color
     let background: Color
@@ -16,8 +16,8 @@ struct KeypadKey: View {
 //            RoundedRectangle(cornerRadius: 20)
 //                .frame(width: 65, height: 40)
 //                .foregroundColor(.black)
-            RoundedRectangle(cornerRadius: 15)
-                .frame(width: 60, height: 35)
+            RoundedRectangle(cornerRadius: 10)
+                .frame(width: 120, height: 35)
                 .foregroundColor(background)
             Text(given_text)
                 .font(.title3)
@@ -28,5 +28,5 @@ struct KeypadKey: View {
 }
 
 #Preview {
-    KeypadKey(given_text: "1", color: .black, background: Color(hue: 1.0, saturation: 0.0, brightness: 0.835))
+    LargeKey(given_text: "1", color: .black, background: Color(hue: 1.0, saturation: 0.0, brightness: 0.835))
 }

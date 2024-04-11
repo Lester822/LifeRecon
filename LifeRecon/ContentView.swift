@@ -11,8 +11,9 @@ import SwiftUI
 struct ContentView: View {
     @State var current_view = "home"
     @State var button_text = "Start"
-    @State var current_game: ActiveGame
+    @ObservedObject var current_game = ActiveGame(player_count: 4)
     @State var game_started = false
+
     var body: some View {
         VStack {
             if current_view == "home" {
@@ -23,7 +24,6 @@ struct ContentView: View {
                         button_text = "Start"
                     } else if current_view == "home" {
                         if game_started == false {
-                            current_game = ActiveGame(player_count: 4)
                             game_started = true
                         }
                         current_view = "life"
@@ -47,6 +47,10 @@ struct ContentView: View {
                             .foregroundStyle(.tint)
                             .rotationEffect(Angle(degrees: 90))
                     }
+                    if self.current_game.showing_keypad == true {
+                        SetLifeKeypad(current_text: "", current_game: self.current_game)
+                            //.background(Color.black.opacity(0.4))
+                    }
                 })
                 
             }
@@ -56,5 +60,5 @@ struct ContentView: View {
         }
     }
 #Preview {
-    ContentView(current_game: ActiveGame(player_count: 1))
+    ContentView()
 }

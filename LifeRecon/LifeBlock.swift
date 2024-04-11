@@ -10,8 +10,12 @@ import SwiftUI
 struct LifeBlock: View {
     var block_color: Color
     @ObservedObject var player: Player
+    @ObservedObject var game: ActiveGame
     @State private var showing_alert = false
     @State private var user_input = ""
+    @State private var refreshID = UUID()
+
+    
     var body: some View {
         ZStack (content: {
             HStack (spacing: 0.0, content: {
@@ -42,7 +46,9 @@ struct LifeBlock: View {
                 .padding(.horizontal)
                 .rotationEffect(Angle(degrees: 90))
                 .gesture(LongPressGesture(minimumDuration: 0.3).onEnded { _ in
-                    print("TEST")
+                    game.showing_keypad = true
+                    game.caller = self.player
+                    print("Click!")
                 })
             
         })
@@ -50,5 +56,5 @@ struct LifeBlock: View {
 }
 
 #Preview {
-    LifeBlock(block_color: .red, player: Player(life_total: 30))
+    LifeBlock(block_color: .red, player: Player(life_total: 30), game: ActiveGame(player_count: 4))
 }
