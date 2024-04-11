@@ -58,7 +58,8 @@ struct LifeBlock: View {
                 .padding()
                 .rotationEffect(Angle(degrees: 90))
                 .gesture(LongPressGesture(minimumDuration: 0.1).onEnded { _ in
-                    withAnimation(.easeInOut(duration: 0.2)) {
+                    withAnimation {
+                        game.showing_circle_menu = false
                         game.showing_keypad = true
                         game.caller = self.player
                         print("Click!")

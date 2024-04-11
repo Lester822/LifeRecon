@@ -12,7 +12,6 @@ struct SetLifeKeypad: View {
     @ObservedObject var current_game: ActiveGame
     var body: some View {
         ZStack(content: {
-
             RoundedRectangle(cornerRadius: 30.0)
                 .frame(width: 350.0, height: 350.0)
                 .frame(width: 350.0, height: 350.0)
@@ -165,10 +164,13 @@ struct SetLifeKeypad: View {
 
                     HStack (content: {
                         Button {
-                            self.current_game.showing_keypad = false
+                            withAnimation {
+                                self.current_game.showing_keypad = false
+                            }
                         } label: {
                             LargeKey(given_text: "Cancel", color: .black, background: Color(hue: 1.0, saturation: 0.0, brightness: 0.835))
                         }
+                        .transition(.zoomIt)
                         Button {
                             if current_text.first == "+" || current_text.first == "-" {
                                 if let given_number = Int(current_text) {
