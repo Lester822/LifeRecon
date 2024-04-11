@@ -13,10 +13,12 @@ class ActiveGame: ObservableObject {
     @Published var showing_keypad: Bool
     @Published var caller: Player
     @Published var starting_life: Int
+    @Published var showing_circle_menu: Bool
     
     init(player_count: Int, starting_life: Int) {
         self.player_count = player_count
         self.showing_keypad = false
+        self.showing_circle_menu = false
         self.players = []
         self.caller = Player(life_total: 1)
         self.starting_life = starting_life

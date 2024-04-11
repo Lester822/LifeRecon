@@ -67,9 +67,12 @@ struct ContentView: View {
                     } else if current_view == "two_player" {
                         TwoPlayerGame(current_game: current_game)
                     }
+                    if self.current_game.showing_circle_menu == true {
+                        CircleMenu(current_game: current_game)
+                    }
                     Button {
                         withAnimation(.easeInOut(duration: 0.2)) {
-                            current_view = "home"
+                            current_game.showing_circle_menu.toggle()
                         }
                     } label: {
                         Image("MenuIcon")
