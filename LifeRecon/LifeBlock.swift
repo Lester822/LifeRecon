@@ -23,18 +23,28 @@ struct LifeBlock: View {
                     player.life_total = player.life_total - 1
                     player.life_total = player.life_total
                 } label: {
-                    Rectangle()
-                        .padding(.all, 0.0)
-                        .foregroundColor(block_color)
+                    UnevenRoundedRectangle(cornerRadii: .init(
+                                                                        topLeading: 50.0,
+                                                                        bottomLeading: 50.0,
+                                                                        bottomTrailing: 00.0,
+                                                                        topTrailing: 00.0),
+                                           style: .continuous)
+                    .padding([.top, .leading, .bottom], 5.0)
+                    .foregroundColor(block_color)
                 }
 
                 Button {
                     player.life_total = player.life_total + 1
                     player.life_total = player.life_total
                 } label: {
-                    Rectangle()
-                        .padding(.all, 0.0)
-                        .foregroundColor(block_color)
+                    UnevenRoundedRectangle(cornerRadii: .init(
+                        topLeading: 0.0,
+                        bottomLeading: 0.0,
+                        bottomTrailing: 50.0,
+                        topTrailing: 50.0),
+                                           style: .continuous)
+                    .padding([.top, .bottom, .trailing], 5.0)
+                    .foregroundColor(block_color)
                 }
                 
             })
@@ -61,5 +71,5 @@ struct LifeBlock: View {
 }
 
 #Preview {
-    LifeBlock(block_color: .red, player: Player(life_total: 30), game: ActiveGame(player_count: 4))
+    LifeBlock(block_color: .red, player: Player(life_total: 30), game: ActiveGame(player_count: 4, starting_life: 40))
 }

@@ -12,9 +12,7 @@ struct SetLifeKeypad: View {
     @ObservedObject var current_game: ActiveGame
     var body: some View {
         ZStack(content: {
-            
-//                .frame(width: 285.0, height: 415.0)
-//                .foregroundColor(.black)
+
             RoundedRectangle(cornerRadius: 30.0)
                 .frame(width: 350.0, height: 350.0)
                 .frame(width: 350.0, height: 350.0)
@@ -23,11 +21,8 @@ struct SetLifeKeypad: View {
                 .blur(radius: 1.0)
             VStack(content: {
                 ZStack (content: {
-//                    RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
-//                        .frame(width:235, height: 65)
-//                        .foregroundColor(.black)
                     RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
-                        .frame(width:200, height: 60)
+                        .frame(width:275, height: 60)
                         .foregroundColor(Color(hue: 1.0, saturation: 0.0, brightness: 0.835))
                     Text(current_text)
                         .font(.largeTitle)
@@ -39,8 +34,8 @@ struct SetLifeKeypad: View {
                 Spacer()
                     .frame(height: 20.0)
                 HStack(content: {
-                    Spacer()
-                        .frame(width: 60.0)
+                    //Spacer()
+                        //.frame(width: 60.0)
                     VStack(content: {
                         Button {
                             if current_text.count < 8 {
@@ -218,5 +213,5 @@ struct SetLifeKeypad: View {
                }}
 
 #Preview {
-    SetLifeKeypad(current_text: "10", current_game: ActiveGame(player_count: 4))
+    SetLifeKeypad(current_text: "10", current_game: ActiveGame(player_count: 4, starting_life: 40))
 }

@@ -12,14 +12,23 @@ class ActiveGame: ObservableObject {
     var player_count: Int
     @Published var showing_keypad: Bool
     @Published var caller: Player
+    @Published var starting_life: Int
     
-    init(player_count: Int) {
+    init(player_count: Int, starting_life: Int) {
         self.player_count = player_count
         self.showing_keypad = false
         self.players = []
         self.caller = Player(life_total: 1)
-        for i in 1...player_count {
-            self.players.append(Player(life_total: 40))
+        self.starting_life = starting_life
+        for _ in 1...player_count {
+            self.players.append(Player(life_total: starting_life))
+        }
+    }
+    func new_player_count(new_number: Int) {
+        self.player_count = new_number
+        self.players = []
+        for _ in 1...player_count {
+            self.players.append(Player(life_total: self.starting_life))
         }
     }
 }

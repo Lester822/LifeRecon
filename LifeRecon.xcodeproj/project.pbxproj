@@ -10,6 +10,11 @@
 		F81AC3D22BC6E6B700D65AB4 /* SetLifeKeypad.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81AC3D12BC6E6B700D65AB4 /* SetLifeKeypad.swift */; };
 		F81AC3D42BC6E88200D65AB4 /* KeypadKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81AC3D32BC6E88200D65AB4 /* KeypadKey.swift */; };
 		F81AC3D82BC831BE00D65AB4 /* LargeKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81AC3D72BC831BE00D65AB4 /* LargeKey.swift */; };
+		F81AC3DA2BC85B8000D65AB4 /* SmallKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81AC3D92BC85B8000D65AB4 /* SmallKey.swift */; };
+		F81AC3DC2BC85D3500D65AB4 /* ThreePlayerGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81AC3DB2BC85D3500D65AB4 /* ThreePlayerGame.swift */; };
+		F81AC3DE2BC85E6B00D65AB4 /* TwoPlayerGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81AC3DD2BC85E6B00D65AB4 /* TwoPlayerGame.swift */; };
+		F81AC3E02BC8632900D65AB4 /* SquareButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81AC3DF2BC8632900D65AB4 /* SquareButton.swift */; };
+		F81AC3E22BC8690900D65AB4 /* CircleMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81AC3E12BC8690900D65AB4 /* CircleMenu.swift */; };
 		F82E08EE2BC58A8E00C651AE /* Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82E08ED2BC58A8E00C651AE /* Loading.swift */; };
 		F82E08F02BC58BE500C651AE /* FourPlayerGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82E08EF2BC58BE400C651AE /* FourPlayerGame.swift */; };
 		F82E08F22BC599CF00C651AE /* LifeBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82E08F12BC599CF00C651AE /* LifeBlock.swift */; };
@@ -46,6 +51,11 @@
 		F81AC3D12BC6E6B700D65AB4 /* SetLifeKeypad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetLifeKeypad.swift; sourceTree = "<group>"; };
 		F81AC3D32BC6E88200D65AB4 /* KeypadKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeypadKey.swift; sourceTree = "<group>"; };
 		F81AC3D72BC831BE00D65AB4 /* LargeKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeKey.swift; sourceTree = "<group>"; };
+		F81AC3D92BC85B8000D65AB4 /* SmallKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallKey.swift; sourceTree = "<group>"; };
+		F81AC3DB2BC85D3500D65AB4 /* ThreePlayerGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreePlayerGame.swift; sourceTree = "<group>"; };
+		F81AC3DD2BC85E6B00D65AB4 /* TwoPlayerGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoPlayerGame.swift; sourceTree = "<group>"; };
+		F81AC3DF2BC8632900D65AB4 /* SquareButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareButton.swift; sourceTree = "<group>"; };
+		F81AC3E12BC8690900D65AB4 /* CircleMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleMenu.swift; sourceTree = "<group>"; };
 		F82E08ED2BC58A8E00C651AE /* Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loading.swift; sourceTree = "<group>"; };
 		F82E08EF2BC58BE400C651AE /* FourPlayerGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourPlayerGame.swift; sourceTree = "<group>"; };
 		F82E08F12BC599CF00C651AE /* LifeBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeBlock.swift; sourceTree = "<group>"; };
@@ -115,14 +125,19 @@
 			children = (
 				F8B234622BC57ED7009D6962 /* LifeReconApp.swift */,
 				F82E08F32BC5A56000C651AE /* Player.swift */,
+				F81AC3DB2BC85D3500D65AB4 /* ThreePlayerGame.swift */,
+				F81AC3DD2BC85E6B00D65AB4 /* TwoPlayerGame.swift */,
 				F82E08F52BC5A57900C651AE /* Game.swift */,
 				F8B234642BC57ED7009D6962 /* ContentView.swift */,
 				F82E08ED2BC58A8E00C651AE /* Loading.swift */,
 				F81AC3D12BC6E6B700D65AB4 /* SetLifeKeypad.swift */,
 				F81AC3D72BC831BE00D65AB4 /* LargeKey.swift */,
 				F81AC3D32BC6E88200D65AB4 /* KeypadKey.swift */,
+				F81AC3D92BC85B8000D65AB4 /* SmallKey.swift */,
 				F82E08EF2BC58BE400C651AE /* FourPlayerGame.swift */,
 				F82E08F12BC599CF00C651AE /* LifeBlock.swift */,
+				F81AC3DF2BC8632900D65AB4 /* SquareButton.swift */,
+				F81AC3E12BC8690900D65AB4 /* CircleMenu.swift */,
 				F8B234662BC57ED8009D6962 /* Assets.xcassets */,
 				F8B234682BC57ED8009D6962 /* Preview Content */,
 			);
@@ -288,12 +303,17 @@
 				F81AC3D22BC6E6B700D65AB4 /* SetLifeKeypad.swift in Sources */,
 				F8B234652BC57ED7009D6962 /* ContentView.swift in Sources */,
 				F82E08EE2BC58A8E00C651AE /* Loading.swift in Sources */,
+				F81AC3DC2BC85D3500D65AB4 /* ThreePlayerGame.swift in Sources */,
 				F82E08F62BC5A57900C651AE /* Game.swift in Sources */,
 				F82E08F02BC58BE500C651AE /* FourPlayerGame.swift in Sources */,
 				F81AC3D82BC831BE00D65AB4 /* LargeKey.swift in Sources */,
+				F81AC3DE2BC85E6B00D65AB4 /* TwoPlayerGame.swift in Sources */,
 				F81AC3D42BC6E88200D65AB4 /* KeypadKey.swift in Sources */,
+				F81AC3E22BC8690900D65AB4 /* CircleMenu.swift in Sources */,
+				F81AC3DA2BC85B8000D65AB4 /* SmallKey.swift in Sources */,
 				F8B234632BC57ED7009D6962 /* LifeReconApp.swift in Sources */,
 				F82E08F42BC5A56000C651AE /* Player.swift in Sources */,
+				F81AC3E02BC8632900D65AB4 /* SquareButton.swift in Sources */,
 				F82E08F22BC599CF00C651AE /* LifeBlock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
