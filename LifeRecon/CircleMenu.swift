@@ -16,6 +16,7 @@ struct CircleMenu: View {
                 .opacity(0.5)
 
             HStack() {
+                
                 Button {
                     current_game.showing_circle_menu = false
                     for player in current_game.players {
@@ -29,19 +30,24 @@ struct CircleMenu: View {
                         .frame(width: 50.0, height: 50.0)
                 }
                 Spacer()
-                    .frame(width: 50.0)
+                    .frame(width: 35.0)
+                
                 VStack() {
                     Button("test") {
                         print("test")
                     }
                     Spacer()
-                        .frame(width: 0, height: 200.0)
-                    Button("test") {
+                        .frame(width: 0, height: 150.0)
+                    Button {
                         print("test")
+                    } label: {
+                        Image("Settings")
+                            .resizable(resizingMode: .stretch)
+                            .frame(width: 60.0, height: 60.0)
                     }
                 }
                 Spacer()
-                    .frame(width: 50.0)
+                    .frame(width: 30.0)
                 Button {
                     withAnimation {
                         current_game.showing_circle_menu = false
@@ -50,7 +56,7 @@ struct CircleMenu: View {
                 } label: {
                     Image("Home")
                         .resizable(resizingMode: .stretch)
-                        .frame(width: 60.0, height: 55.0)
+                        .frame(width: 60.0, height: 60.0)
                 }
             }
         }

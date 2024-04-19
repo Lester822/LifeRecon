@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+import UIKit
 
 struct ContentView: View {
     @ObservedObject var current_game: ActiveGame
@@ -38,7 +38,10 @@ struct ContentView: View {
                                     //current_game.showing_circle_menu = false
                                     //current_game.current_page = "home"
                                 //} else {
+                                let generator = UIImpactFeedbackGenerator(style: .light)
+                                generator.prepare()
                                 current_game.showing_circle_menu.toggle()
+                                generator.impactOccurred()
                                 //}
                             }
                         } label: {

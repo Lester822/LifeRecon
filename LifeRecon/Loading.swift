@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import UIKit
+
 
 struct Loading: View {
     @ObservedObject var current_game: ActiveGame
@@ -28,7 +30,10 @@ struct Loading: View {
             HStack {
                 Button {
                     withAnimation(.easeInOut(duration: 0.2)) {
+                        let generator = UIImpactFeedbackGenerator(style: .medium)
+                        generator.prepare()
                         current_game.current_page = "four_player"
+                        generator.impactOccurred()
                         if current_game.player_count != 4 {
                             for player in self.current_game.players {
                                 player.life_total = player.starting_life
@@ -42,7 +47,10 @@ struct Loading: View {
                 }
                 Button {
                     withAnimation(.easeInOut(duration: 0.2)) {
+                        let generator = UIImpactFeedbackGenerator(style: .medium)
+                        generator.prepare()
                         current_game.current_page = "three_player"
+                        generator.impactOccurred()
                         if current_game.player_count != 3 {
                             for player in self.current_game.players {
                                 player.life_total = player.starting_life
@@ -58,7 +66,10 @@ struct Loading: View {
                 }
                 Button {
                     withAnimation(.easeInOut(duration: 0.2)) {
+                        let generator = UIImpactFeedbackGenerator(style: .medium)
+                        generator.prepare()
                         current_game.current_page = "two_player"
+                        generator.impactOccurred()
                         if current_game.player_count != 2 {
                             for player in self.current_game.players {
                                 player.life_total = player.starting_life
