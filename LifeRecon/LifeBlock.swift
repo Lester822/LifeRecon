@@ -18,35 +18,15 @@ struct LifeBlock: View {
     @State private var lastUpdated: Date? = nil
     @State private var resetWorkItem: DispatchWorkItem?
     @State private var scale: CGFloat = 1.0
-//    @State private var refreshID = UUID()
+    @State private var changeOpacity: Double = 0.0
+    @State private var changeOffset: CGFloat = -60
 
     
     var body: some View {
         ZStack (content: {
             HStack (spacing: 0.0, content: {
                 Button {
-                    let generator = UIImpactFeedbackGenerator(style: .medium)
-                    generator.prepare()
-                    player.life_total = player.life_total - 1
-                    player.life_total = player.life_total
-                    recent_change -= 1
-                    triggerAnimation()
-                    print(recent_change)
-                    generator.impactOccurred()
-                    
-                    // Cancel the previous work item if it exists
-                    resetWorkItem?.cancel()
-
-                    // Create a new DispatchWorkItem
-                    let workItem = DispatchWorkItem {
-                        recent_change = 0
-                    }
-
-                    // Save the new work item to the state
-                    resetWorkItem = workItem
-                    
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: workItem)
-                    lastUpdated = Date() // Update the time of the last change
+                    modifyLife(by: -1)
                     
                 } label: {
                     UnevenRoundedRectangle(cornerRadii: .init(
@@ -60,27 +40,7 @@ struct LifeBlock: View {
                 }
 
                 Button {
-                    let generator = UIImpactFeedbackGenerator(style: .soft)
-                    generator.prepare()
-                    player.life_total = player.life_total + 1
-                    player.life_total = player.life_total
-                    recent_change += 1
-                    triggerAnimation()
-                    print(recent_change)
-                    generator.impactOccurred()
-                    resetWorkItem?.cancel()
-
-                    // Create a new DispatchWorkItem
-                    let workItem = DispatchWorkItem {
-                        recent_change = 0
-                    }
-
-                    // Save the new work item to the state
-                    resetWorkItem = workItem
-                    
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: workItem)
-                    lastUpdated = Date() // Update the time of the last change
-                    
+                    modifyLife(by: 1)
                 } label: {
                     UnevenRoundedRectangle(cornerRadii: .init(
                         topLeading: 0.0,
@@ -95,45 +55,78 @@ struct LifeBlock: View {
             })
            
             HStack {
-
                 Text(String(player.life_total))
                     .font(.system(size: 80))
                     .fontWeight(.bold)
                     .foregroundColor(Color.white)
+                    .multilineTextAlignment(.center)
                     .minimumScaleFactor(0.1)
                     .lineLimit(1)
                     .padding()
                     .rotationEffect(Angle(degrees: 90))
                     .scaleEffect(scale)
                     .animation(.easeInOut(duration: 0.3), value: scale)
-                    .gesture(LongPressGesture(minimumDuration: 0.1).onEnded { _ in
+                    .gesture(TapGesture(count: 2).onEnded { _ in
                         withAnimation {
                             let generator = UIImpactFeedbackGenerator(style: .heavy)
                             generator.prepare()
+                            generator.impactOccurred()
                             game.showing_circle_menu = false
                             game.showing_keypad = true
                             game.caller = self.player
                             print("Click!")
                         }
                     })
-    //            HStack {
-    //                VStack {
-    //                    Spacer()
-    //                    Button {
-    //                        print("SETTINGS")
-    //                    } label: {
-    //                        Image("Settings")
-    //                            .resizable(resizingMode: .stretch)
-    //                            .padding([.leading, .bottom], 20.0)
-    //                            .frame(width: 50.0, height: 50.0)
-    //                    }
-    //                }
-    //                Spacer()
-    //            }
+                    .gesture(LongPressGesture(minimumDuration: 0.01).onEnded { _ in
+                        print("OPEN PLAYER SETTINGS")
+                    })
+                    
             }
+            HStack {
+                if recent_change != 0 {
+                                    Text(recent_change > 0 ? "+\(recent_change)" : "\(recent_change)")
+                                        .rotationEffect(Angle(degrees: 90))
+                                        .font(.system(size: 25))
+                                        .fontWeight(.bold)
+                                        .foregroundColor(.white)
+                                        .opacity(changeOpacity)
+                                        .offset(x: changeOffset)
+                                        .animation(.easeIn(duration: 0.5), value: changeOpacity)
+                                        //.transition(.move(edge: .bottom).combined(with: .opacity))
+                                        .onAppear {
+                                            changeOpacity = 1
+                                            changeOffset = -50
+                                        }
+                                }
+                            }
 
         })
     }
+    
+    func modifyLife(by amount: Int) {
+        let generator = UIImpactFeedbackGenerator(style: amount < 0 ? .heavy : .heavy)
+        generator.prepare()
+        withAnimation(.easeIn(duration: 0.3)) {
+            player.life_total += amount
+            recent_change += amount
+        }
+
+        triggerAnimation()
+        generator.impactOccurred()
+        
+        resetWorkItem?.cancel()
+        let workItem = DispatchWorkItem {
+            withAnimation(.easeOut(duration: 0.2)) {
+                recent_change = 0
+                changeOpacity = 0
+                changeOffset = -60
+            }
+        }
+        resetWorkItem = workItem
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: workItem)
+        lastUpdated = Date() // Update the time of the last change
+    }
+    
     func triggerAnimation() {
         scale = 0.9  // Scale up to 110%
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.15) {

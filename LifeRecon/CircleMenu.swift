@@ -12,12 +12,13 @@ struct CircleMenu: View {
     var body: some View {
         ZStack() {
             Circle()
-                .frame(width: 250.0, height: 250.0)
+                .frame(width: 200.0, height: 200.0)
                 .opacity(0.5)
 
             HStack() {
                 
                 Button {
+                    soft_pulse()
                     current_game.showing_circle_menu = false
                     for player in current_game.players {
                         player.life_total = current_game.starting_life
@@ -29,26 +30,34 @@ struct CircleMenu: View {
                         .resizable(resizingMode: .stretch)
                         .frame(width: 50.0, height: 50.0)
                 }
+                
                 Spacer()
-                    .frame(width: 35.0)
+                    .frame(width: 20.0)
                 
                 VStack() {
-                    Button("test") {
+                    Button {
+                        soft_pulse()
                         print("test")
+                    } label: {
+                        Image("Dice")
+                            .resizable(resizingMode: .stretch)
+                            .frame(width: 50.0, height: 50.0)
                     }
                     Spacer()
-                        .frame(width: 0, height: 150.0)
+                        .frame(width: 0, height: 90.0)
                     Button {
+                        soft_pulse()
                         print("test")
                     } label: {
                         Image("Settings")
                             .resizable(resizingMode: .stretch)
-                            .frame(width: 60.0, height: 60.0)
+                            .frame(width: 50.0, height: 50.0)
                     }
                 }
                 Spacer()
-                    .frame(width: 30.0)
+                    .frame(width: 20.0)
                 Button {
+                    soft_pulse()
                     withAnimation {
                         current_game.showing_circle_menu = false
                         current_game.current_page = "home"
@@ -56,13 +65,19 @@ struct CircleMenu: View {
                 } label: {
                     Image("Home")
                         .resizable(resizingMode: .stretch)
-                        .frame(width: 60.0, height: 60.0)
+                        .frame(width: 50.0, height: 50.0)
                 }
             }
         }
 
     }
         }
+
+func soft_pulse() {
+    let generator = UIImpactFeedbackGenerator(style: .soft)
+    generator.prepare()
+    generator.impactOccurred()
+}
 
 #Preview {
     CircleMenu(current_game: ActiveGame(player_count: 4, starting_life: 40))

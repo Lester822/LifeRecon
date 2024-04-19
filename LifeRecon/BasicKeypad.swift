@@ -7,9 +7,10 @@
 
 import SwiftUI
 
-struct SetLifeKeypad: View {
+struct BasicKeypad: View {
     @State var current_text: String
     @ObservedObject var current_game: ActiveGame
+    
     var body: some View {
         ZStack(content: {
             RoundedRectangle(cornerRadius: 30.0)
@@ -129,39 +130,6 @@ struct SetLifeKeypad: View {
                             KeypadKey(given_text: "9", color: .black, background: Color(hue: 1.0, saturation: 0.0, brightness: 0.835))
                         }
                         Button {
-                            print("blank")
-                        } label: {
-                            BlankKey()
-                        }
-                        
-
-                    })
-                    VStack (content: {
-                        Button {
-                            haptic_pulse()
-                            if current_text.count < 8 {
-                                current_text = current_text + "+"
-                            }
-                        } label: {
-                            KeypadKey(given_text: "+", color: .white, background: Color(hue: 1.0, saturation: 0.0, brightness: 0))
-                        }
-                        Button {
-                            haptic_pulse()
-                            if current_text.count < 8 {
-                                current_text = current_text + "-"
-                            }
-                        } label: {
-                            KeypadKey(given_text: "-", color: .white, background: Color(hue: 1.0, saturation: 0.0, brightness: 0))
-                        }
-                        Button {
-                            haptic_pulse()
-                            if current_text.count < 8 {
-                                current_text = current_text + "*"
-                            }
-                        } label: {
-                            KeypadKey(given_text: "x", color: .white, background: Color(hue: 1.0, saturation: 0.0, brightness: 0))
-                        }
-                        Button {
                             haptic_pulse()
                             if current_text.count > 0 {
                                 current_text.removeLast()
@@ -169,51 +137,30 @@ struct SetLifeKeypad: View {
                         } label: {
                             KeypadKey(given_text: "←", color: .black, background: .white)
                         }
+                        
+
                     })
-                    
-                    
+
+                                    
                 })
 //                Spacer()
 //                    .frame(height: 30)
                 VStack (content: {
-
                     HStack (content: {
+                        Spacer()
+                            .frame(width: 0.0, height: 50.0)
                         Button {
                             haptic_pulse()
-                            withAnimation {
-                                self.current_game.showing_keypad = false
-                            }
-                        } label: {
-                            LargeKey(given_text: "Cancel", color: .black, background: Color(hue: 1.0, saturation: 0.0, brightness: 0.835))
-                        }
-                        .transition(.zoomIt)
-                        Button {
-                            haptic_pulse()
-                            if current_text.first == "+" || current_text.first == "-" {
-                                if let given_number = Int(current_text) {
-                                    self.current_game.caller.life_total = self.current_game.caller.life_total + given_number
-                                } else {
-                                    print("'\(current_text)' is not a valid integer.")
+                            if let given_number = Int(current_text) {
+                                self.current_game.starting_life = given_number
+                                withAnimation {
+                                    current_game.current_setting = "optional"
                                 }
-
-                            } else if current_text.first == "*" {
-                                let real_text = current_text.dropFirst()
-                                    if let given_number = Int(real_text) {
-                                        self.current_game.caller.life_total = self.current_game.caller.life_total * given_number
-                                    } else {
-                                        print("'\(current_text)' is not a valid integer.")
-                                    }
-                            } else {
-                                if let given_number = Int(current_text) {
-                                    self.current_game.caller.life_total = given_number
-                                } else {
-                                    print("'\(current_text)' is not a valid integer.")
-                                }
+                                
                             }
-                            self.current_game.showing_keypad = false
                             
                         } label: {
-                            LargeKey(given_text: "Submit", color: .white, background: .green)
+                            LargeKey(given_text: "Submit", color: .white, background: .red)
                         }
                     })
 
@@ -231,11 +178,7 @@ struct SetLifeKeypad: View {
         })
                }}
 
-func haptic_pulse() {
-    let generator = UIImpactFeedbackGenerator(style: .medium)
-    generator.prepare()
-    generator.impactOccurred()
-}
+
 #Preview {
-    SetLifeKeypad(current_text: "10", current_game: ActiveGame(player_count: 4, starting_life: 40))
+    BasicKeypad(current_text: "10", current_game: ActiveGame(player_count: 4, starting_life: 40))
 }

@@ -20,13 +20,22 @@ struct SquareButton: View {
                 .foregroundColor(button_color)
                 .opacity(/*@START_MENU_TOKEN@*/0.8/*@END_MENU_TOKEN@*/)
             VStack (content: {
-                Text(title)
-                    .fontWeight(.bold)
-                    .foregroundColor(text_color)
-                    .padding(.bottom, -3)
-                Image(icon)
-                    .resizable(resizingMode: .stretch)
-                    .frame(width: 55, height: 55)
+                if icon != "NONE" {
+                    Text(title)
+                        .fontWeight(.bold)
+                        .foregroundColor(text_color)
+                        .padding(.bottom, -3)
+                    Image(icon)
+                        .resizable(resizingMode: .stretch)
+                        .frame(width: 55, height: 55)
+                
+                } else {
+                    Text(title)
+                        .font(.title)
+                        .fontWeight(.bold)
+                        .foregroundColor(text_color)
+                        .padding(.bottom, -3)
+                }
             })
 
         })
