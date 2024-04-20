@@ -10,6 +10,7 @@ import SwiftUI
 struct BasicKeypad: View {
     @State var current_text: String
     @ObservedObject var current_game: ActiveGame
+    @State private var first_entry = true
     
     var body: some View {
         ZStack(content: {
@@ -40,6 +41,10 @@ struct BasicKeypad: View {
                         Button {
                             haptic_pulse()
                             if current_text.count < 8 {
+                                if first_entry == true {
+                                    current_text = ""
+                                    first_entry = false
+                                }
                                 current_text = current_text + "1"
                             }
                         } label: {
@@ -47,6 +52,10 @@ struct BasicKeypad: View {
                         }
                         Button {
                             haptic_pulse()
+                            if first_entry == true {
+                                current_text = ""
+                                first_entry = false
+                            }
                             if current_text.count < 8 {
                                 current_text = current_text + "4"
                             }
@@ -55,6 +64,10 @@ struct BasicKeypad: View {
                         }
                         Button {
                             haptic_pulse()
+                            if first_entry == true {
+                                current_text = ""
+                                first_entry = false
+                            }
                             if current_text.count < 8 {
                                 current_text = current_text + "7"
                             }
@@ -73,6 +86,10 @@ struct BasicKeypad: View {
                     VStack(content: {
                         Button {
                             haptic_pulse()
+                            if first_entry == true {
+                                current_text = ""
+                                first_entry = false
+                            }
                             if current_text.count < 8 {
                                 current_text = current_text + "2"
                             }
@@ -81,6 +98,10 @@ struct BasicKeypad: View {
                         }
                         Button {
                             haptic_pulse()
+                            if first_entry == true {
+                                current_text = ""
+                                first_entry = false
+                            }
                             if current_text.count < 8 {
                                 current_text = current_text + "5"
                             }
@@ -89,6 +110,10 @@ struct BasicKeypad: View {
                         }
                         Button {
                             haptic_pulse()
+                            if first_entry == true {
+                                current_text = ""
+                                first_entry = false
+                            }
                             if current_text.count < 8 {
                                 current_text = current_text + "8"
                             }
@@ -97,6 +122,10 @@ struct BasicKeypad: View {
                         }
                         Button {
                             haptic_pulse()
+                            if first_entry == true {
+                                current_text = ""
+                                first_entry = false
+                            }
                             if current_text.count < 8 {
                                 current_text = current_text + "0"
                             }
@@ -107,6 +136,10 @@ struct BasicKeypad: View {
                     VStack(content: {
                         Button {
                             haptic_pulse()
+                            if first_entry == true {
+                                current_text = ""
+                                first_entry = false
+                            }
                             if current_text.count < 8 {
                                 current_text = current_text + "3"
                             }
@@ -115,6 +148,10 @@ struct BasicKeypad: View {
                         }
                         Button {
                             haptic_pulse()
+                            if first_entry == true {
+                                current_text = ""
+                                first_entry = false
+                            }
                             if current_text.count < 8 {
                                 current_text = current_text + "6"
                             }
@@ -123,6 +160,10 @@ struct BasicKeypad: View {
                         }
                         Button {
                             haptic_pulse()
+                            if first_entry == true {
+                                current_text = ""
+                                first_entry = false
+                            }
                             if current_text.count < 8 {
                                 current_text = current_text + "9"
                             }

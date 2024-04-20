@@ -14,6 +14,7 @@ struct CircleMenu: View {
             Circle()
                 .frame(width: 200.0, height: 200.0)
                 .opacity(0.5)
+                .foregroundColor(.black)
 
             HStack() {
                 

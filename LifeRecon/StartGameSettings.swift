@@ -70,7 +70,6 @@ struct PlayerCount: View {
                             let generator = UIImpactFeedbackGenerator(style: .medium)
                             generator.prepare()
                             generator.impactOccurred()
-                            current_game.player_count = 2
                             if current_game.player_count != 2 {
                                 current_game.player_count = 2
                                 withAnimation {
@@ -138,6 +137,7 @@ struct OptionalSettings: View {
             Spacer()
                 .frame(height: 40.0)
             Button {
+                haptic_pulse()
                 current_game.showing_circle_menu = false
                 for player in current_game.players {
                     player.life_total = current_game.starting_life

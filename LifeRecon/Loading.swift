@@ -14,8 +14,11 @@ struct Loading: View {
     
     var body: some View {
         VStack (content: {
+            Image("LifeReconLong")
+                .resizable(resizingMode: .stretch)
+                .frame(width: 140*1.75, height: 52.4*1.75)
             HStack {
-                Text("LifeRecon by")
+                Text("by")
                     .font(.headline)
                     .multilineTextAlignment(.center)
                 Spacer()
@@ -27,12 +30,14 @@ struct Loading: View {
                     .foregroundStyle(.tint)
             }
             Button {
+                haptic_pulse()
                 withAnimation {
                     current_game.current_page = "settings"
                 }
             } label: {
                 LargeKey(given_text: "Start", color: .white, background: .red)
             }
+            .frame(width: 140.0, height: 55.0)
         })
     }
 }
