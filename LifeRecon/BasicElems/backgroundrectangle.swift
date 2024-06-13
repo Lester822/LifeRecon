@@ -12,12 +12,16 @@ struct BackgroundRectangle: View {
     var body: some View {
         Rectangle()
             .foregroundColor(.black)
-            .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+            //.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
             .opacity(0.5)
+            .ignoresSafeArea(.all)
             .onTapGesture {
+                current_game.current_rotation = 0
                 withAnimation {
                     self.current_game.showing_keypad = false
                     self.current_game.showing_circle_menu = false
+                    self.current_game.showing_confirm = false
+                    self.current_game.showing_player_menu = false
                 }
             }
     }

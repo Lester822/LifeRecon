@@ -9,7 +9,10 @@ import SwiftUI
 
 struct SetLifeKeypad: View {
     @State var current_text: String
+    @State private var current_operation = "="
     @ObservedObject var current_game: ActiveGame
+    
+    private let operations = ["=", "+", "-"]
     var body: some View {
         ZStack(content: {
             RoundedRectangle(cornerRadius: 30.0)
@@ -20,14 +23,75 @@ struct SetLifeKeypad: View {
                 .blur(radius: 1.0)
             VStack(content: {
                 ZStack (content: {
-                    RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
-                        .frame(width:275, height: 60)
-                        .foregroundColor(Color(hue: 1.0, saturation: 0.0, brightness: 0.835))
-                    Text(current_text)
-                        .font(.largeTitle)
-                        .minimumScaleFactor(0.1)
-                        .bold()
-                        .foregroundColor(.black)
+                    HStack {
+                        ZStack {
+                            UnevenRoundedRectangle(cornerRadii: .init(
+                                topLeading: 25.0,
+                                bottomLeading: 25.0,
+                                bottomTrailing: 0.0,
+                                topTrailing: 0.0),
+                                                   style: .continuous)
+                            .padding(0.0)
+                            .frame(width:50, height: 60)
+                            .foregroundColor(Color(hue: 1.0, saturation: 0.0, brightness: 0.835))
+                            Text(current_operation)
+                                .font(.largeTitle)
+                                .minimumScaleFactor(0.1)
+                                .bold()
+                                .foregroundColor(.black)
+                                .gesture(DragGesture().onEnded { gesture in
+                                    let verticalMovement = gesture.translation.height
+                                    if current_operation == "=" {
+                                        if verticalMovement > 0 {
+                                            current_operation = "+"
+                                        } else {
+                                            current_operation = "-"
+                                        }
+                                        
+                                    } else if current_operation == "+" {
+                                        if verticalMovement > 0 {
+                                            current_operation = "-"
+                                        } else {
+                                            current_operation = "="
+                                        }
+                                        
+                                    } else if current_operation == "-" {
+                                        if verticalMovement > 0 {
+                                            current_operation = "="
+                                        } else {
+                                            current_operation = "+"
+                                        }
+                                        
+                                    }
+                                                })
+                        }
+                        
+                        
+                        ZStack {
+                            UnevenRoundedRectangle(cornerRadii: .init(
+                                topLeading: 0.0,
+                                bottomLeading: 0.0,
+                                bottomTrailing: 25.0,
+                                topTrailing: 25.0),
+                                                   style: .continuous)
+                            .frame(width:200, height: 60)
+                            .foregroundColor(Color(hue: 1.0, saturation: 0.0, brightness: 0.835))
+                            
+                            .padding(.all, 0.0)
+                            .foregroundColor(Color(hue: 1.0, saturation: 0.0, brightness: 0.835))
+                            Text(current_text)
+                                .font(.largeTitle)
+                                .minimumScaleFactor(0.1)
+                                .bold()
+                                .foregroundColor(.black)
+                        }
+                        
+//                        RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
+//                            .frame(width:275, height: 60)
+//                            .foregroundColor(Color(hue: 1.0, saturation: 0.0, brightness: 0.835))
+                    }
+                    
+                    
                     
                 })
                 Spacer()
@@ -129,39 +193,6 @@ struct SetLifeKeypad: View {
                             KeypadKey(given_text: "9", color: .black, background: Color(hue: 1.0, saturation: 0.0, brightness: 0.835))
                         }
                         Button {
-                            print("blank")
-                        } label: {
-                            BlankKey()
-                        }
-                        
-
-                    })
-                    VStack (content: {
-                        Button {
-                            haptic_pulse()
-                            if current_text.count < 8 {
-                                current_text = current_text + "+"
-                            }
-                        } label: {
-                            KeypadKey(given_text: "+", color: .white, background: Color(hue: 1.0, saturation: 0.0, brightness: 0))
-                        }
-                        Button {
-                            haptic_pulse()
-                            if current_text.count < 8 {
-                                current_text = current_text + "-"
-                            }
-                        } label: {
-                            KeypadKey(given_text: "-", color: .white, background: Color(hue: 1.0, saturation: 0.0, brightness: 0))
-                        }
-                        Button {
-                            haptic_pulse()
-                            if current_text.count < 8 {
-                                current_text = current_text + "*"
-                            }
-                        } label: {
-                            KeypadKey(given_text: "x", color: .white, background: Color(hue: 1.0, saturation: 0.0, brightness: 0))
-                        }
-                        Button {
                             haptic_pulse()
                             if current_text.count > 0 {
                                 current_text.removeLast()
@@ -169,7 +200,35 @@ struct SetLifeKeypad: View {
                         } label: {
                             KeypadKey(given_text: "←", color: .black, background: .white)
                         }
+                        
+
                     })
+//                    VStack (content: {
+//                        Button {
+//                            haptic_pulse()
+//                            if current_text.count < 8 {
+//                                current_text = current_text + "+"
+//                            }
+//                        } label: {
+//                            KeypadKey(given_text: "+", color: .white, background: Color(hue: 1.0, saturation: 0.0, brightness: 0))
+//                        }
+//                        Button {
+//                            haptic_pulse()
+//                            if current_text.count < 8 {
+//                                current_text = current_text + "-"
+//                            }
+//                        } label: {
+//                            KeypadKey(given_text: "-", color: .white, background: Color(hue: 1.0, saturation: 0.0, brightness: 0))
+//                        }
+//                        Button {
+//                            haptic_pulse()
+//                            if current_text.count < 8 {
+//                                current_text = current_text + "*"
+//                            }
+//                        } label: {
+//                            KeypadKey(given_text: "x", color: .white, background: Color(hue: 1.0, saturation: 0.0, brightness: 0))
+//                        }
+//                    })
                     
                     
                 })
@@ -180,6 +239,7 @@ struct SetLifeKeypad: View {
                     HStack (content: {
                         Button {
                             haptic_pulse()
+                            current_game.current_rotation = 0
                             withAnimation {
                                 self.current_game.showing_keypad = false
                             }
@@ -189,20 +249,19 @@ struct SetLifeKeypad: View {
                         .transition(.zoomIt)
                         Button {
                             haptic_pulse()
-                            if current_text.first == "+" || current_text.first == "-" {
+                            if current_operation == "+" {
                                 if let given_number = Int(current_text) {
                                     self.current_game.caller.life_total = self.current_game.caller.life_total + given_number
                                 } else {
                                     print("'\(current_text)' is not a valid integer.")
                                 }
 
-                            } else if current_text.first == "*" {
-                                let real_text = current_text.dropFirst()
-                                    if let given_number = Int(real_text) {
-                                        self.current_game.caller.life_total = self.current_game.caller.life_total * given_number
-                                    } else {
-                                        print("'\(current_text)' is not a valid integer.")
-                                    }
+                            } else if current_operation == "-" {
+                                if let given_number = Int(current_text) {
+                                    self.current_game.caller.life_total = self.current_game.caller.life_total - given_number
+                                } else {
+                                    print("'\(current_text)' is not a valid integer.")
+                                }
                             } else {
                                 if let given_number = Int(current_text) {
                                     self.current_game.caller.life_total = given_number
@@ -210,7 +269,11 @@ struct SetLifeKeypad: View {
                                     print("'\(current_text)' is not a valid integer.")
                                 }
                             }
-                            self.current_game.showing_keypad = false
+                            current_game.current_rotation = 0
+                            withAnimation {
+                                self.current_game.showing_keypad = false
+                            }
+                            
                             
                         } label: {
                             LargeKey(given_text: "Submit", color: .white, background: .green)
@@ -221,6 +284,7 @@ struct SetLifeKeypad: View {
                 })
                 
                 
+                
 
                 
                 
@@ -229,6 +293,7 @@ struct SetLifeKeypad: View {
 
         
         })
+
                }}
 
 func haptic_pulse() {

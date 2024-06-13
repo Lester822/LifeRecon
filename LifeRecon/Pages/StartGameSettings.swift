@@ -23,18 +23,14 @@ struct PlayerCount: View {
                     
                     Button {
                         withAnimation(.easeInOut(duration: 0.2)) {
+                            current_game.players[0].rotation = 0
                             let generator = UIImpactFeedbackGenerator(style: .medium)
                             generator.prepare()
                             generator.impactOccurred()
-                            if current_game.player_count != 1 {
-                                current_game.player_count = 1
-                                withAnimation {
-                                    current_game.current_setting = "starting_life"
-                                }
-                            } else {
-                                current_game.current_page = "one_player"
+                            current_game.player_count = 1
+                            withAnimation {
+                                current_game.current_setting = "starting_life"
                             }
-                            
                         }
                         
                     } label: {
@@ -44,16 +40,15 @@ struct PlayerCount: View {
                     
                     Button {
                         withAnimation(.easeInOut(duration: 0.2)) {
+                            current_game.players[0].rotation = 90
+                            current_game.players[1].rotation = -90
+                            current_game.players[2].rotation = 0
                             let generator = UIImpactFeedbackGenerator(style: .medium)
                             generator.prepare()
                             generator.impactOccurred()
-                            if current_game.player_count != 3 {
-                                current_game.player_count = 3
-                                withAnimation {
-                                    current_game.current_setting = "starting_life"
-                                }
-                            } else {
-                                current_game.current_page = "three_player"
+                            current_game.player_count = 3
+                            withAnimation {
+                                current_game.current_setting = "starting_life"
                             }
                            
                         }
@@ -67,16 +62,14 @@ struct PlayerCount: View {
                     
                     Button {
                         withAnimation(.easeInOut(duration: 0.2)) {
+                            current_game.players[0].rotation = 180
+                            current_game.players[1].rotation = 0
                             let generator = UIImpactFeedbackGenerator(style: .medium)
                             generator.prepare()
                             generator.impactOccurred()
-                            if current_game.player_count != 2 {
-                                current_game.player_count = 2
-                                withAnimation {
-                                    current_game.current_setting = "starting_life"
-                                }
-                            } else {
-                                current_game.current_page = "two_player"
+                            current_game.player_count = 2
+                            withAnimation {
+                                current_game.current_setting = "starting_life"
                             }
                         }
                     } label: {
@@ -85,16 +78,16 @@ struct PlayerCount: View {
                     
                     Button {
                         withAnimation(.easeInOut(duration: 0.2)) {
+                            current_game.players[0].rotation = 90
+                            current_game.players[1].rotation = -90
+                            current_game.players[2].rotation = 90
+                            current_game.players[3].rotation = -90
                             let generator = UIImpactFeedbackGenerator(style: .medium)
                             generator.prepare()
                             generator.impactOccurred()
-                            if current_game.player_count != 4 {
-                                current_game.player_count = 4
-                                withAnimation {
-                                    current_game.current_setting = "starting_life"
-                                }
-                            } else {
-                                current_game.current_page = "four_player"
+                            current_game.player_count = 4
+                            withAnimation {
+                                current_game.current_setting = "starting_life"
                             }
                             
                         }
@@ -138,30 +131,36 @@ struct OptionalSettings: View {
                 .frame(height: 40.0)
             Button {
                 haptic_pulse()
+                current_game.in_progress = true
                 current_game.showing_circle_menu = false
                 for player in current_game.players {
                     player.life_total = current_game.starting_life
+                    player.white_mana = 0
+                    player.blue_mana = 0
+                    player.black_mana = 0
+                    player.red_mana = 0
+                    player.green_mana = 0
                 }
                 if current_game.player_count == 1 {
                     withAnimation{
                         current_game.current_page = "one_player"
                     }
-                    current_game.current_setting = "player_count"
                 } else if current_game.player_count == 2 {
                     withAnimation{
                         current_game.current_page = "two_player"
                     }
-                    current_game.current_setting = "player_count"
                 } else if current_game.player_count == 3 {
                     withAnimation{
                         current_game.current_page = "three_player"
                     }
-                    current_game.current_setting = "player_count"
                 } else if current_game.player_count == 4 {
                     withAnimation{
                         current_game.current_page = "four_player"
                     }
-                    current_game.current_setting = "player_count"
+                } else if current_game.player_count == 5 {
+                    withAnimation{
+                        current_game.current_page = "five_player"
+                    }
                 }
                 
             } label: {

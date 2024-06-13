@@ -17,15 +17,14 @@ struct CircleMenu: View {
                 .foregroundColor(.black)
 
             HStack() {
-                
                 Button {
-                    soft_pulse()
-                    current_game.showing_circle_menu = false
-                    for player in current_game.players {
-                        player.life_total = current_game.starting_life
+                    withAnimation {
+                        soft_pulse()
+                        current_game.first_confirm_line = "Are you sure you want to"
+                        current_game.confirm_message = "reset the game?"
+                        current_game.showing_confirm =  true
+                        current_game.confirm_action = "reset"
                     }
-                    
-                    
                 } label: {
                     Image("Restart")
                         .resizable(resizingMode: .stretch)
@@ -83,3 +82,5 @@ func soft_pulse() {
 #Preview {
     CircleMenu(current_game: ActiveGame(player_count: 4, starting_life: 40))
 }
+
+

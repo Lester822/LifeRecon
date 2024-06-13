@@ -67,18 +67,23 @@ struct LifeBlock: View {
                     .scaleEffect(scale)
                     .animation(.easeInOut(duration: 0.3), value: scale)
                     .gesture(TapGesture(count: 2).onEnded { _ in
+                        let generator = UIImpactFeedbackGenerator(style: .heavy)
+                        generator.prepare()
+                        generator.impactOccurred()
+                        print(game.current_rotation)
+                        game.showing_circle_menu = false
                         withAnimation {
-                            let generator = UIImpactFeedbackGenerator(style: .heavy)
-                            generator.prepare()
-                            generator.impactOccurred()
-                            game.showing_circle_menu = false
                             game.showing_keypad = true
-                            game.caller = self.player
-                            print("Click!")
                         }
+                        game.current_rotation = player.rotation
+                        game.caller = self.player
                     })
-                    .gesture(LongPressGesture(minimumDuration: 0.01).onEnded { _ in
+                    .gesture(LongPressGesture(minimumDuration: 0.2).onEnded { _ in
                         print("OPEN PLAYER SETTINGS")
+                        withAnimation {
+                            game.caller = player
+                            game.showing_player_menu = true
+                        }
                     })
                     
             }

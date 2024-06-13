@@ -12,6 +12,7 @@ struct LifeReconApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView(current_game: ActiveGame(player_count: 0, starting_life: 40))
+                .edgesIgnoringSafeArea(.all)
         }
     }
 }

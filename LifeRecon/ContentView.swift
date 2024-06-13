@@ -14,21 +14,41 @@ struct ContentView: View {
     var body: some View {
         VStack {
             if current_game.current_page == "home" {
-                Loading(current_game: current_game)
-                    .transition(.zoomIt)
+                ZStack {
+                    Loading(current_game: current_game)
+                        .transition(.zoomIt)
+                    if self.current_game.showing_confirm == true {
+                        BackgroundRectangle(current_game: current_game)
+                            .transition(.fade)
+                            .edgesIgnoringSafeArea(.all)
+                        Confirmation(current_game: current_game, confirm_text: current_game.confirm_message)
+                            .transition(.zoomIt)
+                    }
+                }
+                
             } else if current_game.current_page == "settings" {
-                StartGameSettings(current_game: current_game)
-                    .transition(.zoomIt)
+                ZStack {
+                    StartGameSettings(current_game: current_game)
+                        .transition(.zoomIt)
+                }
+                
             } else if current_game.is_loading == false {
                     ZStack (content: {
                         if current_game.current_page == "four_player" {
                             FourPlayerGame(current_game: current_game)
+                                .background(.black)
                         } else if current_game.current_page == "three_player" {
                             ThreePlayerGame(current_game: current_game)
+                                .background(.black)
                         } else if current_game.current_page == "two_player" {
                             TwoPlayerGame(current_game: current_game)
+                                .background(.black)
                         } else if current_game.current_page == "one_player" {
                             OnePlayerGame(current_game: current_game)
+                                .background(.black)
+                        } else if current_game.current_page == "five_player" {
+                            FivePlayerGame(current_game: current_game)
+                                .background(.black)
                         }
                         if self.current_game.showing_circle_menu == true {
                             BackgroundRectangle(current_game: current_game)
@@ -73,6 +93,21 @@ struct ContentView: View {
                             BackgroundRectangle(current_game: current_game)
                                 .transition(.fade)
                             SetLifeKeypad(current_text: "", current_game: self.current_game)
+                                .transition(.zoomIt)
+                                .rotationEffect(Angle(degrees: current_game.current_rotation))
+                        }
+                        if self.current_game.showing_confirm == true {
+                            BackgroundRectangle(current_game: current_game)
+                                .transition(.fade)
+                                .edgesIgnoringSafeArea(.all)
+                            Confirmation(current_game: current_game, confirm_text: current_game.confirm_message)
+                                .transition(.zoomIt)
+                        }
+                        if self.current_game.showing_player_menu == true {
+                            BackgroundRectangle(current_game: current_game)
+                                .transition(.fade)
+                            PlayerMenu(current_game: current_game)
+                                .rotationEffect(Angle(degrees: current_game.caller.rotation))
                                 .transition(.zoomIt)
                         }
                     })

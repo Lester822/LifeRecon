@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct FourPlayerGame: View {
+struct ThreePlayerGame: View {
     @ObservedObject var current_game: ActiveGame
     var body: some View {
         ZStack (content: {
@@ -20,25 +20,25 @@ struct FourPlayerGame: View {
                     let life2 = LifeBlock(block_color: .red, player: current_game.players[1], game: current_game)
                         .rotationEffect(Angle(degrees: 180))
                     life1
+                        .edgesIgnoringSafeArea(.all)
                     life2
+                        .edgesIgnoringSafeArea(.all)
                 })
        
                 HStack (spacing: 0.0, content: {
                     let life3 = LifeBlock(block_color: .green, player: current_game.players[2], game: current_game)
-                    let life4 = LifeBlock(block_color: .yellow, player: current_game.players[3], game: current_game)
-                        .rotationEffect(Angle(degrees: 180))
+                        .rotationEffect(Angle(degrees: 270))
                     life3
-                    life4
+                        .edgesIgnoringSafeArea(.all)
                     
                 })
             })
         })
-
             .padding(-10)
             
     }
 }
 
 #Preview {
-    FourPlayerGame(current_game: ActiveGame(player_count: 4, starting_life: 40))
+    ThreePlayerGame(current_game: ActiveGame(player_count: 3, starting_life: 40))
 }
