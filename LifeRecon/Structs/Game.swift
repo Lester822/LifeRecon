@@ -44,10 +44,10 @@ class ActiveGame: ObservableObject {
         self.in_progress = false
         self.current_rotation = 0
         self.showing_circle_menu = false
-        self.players = [Player(life_total: 0), Player(life_total: 0), Player(life_total: 0), Player(life_total: 0), Player(life_total: 0)]
+        self.players = [Player(life_total: 0, name: "PLAYER 1"), Player(life_total: 0, name: "PLAYER 2"), Player(life_total: 0, name: "PLAYER 3"), Player(life_total: 0, name: "PLAYER 4"), Player(life_total: 0, name: "PLAYER 5")]
         self.is_loading = false
         self.current_setting = "player_count"
-        self.caller = Player(life_total: 1)
+        self.caller = Player(life_total: 1, name: "PLAYER ERROR")
         self.starting_life = starting_life
         self.first_confirm_line = "Are you sure you want to"
     }
@@ -55,8 +55,9 @@ class ActiveGame: ObservableObject {
     func new_player_count(new_number: Int) {
         self.player_count = new_number
         self.players = []
-        for _ in 1...player_count {
-            self.players.append(Player(life_total: self.starting_life))
+        for i in 1...player_count {
+            self.players.append(Player(life_total: self.starting_life, name: "PLAYER 1"))
+            
         }
     }
 }

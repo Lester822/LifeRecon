@@ -104,6 +104,17 @@ struct LifeBlock: View {
                                         }
                                 }
                             }
+            HStack {
+                Spacer()
+                    .frame(width: 90.0)
+                Text(String(player.name))
+                    .foregroundStyle(.white)
+                    .fontWeight(.bold)
+                    .rotationEffect(Angle(degrees: 90))
+                    .disabled(true)
+                
+            }
+            
 
         })
     }
@@ -141,5 +152,5 @@ struct LifeBlock: View {
 }
 
 #Preview {
-    LifeBlock(block_color: .red, player: Player(life_total: 30), game: ActiveGame(player_count: 4, starting_life: 40))
+    LifeBlock(block_color: .red, player: Player(life_total: 30, name: "PLAYER 1"), game: ActiveGame(player_count: 4, starting_life: 40))
 }

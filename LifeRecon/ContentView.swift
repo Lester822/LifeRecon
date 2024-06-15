@@ -107,8 +107,11 @@ struct ContentView: View {
                             BackgroundRectangle(current_game: current_game)
                                 .transition(.fade)
                             PlayerMenu(current_game: current_game)
-                                .rotationEffect(Angle(degrees: current_game.caller.rotation))
                                 .transition(.zoomIt)
+                                .rotationEffect(Angle(degrees: current_game.caller.rotation))
+                                .edgesIgnoringSafeArea(.all)
+                                .frame(width: 10, height:10)
+                                
                         }
                     })
                     

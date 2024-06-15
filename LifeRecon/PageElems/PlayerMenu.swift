@@ -16,14 +16,20 @@ struct PlayerMenu: View {
                 .frame(width: UIScreen.main.bounds.height * 0.8, height: UIScreen.main.bounds.width * 0.8)
                 .foregroundColor(.black)
                 .opacity(0.5)
-                .edgesIgnoringSafeArea(.all)
-            HStack {
-                NumberCircle(number: $current_game.caller.white_mana, block_color: .yellow, player: current_game.caller, current_game: current_game)
-                NumberCircle(number: $current_game.caller.blue_mana, block_color: .blue, player: current_game.caller, current_game: current_game)
-                NumberCircle(number: $current_game.caller.black_mana, block_color: .black, player: current_game.caller, current_game: current_game)
-                NumberCircle(number: $current_game.caller.red_mana, block_color: .red, player: current_game.caller, current_game: current_game)
-                NumberCircle(number: $current_game.caller.green_mana, block_color: .green, player: current_game.caller, current_game: current_game)
+            VStack {
+                Text(String(current_game.caller.name))
+                    .bold()
+                Spacer()
+                    .frame(height: 20.0)
+                HStack {
+                    NumberCircle(number: $current_game.caller.white_mana, block_color: .yellow, player: current_game.caller, current_game: current_game)
+                    NumberCircle(number: $current_game.caller.blue_mana, block_color: .blue, player: current_game.caller, current_game: current_game)
+                    NumberCircle(number: $current_game.caller.black_mana, block_color: .black, player: current_game.caller, current_game: current_game)
+                    NumberCircle(number: $current_game.caller.red_mana, block_color: .red, player: current_game.caller, current_game: current_game)
+                    NumberCircle(number: $current_game.caller.green_mana, block_color: .green, player: current_game.caller, current_game: current_game)
+                }
             }
+            
             
         }
     }

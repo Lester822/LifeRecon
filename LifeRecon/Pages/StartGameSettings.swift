@@ -133,8 +133,11 @@ struct OptionalSettings: View {
                 haptic_pulse()
                 current_game.in_progress = true
                 current_game.showing_circle_menu = false
+                var index = 1
                 for player in current_game.players {
                     player.life_total = current_game.starting_life
+                    player.name = "PLAYER " + String(index)
+                    index += 1
                     player.white_mana = 0
                     player.blue_mana = 0
                     player.black_mana = 0

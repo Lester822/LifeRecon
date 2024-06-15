@@ -19,6 +19,7 @@ struct NumberCircle: View {
         ZStack {
             VStack(spacing: 0.0) {
                 Button {
+                    soft_pulse()
                     number += 1
                 } label: {
                     UnevenRoundedRectangle(cornerRadii: .init(
@@ -33,6 +34,7 @@ struct NumberCircle: View {
                 }
                 
                 Button {
+                    soft_pulse()
                     number -= 1
                 } label: {
                     UnevenRoundedRectangle(cornerRadii: .init(
@@ -59,5 +61,5 @@ struct NumberCircle: View {
 }
 
 #Preview {
-    NumberCircle(number:.constant(10), block_color: .red, player: Player(life_total: 30), current_game: ActiveGame(player_count: 4, starting_life: 40))
+    NumberCircle(number:.constant(10), block_color: .red, player: Player(life_total: 30, name: "PLAYER 1"), current_game: ActiveGame(player_count: 4, starting_life: 40))
 }

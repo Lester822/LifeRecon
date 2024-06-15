@@ -16,10 +16,12 @@ class Player: ObservableObject {
     @Published var black_mana: Int
     @Published var red_mana: Int
     @Published var green_mana: Int
+    @Published var name: String
     
-    init(life_total: Int) {
+    init(life_total: Int, name: String) {
         self.life_total = life_total
         self.starting_life = life_total
+        self.name = name
         self.rotation = 0.0
         self.white_mana = 0
         self.blue_mana = 0
