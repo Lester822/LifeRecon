@@ -9,16 +9,27 @@ import SwiftUI
 
 struct PlayerMenu: View {
     @ObservedObject var current_game: ActiveGame
+    @State private var isEditingName = false
+    @State private var playerName: String
+    
+    init(current_game: ActiveGame) {
+        self.current_game = current_game
+        self._playerName = State(initialValue: current_game.caller.name)
+    }
     
     var body: some View {
         ZStack {
-            RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
+            RoundedRectangle(cornerRadius: 25.0)
                 .frame(width: UIScreen.main.bounds.height * 0.8, height: UIScreen.main.bounds.width * 0.8)
                 .foregroundColor(.black)
                 .opacity(0.5)
             VStack {
-                Text(String(current_game.caller.name))
+                Text(playerName)
                     .bold()
+                    .font(.system(size: 25))
+                    .onTapGesture {
+                        isEditingName = true
+                    }
                 Spacer()
                     .frame(height: 20.0)
                 HStack {
@@ -29,9 +40,40 @@ struct PlayerMenu: View {
                     NumberCircle(number: $current_game.caller.green_mana, block_color: .green, player: current_game.caller, current_game: current_game)
                 }
             }
-            
-            
         }
+        .sheet(isPresented: $isEditingName) {
+            NameEditView(playerName: $playerName, isEditingName: $isEditingName) {
+                current_game.caller.name = playerName
+            }
+        }
+    }
+}
+
+struct NameEditView: View {
+    @Binding var playerName: String
+    @Binding var isEditingName: Bool
+    @FocusState private var isTextFieldFocused: Bool
+    var onCommit: () -> Void
+    
+    var body: some View {
+        VStack {
+            TextField("Enter name", text: $playerName, onCommit: {
+                onCommit()
+                isEditingName = false
+            })
+            .textFieldStyle(RoundedBorderTextFieldStyle())
+            .padding()
+            .focused($isTextFieldFocused) // Bind the focus state to the text field
+            .onAppear {
+                isTextFieldFocused = true // Set the focus when the view appears
+            }
+            Button("Done") {
+                onCommit()
+                isEditingName = false
+            }
+            .padding()
+        }
+        .padding()
     }
 }
 
