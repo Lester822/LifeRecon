@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "ReconDevLogo-Black copy.png",
+      "filename" : "ReconDev-Logo1 copy.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -12,7 +12,7 @@
           "value" : "light"
         }
       ],
-      "filename" : "ReconDevLogo-Black copy 1.png",
+      "filename" : "ReconDev-Logo1 copy 1.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -23,7 +23,7 @@
           "value" : "dark"
         }
       ],
-      "filename" : "ReconDevLogo-White copy.png",
+      "filename" : "ReconDev-Logo1 copy 2.png",
       "idiom" : "universal",
       "scale" : "1x"
     },

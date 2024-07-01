@@ -34,7 +34,7 @@ struct PlayerCount: View {
                         }
                         
                     } label: {
-                        SquareButton(button_color: .gray, text_color: .white, title: "1", icon: "NONE")
+                        SquareButton(button_color: .black, text_color: .white, title: "1", icon: "NONE")
                     }
                     
                     
@@ -53,7 +53,7 @@ struct PlayerCount: View {
                            
                         }
                     } label: {
-                        SquareButton(button_color: .gray, text_color: .white, title: "3", icon: "NONE")
+                        SquareButton(button_color: .black, text_color: .white, title: "3", icon: "NONE")
                         
                     }
                 }
@@ -73,7 +73,7 @@ struct PlayerCount: View {
                             }
                         }
                     } label: {
-                        SquareButton(button_color: .gray, text_color: .white, title: "2", icon: "NONE")
+                        SquareButton(button_color: .black, text_color: .white, title: "2", icon: "NONE")
                     }
                     
                     Button {
@@ -92,7 +92,7 @@ struct PlayerCount: View {
                             
                         }
                     } label: {
-                        SquareButton(button_color: .gray, text_color: .white, title: "4", icon: "NONE")
+                        SquareButton(button_color: .black, text_color: .white, title: "4", icon: "NONE")
                     }
                 }
             }

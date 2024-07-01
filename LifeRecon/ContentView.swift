@@ -92,7 +92,7 @@ struct ContentView: View {
                         if self.current_game.showing_keypad == true {
                             BackgroundRectangle(current_game: current_game)
                                 .transition(.fade)
-                            SetLifeKeypad(current_text: "", current_game: self.current_game)
+                            SetLifeKeypad(current_game: self.current_game)
                                 .transition(.zoomIt)
                                 .rotationEffect(Angle(degrees: current_game.current_rotation))
                         }

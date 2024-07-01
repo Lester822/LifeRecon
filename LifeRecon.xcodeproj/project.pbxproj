@@ -121,6 +121,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F81B6B732C320769005B98E4 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		F8B234562BC57ED7009D6962 = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +152,7 @@
 		F8B234612BC57ED7009D6962 /* LifeRecon */ = {
 			isa = PBXGroup;
 			children = (
+				F81B6B732C320769005B98E4 /* Fonts */,
 				F8B234642BC57ED7009D6962 /* ContentView.swift */,
 				F8B234622BC57ED7009D6962 /* LifeReconApp.swift */,
 				F8D1BC172C0541FD00A163D8 /* Structs */,

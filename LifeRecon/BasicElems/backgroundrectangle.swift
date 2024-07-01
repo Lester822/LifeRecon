@@ -17,6 +17,8 @@ struct BackgroundRectangle: View {
             .ignoresSafeArea(.all)
             .onTapGesture {
                 current_game.current_rotation = 0
+                current_game.current_operation = "="
+                current_game.keypad_current_text = ""
                 withAnimation {
                     self.current_game.showing_keypad = false
                     self.current_game.showing_circle_menu = false
