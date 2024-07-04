@@ -12,7 +12,7 @@ extension AnyTransition {
     static var zoomIt: AnyTransition {
         .asymmetric(
             insertion: .scale.combined(with: .opacity),
-            removal: .scale
+            removal: AnyTransition.scale(scale: 0.0)
         )
     }
     static var fade: AnyTransition {

@@ -143,6 +143,10 @@ struct OptionalSettings: View {
                     player.black_mana = 0
                     player.red_mana = 0
                     player.green_mana = 0
+                    for sub_player in current_game.players {
+                        player.commander_damage.append([0])
+                    }
+                    
                 }
                 if current_game.player_count == 1 {
                     withAnimation{

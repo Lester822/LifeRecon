@@ -29,7 +29,7 @@ struct NumberCircle: View {
                                                                         topTrailing: 50.0),
                                            style: .continuous)
                     .padding([.top, .leading, .bottom], 0.0)
-                    .frame(width: 100.0, height: 50.0)
+                    .frame(width: 80.0, height: 40.0)
                     .foregroundColor(block_color)
                 }
                 
@@ -44,7 +44,7 @@ struct NumberCircle: View {
                                                                         topTrailing: 00.0),
                                            style: .continuous)
                     .padding([.top, .leading, .bottom], 0.0)
-                    .frame(width: 100.0, height: 50.0)
+                    .frame(width: 80.0, height: 40.0)
                     .foregroundColor(block_color)
                 }
                 

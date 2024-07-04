@@ -62,12 +62,12 @@ struct Loading: View {
                 Spacer()
                     .frame(height: 10)
                 HStack{
-                    Circle()
+                    Image("Settings")
+                        .resizable(resizingMode: .stretch)
                         .frame(width: 50.0, height: 50.0)
-                        .foregroundColor(.black)
-                    Circle()
+                    Image("Info")
+                        .resizable(resizingMode: .stretch)
                         .frame(width: 50.0, height: 50.0)
-                        .foregroundColor(.black)
                 }
                 
             })

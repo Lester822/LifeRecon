@@ -20,7 +20,7 @@ struct PlayerMenu: View {
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 25.0)
-                .frame(width: UIScreen.main.bounds.height * 0.8, height: UIScreen.main.bounds.width * 0.8)
+                .frame(width: UIScreen.main.bounds.height * 0.85, height: UIScreen.main.bounds.width * 0.8)
                 .foregroundColor(.black)
                 .opacity(0.5)
             VStack {
@@ -33,11 +33,43 @@ struct PlayerMenu: View {
                 Spacer()
                     .frame(height: 20.0)
                 HStack {
+                    Button {
+                        
+                    } label: {
+                        Image("Settings")
+                            .resizable(resizingMode: .stretch)
+                            .frame(width: 50.0, height: 50.0)
+                    }
+                    
+                    Button {
+                        
+                    } label: {
+                        Image("Settings")
+                            .resizable(resizingMode: .stretch)
+                            .frame(width: 50.0, height: 50.0)
+                    }
                     NumberCircle(number: $current_game.caller.white_mana, block_color: .yellow, player: current_game.caller, current_game: current_game)
                     NumberCircle(number: $current_game.caller.blue_mana, block_color: .blue, player: current_game.caller, current_game: current_game)
                     NumberCircle(number: $current_game.caller.black_mana, block_color: .black, player: current_game.caller, current_game: current_game)
                     NumberCircle(number: $current_game.caller.red_mana, block_color: .red, player: current_game.caller, current_game: current_game)
                     NumberCircle(number: $current_game.caller.green_mana, block_color: .green, player: current_game.caller, current_game: current_game)
+                    NumberCircle(number: $current_game.caller.colorless_mana, block_color: .gray, player: current_game.caller, current_game: current_game)
+                    Button {
+                        
+                    } label: {
+                        Image("Settings")
+                            .resizable(resizingMode: .stretch)
+                            .frame(width: 50.0, height: 50.0)
+                    }
+                    
+                    Button {
+                        
+                    } label: {
+                        Image("Settings")
+                            .resizable(resizingMode: .stretch)
+                            .frame(width: 50.0, height: 50.0)
+                    }
+                    
                 }
             }
         }

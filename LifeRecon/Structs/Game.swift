@@ -24,6 +24,8 @@ class ActiveGame: ObservableObject {
     @Published var first_confirm_line: String
     @Published var confirm_message: String
     @Published var confirm_action: String
+    @Published var current_operation: String
+    @Published var keypad_current_text: String
     
     @Published var caller: Player
     
@@ -31,8 +33,8 @@ class ActiveGame: ObservableObject {
     @Published var showing_confirm: Bool
     @Published var showing_keypad: Bool
     @Published var showing_player_menu: Bool
-    @Published var current_operation: String
-    @Published var keypad_current_text: String
+    @Published var showing_commander_damage: Bool
+    
     
     init(player_count: Int, starting_life: Int) {
         self.player_count = player_count
@@ -54,6 +56,7 @@ class ActiveGame: ObservableObject {
         self.first_confirm_line = "Are you sure you want to"
         self.current_operation = "="
         self.keypad_current_text = ""
+        self.showing_commander_damage = false
     }
     
     func new_player_count(new_number: Int) {

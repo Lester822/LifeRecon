@@ -17,6 +17,8 @@ class Player: ObservableObject {
     @Published var red_mana: Int
     @Published var green_mana: Int
     @Published var name: String
+    @Published var colorless_mana: Int
+    @Published var commander_damage: Array<Array<Int>> // So it would look like [[1], [2], [1,2]] The list represents multiple commanders
     
     init(life_total: Int, name: String) {
         self.life_total = life_total
@@ -28,6 +30,8 @@ class Player: ObservableObject {
         self.black_mana = 0
         self.red_mana = 0
         self.green_mana = 0
+        self.colorless_mana = 0
+        self.commander_damage = []
     }
 }
 

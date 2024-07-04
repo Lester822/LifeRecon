@@ -113,9 +113,41 @@ struct LifeBlock: View {
                     .rotationEffect(Angle(degrees: 90))
                     .disabled(true)
                 
+                
             }
             
-
+            // Commander Damage Button
+            
+            VStack{
+                Spacer()
+                HStack {
+                    Spacer()
+                        .frame(width: 30.0)
+                    Button {
+                        withAnimation{
+                            game.showing_commander_damage.toggle()
+                        }
+                    } label: {
+                        Image("CommanderDamage")
+                            .resizable(resizingMode: .stretch)
+                            .frame(width: 50, height: 50)
+                            .opacity(0.2)
+                    }
+                    Spacer()
+                }
+                Spacer()
+                    .frame(height: 30.0)
+            }
+            
+            // Commander Damage Display
+            
+            if game.showing_commander_damage == true {
+                CommanderDamageDisplay()
+                    .transition(.zoomIt)
+            }
+            
+            
+            
         })
     }
     
