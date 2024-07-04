@@ -59,10 +59,12 @@ struct ContentView: View {
                                     Spacer()
                                         .frame(height: 500.0)
                                     CircleMenu(current_game: current_game)
-                                        .transition(.zoomIt)
+                                        .transition(.zoomEffect)
+                                        .zIndex(1)
                                 } else {
                                     CircleMenu(current_game: current_game)
-                                        .transition(.zoomIt)
+                                        .transition(.zoomEffect)
+                                        .zIndex(1)
                                 }
                                 
                             }
@@ -93,7 +95,7 @@ struct ContentView: View {
                             BackgroundRectangle(current_game: current_game)
                                 .transition(.fade)
                             SetLifeKeypad(current_game: self.current_game)
-                                .transition(.zoomIt)
+                                .transition(.zoomEffect)
                                 .rotationEffect(Angle(degrees: current_game.current_rotation))
                         }
                         if self.current_game.showing_confirm == true {

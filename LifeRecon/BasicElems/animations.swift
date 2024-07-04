@@ -21,4 +21,14 @@ extension AnyTransition {
             removal: .opacity
         )
     }
+    static var zoomEffect: AnyTransition {
+        .asymmetric(
+            insertion: AnyTransition.scale(scale: 0.1, anchor: .center)
+                .combined(with: .opacity)
+                .animation(.easeInOut(duration: 0.3)),
+            removal: AnyTransition.scale(scale: 0.1, anchor: .center)
+                .combined(with: .opacity)
+                .animation(.easeInOut(duration: 0.3))
+        )
+    }
 }

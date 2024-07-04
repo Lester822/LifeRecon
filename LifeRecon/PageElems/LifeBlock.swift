@@ -23,132 +23,129 @@ struct LifeBlock: View {
 
     
     var body: some View {
-        ZStack (content: {
-            HStack (spacing: 0.0, content: {
-                Button {
-                    modifyLife(by: -1)
-                    
-                } label: {
-                    UnevenRoundedRectangle(cornerRadii: .init(
-                                                                        topLeading: 50.0,
-                                                                        bottomLeading: 50.0,
-                                                                        bottomTrailing: 00.0,
-                                                                        topTrailing: 00.0),
-                                           style: .continuous)
-                    .padding([.top, .leading, .bottom], 5.0)
-                    .foregroundColor(block_color)
-                }
+        ZStack {
+            ZStack (content: {
+                HStack (spacing: 0.0, content: {
+                    Button {
+                        modifyLife(by: -1)
+                        
+                    } label: {
+                        UnevenRoundedRectangle(cornerRadii: .init(
+                                                                            topLeading: 50.0,
+                                                                            bottomLeading: 50.0,
+                                                                            bottomTrailing: 00.0,
+                                                                            topTrailing: 00.0),
+                                               style: .continuous)
+                        .padding([.top, .leading, .bottom], 5.0)
+                        .foregroundColor(block_color)
+                    }
 
-                Button {
-                    modifyLife(by: 1)
-                } label: {
-                    UnevenRoundedRectangle(cornerRadii: .init(
-                        topLeading: 0.0,
-                        bottomLeading: 0.0,
-                        bottomTrailing: 50.0,
-                        topTrailing: 50.0),
-                                           style: .continuous)
-                    .padding([.top, .bottom, .trailing], 5.0)
-                    .foregroundColor(block_color)
-                }
-                
-            })
-           
-            HStack {
-                Text(String(player.life_total))
-                    .font(.system(size: 80))
-                    .fontWeight(.bold)
-                    .foregroundColor(Color.white)
-                    .multilineTextAlignment(.center)
-                    .minimumScaleFactor(0.1)
-                    .lineLimit(1)
-                    .padding()
-                    .rotationEffect(Angle(degrees: 90))
-                    .scaleEffect(scale)
-                    .animation(.easeInOut(duration: 0.3), value: scale)
-                    .gesture(TapGesture(count: 2).onEnded { _ in
-                        let generator = UIImpactFeedbackGenerator(style: .heavy)
-                        generator.prepare()
-                        generator.impactOccurred()
-                        print(game.current_rotation)
-                        game.showing_circle_menu = false
-                        withAnimation {
-                            game.showing_keypad = true
-                        }
-                        game.current_rotation = player.rotation
-                        game.caller = self.player
-                    })
-                    .gesture(LongPressGesture(minimumDuration: 0.2).onEnded { _ in
-                        print("OPEN PLAYER SETTINGS")
-                        withAnimation {
-                            game.caller = player
-                            game.showing_player_menu = true
-                        }
-                    })
+                    Button {
+                        modifyLife(by: 1)
+                    } label: {
+                        UnevenRoundedRectangle(cornerRadii: .init(
+                            topLeading: 0.0,
+                            bottomLeading: 0.0,
+                            bottomTrailing: 50.0,
+                            topTrailing: 50.0),
+                                               style: .continuous)
+                        .padding([.top, .bottom, .trailing], 5.0)
+                        .foregroundColor(block_color)
+                    }
                     
-            }
-            HStack {
-                if recent_change != 0 {
-                                    Text(recent_change > 0 ? "+\(recent_change)" : "\(recent_change)")
-                                        .rotationEffect(Angle(degrees: 90))
-                                        .font(.system(size: 25))
-                                        .fontWeight(.bold)
-                                        .foregroundColor(.white)
-                                        .opacity(changeOpacity)
-                                        .offset(x: changeOffset)
-                                        .animation(.easeIn(duration: 0.5), value: changeOpacity)
-                                        //.transition(.move(edge: .bottom).combined(with: .opacity))
-                                        .onAppear {
-                                            changeOpacity = 1
-                                            changeOffset = -50
-                                        }
-                                }
+                })
+               
+                HStack {
+                    Text(String(player.life_total))
+                        .font(.system(size: 80))
+                        .fontWeight(.bold)
+                        .foregroundColor(Color.white)
+                        .multilineTextAlignment(.center)
+                        .minimumScaleFactor(0.1)
+                        .lineLimit(1)
+                        .padding()
+                        .rotationEffect(Angle(degrees: 90))
+                        .scaleEffect(scale)
+                        .animation(.easeInOut(duration: 0.3), value: scale)
+                        .gesture(TapGesture(count: 2).onEnded { _ in
+                            let generator = UIImpactFeedbackGenerator(style: .heavy)
+                            generator.prepare()
+                            generator.impactOccurred()
+                            print(game.current_rotation)
+                            game.showing_circle_menu = false
+                            withAnimation {
+                                game.showing_keypad = true
                             }
-            HStack {
-                Spacer()
-                    .frame(width: 90.0)
-                Text(String(player.name))
-                    .foregroundStyle(.white)
-                    .fontWeight(.bold)
-                    .rotationEffect(Angle(degrees: 90))
-                    .disabled(true)
-                
-                
-            }
-            
-            // Commander Damage Button
-            
-            VStack{
-                Spacer()
+                            game.current_rotation = player.rotation
+                            game.caller = self.player
+                        })
+                        .gesture(LongPressGesture(minimumDuration: 0.2).onEnded { _ in
+                            print("OPEN PLAYER SETTINGS")
+                            withAnimation {
+                                game.caller = player
+                                game.showing_player_menu = true
+                            }
+                        })
+                        
+                }
+                HStack {
+                    if recent_change != 0 {
+                        Text(recent_change > 0 ? "+\(recent_change)" : "\(recent_change)")
+                            .rotationEffect(Angle(degrees: 90))
+                            .font(.system(size: 25))
+                            .fontWeight(.bold)
+                            .foregroundColor(.white)
+                            .opacity(changeOpacity)
+                            .offset(x: changeOffset)
+                            .animation(.easeIn(duration: 0.5), value: changeOpacity)
+                            //.transition(.move(edge: .bottom).combined(with: .opacity))
+                            .onAppear {
+                                changeOpacity = 1
+                                changeOffset = -50
+                            }
+                    }
+                }
                 HStack {
                     Spacer()
-                        .frame(width: 30.0)
-                    Button {
-                        withAnimation{
-                            game.showing_commander_damage.toggle()
+                        .frame(width: 90.0)
+                    Text(String(player.name))
+                        .foregroundStyle(.white)
+                        .fontWeight(.bold)
+                        .rotationEffect(Angle(degrees: 90))
+                        .disabled(true)
+                }
+                
+                // Commander Damage Button
+                
+                VStack{
+                    Spacer()
+                    HStack {
+                        Spacer()
+                            .frame(width: 30.0)
+                        Button {
+                            withAnimation {
+                                game.showing_commander_damage.toggle()
+                            }
+                        } label: {
+                            Image("CommanderDamage")
+                                .resizable(resizingMode: .stretch)
+                                .frame(width: 50, height: 50)
+                                .opacity(0.2)
                         }
-                    } label: {
-                        Image("CommanderDamage")
-                            .resizable(resizingMode: .stretch)
-                            .frame(width: 50, height: 50)
-                            .opacity(0.2)
+                        Spacer()
                     }
                     Spacer()
+                        .frame(height: 30.0)
                 }
-                Spacer()
-                    .frame(height: 30.0)
-            }
+            })
             
             // Commander Damage Display
-            
-            if game.showing_commander_damage == true {
+            if game.showing_commander_damage {
                 CommanderDamageDisplay()
-                    .transition(.zoomIt)
+                    .transition(.zoomEffect)
+                    .zIndex(1)  // Ensure it stays on top
             }
-            
-            
-            
-        })
+        }
     }
     
     func modifyLife(by amount: Int) {
