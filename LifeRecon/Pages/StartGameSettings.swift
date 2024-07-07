@@ -137,13 +137,15 @@ struct OptionalSettings: View {
                 for player in current_game.players {
                     player.life_total = current_game.starting_life
                     player.name = "PLAYER " + String(index)
+                    player.player_number = index
                     index += 1
                     player.white_mana = 0
                     player.blue_mana = 0
                     player.black_mana = 0
                     player.red_mana = 0
                     player.green_mana = 0
-                    for sub_player in current_game.players {
+                    player.commander_damage = []
+                    for _ in current_game.players {
                         player.commander_damage.append([0])
                     }
                     
@@ -184,15 +186,15 @@ struct StartGameSettings: View {
        
         if current_game.current_setting == "player_count" {
             PlayerCount(current_game: current_game)
-                .transition(.zoomIt)
+                .transition(.zoomEffect)
         }  // End of starting life page
         if current_game.current_setting == "starting_life" {
             StartingLife(current_game: current_game)
-                .transition(.zoomIt)
+                .transition(.zoomEffect)
         }
         if current_game.current_setting == "optional" {
             OptionalSettings(current_game: current_game)
-                .transition(.zoomIt)
+                .transition(.zoomEffect)
         }
     }
 }

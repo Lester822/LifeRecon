@@ -21,11 +21,12 @@ struct Loading: View {
                 Spacer()
                     .frame(height: 30.0)
                 Button {
+                    current_game.current_setting = "player_count"
+                    haptic_pulse()
                     withAnimation {
-                        haptic_pulse()
-                        current_game.current_setting = "player_count"
                         current_game.current_page = "settings"
                     }
+                    
                 } label: {
                     HomeScreenKey(given_text: "Start Game", color: .white, background: .black)
                 }

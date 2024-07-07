@@ -24,6 +24,7 @@ struct BackgroundRectangle: View {
                     self.current_game.showing_circle_menu = false
                     self.current_game.showing_confirm = false
                     self.current_game.showing_player_menu = false
+                    self.current_game.showing_commander_damage = false
                 }
             }
     }

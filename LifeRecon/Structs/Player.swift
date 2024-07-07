@@ -10,6 +10,7 @@ import Foundation
 class Player: ObservableObject {
     @Published var life_total: Int
     @Published var starting_life: Int
+    @Published var player_number: Int
     @Published var rotation: Double
     @Published var white_mana: Int
     @Published var blue_mana: Int
@@ -19,6 +20,7 @@ class Player: ObservableObject {
     @Published var name: String
     @Published var colorless_mana: Int
     @Published var commander_damage: Array<Array<Int>> // So it would look like [[1], [2], [1,2]] The list represents multiple commanders
+    @Published var commander_count: Int
     
     init(life_total: Int, name: String) {
         self.life_total = life_total
@@ -31,7 +33,9 @@ class Player: ObservableObject {
         self.red_mana = 0
         self.green_mana = 0
         self.colorless_mana = 0
-        self.commander_damage = []
+        self.commander_damage = [[0,0], [0], [0], [0]]
+        self.player_number = 0
+        self.commander_count = 1
     }
 }
 

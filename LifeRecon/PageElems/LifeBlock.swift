@@ -123,6 +123,7 @@ struct LifeBlock: View {
                         Spacer()
                             .frame(width: 30.0)
                         Button {
+                            game.caller = player
                             withAnimation {
                                 game.showing_commander_damage.toggle()
                             }
@@ -141,9 +142,16 @@ struct LifeBlock: View {
             
             // Commander Damage Display
             if game.showing_commander_damage {
-                CommanderDamageDisplay()
-                    .transition(.zoomEffect)
-                    .zIndex(1)  // Ensure it stays on top
+                BackgroundRectangle(current_game: game)
+            }
+            if game.showing_commander_damage {
+                ZStack {
+                    CommanderDamageDisplay(player: player, current_game: game)
+                          // Ensure it stays on top
+                }
+                .zIndex(1)
+                .transition(.zoomEffect)
+                
             }
         }
     }
