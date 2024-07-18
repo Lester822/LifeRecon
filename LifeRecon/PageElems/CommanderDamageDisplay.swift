@@ -1,5 +1,8 @@
 import SwiftUI
 
+// Player is the person whose block appears below the circle
+// current_game.caller is the person who clicks it
+
 struct CommanderDamageDisplay: View {
     @ObservedObject var player: Player
     @ObservedObject var current_game: ActiveGame
@@ -8,12 +11,15 @@ struct CommanderDamageDisplay: View {
         VStack { // Start of Frame Spacer Stack
             Spacer()
                 .frame(height: 50.0)
-            Circle()
-                .padding(.horizontal, 20.0) // Maybe use circle menu
+            NumberCircle(number: $current_game.caller.commander_damage[player.player_number][0], block_color: .yellow, player: current_game.caller, current_game: current_game)
+                .padding(.horizontal, 20.0)
+                .transition(.zoomEffect)
+                .rotationEffect(Angle(degrees: 90.0))
             if player.commander_count > 1 {
-                Circle()
+                NumberCircle(number: $current_game.caller.commander_damage[player.player_number][1], block_color: .yellow, player: current_game.caller, current_game: current_game)
                     .padding(.horizontal, 20.0)
                     .transition(.zoomEffect)
+                    .rotationEffect(Angle(degrees: 90.0))
                 Spacer()
                     .frame(height: 50.0)
                 
@@ -23,7 +29,10 @@ struct CommanderDamageDisplay: View {
                 Button {
                     // Ensure changes are made on the main thread
                     withAnimation {
-                        current_game.caller.commander_damage[player.player_number].append(0)
+                        for each_player in current_game.players {
+                            each_player.commander_damage[player.player_number].append(0)
+                        }
+                        
                         player.commander_count = 2
                     }
                     
@@ -36,6 +45,7 @@ struct CommanderDamageDisplay: View {
                             .font(.title)
                             .fontWeight(.bold)
                             .foregroundColor(.green)
+                            .multilineTextAlignment(.center)
                     }
                 }
             }

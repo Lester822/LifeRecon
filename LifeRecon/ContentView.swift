@@ -110,14 +110,16 @@ struct ContentView: View {
                 Confirmation(current_game: current_game, confirm_text: current_game.confirm_message)
                     .transition(.zoomEffect)
             }
-            if self.current_game.showing_player_menu == true {
+            if self.current_game.showing_player_menu ==  true {
                 BackgroundRectangle(current_game: current_game)
-                    .transition(.fade)
+                    //.transition(.fade)
+            }
+            if self.current_game.showing_player_menu == true {
                 PlayerMenu(current_game: current_game)
-                    .transition(.zoomEffect)
                     .rotationEffect(Angle(degrees: current_game.caller.rotation))
                     .edgesIgnoringSafeArea(.all)
                     .frame(width: 10, height:10)
+                    .transition(.zoomEffect)
                     
             }
         }

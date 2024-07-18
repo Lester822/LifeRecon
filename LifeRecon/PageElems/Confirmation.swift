@@ -65,7 +65,7 @@ struct Confirmation: View {
                 player.red_mana = 0
                 player.green_mana = 0
                 player.commander_damage = []
-                for sub_player in current_game.players {
+                for _ in current_game.players {
                     player.commander_damage.append([0])
                 }
                 

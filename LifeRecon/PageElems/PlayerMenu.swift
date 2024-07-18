@@ -49,11 +49,17 @@ struct PlayerMenu: View {
                             .frame(width: 50.0, height: 50.0)
                     }
                     NumberCircle(number: $current_game.caller.white_mana, block_color: .yellow, player: current_game.caller, current_game: current_game)
+                        .frame(width: 80.0, height: 80.0)
                     NumberCircle(number: $current_game.caller.blue_mana, block_color: .blue, player: current_game.caller, current_game: current_game)
+                        .frame(width: 80.0, height: 80.0)
                     NumberCircle(number: $current_game.caller.black_mana, block_color: .black, player: current_game.caller, current_game: current_game)
+                        .frame(width: 80.0, height: 80.0)
                     NumberCircle(number: $current_game.caller.red_mana, block_color: .red, player: current_game.caller, current_game: current_game)
+                        .frame(width: 80.0, height: 80.0)
                     NumberCircle(number: $current_game.caller.green_mana, block_color: .green, player: current_game.caller, current_game: current_game)
+                        .frame(width: 80.0, height: 80.0)
                     NumberCircle(number: $current_game.caller.colorless_mana, block_color: .gray, player: current_game.caller, current_game: current_game)
+                        .frame(width: 80.0, height: 80.0)
                     Button {
                         
                     } label: {

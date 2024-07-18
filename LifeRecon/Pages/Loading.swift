@@ -21,7 +21,9 @@ struct Loading: View {
                 Spacer()
                     .frame(height: 30.0)
                 Button {
-                    current_game.current_setting = "player_count"
+                    withAnimation {
+                        current_game.current_setting = "player_count"
+                    }
                     haptic_pulse()
                     withAnimation {
                         current_game.current_page = "settings"
