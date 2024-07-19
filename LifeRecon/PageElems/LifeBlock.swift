@@ -213,21 +213,42 @@ struct LifeBlock: View {
                             CommanderDamageDisplay(player: player, current_game: game)
                             // Ensure it stays on top
                         }
-                        .frame(width: geometry.size.width/2)
+                        .padding(50.0)
+                        .frame(height: geometry.size.height)
                         .zIndex(1)
                         .transition(.zoomEffect)
+                        .rotationEffect(Angle(degrees: 180 + player.rotation - game.caller.rotation))
                         
                     }
                 } else {
-                    if game.showing_commander_damage {
-                        ZStack {
-                            CommanderDamageDisplay(player: player, current_game: game)
-                            // Ensure it stays on top
+                    if game.caller.rotation != 0 && game.caller.rotation != 180 {
+                        if game.showing_commander_damage {
+                            ZStack {
+                                CommanderDamageDisplay(player: player, current_game: game)
+                            }
+                            .zIndex(1)
+                            .padding(20.0)
+                            .rotationEffect(Angle(degrees: player.rotation - game.caller.rotation))
+                            .frame(width: geometry.size.width, height:geometry.size.height)
+                            .transition(.zoomEffect)
+                            
+                            
                         }
-                        .zIndex(1)
-                        .transition(.zoomEffect)
-                        
+                    } else {
+                        if game.showing_commander_damage {
+                            ZStack {
+                                CommanderDamageDisplay(player: player, current_game: game)
+                            }
+                            .zIndex(1)
+                            .padding(-10.0)
+                            .rotationEffect(Angle(degrees: player.rotation - game.caller.rotation))
+                            .frame(width: geometry.size.width, height:geometry.size.height)
+                            .transition(.zoomEffect)
+                            
+                            
+                        }
                     }
+                    
                 }
             }
         }

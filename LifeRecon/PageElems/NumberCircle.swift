@@ -28,8 +28,8 @@ struct NumberCircle: View {
                             bottomTrailing: 00.0,
                             topTrailing: 5000.0),
                             style: .continuous)
-                        .padding([.top, .leading, .bottom], 0.0)
-                        .frame(height: geometry.size.width / 2)
+                        .padding(.all, 0.0)
+                        //.frame(height: geometry.size.width / 2)
                         .foregroundColor(block_color)
                     }
                     
@@ -43,19 +43,21 @@ struct NumberCircle: View {
                             bottomTrailing: 5000.0,
                             topTrailing: 00.0),
                             style: .continuous)
-                        .padding([.top, .leading, .bottom], 0.0)
-                        .frame(height: geometry.size.width / 2)
+                        .padding(.all, 0.0)
+                        //.frame(height: geometry.size.width / 2)
                         .foregroundColor(block_color)
                     }
                 }
-                .frame(width: geometry.size.width)
+                //.frame(width: geometry.size.width)
                 
                 Text(String(number))
                     .font(.title)
                     .fontWeight(.bold)
                     .foregroundColor(Color.white)
+                    .padding(0.0)
             }
-            .frame(width: geometry.size.width, height: geometry.size.width) // Ensure square shape
+            .padding(0.0)
+            //.frame(width: geometry.size.width, height: geometry.size.width) // Ensure square shape
         }
         .aspectRatio(1, contentMode: .fit) // Maintain aspect ratio
     }

@@ -59,12 +59,15 @@ struct Confirmation: View {
             current_game.showing_circle_menu = false
             for player in current_game.players {
                 player.life_total = current_game.starting_life
+                current_game.showing_commander_damage = false
+                current_game.showing_circle_menu = false
                 player.white_mana = 0
                 player.blue_mana = 0
                 player.black_mana = 0
                 player.red_mana = 0
                 player.green_mana = 0
                 player.commander_damage = []
+                player.commander_count = 1
                 for _ in current_game.players {
                     player.commander_damage.append([0])
                 }

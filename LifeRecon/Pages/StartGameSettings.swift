@@ -133,6 +133,7 @@ struct OptionalSettings: View {
                 haptic_pulse()
                 current_game.in_progress = true
                 current_game.showing_circle_menu = false
+                current_game.showing_commander_damage = false
                 var index = 1
                 for player in current_game.players {
                     player.life_total = current_game.starting_life
@@ -144,6 +145,7 @@ struct OptionalSettings: View {
                     player.black_mana = 0
                     player.red_mana = 0
                     player.green_mana = 0
+                    player.commander_count = 1
                     player.commander_damage = []
                     for _ in current_game.players {
                         player.commander_damage.append([0])
