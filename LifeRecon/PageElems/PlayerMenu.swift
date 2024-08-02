@@ -18,7 +18,7 @@ struct PlayerMenu: View {
     }
     
     var body: some View {
-        ZStack {
+        ZStack {            
             RoundedRectangle(cornerRadius: 25.0)
                 .frame(width: UIScreen.main.bounds.height * 0.85, height: UIScreen.main.bounds.width * 0.8)
                 .foregroundColor(.black)

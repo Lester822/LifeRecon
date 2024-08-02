@@ -11,7 +11,7 @@ struct CommanderDamageDisplay: View {
         if current_game.caller.rotation != 0 && current_game.caller.rotation != 180 {
             VStack { // Start of Frame Spacer Stack
                 Spacer()
-                    .frame(height: 50.0)
+                    .frame(height: 70.0)
                 NumberCircle(number: $current_game.caller.commander_damage[player.player_number][0], block_color: .black, player: current_game.caller, current_game: current_game)
                     //.padding(.horizontal, 20.0)
                     .transition(.zoomEffect)
@@ -22,7 +22,7 @@ struct CommanderDamageDisplay: View {
                         .transition(.zoomEffect)
                         .rotationEffect(Angle(degrees: 90.0))
                     Spacer()
-                        .frame(height: 50.0)
+                        .frame(height: 70.0)
                     
                 }
                 if player.commander_count == 1 {
@@ -39,18 +39,16 @@ struct CommanderDamageDisplay: View {
                         
                     } label: {
                         ZStack {
-                            Circle()
-                                .frame(width: 50, height: 50)
-                                .foregroundColor(.white) // Maybe use circle menu
-                            Text("+")
-                                .font(.title)
-                                .fontWeight(.bold)
-                                .foregroundColor(.green)
-                                .multilineTextAlignment(.center)
+                            Image("AddIcon")
+                                .resizable(resizingMode: .stretch)
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 70, height: 70)
+                                
                         }
                     }
                 }
             }  // End of Frame Spacer Stack
+            .padding(player.commander_count > 1 && (player.rotation == 0 || player.rotation == 180) ? -60 : 0)
         } else {
             HStack { // Start of Frame Spacer Stack
                 NumberCircle(number: $current_game.caller.commander_damage[player.player_number][0], block_color: .black, player: current_game.caller, current_game: current_game)
@@ -77,19 +75,17 @@ struct CommanderDamageDisplay: View {
                         
                     } label: {
                         ZStack {
-                            Circle()
-                                .frame(width: 50, height: 50)
-                                .foregroundColor(.white) // Maybe use circle menu
-                            Text("+")
-                                .font(.title)
-                                .fontWeight(.bold)
-                                .foregroundColor(.green)
-                                .multilineTextAlignment(.center)
+                            Image("AddIcon")
+                                .resizable(resizingMode: .stretch)
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 70, height: 70)
+                                
                         }
                         .padding(0.0)
                     }
                 }
             }  // End of Frame Spacer Stack
+            .padding(player.commander_count > 1 && (player.rotation != 0 && player.rotation != 180) ? -30 : 0)
         }
             
         

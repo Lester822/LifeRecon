@@ -30,6 +30,7 @@
 		F881E27B2BD20DC700A98031 /* StartGameSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F881E27A2BD20DC700A98031 /* StartGameSettings.swift */; };
 		F881E27D2BD20F6600A98031 /* OnePlayerGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = F881E27C2BD20F6600A98031 /* OnePlayerGame.swift */; };
 		F881E27F2BD2177300A98031 /* BasicKeypad.swift in Sources */ = {isa = PBXBuildFile; fileRef = F881E27E2BD2177300A98031 /* BasicKeypad.swift */; };
+		F88B27542C56AC8D00E19197 /* ExpandingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88B27532C56AC8D00E19197 /* ExpandingButton.swift */; };
 		F8B234632BC57ED7009D6962 /* LifeReconApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B234622BC57ED7009D6962 /* LifeReconApp.swift */; };
 		F8B234652BC57ED7009D6962 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B234642BC57ED7009D6962 /* ContentView.swift */; };
 		F8B234672BC57ED8009D6962 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8B234662BC57ED8009D6962 /* Assets.xcassets */; };
@@ -83,6 +84,7 @@
 		F881E27A2BD20DC700A98031 /* StartGameSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartGameSettings.swift; sourceTree = "<group>"; };
 		F881E27C2BD20F6600A98031 /* OnePlayerGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnePlayerGame.swift; sourceTree = "<group>"; };
 		F881E27E2BD2177300A98031 /* BasicKeypad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicKeypad.swift; sourceTree = "<group>"; };
+		F88B27532C56AC8D00E19197 /* ExpandingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandingButton.swift; sourceTree = "<group>"; };
 		F8B2345F2BC57ED7009D6962 /* LifeRecon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LifeRecon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8B234622BC57ED7009D6962 /* LifeReconApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeReconApp.swift; sourceTree = "<group>"; };
 		F8B234642BC57ED7009D6962 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 		F8D1BC142C05412D00A163D8 /* BasicElems */ = {
 			isa = PBXGroup;
 			children = (
+				F88B27532C56AC8D00E19197 /* ExpandingButton.swift */,
 				F81AC3DF2BC8632900D65AB4 /* SquareButton.swift */,
 				F81AC3E52BC89F8500D65AB4 /* backgroundrectangle.swift */,
 				F81AC3D92BC85B8000D65AB4 /* SmallKey.swift */,
@@ -398,6 +401,7 @@
 				F8B234632BC57ED7009D6962 /* LifeReconApp.swift in Sources */,
 				F881E27B2BD20DC700A98031 /* StartGameSettings.swift in Sources */,
 				F8D1BC1B2C05479200A163D8 /* NumberCircle.swift in Sources */,
+				F88B27542C56AC8D00E19197 /* ExpandingButton.swift in Sources */,
 				F82E08F42BC5A56000C651AE /* Player.swift in Sources */,
 				F8729EBE2BDC00ED00662855 /* FivePlayerGame.swift in Sources */,
 				F81AC3E02BC8632900D65AB4 /* SquareButton.swift in Sources */,

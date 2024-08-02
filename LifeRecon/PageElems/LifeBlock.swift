@@ -38,6 +38,7 @@ struct LifeBlock: View {
                                 topTrailing: 00.0),
                                                    style: .continuous)
                             .padding([.top, .leading, .bottom], 5.0)
+                            .padding(.trailing, -1.0)
                             .foregroundColor(block_color)
                         }
                         
@@ -51,6 +52,7 @@ struct LifeBlock: View {
                                 topTrailing: 50.0),
                                                    style: .continuous)
                             .padding([.top, .bottom, .trailing], 5.0)
+                            .padding(.leading, -1.0)
                             .foregroundColor(block_color)
                         }
                         
@@ -250,7 +252,12 @@ struct LifeBlock: View {
                     }
                     
                 }
+                    
             }
+            .frame(width: geometry.size.width, height: geometry.size.height)
+            .rotationEffect(Angle(degrees: player.rotation - 90))
+            .scaledToFill()
+            
         }
     }
     

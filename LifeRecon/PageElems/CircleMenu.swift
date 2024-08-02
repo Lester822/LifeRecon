@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CircleMenu: View {
-    var current_game: ActiveGame
+    @ObservedObject var current_game: ActiveGame
     var body: some View {
         ZStack() {
             Circle()
