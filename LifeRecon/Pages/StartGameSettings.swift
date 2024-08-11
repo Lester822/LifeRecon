@@ -147,6 +147,13 @@ struct OptionalSettings: View {
                     player.green_mana = 0
                     player.commander_count = 1
                     player.commander_damage = []
+                    player.storm_count = 0
+                    player.poison_counters = 0
+                    player.rad_counters = 0
+                    player.experience_counters = 0
+                    player.energy_counters = 0
+                    player.ticket_counters = 0
+                    player.acorn_counters = 0
                     for _ in current_game.players {
                         player.commander_damage.append([0])
                     }

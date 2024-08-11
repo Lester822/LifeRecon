@@ -96,12 +96,69 @@ struct LifeBlock: View {
                                 if (horizontalMovement < 0) {
                                         print("OPEN PLAYER SETTINGS")
                                     haptic_pulse()
-                                        withAnimation {
-                                            game.caller = player
-                                            game.showing_player_menu = true
-                                            game.blur_background = true
+                                    
+                                    if player.storm_count > 0 {
+                                        player.active_counters.append("storm")
+                                    } else if player.active_counters.contains("storm") {
+                                        if let index = player.active_counters.firstIndex(of: "storm") {
+                                            player.active_counters.remove(at: index)
                                         }
                                     }
+                                    
+                                    if player.poison_counters > 0 {
+                                        player.active_counters.append("poison")
+                                    } else if player.active_counters.contains("poison") {
+                                        if let index = player.active_counters.firstIndex(of: "poison") {
+                                            player.active_counters.remove(at: index)
+                                        }
+                                    }
+                                    
+                                    if player.rad_counters > 0 {
+                                        player.active_counters.append("rad")
+                                    } else if player.active_counters.contains("rad") {
+                                        if let index = player.active_counters.firstIndex(of: "rad") {
+                                            player.active_counters.remove(at: index)
+                                        }
+                                    }
+                                    
+                                    if player.experience_counters > 0 {
+                                        player.active_counters.append("experience")
+                                    } else if player.active_counters.contains("experience") {
+                                        if let index = player.active_counters.firstIndex(of: "experience") {
+                                            player.active_counters.remove(at: index)
+                                        }
+                                    }
+                                    
+                                    if player.energy_counters > 0 {
+                                        player.active_counters.append("energy")
+                                    } else if player.active_counters.contains("energy") {
+                                        if let index = player.active_counters.firstIndex(of: "energy") {
+                                            player.active_counters.remove(at: index)
+                                        }
+                                    }
+                                    
+                                    if player.ticket_counters > 0 {
+                                        player.active_counters.append("ticket")
+                                    } else if player.active_counters.contains("ticket") {
+                                        if let index = player.active_counters.firstIndex(of: "ticket") {
+                                            player.active_counters.remove(at: index)
+                                        }
+                                    }
+                                    
+                                    if player.acorn_counters > 0 {
+                                        player.active_counters.append("acorn")
+                                    } else if player.active_counters.contains("acorn") {
+                                        if let index = player.active_counters.firstIndex(of: "acorn") {
+                                            player.active_counters.remove(at: index)
+                                        }
+                                    }
+                                    
+                                    withAnimation {
+                                        game.caller = player
+                                        game.showing_player_menu = true
+                                        game.blur_background = true
+                                    }
+                                }
                             })
                         
                     }
@@ -129,7 +186,7 @@ struct LifeBlock: View {
                             .foregroundStyle(.white)
                             .fontWeight(.bold)
                             .rotationEffect(Angle(degrees: 90))
-                            .disabled(true)
+                            .allowsHitTesting(false)
                             .multilineTextAlignment(.center)
                             .minimumScaleFactor(0.1)
                             .lineLimit(1)

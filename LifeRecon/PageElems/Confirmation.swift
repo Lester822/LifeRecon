@@ -22,7 +22,7 @@ struct Confirmation: View {
                 Text(current_game.first_confirm_line)
                     .fontWeight(.black)
                     .foregroundColor(Color.white)
-                Text(confirm_text)
+                Text(current_game.confirm_message)
                     .fontWeight(.black)
                     .foregroundColor(Color.white)
                 Spacer()
@@ -30,15 +30,14 @@ struct Confirmation: View {
                 HStack {
                     Button {
                         current_game.last_confirm = false
-                        current_game.confirm_message = ""
                         current_game.showing_confirm = false
+                        current_game.blur_background = false
                         
                     } label: {
                         LargeKey(given_text: "No", color: .black, background: .white)
                     }
                     
                     Button {
-                        current_game.confirm_message = ""
                         current_game.showing_confirm = false
                         current_game.last_confirm = true
                         if current_game.confirm_action == "reset" {
@@ -57,10 +56,10 @@ struct Confirmation: View {
     func reset_game() {
         withAnimation {
             current_game.showing_circle_menu = false
+            current_game.showing_commander_damage = false
+            current_game.blur_background = false
             for player in current_game.players {
                 player.life_total = current_game.starting_life
-                current_game.showing_commander_damage = false
-                current_game.showing_circle_menu = false
                 player.white_mana = 0
                 player.blue_mana = 0
                 player.black_mana = 0
@@ -68,6 +67,15 @@ struct Confirmation: View {
                 player.green_mana = 0
                 player.commander_damage = []
                 player.commander_count = 1
+                
+                player.storm_count = 0
+                player.poison_counters = 0
+                player.rad_counters = 0
+                player.experience_counters = 0
+                player.energy_counters = 0
+                player.ticket_counters = 0
+                player.acorn_counters = 0
+                
                 for _ in current_game.players {
                     player.commander_damage.append([0])
                 }

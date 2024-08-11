@@ -20,6 +20,7 @@
 		F81B6B772C367B60005B98E4 /* CommanderDamageDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81B6B762C367B60005B98E4 /* CommanderDamageDisplay.swift */; };
 		F82B69042C6847750058FAC0 /* PageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82B69032C6847750058FAC0 /* PageManager.swift */; };
 		F82B69062C68497D0058FAC0 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82B69052C68497D0058FAC0 /* MenuButton.swift */; };
+		F82B69082C68547E0058FAC0 /* CounterCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82B69072C68547E0058FAC0 /* CounterCounter.swift */; };
 		F82E08EE2BC58A8E00C651AE /* Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82E08ED2BC58A8E00C651AE /* Loading.swift */; };
 		F82E08F02BC58BE500C651AE /* FourPlayerGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82E08EF2BC58BE400C651AE /* FourPlayerGame.swift */; };
 		F82E08F22BC599CF00C651AE /* LifeBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82E08F12BC599CF00C651AE /* LifeBlock.swift */; };
@@ -75,6 +76,7 @@
 		F81B6B762C367B60005B98E4 /* CommanderDamageDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommanderDamageDisplay.swift; sourceTree = "<group>"; };
 		F82B69032C6847750058FAC0 /* PageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageManager.swift; sourceTree = "<group>"; };
 		F82B69052C68497D0058FAC0 /* MenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
+		F82B69072C68547E0058FAC0 /* CounterCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterCounter.swift; sourceTree = "<group>"; };
 		F82E08ED2BC58A8E00C651AE /* Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loading.swift; sourceTree = "<group>"; };
 		F82E08EF2BC58BE400C651AE /* FourPlayerGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourPlayerGame.swift; sourceTree = "<group>"; };
 		F82E08F12BC599CF00C651AE /* LifeBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeBlock.swift; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 			children = (
 				F88B27532C56AC8D00E19197 /* ExpandingButton.swift */,
 				F81AC3DF2BC8632900D65AB4 /* SquareButton.swift */,
+				F82B69072C68547E0058FAC0 /* CounterCounter.swift */,
 				F81AC3E52BC89F8500D65AB4 /* backgroundrectangle.swift */,
 				F81AC3D92BC85B8000D65AB4 /* SmallKey.swift */,
 				F81AC3D72BC831BE00D65AB4 /* LargeKey.swift */,
@@ -403,6 +406,7 @@
 				F8D1BC192C05433F00A163D8 /* PlayerMenu.swift in Sources */,
 				F81AC3DA2BC85B8000D65AB4 /* SmallKey.swift in Sources */,
 				F8B234632BC57ED7009D6962 /* LifeReconApp.swift in Sources */,
+				F82B69082C68547E0058FAC0 /* CounterCounter.swift in Sources */,
 				F881E27B2BD20DC700A98031 /* StartGameSettings.swift in Sources */,
 				F8D1BC1B2C05479200A163D8 /* NumberCircle.swift in Sources */,
 				F88B27542C56AC8D00E19197 /* ExpandingButton.swift in Sources */,

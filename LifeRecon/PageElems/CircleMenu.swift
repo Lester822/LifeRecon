@@ -20,6 +20,7 @@ struct CircleMenu: View {
                 Button {
                     withAnimation {
                         soft_pulse()
+                        current_game.showing_circle_menu = false
                         current_game.first_confirm_line = "Are you sure you want to"
                         current_game.confirm_message = "reset the game?"
                         current_game.showing_confirm =  true

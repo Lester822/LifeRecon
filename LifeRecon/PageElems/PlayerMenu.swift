@@ -18,35 +18,85 @@ struct PlayerMenu: View {
     }
     
     var body: some View {
-            ZStack {
-                RoundedRectangle(cornerRadius: 25.0)
-                    .frame(width: UIScreen.main.bounds.height * 0.85, height: UIScreen.main.bounds.width * 0.8)
-                    .foregroundColor(.black)
-                    .opacity(0.5)
-                
-                VStack {
-                    Text(playerName)
-                        .bold()
-                        .font(.system(size: 25))
-                        .onTapGesture {
-                            isEditingName = true
+        ZStack {
+            RoundedRectangle(cornerRadius: 25.0)
+                .frame(width: UIScreen.main.bounds.height * 0.85, height: UIScreen.main.bounds.width * 0.8)
+                .foregroundColor(.black)
+                .opacity(0.5)
+            
+            VStack {
+                Text(playerName)
+                    .bold()
+                    .font(.system(size: 25))
+                    .onTapGesture {
+                        isEditingName = true
+                    }
+                Spacer()
+                    .frame(height: 20.0)
+                ScrollView(.horizontal) {
+                    HStack {
+                        
+                        if current_game.caller.active_counters.contains("storm") {
+                            CounterCounter(icon: "UnknownIconIcon", number: $current_game.caller.storm_count)
                         }
-                    Spacer()
-                        .frame(height: 20.0)
-                    ScrollView(.horizontal) {
-                        HStack {
-                            SquareButton(button_color: .gray, text_color: .black, title: "Test", icon: "String")
-                            SquareButton(button_color: .gray, text_color: .black, title: "Test", icon: "String")
-                            SquareButton(button_color: .gray, text_color: .black, title: "Test", icon: "String")
-                            SquareButton(button_color: .gray, text_color: .black, title: "Test", icon: "String")
-                            SquareButton(button_color: .gray, text_color: .black, title: "Test", icon: "String")
-                            SquareButton(button_color: .gray, text_color: .black, title: "Test", icon: "String")
-                            SquareButton(button_color: .gray, text_color: .black, title: "Test", icon: "String")
-                            SquareButton(button_color: .gray, text_color: .black, title: "Test", icon: "String")
+                        
+                        if current_game.caller.active_counters.contains("poison") {
+                            CounterCounter(icon: "UnknownIconIcon", number: $current_game.caller.poison_counters)
+                        }
+                        
+                        if current_game.caller.active_counters.contains("rad") {
+                            CounterCounter(icon: "UnknownIconIcon", number: $current_game.caller.rad_counters)
+                        }
+                        
+                        if current_game.caller.active_counters.contains("experience") {
+                            CounterCounter(icon: "UnknownIconIcon", number: $current_game.caller.experience_counters)
+                        }
+                        
+                        if current_game.caller.active_counters.contains("energy") {
+                            CounterCounter(icon: "UnknownIconIcon", number: $current_game.caller.energy_counters)
+                        }
+                        
+                        if current_game.caller.active_counters.contains("ticket") {
+                            CounterCounter(icon: "UnknownIconIcon", number: $current_game.caller.ticket_counters)
+                        }
+                        
+                        if current_game.caller.active_counters.contains("acorn") {
+                            CounterCounter(icon: "UnknownIconIcon", number: $current_game.caller.acorn_counters)
+                        }
+                        
+                        if !current_game.caller.active_counters.contains("storm") {
+                            CounterCounter(icon: "UnknownIconIcon", number: $current_game.caller.storm_count)
+                        }
+                        
+                        if !current_game.caller.active_counters.contains("poison") {
+                            CounterCounter(icon: "UnknownIconIcon", number: $current_game.caller.poison_counters)
+                        }
+                        
+                        if !current_game.caller.active_counters.contains("rad") {
+                            CounterCounter(icon: "UnknownIconIcon", number: $current_game.caller.rad_counters)
+                        }
+                        
+                        if !current_game.caller.active_counters.contains("experience") {
+                            CounterCounter(icon: "UnknownIconIcon", number: $current_game.caller.experience_counters)
+                        }
+                        
+                        if !current_game.caller.active_counters.contains("energy") {
+                            CounterCounter(icon: "UnknownIconIcon", number: $current_game.caller.energy_counters)
+                        }
+                        
+                        if !current_game.caller.active_counters.contains("ticket") {
+                            CounterCounter(icon: "UnknownIconIcon", number: $current_game.caller.ticket_counters)
+                        }
+                        
+                        if !current_game.caller.active_counters.contains("acorn") {
+                            CounterCounter(icon: "UnknownIconIcon", number: $current_game.caller.acorn_counters)
                         }
                         
                     }
-                    .padding(.horizontal, 100.0)
+                }
+                    
+                    .frame(alignment: .center)
+                    .padding(.horizontal, 200.0)
                     
                     HStack { // Mana Floating
                         Button {

@@ -22,6 +22,16 @@ class Player: ObservableObject {
     @Published var commander_damage: Array<Array<Int>> // So it would look like [[1], [2], [1,2]] The list represents multiple commanders
     @Published var commander_count: Int
     
+    @Published var storm_count: Int
+    @Published var poison_counters: Int
+    @Published var rad_counters: Int
+    @Published var experience_counters: Int
+    @Published var energy_counters: Int
+    @Published var ticket_counters: Int
+    @Published var acorn_counters: Int
+    
+    @Published var active_counters: Array<String>
+    
     init(life_total: Int, name: String) {
         self.life_total = life_total
         self.starting_life = life_total
@@ -36,6 +46,16 @@ class Player: ObservableObject {
         self.commander_damage = [[0,0], [0], [0], [0]]
         self.player_number = 0
         self.commander_count = 1
+        
+        self.storm_count = 0
+        self.poison_counters = 0
+        self.rad_counters = 0
+        self.experience_counters = 0
+        self.energy_counters = 0
+        self.ticket_counters = 0
+        self.acorn_counters = 0
+        
+        self.active_counters = []
     }
 }
 

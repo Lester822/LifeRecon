@@ -243,7 +243,7 @@ struct SetLifeKeypad: View {
                             }
                             current_game.current_rotation = 0
                         } label: {
-                            LargeKey(given_text: "Cancel", color: .black, background: Color(hue: 1.0, saturation: 0.0, brightness: 0.835))
+                            LargeKey(given_text: "Cancel", color: .red, background: Color(hue: 1.0, saturation: 0.0, brightness: 0.835))
                         }
                         .transition(.zoomIt)
                         Button {
@@ -278,7 +278,7 @@ struct SetLifeKeypad: View {
                             
                             
                         } label: {
-                            LargeKey(given_text: "Submit", color: .white, background: .green)
+                            LargeKey(given_text: "Submit", color: .white, background: .red)
                         }
                     })
 
