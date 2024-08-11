@@ -18,6 +18,8 @@
 		F81AC3E42BC89A4600D65AB4 /* animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81AC3E32BC89A4600D65AB4 /* animations.swift */; };
 		F81AC3E62BC89F8500D65AB4 /* backgroundrectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81AC3E52BC89F8500D65AB4 /* backgroundrectangle.swift */; };
 		F81B6B772C367B60005B98E4 /* CommanderDamageDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81B6B762C367B60005B98E4 /* CommanderDamageDisplay.swift */; };
+		F82B69042C6847750058FAC0 /* PageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82B69032C6847750058FAC0 /* PageManager.swift */; };
+		F82B69062C68497D0058FAC0 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82B69052C68497D0058FAC0 /* MenuButton.swift */; };
 		F82E08EE2BC58A8E00C651AE /* Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82E08ED2BC58A8E00C651AE /* Loading.swift */; };
 		F82E08F02BC58BE500C651AE /* FourPlayerGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82E08EF2BC58BE400C651AE /* FourPlayerGame.swift */; };
 		F82E08F22BC599CF00C651AE /* LifeBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82E08F12BC599CF00C651AE /* LifeBlock.swift */; };
@@ -32,7 +34,6 @@
 		F881E27F2BD2177300A98031 /* BasicKeypad.swift in Sources */ = {isa = PBXBuildFile; fileRef = F881E27E2BD2177300A98031 /* BasicKeypad.swift */; };
 		F88B27542C56AC8D00E19197 /* ExpandingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88B27532C56AC8D00E19197 /* ExpandingButton.swift */; };
 		F8B234632BC57ED7009D6962 /* LifeReconApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B234622BC57ED7009D6962 /* LifeReconApp.swift */; };
-		F8B234652BC57ED7009D6962 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B234642BC57ED7009D6962 /* ContentView.swift */; };
 		F8B234672BC57ED8009D6962 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8B234662BC57ED8009D6962 /* Assets.xcassets */; };
 		F8B2346A2BC57ED8009D6962 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8B234692BC57ED8009D6962 /* Preview Assets.xcassets */; };
 		F8B234742BC57ED9009D6962 /* LifeReconTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B234732BC57ED9009D6962 /* LifeReconTests.swift */; };
@@ -72,6 +73,8 @@
 		F81AC3E32BC89A4600D65AB4 /* animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = animations.swift; sourceTree = "<group>"; };
 		F81AC3E52BC89F8500D65AB4 /* backgroundrectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = backgroundrectangle.swift; sourceTree = "<group>"; };
 		F81B6B762C367B60005B98E4 /* CommanderDamageDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommanderDamageDisplay.swift; sourceTree = "<group>"; };
+		F82B69032C6847750058FAC0 /* PageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageManager.swift; sourceTree = "<group>"; };
+		F82B69052C68497D0058FAC0 /* MenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
 		F82E08ED2BC58A8E00C651AE /* Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loading.swift; sourceTree = "<group>"; };
 		F82E08EF2BC58BE400C651AE /* FourPlayerGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourPlayerGame.swift; sourceTree = "<group>"; };
 		F82E08F12BC599CF00C651AE /* LifeBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeBlock.swift; sourceTree = "<group>"; };
@@ -87,7 +90,6 @@
 		F88B27532C56AC8D00E19197 /* ExpandingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandingButton.swift; sourceTree = "<group>"; };
 		F8B2345F2BC57ED7009D6962 /* LifeRecon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LifeRecon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8B234622BC57ED7009D6962 /* LifeReconApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeReconApp.swift; sourceTree = "<group>"; };
-		F8B234642BC57ED7009D6962 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F8B234662BC57ED8009D6962 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F8B234692BC57ED8009D6962 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F8B2346F2BC57ED9009D6962 /* LifeReconTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LifeReconTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -157,8 +159,8 @@
 			isa = PBXGroup;
 			children = (
 				F81B6B732C320769005B98E4 /* Fonts */,
-				F8B234642BC57ED7009D6962 /* ContentView.swift */,
 				F8B234622BC57ED7009D6962 /* LifeReconApp.swift */,
+				F82B69032C6847750058FAC0 /* PageManager.swift */,
 				F8D1BC172C0541FD00A163D8 /* Structs */,
 				F8D1BC162C0541B600A163D8 /* PageElems */,
 				F8D1BC152C05417500A163D8 /* Pages */,
@@ -229,6 +231,7 @@
 			children = (
 				F82E08F12BC599CF00C651AE /* LifeBlock.swift */,
 				F81B6B762C367B60005B98E4 /* CommanderDamageDisplay.swift */,
+				F82B69052C68497D0058FAC0 /* MenuButton.swift */,
 				F81AC3E12BC8690900D65AB4 /* CircleMenu.swift */,
 				F8729EBF2BDC091200662855 /* Confirmation.swift */,
 				F81AC3D12BC6E6B700D65AB4 /* SetLifeKeypad.swift */,
@@ -381,7 +384,7 @@
 			files = (
 				F881E27F2BD2177300A98031 /* BasicKeypad.swift in Sources */,
 				F81AC3D22BC6E6B700D65AB4 /* SetLifeKeypad.swift in Sources */,
-				F8B234652BC57ED7009D6962 /* ContentView.swift in Sources */,
+				F82B69062C68497D0058FAC0 /* MenuButton.swift in Sources */,
 				F82E08EE2BC58A8E00C651AE /* Loading.swift in Sources */,
 				F81B6B772C367B60005B98E4 /* CommanderDamageDisplay.swift in Sources */,
 				F81AC3DC2BC85D3500D65AB4 /* ThreePlayerGame.swift in Sources */,
@@ -391,6 +394,7 @@
 				F8D1BC132C04900500A163D8 /* HomeLargeButton.swift in Sources */,
 				F8729EC02BDC091200662855 /* Confirmation.swift in Sources */,
 				F81AC3D82BC831BE00D65AB4 /* LargeKey.swift in Sources */,
+				F82B69042C6847750058FAC0 /* PageManager.swift in Sources */,
 				F81AC3E62BC89F8500D65AB4 /* backgroundrectangle.swift in Sources */,
 				F81AC3DE2BC85E6B00D65AB4 /* TwoPlayerGame.swift in Sources */,
 				F81AC3D42BC6E88200D65AB4 /* KeypadKey.swift in Sources */,

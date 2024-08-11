@@ -190,10 +190,12 @@ struct StartGameSettings: View {
             PlayerCount(current_game: current_game)
                 .transition(.zoomEffect)
         }  // End of starting life page
+        
         if current_game.current_setting == "starting_life" {
             StartingLife(current_game: current_game)
                 .transition(.zoomEffect)
         }
+        
         if current_game.current_setting == "optional" {
             OptionalSettings(current_game: current_game)
                 .transition(.zoomEffect)

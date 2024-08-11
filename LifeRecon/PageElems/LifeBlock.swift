@@ -78,16 +78,30 @@ struct LifeBlock: View {
                                 game.showing_circle_menu = false
                                 withAnimation {
                                     game.showing_keypad = true
+                                    game.blur_background = true
                                 }
                                 game.current_rotation = player.rotation
                                 game.caller = self.player
                             })
-                            .gesture(LongPressGesture(minimumDuration: 0.2).onEnded { _ in
-                                print("OPEN PLAYER SETTINGS")
-                                withAnimation {
-                                    game.caller = player
-                                    game.showing_player_menu = true
-                                }
+//                            .gesture(LongPressGesture(minimumDuration: 0.2).onEnded { _ in
+//                                print("OPEN PLAYER SETTINGS")
+//                                withAnimation {
+//                                    game.caller = player
+//                                    game.showing_player_menu = true
+//                                }
+//                            })
+                            .gesture(DragGesture().onEnded { gesture in
+                                //let verticalMovement = gesture.translation.height
+                                let horizontalMovement = gesture.translation.width
+                                if (horizontalMovement < 0) {
+                                        print("OPEN PLAYER SETTINGS")
+                                    haptic_pulse()
+                                        withAnimation {
+                                            game.caller = player
+                                            game.showing_player_menu = true
+                                            game.blur_background = true
+                                        }
+                                    }
                             })
                         
                     }
@@ -116,6 +130,9 @@ struct LifeBlock: View {
                             .fontWeight(.bold)
                             .rotationEffect(Angle(degrees: 90))
                             .disabled(true)
+                            .multilineTextAlignment(.center)
+                            .minimumScaleFactor(0.1)
+                            .lineLimit(1)
                     }
                     
                     // Commander Damage Button

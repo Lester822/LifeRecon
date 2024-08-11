@@ -60,6 +60,7 @@ struct CircleMenu: View {
                     soft_pulse()
                     withAnimation {
                         current_game.showing_circle_menu = false
+                        current_game.blur_background = false
                         current_game.current_page = "home"
                     }
                 } label: {

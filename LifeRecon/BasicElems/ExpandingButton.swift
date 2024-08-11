@@ -10,6 +10,7 @@ import SwiftUI
 struct ExpandingButton: View {
     @ObservedObject var current_game: ActiveGame
     @State var mode = "circle"
+    
     public var item_color: Color
     var body: some View {
         GeometryReader { geometry in

@@ -16,7 +16,7 @@ struct LifeReconApp: App {
             ZStack{
                 Rectangle().fill(LinearGradient(gradient: Gradient(colors: [.orange, .red]), startPoint: .top, endPoint: .bottom))
                     .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
-                ContentView(current_game: ActiveGame(player_count: 0, starting_life: 40))
+                PageManager(current_game: ActiveGame(player_count: 0, starting_life: 40))
                     .edgesIgnoringSafeArea(.all)
             }
             

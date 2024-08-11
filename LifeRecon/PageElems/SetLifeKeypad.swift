@@ -237,10 +237,11 @@ struct SetLifeKeypad: View {
                     HStack (content: {
                         Button {
                             haptic_pulse()
-                            current_game.current_rotation = 0
                             withAnimation {
-                                self.current_game.showing_keypad = false
+                                current_game.showing_keypad = false
+                                current_game.blur_background = false
                             }
+                            current_game.current_rotation = 0
                         } label: {
                             LargeKey(given_text: "Cancel", color: .black, background: Color(hue: 1.0, saturation: 0.0, brightness: 0.835))
                         }
@@ -267,10 +268,11 @@ struct SetLifeKeypad: View {
                                     print("'\(current_game.keypad_current_text)' is not a valid integer.")
                                 }
                             }
-                            current_game.current_rotation = 0
                             withAnimation {
-                                self.current_game.showing_keypad = false
+                                current_game.showing_keypad = false
+                                current_game.blur_background = false
                             }
+                            current_game.current_rotation = 0
                             current_game.current_operation = "="
                             current_game.keypad_current_text = ""
                             

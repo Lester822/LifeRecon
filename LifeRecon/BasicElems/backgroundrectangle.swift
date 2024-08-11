@@ -16,16 +16,18 @@ struct BackgroundRectangle: View {
             .opacity(0.5)
             .ignoresSafeArea(.all)
             .onTapGesture {
+                withAnimation {
+                    current_game.showing_keypad = false
+                    current_game.showing_circle_menu = false
+                    current_game.showing_confirm = false
+                    current_game.showing_player_menu = false
+                    current_game.showing_commander_damage = false
+                    current_game.blur_background = false
+                }
+                
                 current_game.current_rotation = 0
                 current_game.current_operation = "="
                 current_game.keypad_current_text = ""
-                withAnimation {
-                    self.current_game.showing_keypad = false
-                    self.current_game.showing_circle_menu = false
-                    self.current_game.showing_confirm = false
-                    self.current_game.showing_player_menu = false
-                    self.current_game.showing_commander_damage = false
-                }
             }
     }
 }

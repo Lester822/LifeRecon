@@ -34,6 +34,7 @@ class ActiveGame: ObservableObject {
     @Published var showing_keypad: Bool
     @Published var showing_player_menu: Bool
     @Published var showing_commander_damage: Bool
+    @Published var blur_background: Bool
     
     
     init(player_count: Int, starting_life: Int) {
@@ -48,6 +49,7 @@ class ActiveGame: ObservableObject {
         self.in_progress = false
         self.current_rotation = 0
         self.showing_circle_menu = false
+        self.blur_background = false
         self.players = [Player(life_total: 0, name: "PLAYER 1"), Player(life_total: 0, name: "PLAYER 2"), Player(life_total: 0, name: "PLAYER 3"), Player(life_total: 0, name: "PLAYER 4"), Player(life_total: 0, name: "PLAYER 5")]
         self.is_loading = false
         self.current_setting = "player_count"
