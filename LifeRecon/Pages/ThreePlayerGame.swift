@@ -16,8 +16,8 @@ struct ThreePlayerGame: View {
                 .foregroundColor(.black)
             VStack (alignment: .center, spacing: 0.0, content: {
                 HStack (spacing: 0.0, content: {
-                    let life1 = LifeBlock(block_color: .blue, player: current_game.players[0], game: current_game)
-                    let life2 = LifeBlock(block_color: .red, player: current_game.players[1], game: current_game)
+                    let life1 = LifeBlock(player: current_game.players[0], game: current_game)
+                    let life2 = LifeBlock(player: current_game.players[1], game: current_game)
                         //.rotationEffect(Angle(degrees: 180))
                     life1
                         .edgesIgnoringSafeArea(.all)
@@ -26,7 +26,7 @@ struct ThreePlayerGame: View {
                 })
        
                 HStack (spacing: 0.0, content: {
-                    let life3 = LifeBlock(block_color: .green, player: current_game.players[2], game: current_game)
+                    let life3 = LifeBlock(player: current_game.players[2], game: current_game)
                     life3
                         .edgesIgnoringSafeArea(.all)
                     

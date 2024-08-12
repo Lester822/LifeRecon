@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 class Player: ObservableObject {
     @Published var life_total: Int
@@ -32,6 +33,14 @@ class Player: ObservableObject {
     
     @Published var active_counters: Array<String>
     
+    @Published var reset_floating_each_time: Bool = false
+    @Published var is_monarch: Bool = false
+    @Published var has_initiative: Bool = false
+    @Published var has_cities_blessing: Bool = false
+    
+    @Published var background_color: Color = .red
+    @Published var background_image: String = "NONE"
+    
     init(life_total: Int, name: String) {
         self.life_total = life_total
         self.starting_life = life_total
@@ -56,6 +65,7 @@ class Player: ObservableObject {
         self.acorn_counters = 0
         
         self.active_counters = []
+        
     }
 }
 

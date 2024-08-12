@@ -76,6 +76,10 @@ struct Confirmation: View {
                 player.ticket_counters = 0
                 player.acorn_counters = 0
                 
+                player.is_monarch = false
+                player.has_initiative = false
+                player.has_cities_blessing = false
+                
                 for _ in current_game.players {
                     player.commander_damage.append([0])
                 }

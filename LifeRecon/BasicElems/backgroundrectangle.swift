@@ -25,6 +25,15 @@ struct BackgroundRectangle: View {
                     current_game.blur_background = false
                 }
                 
+                if current_game.caller.reset_floating_each_time == true {
+                    current_game.caller.white_mana = 0
+                    current_game.caller.blue_mana = 0
+                    current_game.caller.black_mana = 0
+                    current_game.caller.red_mana = 0
+                    current_game.caller.green_mana = 0
+                    current_game.caller.colorless_mana = 0
+                }
+                
                 current_game.current_rotation = 0
                 current_game.current_operation = "="
                 current_game.keypad_current_text = ""

@@ -8,8 +8,15 @@
 import SwiftUI
 import UIKit
 
+struct OpacityButton: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .opacity(configuration.isPressed ? 0.6 : 0.05)
+            .animation(.easeInOut(duration: 0.4), value: configuration.isPressed)
+    }
+}
+
 struct LifeBlock: View {
-    var block_color: Color
     @ObservedObject var player: Player
     @ObservedObject var game: ActiveGame
     @State private var showing_alert = false
@@ -19,13 +26,34 @@ struct LifeBlock: View {
     @State private var resetWorkItem: DispatchWorkItem?
     @State private var scale: CGFloat = 1.0
     @State private var changeOpacity: Double = 0.0
-    @State private var changeOffset: CGFloat = -60
+    @State private var changeOffset: CGFloat =  -60
 
     
     var body: some View {
         GeometryReader { geometry in
             ZStack {
-                ZStack (content: {
+                
+//               RoundedRectangle(cornerRadius: 50.0) // This is the actual background color
+//                    .foregroundColor(block_color)
+//                    .padding([.top, .bottom, .trailing, .leading], 5.0)
+                if player.background_image != "NONE" {
+                    Image(player.background_image)
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .rotationEffect(Angle(degrees: 90))
+                        .frame(width: geometry.size.width - 10, height: geometry.size.height - 10) // Ensure the image fits within the padding
+                        .clipShape(RoundedRectangle(cornerRadius: 50.0)) // Clips the image to the rounded rectangle shape
+                        .clipped() // Ensures no overflow
+                        .blur(radius: 2.0)
+                        .allowsHitTesting(false)
+                } else {
+                    RoundedRectangle(cornerRadius: 50.0) // This is the actual background color
+                        .foregroundColor(player.background_color)
+                        .padding([.top, .bottom, .trailing, .leading], 5.0)
+                }
+                
+
+                ZStack (content: {  // THIS IS THE ZSTACK FOR THE INTERACTABLE-PARTS
                     HStack (spacing: 0.0, content: {
                         Button {
                             modifyLife(by: -1)
@@ -38,9 +66,11 @@ struct LifeBlock: View {
                                 topTrailing: 00.0),
                                                    style: .continuous)
                             .padding([.top, .leading, .bottom], 5.0)
-                            .padding(.trailing, -1.0)
-                            .foregroundColor(block_color)
+                            .padding(.trailing, 0.0)
+                            .foregroundColor(.black)
+                            //.opacity(0.05)
                         }
+                        .buttonStyle(OpacityButton())
                         
                         Button {
                             modifyLife(by: 1)
@@ -52,9 +82,11 @@ struct LifeBlock: View {
                                 topTrailing: 50.0),
                                                    style: .continuous)
                             .padding([.top, .bottom, .trailing], 5.0)
-                            .padding(.leading, -1.0)
-                            .foregroundColor(block_color)
+                            .padding(.leading, 0.0)
+                            .foregroundColor(.black)
+                            //.opacity(0.05)
                         }
+                        .buttonStyle(OpacityButton())
                         
                     })
                     
@@ -97,7 +129,7 @@ struct LifeBlock: View {
                                         print("OPEN PLAYER SETTINGS")
                                     haptic_pulse()
                                     
-                                    if player.storm_count > 0 {
+                                    if player.storm_count != 0 {
                                         player.active_counters.append("storm")
                                     } else if player.active_counters.contains("storm") {
                                         if let index = player.active_counters.firstIndex(of: "storm") {
@@ -105,7 +137,7 @@ struct LifeBlock: View {
                                         }
                                     }
                                     
-                                    if player.poison_counters > 0 {
+                                    if player.poison_counters != 0 {
                                         player.active_counters.append("poison")
                                     } else if player.active_counters.contains("poison") {
                                         if let index = player.active_counters.firstIndex(of: "poison") {
@@ -113,7 +145,7 @@ struct LifeBlock: View {
                                         }
                                     }
                                     
-                                    if player.rad_counters > 0 {
+                                    if player.rad_counters != 0 {
                                         player.active_counters.append("rad")
                                     } else if player.active_counters.contains("rad") {
                                         if let index = player.active_counters.firstIndex(of: "rad") {
@@ -121,7 +153,7 @@ struct LifeBlock: View {
                                         }
                                     }
                                     
-                                    if player.experience_counters > 0 {
+                                    if player.experience_counters != 0 {
                                         player.active_counters.append("experience")
                                     } else if player.active_counters.contains("experience") {
                                         if let index = player.active_counters.firstIndex(of: "experience") {
@@ -129,7 +161,7 @@ struct LifeBlock: View {
                                         }
                                     }
                                     
-                                    if player.energy_counters > 0 {
+                                    if player.energy_counters != 0 {
                                         player.active_counters.append("energy")
                                     } else if player.active_counters.contains("energy") {
                                         if let index = player.active_counters.firstIndex(of: "energy") {
@@ -137,7 +169,7 @@ struct LifeBlock: View {
                                         }
                                     }
                                     
-                                    if player.ticket_counters > 0 {
+                                    if player.ticket_counters != 0 {
                                         player.active_counters.append("ticket")
                                     } else if player.active_counters.contains("ticket") {
                                         if let index = player.active_counters.firstIndex(of: "ticket") {
@@ -145,7 +177,7 @@ struct LifeBlock: View {
                                         }
                                     }
                                     
-                                    if player.acorn_counters > 0 {
+                                    if player.acorn_counters != 0 {
                                         player.active_counters.append("acorn")
                                     } else if player.active_counters.contains("acorn") {
                                         if let index = player.active_counters.firstIndex(of: "acorn") {
@@ -190,7 +222,42 @@ struct LifeBlock: View {
                             .multilineTextAlignment(.center)
                             .minimumScaleFactor(0.1)
                             .lineLimit(1)
+                        }
+                    
+                        HStack {
+                            Spacer()
+                                .frame(width: 150.0)
+                            VStack {
+                                if player.is_monarch == true {
+                                    Image("MonarchIcon")
+                                    .resizable(resizingMode: .stretch)
+                                    .frame(width: 40.0, height: 40.0)
+                                    .rotationEffect(Angle(degrees: 90.0))
+                                    .allowsHitTesting(false)
+                                    .zIndex(0.9)
+                                    .transition(.zoomEffect)
+                                }
+                                if player.has_initiative == true {
+                                    Image("InitiativeIcon")
+                                    .resizable(resizingMode: .stretch)
+                                    .frame(width: 40.0, height: 40.0)
+                                    .rotationEffect(Angle(degrees: 90.0))
+                                    .allowsHitTesting(false)
+                                    .zIndex(0.9)
+                                    .transition(.zoomEffect)
+                                }
+                                if player.has_cities_blessing == true {
+                                    Image("CitiesBlessingIcon")
+                                        .resizable(resizingMode: .stretch)
+                                        .frame(width: 40.0, height: 40.0)
+                                        .rotationEffect(Angle(degrees: 90.0))
+                                        .allowsHitTesting(false)
+                                        .zIndex(0.9)
+                                        .transition(.zoomEffect)
+                                }
+                            }
                     }
+                    
                     
                     // Commander Damage Button
                     
@@ -368,5 +435,5 @@ struct LifeBlock: View {
 }
 
 #Preview {
-    LifeBlock(block_color: .red, player: Player(life_total: 30, name: "PLAYER 1"), game: ActiveGame(player_count: 4, starting_life: 40))
+    LifeBlock(player: Player(life_total: 30, name: "PLAYER 1"), game: ActiveGame(player_count: 4, starting_life: 40))
 }

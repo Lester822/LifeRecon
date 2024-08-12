@@ -16,8 +16,8 @@ struct FivePlayerGame: View {
                 .foregroundColor(.black)
             VStack (alignment: .center, spacing: 0.0, content: {
                 HStack (spacing: 0.0, content: {
-                    let life1 = LifeBlock(block_color: .blue, player: current_game.players[0], game: current_game)
-                    let life2 = LifeBlock(block_color: .red, player: current_game.players[1], game: current_game)
+                    let life1 = LifeBlock(player: current_game.players[0], game: current_game)
+                    let life2 = LifeBlock(player: current_game.players[1], game: current_game)
                         .rotationEffect(Angle(degrees: 180))
                     life1
                         //.edgesIgnoringSafeArea(.all)
@@ -27,8 +27,8 @@ struct FivePlayerGame: View {
                 .frame(height: UIScreen.main.bounds.height/3)
        
                 HStack (spacing: 0.0, content: {
-                    let life3 = LifeBlock(block_color: .green, player: current_game.players[2], game: current_game)
-                    let life4 = LifeBlock(block_color: .yellow, player: current_game.players[3], game: current_game)
+                    let life3 = LifeBlock(player: current_game.players[2], game: current_game)
+                    let life4 = LifeBlock(player: current_game.players[3], game: current_game)
                         .rotationEffect(Angle(degrees: 180))
                     life3
                         //.edgesIgnoringSafeArea(.all)
@@ -38,7 +38,7 @@ struct FivePlayerGame: View {
                     
                 })
                 .frame(height: UIScreen.main.bounds.height/3)
-                let life5 = LifeBlock(block_color: .purple, player: current_game.players[4], game: current_game)
+                let life5 = LifeBlock(player: current_game.players[4], game: current_game)
                     .rotationEffect(Angle(degrees: 270))
                 life5
                     .frame(width: UIScreen.main.bounds.height/3, height: UIScreen.main.bounds.width)

@@ -20,7 +20,9 @@ struct NumberCircle: View {
                 VStack(spacing: 0.0) {
                     Button {
                         soft_pulse()
-                        number += 1
+                        withAnimation(.easeIn(duration: 0.3)) {
+                            number += 1
+                        }
                     } label: {
                         UnevenRoundedRectangle(cornerRadii: .init(
                             topLeading: 5000.0,
@@ -35,7 +37,9 @@ struct NumberCircle: View {
                     
                     Button {
                         soft_pulse()
-                        number -= 1
+                        withAnimation(.easeIn(duration: 0.3)) {
+                            number -= 1
+                        }
                     } label: {
                         UnevenRoundedRectangle(cornerRadii: .init(
                             topLeading: 00.0,

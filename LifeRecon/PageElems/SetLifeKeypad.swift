@@ -248,22 +248,31 @@ struct SetLifeKeypad: View {
                         .transition(.zoomIt)
                         Button {
                             haptic_pulse()
+                            
                             if current_game.current_operation == "+" {
                                 if let given_number = Int(current_game.keypad_current_text) {
-                                    self.current_game.caller.life_total = self.current_game.caller.life_total + given_number
+                                    withAnimation(.easeIn(duration: 0.3)) {
+                                        current_game.caller.life_total = self.current_game.caller.life_total + given_number
+                                    }
+                                    
                                 } else {
                                     print("'\(current_game.keypad_current_text)' is not a valid integer.")
                                 }
 
                             } else if current_game.current_operation == "-" {
                                 if let given_number = Int(current_game.keypad_current_text) {
-                                    self.current_game.caller.life_total = self.current_game.caller.life_total - given_number
+                                    withAnimation(.easeIn(duration: 0.3)) {
+                                        current_game.caller.life_total = self.current_game.caller.life_total - given_number
+                                    }
                                 } else {
                                     print("'\(current_game.keypad_current_text)' is not a valid integer.")
                                 }
                             } else {
                                 if let given_number = Int(current_game.keypad_current_text) {
-                                    self.current_game.caller.life_total = given_number
+                                    withAnimation(.easeIn(duration: 0.3)) {
+                                        current_game.caller.life_total = given_number
+                                    }
+                                    
                                 } else {
                                     print("'\(current_game.keypad_current_text)' is not a valid integer.")
                                 }

@@ -16,7 +16,9 @@ struct CounterCounter: View {
             VStack(spacing: 0.0) {
                 Button {
                     soft_pulse()
-                    number += 1
+                    withAnimation {
+                        number += 1
+                    }
                 } label: {
                     UnevenRoundedRectangle(cornerRadii: .init(
                         topLeading: 20.0,
@@ -31,7 +33,10 @@ struct CounterCounter: View {
                 
                 Button {
                     soft_pulse()
-                    number -= 1
+                    withAnimation {
+                        number -= 1
+                    }
+                    
                 } label: {
                     UnevenRoundedRectangle(cornerRadii: .init(
                         topLeading: 00.0,
@@ -61,6 +66,8 @@ struct CounterCounter: View {
                             .padding(.top, -6.0)
                             .padding(.bottom, 5.0)
                             .allowsHitTesting(false)
+                            .scaledToFit()
+                        
                     } else {
                         Image(icon)
                             .resizable(resizingMode: .stretch)
@@ -75,6 +82,7 @@ struct CounterCounter: View {
                             .foregroundColor(.black)
                             .padding(.top, -6.0)
                             .padding(.bottom, 5.0)
+                            .scaledToFit()
                             .allowsHitTesting(false)
                     }
                     

@@ -139,6 +139,15 @@ struct OptionalSettings: View {
                     player.life_total = current_game.starting_life
                     player.name = "PLAYER " + String(index)
                     player.player_number = index
+                    if index == 1 {
+                        player.background_color = .red
+                    } else if index == 2 {
+                        player.background_color = .blue
+                    } else if index == 3 {
+                        player.background_color = .green
+                    } else if index == 4 {
+                        player.background_color = .yellow
+                    }
                     index += 1
                     player.white_mana = 0
                     player.blue_mana = 0
@@ -154,6 +163,12 @@ struct OptionalSettings: View {
                     player.energy_counters = 0
                     player.ticket_counters = 0
                     player.acorn_counters = 0
+                    player.reset_floating_each_time = false
+                    
+                    player.is_monarch = false
+                    player.has_initiative = false
+                    player.has_cities_blessing = false
+                    
                     for _ in current_game.players {
                         player.commander_damage.append([0])
                     }
