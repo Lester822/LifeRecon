@@ -80,10 +80,26 @@ struct PageManager: View {
                     .transition(.zoomEffect)
             }
             
+            if current_game.showing_dungeon == true {
+                DungeonBackground(current_game: current_game)
+                    .zIndex(1.1)
+                    .transition(.fade)
+            }
+            
+            if current_game.showing_dungeon == true {
+                DungeonElem(current_game: current_game)
+                    .zIndex(1.2)
+                    .rotationEffect(Angle(degrees: current_game.caller.rotation))
+                    .edgesIgnoringSafeArea(.all)
+                    .frame(width: 10, height:10)
+                    .transition(.zoomEffect)
+                    
+            }
+            
             if current_game.showing_confirm == true {
                 Confirmation(current_game: current_game, confirm_text: "String")
                     .transition(.zoomEffect)
-                    .zIndex(/*@START_MENU_TOKEN@*/1.0/*@END_MENU_TOKEN@*/)
+                    .zIndex(1.0)
             }
         }
     }

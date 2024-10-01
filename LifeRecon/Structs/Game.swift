@@ -34,6 +34,7 @@ class ActiveGame: ObservableObject {
     @Published var showing_keypad: Bool
     @Published var showing_player_menu: Bool
     @Published var showing_commander_damage: Bool
+    @Published var showing_dungeon: Bool
     @Published var blur_background: Bool
     
     
@@ -59,12 +60,13 @@ class ActiveGame: ObservableObject {
         self.current_operation = "="
         self.keypad_current_text = ""
         self.showing_commander_damage = false
+        self.showing_dungeon = false
     }
     
     func new_player_count(new_number: Int) {
         self.player_count = new_number
         self.players = []
-        for i in 1...player_count {
+        for _ in 1...player_count {
             self.players.append(Player(life_total: self.starting_life, name: "PLAYER 1"))
             
         }

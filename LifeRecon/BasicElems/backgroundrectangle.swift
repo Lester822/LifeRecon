@@ -23,6 +23,7 @@ struct BackgroundRectangle: View {
                     current_game.showing_player_menu = false
                     current_game.showing_commander_damage = false
                     current_game.blur_background = false
+                    current_game.showing_dungeon = false
                 }
                 
                 if current_game.caller.reset_floating_each_time == true {

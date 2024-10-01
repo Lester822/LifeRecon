@@ -39,6 +39,28 @@ struct PlayerMenu: View {
             }
             // Toggle Row End
             
+            // Uppper left menu row
+            VStack {
+                
+                HStack {
+                    Button {
+                        withAnimation {
+                            current_game.showing_dungeon = true
+                        }
+                    } label: {
+                        Image("DungeonIcon")
+                            .resizable(resizingMode: .stretch)
+                            .frame(width: 55.0, height: 55.0)
+                    }
+                    
+                    Spacer()
+                        .frame(width: UIScreen.main.bounds.height * 0.75)
+                }
+                Spacer()
+                    .frame(height: UIScreen.main.bounds.width * 0.6)
+                
+            }
+            
             
             VStack {  // Main Contents Container
                 

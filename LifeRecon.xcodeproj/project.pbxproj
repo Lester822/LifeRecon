@@ -29,6 +29,8 @@
 		F82E08F42BC5A56000C651AE /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82E08F32BC5A56000C651AE /* Player.swift */; };
 		F82E08F62BC5A57900C651AE /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82E08F52BC5A57900C651AE /* Game.swift */; };
 		F82E08F82BC5C0B600C651AE /* Test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F82E08F72BC5C0B600C651AE /* Test.storyboard */; };
+		F86BD4FE2CAC3CC700E2392F /* DungeonElem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86BD4FD2CAC3CC700E2392F /* DungeonElem.swift */; };
+		F86BD5022CAC4D0300E2392F /* DungeonBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86BD5012CAC4D0300E2392F /* DungeonBackground.swift */; };
 		F8729EBE2BDC00ED00662855 /* FivePlayerGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8729EBD2BDC00ED00662855 /* FivePlayerGame.swift */; };
 		F8729EC02BDC091200662855 /* Confirmation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8729EBF2BDC091200662855 /* Confirmation.swift */; };
 		F881E2792BD202D700A98031 /* BlankKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = F881E2782BD202D700A98031 /* BlankKey.swift */; };
@@ -87,6 +89,8 @@
 		F82E08F32BC5A56000C651AE /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		F82E08F52BC5A57900C651AE /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		F82E08F72BC5C0B600C651AE /* Test.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Test.storyboard; sourceTree = "<group>"; };
+		F86BD4FD2CAC3CC700E2392F /* DungeonElem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DungeonElem.swift; sourceTree = "<group>"; };
+		F86BD5012CAC4D0300E2392F /* DungeonBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DungeonBackground.swift; sourceTree = "<group>"; };
 		F8729EBD2BDC00ED00662855 /* FivePlayerGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FivePlayerGame.swift; sourceTree = "<group>"; };
 		F8729EBF2BDC091200662855 /* Confirmation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Confirmation.swift; sourceTree = "<group>"; };
 		F881E2782BD202D700A98031 /* BlankKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlankKey.swift; sourceTree = "<group>"; };
@@ -212,6 +216,7 @@
 				F81AC3DF2BC8632900D65AB4 /* SquareButton.swift */,
 				F82B69072C68547E0058FAC0 /* CounterCounter.swift */,
 				F81AC3E52BC89F8500D65AB4 /* backgroundrectangle.swift */,
+				F86BD5012CAC4D0300E2392F /* DungeonBackground.swift */,
 				F81AC3D92BC85B8000D65AB4 /* SmallKey.swift */,
 				F81AC3D72BC831BE00D65AB4 /* LargeKey.swift */,
 				F81AC3D32BC6E88200D65AB4 /* KeypadKey.swift */,
@@ -240,6 +245,7 @@
 			isa = PBXGroup;
 			children = (
 				F82E08F12BC599CF00C651AE /* LifeBlock.swift */,
+				F86BD4FD2CAC3CC700E2392F /* DungeonElem.swift */,
 				F81B6B762C367B60005B98E4 /* CommanderDamageDisplay.swift */,
 				F82B69052C68497D0058FAC0 /* MenuButton.swift */,
 				F81AC3E12BC8690900D65AB4 /* CircleMenu.swift */,
@@ -396,8 +402,10 @@
 				F82B69062C68497D0058FAC0 /* MenuButton.swift in Sources */,
 				F82E08EE2BC58A8E00C651AE /* Loading.swift in Sources */,
 				F81B6B772C367B60005B98E4 /* CommanderDamageDisplay.swift in Sources */,
+				F86BD4FE2CAC3CC700E2392F /* DungeonElem.swift in Sources */,
 				F81AC3DC2BC85D3500D65AB4 /* ThreePlayerGame.swift in Sources */,
 				F82E08F62BC5A57900C651AE /* Game.swift in Sources */,
+				F86BD5022CAC4D0300E2392F /* DungeonBackground.swift in Sources */,
 				F82E08F02BC58BE500C651AE /* FourPlayerGame.swift in Sources */,
 				F881E2792BD202D700A98031 /* BlankKey.swift in Sources */,
 				F82B690C2C697D380058FAC0 /* SingleToggleCircle.swift in Sources */,
@@ -593,6 +601,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -621,6 +630,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
