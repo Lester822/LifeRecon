@@ -37,8 +37,8 @@ class Player: ObservableObject {
     @Published var is_monarch: Bool = false
     @Published var has_initiative: Bool = false
     @Published var has_cities_blessing: Bool = false
-    @Published var current_dungeon: String = "Phandelver"
-    @Published var dungeon_positionL: String = "NONE"
+    @Published var current_dungeon: String = "Dungeon_Phandelver"
+    @Published var dungeon_position: String = ""
     
     @Published var background_color: Color = .red
     @Published var background_image: String = "NONE"
