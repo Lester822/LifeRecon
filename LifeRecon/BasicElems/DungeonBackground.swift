@@ -11,11 +11,15 @@ struct DungeonBackground: View {
     @ObservedObject var current_game: ActiveGame
     
     var body: some View {
-        Rectangle()
+        Image("DungeonWall")
+            .aspectRatio(contentMode: .fit)
+            .scaleEffect(1.5)
+            .brightness(-0.5)
             .foregroundColor(.black)
-            //.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-            .opacity(0.5)
+            .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+            .blur(radius: 5.0)
             .ignoresSafeArea(.all)
+            .rotationEffect(Angle(degrees: 90))
             .onTapGesture {
                 withAnimation {
                     current_game.showing_dungeon = false

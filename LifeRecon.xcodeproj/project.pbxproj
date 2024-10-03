@@ -29,6 +29,7 @@
 		F82E08F42BC5A56000C651AE /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82E08F32BC5A56000C651AE /* Player.swift */; };
 		F82E08F62BC5A57900C651AE /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82E08F52BC5A57900C651AE /* Game.swift */; };
 		F82E08F82BC5C0B600C651AE /* Test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F82E08F72BC5C0B600C651AE /* Test.storyboard */; };
+		F84D42172CAEDFE200AEFAD2 /* DungeonDelver.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84D42162CAEDFE200AEFAD2 /* DungeonDelver.swift */; };
 		F86BD4FE2CAC3CC700E2392F /* DungeonElem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86BD4FD2CAC3CC700E2392F /* DungeonElem.swift */; };
 		F86BD5022CAC4D0300E2392F /* DungeonBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86BD5012CAC4D0300E2392F /* DungeonBackground.swift */; };
 		F8729EBE2BDC00ED00662855 /* FivePlayerGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8729EBD2BDC00ED00662855 /* FivePlayerGame.swift */; };
@@ -89,6 +90,7 @@
 		F82E08F32BC5A56000C651AE /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		F82E08F52BC5A57900C651AE /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		F82E08F72BC5C0B600C651AE /* Test.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Test.storyboard; sourceTree = "<group>"; };
+		F84D42162CAEDFE200AEFAD2 /* DungeonDelver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DungeonDelver.swift; sourceTree = "<group>"; };
 		F86BD4FD2CAC3CC700E2392F /* DungeonElem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DungeonElem.swift; sourceTree = "<group>"; };
 		F86BD5012CAC4D0300E2392F /* DungeonBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DungeonBackground.swift; sourceTree = "<group>"; };
 		F8729EBD2BDC00ED00662855 /* FivePlayerGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FivePlayerGame.swift; sourceTree = "<group>"; };
@@ -230,6 +232,7 @@
 		F8D1BC152C05417500A163D8 /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				F84D42162CAEDFE200AEFAD2 /* DungeonDelver.swift */,
 				F881E27A2BD20DC700A98031 /* StartGameSettings.swift */,
 				F8729EBD2BDC00ED00662855 /* FivePlayerGame.swift */,
 				F82E08EF2BC58BE400C651AE /* FourPlayerGame.swift */,
@@ -420,6 +423,7 @@
 				F81AC3E22BC8690900D65AB4 /* CircleMenu.swift in Sources */,
 				F8D1BC192C05433F00A163D8 /* PlayerMenu.swift in Sources */,
 				F81AC3DA2BC85B8000D65AB4 /* SmallKey.swift in Sources */,
+				F84D42172CAEDFE200AEFAD2 /* DungeonDelver.swift in Sources */,
 				F8B234632BC57ED7009D6962 /* LifeReconApp.swift in Sources */,
 				F82B69082C68547E0058FAC0 /* CounterCounter.swift in Sources */,
 				F881E27B2BD20DC700A98031 /* StartGameSettings.swift in Sources */,

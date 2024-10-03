@@ -87,12 +87,12 @@ struct PageManager: View {
             }
             
             if current_game.showing_dungeon == true {
-                DungeonElem(current_game: current_game)
+                DungeonDelver(current_game: current_game, caller: current_game.caller)
                     .zIndex(1.2)
                     .rotationEffect(Angle(degrees: current_game.caller.rotation))
                     .edgesIgnoringSafeArea(.all)
-                    .frame(width: 10, height:10)
                     .transition(.zoomEffect)
+                    .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
                     
             }
             

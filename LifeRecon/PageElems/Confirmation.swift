@@ -80,6 +80,10 @@ struct Confirmation: View {
                 player.has_initiative = false
                 player.has_cities_blessing = false
                 
+                player.current_dungeon = ""
+                player.dungeon_position = ""
+                player.completed_dungeons = []
+                
                 for _ in current_game.players {
                     player.commander_damage.append([0])
                 }

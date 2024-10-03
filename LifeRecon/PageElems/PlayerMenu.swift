@@ -77,7 +77,7 @@ struct PlayerMenu: View {
                     Button {
                         isEditingName = true
                     } label: {
-                        Image("EditIcon")
+                        Image("Settings")
                             .resizable(resizingMode: .stretch)
                             .frame(width: 50.0, height: 50.0)
                     }

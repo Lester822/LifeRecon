@@ -15,7 +15,9 @@ struct PlayerCount: View {
             Text("Player Count")
                 .font(.largeTitle)
                 .fontWeight(.heavy)
+                .foregroundStyle(.white)
             Text("Choose the number of players")
+                .foregroundStyle(.white)
             Spacer()
                 .frame(height: 40.0)
             HStack {
@@ -109,7 +111,9 @@ struct StartingLife: View {
             Text("Starting Life")
                 .font(.largeTitle)
                 .fontWeight(.heavy)
+                .foregroundStyle(.white)
             Text("Choose what life to start at")
+                .foregroundStyle(.white)
             Spacer()
                 .frame(height: 40.0)
             BasicKeypad(current_text: "40", current_game: current_game)
@@ -126,7 +130,9 @@ struct OptionalSettings: View {
             Text("Optional Settings")
                 .font(.largeTitle)
                 .fontWeight(.heavy)
+                .foregroundStyle(.white)
             Text("Change various aspects of the game")
+                .foregroundStyle(.white)
             Spacer()
                 .frame(height: 40.0)
             Button {
@@ -164,6 +170,10 @@ struct OptionalSettings: View {
                     player.ticket_counters = 0
                     player.acorn_counters = 0
                     player.reset_floating_each_time = false
+                    
+                    player.current_dungeon = ""
+                    player.dungeon_position = ""
+                    player.completed_dungeons = []
                     
                     player.is_monarch = false
                     player.has_initiative = false

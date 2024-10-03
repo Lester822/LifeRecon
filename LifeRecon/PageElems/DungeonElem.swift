@@ -471,26 +471,127 @@ struct Dungeon_Tomb: View {
 
     var body: some View {
         ZStack {
+            Image(caller.current_dungeon)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: UIScreen.main.bounds.height*0.9, height: UIScreen.main.bounds.width*0.9)
+                .allowsHitTesting(true)
             // INTERACTABLE OBJECTS
             VStack {
                 
                 // TRAPPED ENTRY
+                Button {
+                    if caller.dungeon_position != "_TrappedEntry" {
+                        withAnimation {
+                            caller.dungeon_position = "_TrappedEntry"
+                        }
+                        
+                    } else {
+                        withAnimation {
+                            caller.dungeon_position = ""
+                        }
+                        
+                    }
+                } label: {
+                    Rectangle()
+                        .padding(0.0)
+                        .frame(width:(619/745)*UIScreen.main.bounds.width*0.65, height: (147/1040)*UIScreen.main.bounds.height*0.45)
+                }
+                .padding(-2.0)
+                .buttonStyle(OpacityButton())
+                
                 
                 // VEILS OF FEAR | OUBLIETTE
                 HStack {
                     
                     // VEILS OF FEAR | SANDFALL CELL
                     VStack {
+                        // VEILS OF FEAR
+                        Button {
+                            if caller.dungeon_position != "_VeilsOfFear" {
+                                withAnimation {
+                                    caller.dungeon_position = "_VeilsOfFear"
+                                }
+                                
+                            } else {
+                                withAnimation {
+                                    caller.dungeon_position = ""
+                                }
+                                
+                            }
+                        } label: {
+                            Rectangle()
+                                .padding(0.0)
+                                .frame(width:(619/745)*UIScreen.main.bounds.width*0.65/2, height: (147/1040)*UIScreen.main.bounds.height*0.53)
+                        }
+                        .padding(-2.0)
+                        .buttonStyle(OpacityButton())
                         
+                        // SANDFALL CELL
+                        Button {
+                            if caller.dungeon_position != "_SandfallCell" {
+                                withAnimation {
+                                    caller.dungeon_position = "_SandfallCell"
+                                }
+                                
+                            } else {
+                                withAnimation {
+                                    caller.dungeon_position = ""
+                                }
+                                
+                            }
+                        } label: {
+                            Rectangle()
+                                .padding(0.0)
+                                .frame(width:(619/745)*UIScreen.main.bounds.width*0.65/2, height: (147/1040)*UIScreen.main.bounds.height*0.53)
+                        }
+                        .padding(-2.0)
+                        .buttonStyle(OpacityButton())
                     }
                     // OUBLIETTE
-                    
+                    Button {
+                        if caller.dungeon_position != "_Oubliette" {
+                            withAnimation {
+                                caller.dungeon_position = "_Oubliette"
+                            }
+                            
+                        } else {
+                            withAnimation {
+                                caller.dungeon_position = ""
+                            }
+                            
+                        }
+                    } label: {
+                        Rectangle()
+                            .padding(0.0)
+                            .frame(width:(619/745)*UIScreen.main.bounds.width*0.65/2, height: (147/1040)*UIScreen.main.bounds.height*1.1)
+                    }
+                    .padding(-2.0)
+                    .buttonStyle(OpacityButton())
                 }
                 
                 // CRADLE OF THE DEATH GOD
-                
-                
+                Button {
+                    if caller.dungeon_position != "_CradleOfTheDeathGod" {
+                        withAnimation {
+                            caller.dungeon_position = "_CradleOfTheDeathGod"
+                        }
+                        
+                    } else {
+                        withAnimation {
+                            caller.dungeon_position = ""
+                        }
+                        
+                    }
+                } label: {
+                    Rectangle()
+                        .padding(0.0)
+                        .frame(width:(619/745)*UIScreen.main.bounds.width*0.65, height: (147/1040)*UIScreen.main.bounds.height*0.53)
+                }
+                .padding(-2.0)
+                .buttonStyle(OpacityButton())
             }
+            
             // CARD IMAGE
             Image(current_game.caller.current_dungeon)
                 .resizable()
