@@ -38,7 +38,7 @@ class Player: ObservableObject {
     @Published var has_initiative: Bool = false
     @Published var has_cities_blessing: Bool = false
     
-    @Published var current_dungeon: String = "Dungeon_Tomb"
+    @Published var current_dungeon: String = "Dungeon_Undercity"
     @Published var dungeon_position: String = ""
     @Published var completed_dungeons: Set<String> = []
     

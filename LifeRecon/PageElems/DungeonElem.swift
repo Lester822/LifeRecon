@@ -615,30 +615,209 @@ struct Dungeon_Undercity: View {
 
     var body: some View {
         ZStack {
+            Image(caller.current_dungeon)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: UIScreen.main.bounds.height*0.9, height: UIScreen.main.bounds.width*0.9)
+                .allowsHitTesting(true)
             // INTERACTABLE OBJECTS
             VStack {
-                
+                Spacer()
+                    .frame(height: UIScreen.main.bounds.height*0.05)
                 // SECRET ENTRANCE
-                
+                Button {
+                    if caller.dungeon_position != "_SecretEntrance" {
+                        withAnimation {
+                            caller.dungeon_position = "_SecretEntrance"
+                        }
+                        
+                    } else {
+                        withAnimation {
+                            caller.dungeon_position = ""
+                        }
+                        
+                    }
+                } label: {
+                    Rectangle()
+                        .padding(0.0)
+                        .frame(width:(619/745)*UIScreen.main.bounds.width*0.65, height: (147/1040)*UIScreen.main.bounds.height*0.30)
+                }
+                .padding(-2.0)
+//                .buttonStyle(OpacityButton())
                 // FORGE | LOST WELL
                 HStack {
-                    
+                    // FORGE
+                    Button {
+                        if caller.dungeon_position != "_Forge" {
+                            withAnimation {
+                                caller.dungeon_position = "_Forge"
+                            }
+                            
+                        } else {
+                            withAnimation {
+                                caller.dungeon_position = ""
+                            }
+                            
+                        }
+                    } label: {
+                        Rectangle()
+                            .padding(0.0)
+                            .frame(width:(619/745)*UIScreen.main.bounds.width*0.65/2, height: (147/1040)*UIScreen.main.bounds.height*0.30)
+                    }
+                    .padding(-2.0)
+    //                .buttonStyle(OpacityButton())
+                    // LOST WELL
+                    Button {
+                        if caller.dungeon_position != "_LostWell" {
+                            withAnimation {
+                                caller.dungeon_position = "_LostWell"
+                            }
+                            
+                        } else {
+                            withAnimation {
+                                caller.dungeon_position = ""
+                            }
+                            
+                        }
+                    } label: {
+                        Rectangle()
+                            .padding(0.0)
+                            .frame(width:(619/745)*UIScreen.main.bounds.width*0.65/2, height: (147/1040)*UIScreen.main.bounds.height*0.30)
+                    }
+                    .padding(-2.0)
+    //                .buttonStyle(OpacityButton())
                 }
                 
                 // TRAP | ARENA | STASH
                 
                 HStack {
-                    
+                    // TRAP
+                    Button {
+                        if caller.dungeon_position != "_Trap" {
+                            withAnimation {
+                                caller.dungeon_position = "_Trap"
+                            }
+                            
+                        } else {
+                            withAnimation {
+                                caller.dungeon_position = ""
+                            }
+                            
+                        }
+                    } label: {
+                        Rectangle()
+                            .padding(0.0)
+                            .frame(width:(619/745)*UIScreen.main.bounds.width*0.65/2.7, height: (147/1040)*UIScreen.main.bounds.height*0.40)
+                    }
+                    .padding(-2.0)
+                    .buttonStyle(OpacityButton())
+                    // ARENA
+                    Button {
+                        if caller.dungeon_position != "_Arena" {
+                            withAnimation {
+                                caller.dungeon_position = "_Arena"
+                            }
+                            
+                        } else {
+                            withAnimation {
+                                caller.dungeon_position = ""
+                            }
+                            
+                        }
+                    } label: {
+                        Rectangle()
+                            .padding(0.0)
+                            .frame(width:(619/745)*UIScreen.main.bounds.width*0.65/4.5, height: (147/1040)*UIScreen.main.bounds.height*0.40)
+                    }
+                    .padding(-2.0)
+                    .buttonStyle(OpacityButton())
+                    // STASH
+                    Button {
+                        if caller.dungeon_position != "_Stash" {
+                            withAnimation {
+                                caller.dungeon_position = "_Stash"
+                            }
+                            
+                        } else {
+                            withAnimation {
+                                caller.dungeon_position = ""
+                            }
+                            
+                        }
+                    } label: {
+                        Rectangle()
+                            .padding(0.0)
+                            .frame(width:(619/745)*UIScreen.main.bounds.width*0.65/2.7, height: (147/1040)*UIScreen.main.bounds.height*0.40)
+                    }
+                    .padding(-2.0)
+                    .buttonStyle(OpacityButton())
                 }
                 
                 // ARCHIVES | CATACOMBS
                 
                 HStack{
-                    
+                    // ARCHIVES
+                    Button {
+                        if caller.dungeon_position != "_Archives" {
+                            withAnimation {
+                                caller.dungeon_position = "_Archives"
+                            }
+                            
+                        } else {
+                            withAnimation {
+                                caller.dungeon_position = ""
+                            }
+                            
+                        }
+                    } label: {
+                        Rectangle()
+                            .padding(0.0)
+                            .frame(width:(619/745)*UIScreen.main.bounds.width*0.65/2, height: (147/1040)*UIScreen.main.bounds.height*0.40)
+                    }
+                    .padding(-2.0)
+                    .buttonStyle(OpacityButton())
+                    // CATACOMBS
+                    Button {
+                        if caller.dungeon_position != "_Catacombs" {
+                            withAnimation {
+                                caller.dungeon_position = "_Catacombs"
+                            }
+                            
+                        } else {
+                            withAnimation {
+                                caller.dungeon_position = ""
+                            }
+                            
+                        }
+                    } label: {
+                        Rectangle()
+                            .padding(0.0)
+                            .frame(width:(619/745)*UIScreen.main.bounds.width*0.65/2, height: (147/1040)*UIScreen.main.bounds.height*0.40)
+                    }
+                    .padding(-2.0)
+                    .buttonStyle(OpacityButton())
                 }
                 
                 // THRONE OF THE DEAD THREE
-                
+                Button {
+                    if caller.dungeon_position != "_ThroneOfTheDeadThree" {
+                        withAnimation {
+                            caller.dungeon_position = "_ThroneOfTheDeadThree"
+                        }
+                        
+                    } else {
+                        withAnimation {
+                            caller.dungeon_position = ""
+                        }
+                        
+                    }
+                } label: {
+                    Rectangle()
+                        .padding(0.0)
+                        .frame(width:(619/745)*UIScreen.main.bounds.width*0.65, height: (147/1040)*UIScreen.main.bounds.height*0.55)
+                }
+                .padding(-2.0)
+                .buttonStyle(OpacityButton())
                 
             }
             // CARD IMAGE
