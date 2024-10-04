@@ -16,14 +16,14 @@ struct TwoPlayerGame: View {
                 .foregroundColor(.black)
             VStack (alignment: .center, spacing: 0.0, content: {
                 HStack (spacing: 0.0, content: {
-                    let life1 = LifeBlock(player: current_game.players[0], game: current_game)
+                    let life1 = LifeBlockA(player: current_game.players[0], game: current_game)
                         //.rotationEffect(Angle(degrees: 90))
                     life1
                         .edgesIgnoringSafeArea(.all)
                 })
        
                 HStack (spacing: 0.0, content: {
-                    let life3 = LifeBlock(player: current_game.players[1], game: current_game)
+                    let life3 = LifeBlockA(player: current_game.players[1], game: current_game)
                         //.rotationEffect(Angle(degrees: 270))
                     life3
                         .edgesIgnoringSafeArea(.all)

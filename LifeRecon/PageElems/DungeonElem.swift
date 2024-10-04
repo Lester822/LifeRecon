@@ -308,7 +308,6 @@ struct Dungeon_Phandelver: View {
                     
                     // GOBLIN LAIR
                     Button {
-                        print("HIT GOBLIN LAIR")
                         if caller.dungeon_position != "_GoblinLair" {
                             withAnimation {
                                 caller.dungeon_position = "_GoblinLair"
@@ -330,7 +329,6 @@ struct Dungeon_Phandelver: View {
                     
                     // MINE TUNNELS
                     Button {
-                        print("HIT MINE TUNNELS")
                         if caller.dungeon_position != "_MineTunnels" {
                             withAnimation {
                                 caller.dungeon_position = "_MineTunnels"
@@ -357,7 +355,6 @@ struct Dungeon_Phandelver: View {
                     
                     // STOREROOM
                     Button {
-                        print("HIT STOREROOM")
                         if caller.dungeon_position != "_Storeroom" {
                             withAnimation {
                                 caller.dungeon_position = "_Storeroom"
@@ -379,7 +376,6 @@ struct Dungeon_Phandelver: View {
                     
                     // DARK POOL
                     Button {
-                        print("HIT DARK POOL")
                         if caller.dungeon_position != "_DarkPool" {
                             withAnimation {
                                 caller.dungeon_position = "_DarkPool"
@@ -401,7 +397,6 @@ struct Dungeon_Phandelver: View {
                     
                     // FUNGI CAVERN
                     Button {
-                        print("HIT FUNGI CAVERN")
                         if caller.dungeon_position != "_FungiCavern" {
                             withAnimation {
                                 caller.dungeon_position = "_FungiCavern"
@@ -424,7 +419,6 @@ struct Dungeon_Phandelver: View {
                 
                 // TEMPLE OF DUMATHOIN
                 Button {
-                    print("HIT TEMPLE OF DUMATHOIN")
                     if caller.dungeon_position != "_TempleOfDumathoin" {
                         withAnimation {
                             caller.dungeon_position = "_TempleOfDumathoin"
