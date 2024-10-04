@@ -282,45 +282,7 @@ struct LifeBlock: View {
                             }
                             Spacer()
                                 .frame(height: 30.0)
-                        } else if player.rotation == 180 {
-                            Spacer()
-                            HStack {
-                                Spacer()
-                                    .frame(width: 50.0)
-                                Button {
-                                    game.caller = player
-                                    withAnimation {
-                                        game.showing_commander_damage.toggle()
-                                    }
-                                } label: {
-                                    Image("CommanderDamage")
-                                        .resizable(resizingMode: .stretch)
-                                        .frame(width: 50, height: 50)
-                                        .opacity(0.2)
-                                }
-                                Spacer()
-                            }
-                            Spacer()
-                        } else if player.rotation == 0 {
-                            Spacer()
-                            HStack {
-                                Spacer()
-                                    .frame(width: 50.0)
-                                Button {
-                                    game.caller = player
-                                    withAnimation {
-                                        game.showing_commander_damage.toggle()
-                                    }
-                                } label: {
-                                    Image("CommanderDamage")
-                                        .resizable(resizingMode: .stretch)
-                                        .frame(width: 50, height: 50)
-                                        .opacity(0.2)
-                                }
-                                Spacer()
-                            }
-                            Spacer()
-                        } else {
+                        } else { // THIS IS NEEDED TO ALIGN SWORD
                             Spacer()
                                 .frame(height: 30.0)
                             HStack {
@@ -350,48 +312,15 @@ struct LifeBlock: View {
                 if game.showing_commander_damage {
                     BackgroundRectangle(current_game: game)
                 }
-                if player.rotation == 180 || player.rotation == 0 {
-                    if game.showing_commander_damage {
-                        ZStack {
-                            CommanderDamageDisplay(player: player, current_game: game)
-                            // Ensure it stays on top
-                        }
-                        .padding(50.0)
-                        .frame(height: geometry.size.height)
-                        .zIndex(1)
-                        .transition(.zoomEffect)
-                        .rotationEffect(Angle(degrees: 180 + player.rotation - game.caller.rotation))
-                        
+                if game.showing_commander_damage {
+                    ZStack {
+                        CommanderDamageDisplay(player: player, current_game: game)
                     }
-                } else {
-                    if game.caller.rotation != 0 && game.caller.rotation != 180 {
-                        if game.showing_commander_damage {
-                            ZStack {
-                                CommanderDamageDisplay(player: player, current_game: game)
-                            }
-                            .zIndex(1)
-                            .padding(20.0)
-                            .rotationEffect(Angle(degrees: player.rotation - game.caller.rotation))
-                            .frame(width: geometry.size.width, height:geometry.size.height)
-                            .transition(.zoomEffect)
-                            
-                            
-                        }
-                    } else {
-                        if game.showing_commander_damage {
-                            ZStack {
-                                CommanderDamageDisplay(player: player, current_game: game)
-                            }
-                            .zIndex(1)
-                            .padding(-10.0)
-                            .rotationEffect(Angle(degrees: player.rotation - game.caller.rotation))
-                            .frame(width: geometry.size.width, height:geometry.size.height)
-                            .transition(.zoomEffect)
-                            
-                            
-                        }
-                    }
-                    
+                    .zIndex(1)
+                    .padding(20.0)
+                    .rotationEffect(Angle(degrees: player.rotation - game.caller.rotation))
+                    .frame(width: geometry.size.width, height:geometry.size.height)
+                    .transition(.zoomEffect)
                 }
                     
             }

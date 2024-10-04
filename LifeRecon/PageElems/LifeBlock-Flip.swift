@@ -215,9 +215,7 @@ struct LifeBlockA: View {
                         }
                     
                         VStack {
-                            Spacer()
-                                .frame(width: 150.0)
-                            VStack {
+                            HStack {
                                 if player.is_monarch == true {
                                     Image("MonarchIcon")
                                     .resizable(resizingMode: .stretch)
@@ -243,6 +241,8 @@ struct LifeBlockA: View {
                                         .transition(.zoomEffect)
                                 }
                             }
+                            Spacer()
+                                .frame(height: 150.0)
                     }
                     
                     
