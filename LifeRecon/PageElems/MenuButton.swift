@@ -14,7 +14,7 @@ struct MenuButton: View {
         Button {
             withAnimation {
                 current_game.showing_circle_menu.toggle()
-                current_game.blur_background.toggle()
+//                current_game.blur_background.toggle()
             }
             haptic_pulse()
             

@@ -32,3 +32,9 @@ extension AnyTransition {
         )
     }
 }
+
+func soft_pulse() {
+    let generator = UIImpactFeedbackGenerator(style: .soft)
+    generator.prepare()
+    generator.impactOccurred()
+}

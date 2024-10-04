@@ -53,12 +53,6 @@ struct PageManager: View {
                     .transition(.fade)
             }
             
-            if current_game.showing_circle_menu == true {
-                CircleMenu(current_game: current_game)
-                    .transition(.zoomEffect)
-                    .zIndex(0.4)
-            }
-            
             if ["four_player", "three_player", "two_player"].contains(current_game.current_page) {
                 MenuButton(current_game: current_game)
                     .zIndex(0.5)

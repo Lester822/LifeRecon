@@ -21,6 +21,8 @@ struct TwoPlayerGame: View {
                     life1
                         .edgesIgnoringSafeArea(.all)
                 })
+                
+                MenuBar(current_game: current_game)
        
                 HStack (spacing: 0.0, content: {
                     let life3 = LifeBlockA(player: current_game.players[1], game: current_game)
