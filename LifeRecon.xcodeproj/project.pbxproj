@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		F811322E2CAF38E2001B8502 /* LifeBlock-Flip.swift in Sources */ = {isa = PBXBuildFile; fileRef = F811322D2CAF38E2001B8502 /* LifeBlock-Flip.swift */; };
 		F81132302CB055B8001B8502 /* MenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F811322F2CB055B8001B8502 /* MenuBar.swift */; };
+		F81132322CB0D8AA001B8502 /* PlayerMenuVert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81132312CB0D8AA001B8502 /* PlayerMenuVert.swift */; };
+		F81132362CB0DB2E001B8502 /* PlayMenuSwitcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81132352CB0DB2E001B8502 /* PlayMenuSwitcher.swift */; };
 		F81AC3D22BC6E6B700D65AB4 /* SetLifeKeypad.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81AC3D12BC6E6B700D65AB4 /* SetLifeKeypad.swift */; };
 		F81AC3D42BC6E88200D65AB4 /* KeypadKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81AC3D32BC6E88200D65AB4 /* KeypadKey.swift */; };
 		F81AC3D82BC831BE00D65AB4 /* LargeKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81AC3D72BC831BE00D65AB4 /* LargeKey.swift */; };
@@ -71,6 +73,8 @@
 /* Begin PBXFileReference section */
 		F811322D2CAF38E2001B8502 /* LifeBlock-Flip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LifeBlock-Flip.swift"; sourceTree = "<group>"; };
 		F811322F2CB055B8001B8502 /* MenuBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBar.swift; sourceTree = "<group>"; };
+		F81132312CB0D8AA001B8502 /* PlayerMenuVert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerMenuVert.swift; sourceTree = "<group>"; };
+		F81132352CB0DB2E001B8502 /* PlayMenuSwitcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayMenuSwitcher.swift; sourceTree = "<group>"; };
 		F81AC3D12BC6E6B700D65AB4 /* SetLifeKeypad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetLifeKeypad.swift; sourceTree = "<group>"; };
 		F81AC3D32BC6E88200D65AB4 /* KeypadKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeypadKey.swift; sourceTree = "<group>"; };
 		F81AC3D72BC831BE00D65AB4 /* LargeKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeKey.swift; sourceTree = "<group>"; };
@@ -259,6 +263,8 @@
 				F81AC3D12BC6E6B700D65AB4 /* SetLifeKeypad.swift */,
 				F881E27E2BD2177300A98031 /* BasicKeypad.swift */,
 				F8D1BC182C05433F00A163D8 /* PlayerMenu.swift */,
+				F81132312CB0D8AA001B8502 /* PlayerMenuVert.swift */,
+				F81132352CB0DB2E001B8502 /* PlayMenuSwitcher.swift */,
 			);
 			path = PageElems;
 			sourceTree = "<group>";
@@ -430,12 +436,14 @@
 				F84D42172CAEDFE200AEFAD2 /* DungeonDelver.swift in Sources */,
 				F8B234632BC57ED7009D6962 /* LifeReconApp.swift in Sources */,
 				F82B69082C68547E0058FAC0 /* CounterCounter.swift in Sources */,
+				F81132362CB0DB2E001B8502 /* PlayMenuSwitcher.swift in Sources */,
 				F881E27B2BD20DC700A98031 /* StartGameSettings.swift in Sources */,
 				F8D1BC1B2C05479200A163D8 /* NumberCircle.swift in Sources */,
 				F88B27542C56AC8D00E19197 /* ExpandingButton.swift in Sources */,
 				F82E08F42BC5A56000C651AE /* Player.swift in Sources */,
 				F8729EBE2BDC00ED00662855 /* FivePlayerGame.swift in Sources */,
 				F81AC3E02BC8632900D65AB4 /* SquareButton.swift in Sources */,
+				F81132322CB0D8AA001B8502 /* PlayerMenuVert.swift in Sources */,
 				F81AC3E42BC89A4600D65AB4 /* animations.swift in Sources */,
 				F82E08F22BC599CF00C651AE /* LifeBlock.swift in Sources */,
 				F82B690A2C69314C0058FAC0 /* ToggleCircle.swift in Sources */,

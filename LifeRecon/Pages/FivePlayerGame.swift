@@ -18,18 +18,15 @@ struct FivePlayerGame: View {
                 HStack (spacing: 0.0, content: {
                     let life1 = LifeBlock(player: current_game.players[0], game: current_game)
                     let life2 = LifeBlock(player: current_game.players[1], game: current_game)
-                        .rotationEffect(Angle(degrees: 180))
                     life1
                         //.edgesIgnoringSafeArea(.all)
                     life2
                        // .edgesIgnoringSafeArea(.all)
                 })
-                .frame(height: UIScreen.main.bounds.height/3)
        
                 HStack (spacing: 0.0, content: {
                     let life3 = LifeBlock(player: current_game.players[2], game: current_game)
                     let life4 = LifeBlock(player: current_game.players[3], game: current_game)
-                        .rotationEffect(Angle(degrees: 180))
                     life3
                         //.edgesIgnoringSafeArea(.all)
                     life4
@@ -37,13 +34,10 @@ struct FivePlayerGame: View {
                     
                     
                 })
-                .frame(height: UIScreen.main.bounds.height/3)
-                let life5 = LifeBlock(player: current_game.players[4], game: current_game)
-                    .rotationEffect(Angle(degrees: 270))
+                let life5 = LifeBlockA(player: current_game.players[4], game: current_game)
                 life5
-                    .frame(width: UIScreen.main.bounds.height/3, height: UIScreen.main.bounds.width)
+                    .frame(height: UIScreen.main.bounds.height/3.5)
                     .padding(0.0)
-                    .border(Color.red, width: 1)
                     //.edgesIgnoringSafeArea(.all)
             })
         })

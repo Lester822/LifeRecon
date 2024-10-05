@@ -33,6 +33,7 @@ struct MenuBar: View {
                         .resizable(resizingMode: .stretch)
                         .frame(width: 50.0, height: 50.0)
                 }
+                
                 Spacer()
                     .frame(width: 125.0)
                 Button {

@@ -96,6 +96,26 @@ struct PlayerCount: View {
                     } label: {
                         SquareButton(button_color: .black, text_color: .white, title: "4", icon: "NONE")
                     }
+//                    Button {
+//                        withAnimation(.easeInOut(duration: 0.2)) {
+//                            current_game.players[0].rotation = 90
+//                            current_game.players[1].rotation = -90
+//                            current_game.players[2].rotation = 90
+//                            current_game.players[3].rotation = -90
+//                            current_game.players[4].rotation = 0
+//                            let generator = UIImpactFeedbackGenerator(style: .medium)
+//                            generator.prepare()
+//                            generator.impactOccurred()
+//                            current_game.player_count = 5
+//                            withAnimation {
+//                                current_game.current_setting = "starting_life"
+//                            }
+//                            
+//                        }
+//                    } label: {
+//                        SquareButton(button_color: .black, text_color: .white, title: "5", icon: "NONE")
+//                    }
+
                 }
             }
         }
@@ -153,6 +173,8 @@ struct OptionalSettings: View {
                         player.background_color = .green
                     } else if index == 4 {
                         player.background_color = .yellow
+                    } else if index == 5 {
+                        player.background_color = .purple
                     }
                     index += 1
                     player.white_mana = 0

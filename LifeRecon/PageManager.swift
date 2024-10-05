@@ -24,6 +24,12 @@ struct PageManager: View {
                     .transition(.zoomEffect)
             }
             
+            if current_game.current_page == "five_player" {
+                FivePlayerGame(current_game: current_game)
+                    .transition(.fade)
+                    .background(.black)
+            }
+            
             if current_game.current_page == "four_player" {
                 FourPlayerGame(current_game: current_game)
                     .transition(.fade)
@@ -66,7 +72,7 @@ struct PageManager: View {
             }
             
             if current_game.showing_player_menu == true {
-                PlayerMenu(current_game: current_game)
+                PlayMenuSwitcher(current_game: current_game)
                     .zIndex(/*@START_MENU_TOKEN@*/1.0/*@END_MENU_TOKEN@*/)
                     .rotationEffect(Angle(degrees: current_game.caller.rotation))
                     .edgesIgnoringSafeArea(.all)

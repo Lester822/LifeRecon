@@ -116,8 +116,8 @@ struct LifeBlockA: View {
 //                            })
                             .gesture(DragGesture().onEnded { gesture in
                                 //let verticalMovement = gesture.translation.height
-                                let horizontalMovement = gesture.translation.width
-                                if (horizontalMovement < 0) {
+                                let horizontalMovement = gesture.translation.height
+                                if (horizontalMovement > 0) {
                                         print("OPEN PLAYER SETTINGS")
                                     haptic_pulse()
                                     
