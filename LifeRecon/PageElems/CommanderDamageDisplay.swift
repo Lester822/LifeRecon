@@ -13,21 +13,6 @@ struct CommanderDamageDisplay: View {
                 
                 VStack { // Start of Frame Spacer Stack
                     
-                    // THIS IS CODE FOR ADDING TAX TO THE COMMANDER MENU
-                    
-//                    if player === current_game.caller {
-//                        VStack {
-//                            TaxCounter(number: $current_game.caller.commander_tax_1, block_color: .gray, player: current_game.caller, current_game: current_game)
-//                                .padding(0.0)
-//                            TaxCounter(number: $current_game.caller.commander_tax_2, block_color: .gray, player: current_game.caller, current_game: current_game)
-//                                .padding(0.0)
-//                        }
-//                        .rotationEffect(Angle(degrees: 90.0))
-//                    } else {
-//                        Spacer()
-//                            .frame(height: UIScreen.main.bounds.height * 0.3)
-//                    }
-                    
                     VStack {
                         if current_game.caller.rotation == -90 {
                             TaxCounter(number: $player.commander_count, block_color: .orange, type: "commander_count", player: current_game.caller, current_game: current_game)
@@ -45,16 +30,34 @@ struct CommanderDamageDisplay: View {
                     }
                     .rotationEffect(Angle(degrees: 90.0))
                     
-                    NumberCircle(number: $current_game.caller.commander_damage[player.player_number][0], block_color: current_game.caller.background_color, player: current_game.caller, current_game: current_game)
-                        //.padding(.horizontal, 20.0)
-                        .transition(.zoomEffect)
-                        .rotationEffect(Angle(degrees: 90.0))
-                    
-                    if player.commander_count > 1 {
-                        NumberCircle(number: $current_game.caller.commander_damage[player.player_number][1], block_color: current_game.caller.background_color, player: current_game.caller, current_game: current_game)
-                            .transition(.zoomEffect)
-                            .rotationEffect(Angle(degrees: 90.0))
-                        
+                    if player.rotation == 0 || player.rotation == 180 {
+                        HStack {
+                            NumberCircle(number: $current_game.caller.commander_damage[player.player_number][0], block_color: current_game.caller.background_color, player: current_game.caller, current_game: current_game)
+                            //.padding(.horizontal, 20.0)
+                                .transition(.zoomEffect)
+                                .rotationEffect(Angle(degrees: 90.0))
+                            
+                            if player.commander_count > 1 {
+                                NumberCircle(number: $current_game.caller.commander_damage[player.player_number][1], block_color: current_game.caller.background_color, player: current_game.caller, current_game: current_game)
+                                    .transition(.zoomEffect)
+                                    .rotationEffect(Angle(degrees: 90.0))
+                                
+                            }
+                        }
+                    } else {
+                        VStack {
+                            NumberCircle(number: $current_game.caller.commander_damage[player.player_number][0], block_color: current_game.caller.background_color, player: current_game.caller, current_game: current_game)
+                            //.padding(.horizontal, 20.0)
+                                .transition(.zoomEffect)
+                                .rotationEffect(Angle(degrees: 90.0))
+                            
+                            if player.commander_count > 1 {
+                                NumberCircle(number: $current_game.caller.commander_damage[player.player_number][1], block_color: current_game.caller.background_color, player: current_game.caller, current_game: current_game)
+                                    .transition(.zoomEffect)
+                                    .rotationEffect(Angle(degrees: 90.0))
+                                
+                            }
+                        }
                     }
                     
                     VStack {
