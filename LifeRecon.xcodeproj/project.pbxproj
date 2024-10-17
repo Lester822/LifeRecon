@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		F810D4772CBD789600EFF7D1 /* DungeonDelverVert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F810D4762CBD789600EFF7D1 /* DungeonDelverVert.swift */; };
 		F810D4792CBD7A0D00EFF7D1 /* DungeonDelverSwitcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = F810D4782CBD7A0D00EFF7D1 /* DungeonDelverSwitcher.swift */; };
+		F810D47B2CC163CD00EFF7D1 /* CommanderToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F810D47A2CC163CD00EFF7D1 /* CommanderToggle.swift */; };
 		F811322E2CAF38E2001B8502 /* LifeBlock-Flip.swift in Sources */ = {isa = PBXBuildFile; fileRef = F811322D2CAF38E2001B8502 /* LifeBlock-Flip.swift */; };
 		F81132302CB055B8001B8502 /* MenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F811322F2CB055B8001B8502 /* MenuBar.swift */; };
 		F81132322CB0D8AA001B8502 /* PlayerMenuVert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81132312CB0D8AA001B8502 /* PlayerMenuVert.swift */; };
@@ -76,6 +77,7 @@
 /* Begin PBXFileReference section */
 		F810D4762CBD789600EFF7D1 /* DungeonDelverVert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DungeonDelverVert.swift; sourceTree = "<group>"; };
 		F810D4782CBD7A0D00EFF7D1 /* DungeonDelverSwitcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DungeonDelverSwitcher.swift; sourceTree = "<group>"; };
+		F810D47A2CC163CD00EFF7D1 /* CommanderToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommanderToggle.swift; sourceTree = "<group>"; };
 		F811322D2CAF38E2001B8502 /* LifeBlock-Flip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LifeBlock-Flip.swift"; sourceTree = "<group>"; };
 		F811322F2CB055B8001B8502 /* MenuBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBar.swift; sourceTree = "<group>"; };
 		F81132312CB0D8AA001B8502 /* PlayerMenuVert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerMenuVert.swift; sourceTree = "<group>"; };
@@ -268,6 +270,7 @@
 				F86BD4FD2CAC3CC700E2392F /* DungeonElem.swift */,
 				F81B6B762C367B60005B98E4 /* CommanderDamageDisplay.swift */,
 				F82B69052C68497D0058FAC0 /* MenuButton.swift */,
+				F810D47A2CC163CD00EFF7D1 /* CommanderToggle.swift */,
 				F8729EBF2BDC091200662855 /* Confirmation.swift */,
 				F81AC3D12BC6E6B700D65AB4 /* SetLifeKeypad.swift */,
 				F881E27E2BD2177300A98031 /* BasicKeypad.swift */,
@@ -452,6 +455,7 @@
 				F8D1BC1B2C05479200A163D8 /* NumberCircle.swift in Sources */,
 				F88B27542C56AC8D00E19197 /* ExpandingButton.swift in Sources */,
 				F82E08F42BC5A56000C651AE /* Player.swift in Sources */,
+				F810D47B2CC163CD00EFF7D1 /* CommanderToggle.swift in Sources */,
 				F8729EBE2BDC00ED00662855 /* FivePlayerGame.swift in Sources */,
 				F81AC3E02BC8632900D65AB4 /* SquareButton.swift in Sources */,
 				F81132322CB0D8AA001B8502 /* PlayerMenuVert.swift in Sources */,

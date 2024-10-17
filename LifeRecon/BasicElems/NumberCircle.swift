@@ -13,6 +13,7 @@ struct NumberCircle: View {
     var block_color: Color
     @ObservedObject var player: Player
     @ObservedObject var current_game: ActiveGame
+    var type: String
     
     var body: some View {
         GeometryReader { geometry in
@@ -20,9 +21,20 @@ struct NumberCircle: View {
                 VStack(spacing: 0.0) {
                     Button {
                         soft_pulse()
-                        withAnimation(.easeIn(duration: 0.3)) {
-                            number += 1
+                        if type == "mana" {
+                            withAnimation(.easeIn(duration: 0.3)) {
+                                number += 1
+                            }
+                        } else if type == "commander_damage" {
+                            withAnimation(.easeIn(duration: 0.3)) {
+                                number += 1
+                                if player.subtract_life_with_cmdr_damage {
+                                    player.life_total -= 1
+                                }
+                            }
+                            
                         }
+                        
                     } label: {
                         UnevenRoundedRectangle(cornerRadii: .init(
                             topLeading: 5000.0,
@@ -37,9 +49,19 @@ struct NumberCircle: View {
                     
                     Button {
                         soft_pulse()
-                        withAnimation(.easeIn(duration: 0.3)) {
-                            number -= 1
+                        if type == "mana" {
+                            withAnimation(.easeIn(duration: 0.3)) {
+                                number -= 1
+                            }
+                        } else if type == "commander_damage" {
+                            withAnimation(.easeIn(duration: 0.3)) {
+                                number -= 1
+                                if player.subtract_life_with_cmdr_damage {
+                                    player.life_total += 1
+                                }
+                            }
                         }
+                        
                     } label: {
                         UnevenRoundedRectangle(cornerRadii: .init(
                             topLeading: 00.0,
@@ -69,5 +91,5 @@ struct NumberCircle: View {
 }
 
 #Preview {
-    NumberCircle(number: .constant(10), block_color: .red, player: Player(life_total: 30, name: "PLAYER 1"), current_game: ActiveGame(player_count: 4, starting_life: 40))
+    NumberCircle(number: .constant(10), block_color: .red, player: Player(life_total: 30, name: "PLAYER 1"), current_game: ActiveGame(player_count: 4, starting_life: 40), type: "test")
 }

@@ -64,6 +64,11 @@ struct PageManager: View {
                     .zIndex(0.5)
             }
             
+            if ["four_player", "three_player", "two_player"].contains(current_game.current_page) && current_game.showing_commander_damage {
+                CommanderToggleButton(current_game: current_game, player: current_game.caller)
+                    .zIndex(0.51)
+            }
+            
             if current_game.showing_keypad == true {
                 SetLifeKeypad(current_game: current_game)
                     .zIndex(/*@START_MENU_TOKEN@*/1.0/*@END_MENU_TOKEN@*/)

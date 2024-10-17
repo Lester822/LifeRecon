@@ -37,6 +37,8 @@ class Player: ObservableObject {
     @Published var active_counters: Array<String>
     
     @Published var reset_floating_each_time: Bool = false
+    @Published var subtract_life_with_cmdr_damage: Bool = false
+    
     @Published var is_monarch: Bool = false
     @Published var has_initiative: Bool = false
     @Published var has_cities_blessing: Bool = false
@@ -75,6 +77,7 @@ class Player: ObservableObject {
         self.commander_tax_2 = 0
         
         self.active_counters = []
+
         
     }
 }

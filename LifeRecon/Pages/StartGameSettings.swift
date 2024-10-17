@@ -193,6 +193,8 @@ struct OptionalSettings: View {
                     player.acorn_counters = 0
                     player.reset_floating_each_time = false
                     
+                    player.subtract_life_with_cmdr_damage = false
+                    
                     player.current_dungeon = ""
                     player.dungeon_position = ""
                     player.completed_dungeons = []

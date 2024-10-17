@@ -32,13 +32,13 @@ struct CommanderDamageDisplay: View {
                     
                     if player.rotation == 0 || player.rotation == 180 {
                         HStack {
-                            NumberCircle(number: $current_game.caller.commander_damage[player.player_number][0], block_color: current_game.caller.background_color, player: current_game.caller, current_game: current_game)
+                            NumberCircle(number: $current_game.caller.commander_damage[player.player_number][0], block_color: current_game.caller.background_color, player: current_game.caller, current_game: current_game, type:"commander_damage")
                             //.padding(.horizontal, 20.0)
                                 .transition(.zoomEffect)
                                 .rotationEffect(Angle(degrees: 90.0))
                             
                             if player.commander_count > 1 {
-                                NumberCircle(number: $current_game.caller.commander_damage[player.player_number][1], block_color: current_game.caller.background_color, player: current_game.caller, current_game: current_game)
+                                NumberCircle(number: $current_game.caller.commander_damage[player.player_number][1], block_color: current_game.caller.background_color, player: current_game.caller, current_game: current_game, type: "commander_damage")
                                     .transition(.zoomEffect)
                                     .rotationEffect(Angle(degrees: 90.0))
                                 
@@ -46,13 +46,13 @@ struct CommanderDamageDisplay: View {
                         }
                     } else {
                         VStack {
-                            NumberCircle(number: $current_game.caller.commander_damage[player.player_number][0], block_color: current_game.caller.background_color, player: current_game.caller, current_game: current_game)
+                            NumberCircle(number: $current_game.caller.commander_damage[player.player_number][0], block_color: current_game.caller.background_color, player: current_game.caller, current_game: current_game, type: "commander_damage")
                             //.padding(.horizontal, 20.0)
                                 .transition(.zoomEffect)
                                 .rotationEffect(Angle(degrees: 90.0))
                             
                             if player.commander_count > 1 {
-                                NumberCircle(number: $current_game.caller.commander_damage[player.player_number][1], block_color: current_game.caller.background_color, player: current_game.caller, current_game: current_game)
+                                NumberCircle(number: $current_game.caller.commander_damage[player.player_number][1], block_color: current_game.caller.background_color, player: current_game.caller, current_game: current_game, type: "commander_damage")
                                     .transition(.zoomEffect)
                                     .rotationEffect(Angle(degrees: 90.0))
                                 
@@ -88,11 +88,11 @@ struct CommanderDamageDisplay: View {
             if player.rotation == 0 || player.rotation == 180 {
                 HStack {
                     VStack { // Start of Frame Spacer Stack
-                        NumberCircle(number: $current_game.caller.commander_damage[player.player_number][0], block_color: current_game.caller.background_color, player: current_game.caller, current_game: current_game)
+                        NumberCircle(number: $current_game.caller.commander_damage[player.player_number][0], block_color: current_game.caller.background_color, player: current_game.caller, current_game: current_game, type: "commander_damage")
                             .transition(.zoomEffect)
                             .rotationEffect(Angle(degrees: 270.0))
                         if player.commander_count > 1 {
-                            NumberCircle(number: $current_game.caller.commander_damage[player.player_number][1], block_color: current_game.caller.background_color, player: current_game.caller, current_game: current_game)
+                            NumberCircle(number: $current_game.caller.commander_damage[player.player_number][1], block_color: current_game.caller.background_color, player: current_game.caller, current_game: current_game, type: "commander_damage")
                                 .transition(.zoomEffect)
                                 .rotationEffect(Angle(degrees: 270.0))
                             
@@ -109,11 +109,11 @@ struct CommanderDamageDisplay: View {
                 .padding(0)
             } else {
                 HStack { // Start of Frame Spacer Stack
-                    NumberCircle(number: $current_game.caller.commander_damage[player.player_number][0], block_color: current_game.caller.background_color, player: current_game.caller, current_game: current_game)
+                    NumberCircle(number: $current_game.caller.commander_damage[player.player_number][0], block_color: current_game.caller.background_color, player: current_game.caller, current_game: current_game, type: "commander_damage")
                         .transition(.zoomEffect)
                         .rotationEffect(Angle(degrees: 270.0))
                     if player.commander_count > 1 {
-                        NumberCircle(number: $current_game.caller.commander_damage[player.player_number][1], block_color: current_game.caller.background_color, player: current_game.caller, current_game: current_game)
+                        NumberCircle(number: $current_game.caller.commander_damage[player.player_number][1], block_color: current_game.caller.background_color, player: current_game.caller, current_game: current_game, type: "commander_damage")
                             .transition(.zoomEffect)
                             .rotationEffect(Angle(degrees: 270.0))
                         
