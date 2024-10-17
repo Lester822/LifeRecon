@@ -13,6 +13,7 @@ struct DungeonBackground: View {
     var body: some View {
         Image("DungeonWall")
             .aspectRatio(contentMode: .fit)
+            .rotationEffect(current_game.caller.rotation == 0 || current_game.caller.rotation == 180 ? Angle(degrees: 90) : Angle(degrees: 0))
             .scaleEffect(1.5)
             .brightness(-0.5)
             .foregroundColor(.black)

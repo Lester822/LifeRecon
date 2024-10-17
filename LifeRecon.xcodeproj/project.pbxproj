@@ -7,10 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F810D4772CBD789600EFF7D1 /* DungeonDelverVert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F810D4762CBD789600EFF7D1 /* DungeonDelverVert.swift */; };
+		F810D4792CBD7A0D00EFF7D1 /* DungeonDelverSwitcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = F810D4782CBD7A0D00EFF7D1 /* DungeonDelverSwitcher.swift */; };
 		F811322E2CAF38E2001B8502 /* LifeBlock-Flip.swift in Sources */ = {isa = PBXBuildFile; fileRef = F811322D2CAF38E2001B8502 /* LifeBlock-Flip.swift */; };
 		F81132302CB055B8001B8502 /* MenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F811322F2CB055B8001B8502 /* MenuBar.swift */; };
 		F81132322CB0D8AA001B8502 /* PlayerMenuVert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81132312CB0D8AA001B8502 /* PlayerMenuVert.swift */; };
 		F81132362CB0DB2E001B8502 /* PlayMenuSwitcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81132352CB0DB2E001B8502 /* PlayMenuSwitcher.swift */; };
+		F81132382CB0DE96001B8502 /* TaxCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81132372CB0DE96001B8502 /* TaxCounter.swift */; };
 		F81AC3D22BC6E6B700D65AB4 /* SetLifeKeypad.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81AC3D12BC6E6B700D65AB4 /* SetLifeKeypad.swift */; };
 		F81AC3D42BC6E88200D65AB4 /* KeypadKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81AC3D32BC6E88200D65AB4 /* KeypadKey.swift */; };
 		F81AC3D82BC831BE00D65AB4 /* LargeKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81AC3D72BC831BE00D65AB4 /* LargeKey.swift */; };
@@ -71,10 +74,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F810D4762CBD789600EFF7D1 /* DungeonDelverVert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DungeonDelverVert.swift; sourceTree = "<group>"; };
+		F810D4782CBD7A0D00EFF7D1 /* DungeonDelverSwitcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DungeonDelverSwitcher.swift; sourceTree = "<group>"; };
 		F811322D2CAF38E2001B8502 /* LifeBlock-Flip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LifeBlock-Flip.swift"; sourceTree = "<group>"; };
 		F811322F2CB055B8001B8502 /* MenuBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBar.swift; sourceTree = "<group>"; };
 		F81132312CB0D8AA001B8502 /* PlayerMenuVert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerMenuVert.swift; sourceTree = "<group>"; };
 		F81132352CB0DB2E001B8502 /* PlayMenuSwitcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayMenuSwitcher.swift; sourceTree = "<group>"; };
+		F81132372CB0DE96001B8502 /* TaxCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxCounter.swift; sourceTree = "<group>"; };
 		F81AC3D12BC6E6B700D65AB4 /* SetLifeKeypad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetLifeKeypad.swift; sourceTree = "<group>"; };
 		F81AC3D32BC6E88200D65AB4 /* KeypadKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeypadKey.swift; sourceTree = "<group>"; };
 		F81AC3D72BC831BE00D65AB4 /* LargeKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeKey.swift; sourceTree = "<group>"; };
@@ -224,6 +230,7 @@
 				F82B690B2C697D380058FAC0 /* SingleToggleCircle.swift */,
 				F81AC3DF2BC8632900D65AB4 /* SquareButton.swift */,
 				F82B69072C68547E0058FAC0 /* CounterCounter.swift */,
+				F81132372CB0DE96001B8502 /* TaxCounter.swift */,
 				F81AC3E52BC89F8500D65AB4 /* backgroundrectangle.swift */,
 				F86BD5012CAC4D0300E2392F /* DungeonBackground.swift */,
 				F81AC3D92BC85B8000D65AB4 /* SmallKey.swift */,
@@ -240,6 +247,8 @@
 			isa = PBXGroup;
 			children = (
 				F84D42162CAEDFE200AEFAD2 /* DungeonDelver.swift */,
+				F810D4762CBD789600EFF7D1 /* DungeonDelverVert.swift */,
+				F810D4782CBD7A0D00EFF7D1 /* DungeonDelverSwitcher.swift */,
 				F881E27A2BD20DC700A98031 /* StartGameSettings.swift */,
 				F8729EBD2BDC00ED00662855 /* FivePlayerGame.swift */,
 				F82E08EF2BC58BE400C651AE /* FourPlayerGame.swift */,
@@ -409,6 +418,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F810D4792CBD7A0D00EFF7D1 /* DungeonDelverSwitcher.swift in Sources */,
 				F881E27F2BD2177300A98031 /* BasicKeypad.swift in Sources */,
 				F81AC3D22BC6E6B700D65AB4 /* SetLifeKeypad.swift in Sources */,
 				F82B69062C68497D0058FAC0 /* MenuButton.swift in Sources */,
@@ -416,6 +426,7 @@
 				F81B6B772C367B60005B98E4 /* CommanderDamageDisplay.swift in Sources */,
 				F86BD4FE2CAC3CC700E2392F /* DungeonElem.swift in Sources */,
 				F81AC3DC2BC85D3500D65AB4 /* ThreePlayerGame.swift in Sources */,
+				F81132382CB0DE96001B8502 /* TaxCounter.swift in Sources */,
 				F81132302CB055B8001B8502 /* MenuBar.swift in Sources */,
 				F82E08F62BC5A57900C651AE /* Game.swift in Sources */,
 				F86BD5022CAC4D0300E2392F /* DungeonBackground.swift in Sources */,
@@ -444,6 +455,7 @@
 				F8729EBE2BDC00ED00662855 /* FivePlayerGame.swift in Sources */,
 				F81AC3E02BC8632900D65AB4 /* SquareButton.swift in Sources */,
 				F81132322CB0D8AA001B8502 /* PlayerMenuVert.swift in Sources */,
+				F810D4772CBD789600EFF7D1 /* DungeonDelverVert.swift in Sources */,
 				F81AC3E42BC89A4600D65AB4 /* animations.swift in Sources */,
 				F82E08F22BC599CF00C651AE /* LifeBlock.swift in Sources */,
 				F82B690A2C69314C0058FAC0 /* ToggleCircle.swift in Sources */,

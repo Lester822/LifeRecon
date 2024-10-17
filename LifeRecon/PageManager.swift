@@ -87,7 +87,7 @@ struct PageManager: View {
             }
             
             if current_game.showing_dungeon == true {
-                DungeonDelver(current_game: current_game, caller: current_game.caller)
+                DungeonDelverSwitcher(current_game: current_game, caller: current_game.caller)
                     .zIndex(1.2)
                     .rotationEffect(Angle(degrees: current_game.caller.rotation))
                     .edgesIgnoringSafeArea(.all)

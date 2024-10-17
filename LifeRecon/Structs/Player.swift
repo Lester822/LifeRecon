@@ -31,6 +31,9 @@ class Player: ObservableObject {
     @Published var ticket_counters: Int
     @Published var acorn_counters: Int
     
+    @Published var commander_tax_1: Int
+    @Published var commander_tax_2: Int
+    
     @Published var active_counters: Array<String>
     
     @Published var reset_floating_each_time: Bool = false
@@ -38,7 +41,7 @@ class Player: ObservableObject {
     @Published var has_initiative: Bool = false
     @Published var has_cities_blessing: Bool = false
     
-    @Published var current_dungeon: String = "Dungeon_Undercity"
+    @Published var current_dungeon: String = ""
     @Published var dungeon_position: String = ""
     @Published var completed_dungeons: Set<String> = []
     
@@ -49,14 +52,14 @@ class Player: ObservableObject {
         self.life_total = life_total
         self.starting_life = life_total
         self.name = name
-        self.rotation = 0.0
+        self.rotation = 90.0
         self.white_mana = 0
         self.blue_mana = 0
         self.black_mana = 0
         self.red_mana = 0
         self.green_mana = 0
         self.colorless_mana = 0
-        self.commander_damage = [[0,0], [0], [0], [0]]
+        self.commander_damage = [[0,0], [0,0], [0,0], [0,0]]
         self.player_number = 0
         self.commander_count = 1
         
@@ -67,6 +70,9 @@ class Player: ObservableObject {
         self.energy_counters = 0
         self.ticket_counters = 0
         self.acorn_counters = 0
+        
+        self.commander_tax_1 = 0
+        self.commander_tax_2 = 0
         
         self.active_counters = []
         

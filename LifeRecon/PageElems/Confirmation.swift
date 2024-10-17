@@ -65,7 +65,7 @@ struct Confirmation: View {
                 player.black_mana = 0
                 player.red_mana = 0
                 player.green_mana = 0
-                player.commander_damage = []
+                player.commander_damage = [[0,0],[0,0],[0,0],[0,0],[0,0]]
                 player.commander_count = 1
                 
                 player.storm_count = 0

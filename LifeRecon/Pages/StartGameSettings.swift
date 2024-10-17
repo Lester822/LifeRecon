@@ -183,7 +183,7 @@ struct OptionalSettings: View {
                     player.red_mana = 0
                     player.green_mana = 0
                     player.commander_count = 1
-                    player.commander_damage = []
+                    player.commander_damage = [[0,0],[0,0],[0,0],[0,0],[0,0]]
                     player.storm_count = 0
                     player.poison_counters = 0
                     player.rad_counters = 0
