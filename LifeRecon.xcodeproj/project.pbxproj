@@ -15,6 +15,7 @@
 		F81132322CB0D8AA001B8502 /* PlayerMenuVert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81132312CB0D8AA001B8502 /* PlayerMenuVert.swift */; };
 		F81132362CB0DB2E001B8502 /* PlayMenuSwitcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81132352CB0DB2E001B8502 /* PlayMenuSwitcher.swift */; };
 		F81132382CB0DE96001B8502 /* TaxCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81132372CB0DE96001B8502 /* TaxCounter.swift */; };
+		F81210232CC22A1E00D77D3C /* MenuSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81210222CC22A1E00D77D3C /* MenuSelector.swift */; };
 		F81AC3D22BC6E6B700D65AB4 /* SetLifeKeypad.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81AC3D12BC6E6B700D65AB4 /* SetLifeKeypad.swift */; };
 		F81AC3D42BC6E88200D65AB4 /* KeypadKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81AC3D32BC6E88200D65AB4 /* KeypadKey.swift */; };
 		F81AC3D82BC831BE00D65AB4 /* LargeKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81AC3D72BC831BE00D65AB4 /* LargeKey.swift */; };
@@ -83,6 +84,7 @@
 		F81132312CB0D8AA001B8502 /* PlayerMenuVert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerMenuVert.swift; sourceTree = "<group>"; };
 		F81132352CB0DB2E001B8502 /* PlayMenuSwitcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayMenuSwitcher.swift; sourceTree = "<group>"; };
 		F81132372CB0DE96001B8502 /* TaxCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxCounter.swift; sourceTree = "<group>"; };
+		F81210222CC22A1E00D77D3C /* MenuSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuSelector.swift; sourceTree = "<group>"; };
 		F81AC3D12BC6E6B700D65AB4 /* SetLifeKeypad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetLifeKeypad.swift; sourceTree = "<group>"; };
 		F81AC3D32BC6E88200D65AB4 /* KeypadKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeypadKey.swift; sourceTree = "<group>"; };
 		F81AC3D72BC831BE00D65AB4 /* LargeKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeKey.swift; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				F811322F2CB055B8001B8502 /* MenuBar.swift */,
+				F81210222CC22A1E00D77D3C /* MenuSelector.swift */,
 				F8D1BC1A2C05479200A163D8 /* NumberCircle.swift */,
 				F88B27532C56AC8D00E19197 /* ExpandingButton.swift */,
 				F82B69092C69314C0058FAC0 /* ToggleCircle.swift */,
@@ -439,6 +442,7 @@
 				F82B690C2C697D380058FAC0 /* SingleToggleCircle.swift in Sources */,
 				F8D1BC132C04900500A163D8 /* HomeLargeButton.swift in Sources */,
 				F8729EC02BDC091200662855 /* Confirmation.swift in Sources */,
+				F81210232CC22A1E00D77D3C /* MenuSelector.swift in Sources */,
 				F81AC3D82BC831BE00D65AB4 /* LargeKey.swift in Sources */,
 				F82B69042C6847750058FAC0 /* PageManager.swift in Sources */,
 				F81AC3E62BC89F8500D65AB4 /* backgroundrectangle.swift in Sources */,

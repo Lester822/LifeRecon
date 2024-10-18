@@ -15,6 +15,14 @@ struct MenuBar: View {
             HStack {
                 Button {
                     soft_pulse()
+                    print("test")
+                } label: {
+                    Image("Settings")
+                        .resizable(resizingMode: .stretch)
+                        .frame(width: 50.0, height: 50.0)
+                }
+                Button {
+                    soft_pulse()
                     withAnimation {
                         current_game.showing_circle_menu = false
                         current_game.blur_background = false
@@ -25,14 +33,7 @@ struct MenuBar: View {
                         .resizable(resizingMode: .stretch)
                         .frame(width: 50.0, height: 50.0)
                 }
-                Button {
-                    soft_pulse()
-                    print("test")
-                } label: {
-                    Image("Settings")
-                        .resizable(resizingMode: .stretch)
-                        .frame(width: 50.0, height: 50.0)
-                }
+
                 
                 Spacer()
                     .frame(width: 125.0)
