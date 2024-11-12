@@ -23,11 +23,13 @@ struct MenuSelector: View {
                     Image(icon)
                         .resizable(resizingMode: .stretch)
                         .aspectRatio(contentMode: .fit)
+                        .padding(.vertical, geometry.size.height * 0.15)
                         .frame(height: geometry.size.height)
                     Text(text)
                         .font(.system(size: geometry.size.height * 0.26))
                         .fontWeight(.bold)
                         .foregroundStyle(.white)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
                     Spacer()
                         .frame(width: geometry.size.width*0.05)
                 }
@@ -40,7 +42,7 @@ struct MenuSelector: View {
 }
 
 #Preview {
-    MenuSelector(current_game: ActiveGame(player_count: 4, starting_life: 40), text: "Hello There", icon: "UnknownIconIcon")
+    MenuSelector(current_game: ActiveGame(player_count: 4, starting_life: 40), text: "Commander Menu That Takes Two", icon: "DungeonIcon")
         .padding(10)
         .frame(width: UIScreen.main.bounds.width, height:UIScreen.main.bounds.width/4)
 }

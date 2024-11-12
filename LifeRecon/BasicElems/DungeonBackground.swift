@@ -12,12 +12,12 @@ struct DungeonBackground: View {
     
     var body: some View {
         Image("DungeonWall")
+            .allowsHitTesting(current_game.showing_dungeon)
             .aspectRatio(contentMode: .fit)
             .rotationEffect(current_game.caller.rotation == 0 || current_game.caller.rotation == 180 ? Angle(degrees: 90) : Angle(degrees: 0))
-            .scaleEffect(1.5)
             .brightness(-0.5)
             .foregroundColor(.black)
-            .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+            .frame(width: UIScreen.main.bounds.width-1, height: UIScreen.main.bounds.height-1)
             .blur(radius: 5.0)
             .ignoresSafeArea(.all)
             .rotationEffect(Angle(degrees: 90))

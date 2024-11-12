@@ -29,17 +29,23 @@ struct PlayerMenu: View {
             VStack {
                 HStack {
                     Spacer()
-                        .frame(width: UIScreen.main.bounds.height * 0.60)
-                    SingleToggleCircle(toggle: $current_game.caller.is_monarch, icon: "MonarchIcon", type: "monarch", current_game: current_game)
-                    SingleToggleCircle(toggle: $current_game.caller.has_initiative, icon: "InitiativeIcon", type: "initiative", current_game: current_game)
-                    ToggleCircle(toggle: $current_game.caller.has_cities_blessing, icon: "CitiesBlessingIcon", current_game: current_game)
+                        .frame(width: UIScreen.main.bounds.height * 0.75)
+                    VStack {
+                        SingleToggleCircle(toggle: $current_game.caller.is_monarch, icon: "MonarchIcon", type: "monarch", current_game: current_game)
+                            .padding(.bottom, 3.0)
+                        SingleToggleCircle(toggle: $current_game.caller.has_initiative, icon: "InitiativeIcon", type: "initiative", current_game: current_game)
+                            .padding(.bottom, 3.0)
+                        ToggleCircle(toggle: $current_game.caller.has_cities_blessing, icon: "CitiesBlessingIcon", current_game: current_game)
+                            .padding(.bottom, 3.0)
+                    }
                 }
                 Spacer()
-                    .frame(height: UIScreen.main.bounds.width * 0.6)
+                    .frame(height: UIScreen.main.bounds.width * 0.33)
             }
             // Toggle Row End
             
-            // Uppper left menu row
+            // Scroll Long Bar
+            
             VStack {
                 
                 HStack {
@@ -49,20 +55,23 @@ struct PlayerMenu: View {
                                 current_game.showing_dungeon = true
                             }
                         } label: {
-                            MenuSelector(current_game: current_game, text: "Dungeon Delver", icon: "UnknownIconIcon")
-                                .frame(width: 200.0, height: 50.0, alignment: .center)
+                            MenuSelector(current_game: current_game, text: "Dungeon Delver", icon: "DungeonIcon")
+                                .frame(width: 160.0, height: 50.0, alignment: .center)
                         }
                         Button {
                             
                         } label: {
-                            MenuSelector(current_game: current_game, text: "The Ring", icon: "UnknownIconIcon")
-                                .frame(width: 200.0, height: 50.0, alignment: .center)
+                            MenuSelector(current_game: current_game, text: "Ring Tracker", icon: "RingIcon")
+                                .frame(width: 160.0, height: 50.0, alignment: .center)
                         }
                         Button {
+                            current_game.showing_player_menu = false
+                            current_game.blur_background = false
+                            current_game.showing_commander_damage = true
                             
                         } label: {
-                            MenuSelector(current_game: current_game, text: "Commander Menu", icon: "UnknownIconIcon")
-                                .frame(width: 200.0, height: 50.0, alignment: .center)
+                            MenuSelector(current_game: current_game, text: "Commander Damage", icon: "CommanderIcon")
+                                .frame(width: 160.0, height: 50.0, alignment: .center)
                         }
                         
                     }
@@ -85,7 +94,6 @@ struct PlayerMenu: View {
                         .frame(width: 50.0, height: 50.0)
                     Text(playerName)
                         .bold()
-                        
                         .font(.system(size: 25))
                         .onTapGesture {
                             isEditingName = true
@@ -101,7 +109,7 @@ struct PlayerMenu: View {
                 }
                 
                 Spacer()
-                    .frame(height: 50)
+                    .frame(height: 30)
                 
                 HStack {
                     Spacer()
@@ -217,7 +225,6 @@ struct PlayerMenu: View {
                         
                         
                     }
-                    .padding(.bottom, 20.0)
                     
                 }
             }
