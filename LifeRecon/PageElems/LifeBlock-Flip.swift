@@ -275,18 +275,20 @@ struct LifeBlockA: View {
                     VStack{
                         Spacer()
                         VStack {
-                           
-                            Button {
-                                game.caller = player
-                                withAnimation {
-                                    game.showing_commander_damage.toggle()
+                            if game.commander_features_enabled {
+                                Button {
+                                    game.caller = player
+                                    withAnimation {
+                                        game.showing_commander_damage.toggle()
+                                    }
+                                } label: {
+                                    Image("CommanderDamage")
+                                        .resizable(resizingMode: .stretch)
+                                        .frame(width: 50, height: 50)
+                                        .opacity(0.2)
                                 }
-                            } label: {
-                                Image("CommanderDamage")
-                                    .resizable(resizingMode: .stretch)
-                                    .frame(width: 50, height: 50)
-                                    .opacity(0.2)
                             }
+                            
                             Spacer()
                                 .frame(height: 70.0)
                         }

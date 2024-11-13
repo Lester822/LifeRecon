@@ -155,6 +155,10 @@ struct OptionalSettings: View {
                 .foregroundStyle(.white)
             Spacer()
                 .frame(height: 40.0)
+            
+            ToggleCircle(toggle: $current_game.commander_features_enabled, icon: "UnknownIconIcon", current_game: current_game)
+                .frame(width: 50.0, height: 50.0)
+            
             Button {
                 haptic_pulse()
                 current_game.in_progress = true

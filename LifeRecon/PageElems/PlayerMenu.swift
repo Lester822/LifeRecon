@@ -206,26 +206,26 @@ struct PlayerMenu: View {
                             }
                         } label: {
                             MenuSelector(current_game: current_game, text: "Dungeon Delver", icon: "DungeonIcon")
-                                .frame(width: UIScreen.main.bounds.width * 0.397, height: UIScreen.main.bounds.height * 0.0586, alignment: .center)
+                                .frame(width: UIScreen.main.bounds.width * 0.397, height: UIScreen.main.bounds.height * 0.0586)
                         }
                         Button {
-                            
+                            // Your action here
                         } label: {
                             MenuSelector(current_game: current_game, text: "Ring Tracker", icon: "RingIcon")
-                                .frame(width: UIScreen.main.bounds.width * 0.397, height: UIScreen.main.bounds.height * 0.0586, alignment: .center)
+                                .frame(width: UIScreen.main.bounds.width * 0.397, height: UIScreen.main.bounds.height * 0.0586)
                         }
-                        Button {
-                            current_game.showing_player_menu = false
-                            current_game.blur_background = false
-                            current_game.showing_commander_damage = true
-                            
-                        } label: {
-                            MenuSelector(current_game: current_game, text: "Commander Damage", icon: "CommanderIcon")
-                                .frame(width: UIScreen.main.bounds.width * 0.397, height: UIScreen.main.bounds.height * 0.0586, alignment: .center)
+                        if current_game.commander_features_enabled {
+                            Button {
+                                current_game.showing_player_menu = false
+                                current_game.blur_background = false
+                                current_game.showing_commander_damage = true
+                            } label: {
+                                MenuSelector(current_game: current_game, text: "Commander Damage", icon: "CommanderIcon")
+                                    .frame(width: UIScreen.main.bounds.width * 0.397, height: UIScreen.main.bounds.height * 0.0586)
+                            }
                         }
-                        
                     }
-                    .frame(alignment: .center)
+                    .frame(width: UIScreen.main.bounds.height * 0.5432, alignment: current_game.commander_features_enabled ? .leading : .center) // Set HStack width to match ScrollView
                 }
                 .frame(width: UIScreen.main.bounds.height * 0.5432, alignment: .center)
                 .padding(10)

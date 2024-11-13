@@ -291,17 +291,20 @@ struct LifeBlock: View {
                             HStack {
                                 Spacer()
                                     .frame(width: 30.0)
-                                Button {
-                                    game.caller = player
-                                    withAnimation {
-                                        game.showing_commander_damage.toggle()
+                                if game.commander_features_enabled {
+                                    Button {
+                                        game.caller = player
+                                        withAnimation {
+                                            game.showing_commander_damage.toggle()
+                                        }
+                                    } label: {
+                                        Image("CommanderDamage")
+                                            .resizable(resizingMode: .stretch)
+                                            .frame(width: 50, height: 50)
+                                            .opacity(0.2)
                                     }
-                                } label: {
-                                    Image("CommanderDamage")
-                                        .resizable(resizingMode: .stretch)
-                                        .frame(width: 50, height: 50)
-                                        .opacity(0.2)
                                 }
+                                
                                 Spacer()
                             }
                             Spacer()
@@ -312,17 +315,20 @@ struct LifeBlock: View {
                             HStack {
                                 Spacer()
                                     .frame(width: 30.0)
-                                Button {
-                                    game.caller = player
-                                    withAnimation {
-                                        game.showing_commander_damage.toggle()
+                                if game.commander_features_enabled {
+                                    Button {
+                                        game.caller = player
+                                        withAnimation {
+                                            game.showing_commander_damage.toggle()
+                                        }
+                                    } label: {
+                                        Image("CommanderDamage")
+                                            .resizable(resizingMode: .stretch)
+                                            .frame(width: 50, height: 50)
+                                            .opacity(0.2)
                                     }
-                                } label: {
-                                    Image("CommanderDamage")
-                                        .resizable(resizingMode: .stretch)
-                                        .frame(width: 50, height: 50)
-                                        .opacity(0.2)
                                 }
+                                
                                 Spacer()
                             }
                             Spacer()

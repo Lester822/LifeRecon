@@ -180,33 +180,38 @@ struct PlayerMenuVert: View {
                 .frame(width: UIScreen.main.bounds.width * 0.597, height: UIScreen.main.bounds.height * 0.1144, alignment: .center)
                 
                 ScrollView(.vertical) {
-                    Button {
-                        withAnimation {
-                            current_game.showing_dungeon = true
+                    VStack {
+                        Button {
+                            withAnimation {
+                                current_game.showing_dungeon = true
+                            }
+                        } label: {
+                            MenuSelector(current_game: current_game, text: "Dungeon Delver", icon: "DungeonIcon")
+                                .frame(width: UIScreen.main.bounds.width * 0.597, height: UIScreen.main.bounds.height * 0.0686, alignment: .center)
                         }
-                    } label: {
-                        MenuSelector(current_game: current_game, text: "Dungeon Delver", icon: "DungeonIcon")
-                            .frame(width: UIScreen.main.bounds.width * 0.597, height: UIScreen.main.bounds.height * 0.0686, alignment: .center)
-                    }
-                    Button {
+                        Button {
+                            
+                        } label: {
+                            MenuSelector(current_game: current_game, text: "Ring Tracker", icon: "RingIcon")
+                                .frame(width: UIScreen.main.bounds.width * 0.597, height: UIScreen.main.bounds.height * 0.0686, alignment: .center)
+                        }
+                        if current_game.commander_features_enabled {
+                            Button {
+                                current_game.showing_player_menu = false
+                                current_game.blur_background = false
+                                current_game.showing_commander_damage = true
+                                
+                            } label: {
+                                MenuSelector(current_game: current_game, text: "Commander Damage", icon: "CommanderIcon")
+                                    .frame(width: UIScreen.main.bounds.width * 0.597, height: UIScreen.main.bounds.height * 0.0686, alignment: .center)
+                            }
+                        }
                         
-                    } label: {
-                        MenuSelector(current_game: current_game, text: "Ring Tracker", icon: "RingIcon")
-                            .frame(width: UIScreen.main.bounds.width * 0.597, height: UIScreen.main.bounds.height * 0.0686, alignment: .center)
                     }
-                    Button {
-                        current_game.showing_player_menu = false
-                        current_game.blur_background = false
-                        current_game.showing_commander_damage = true
-                        
-                    } label: {
-                        MenuSelector(current_game: current_game, text: "Commander Damage", icon: "CommanderIcon")
-                            .frame(width: UIScreen.main.bounds.width * 0.597, height: UIScreen.main.bounds.height * 0.0686, alignment: .center)
-                    }
-                    
+                    .frame(height: UIScreen.main.bounds.height * 0.2288, alignment: current_game.commander_features_enabled ? .top : .center)
                 }
                 .padding(10)
-                .frame(height: UIScreen.main.bounds.height * 0.2288)
+                .frame(height: UIScreen.main.bounds.height * 0.2288, alignment: current_game.commander_features_enabled ? .top : .center)
                 
                 Spacer()
                     .frame(height: UIScreen.main.bounds.height * 0.0114)
