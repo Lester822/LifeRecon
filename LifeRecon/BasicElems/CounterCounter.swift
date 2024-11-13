@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CounterCounter: View {
     var icon: String
+    var add_amount: Int
     @Binding var number: Int
     
     var body: some View {
@@ -19,7 +20,11 @@ struct CounterCounter: View {
                     Button {
                         soft_pulse()
                         withAnimation {
-                            number += 1
+                            if add_amount == -1 {
+                                number = number == 1 ? 2 : 1
+                            } else {
+                                number += add_amount
+                            }
                         }
                     } label: {
                         UnevenRoundedRectangle(cornerRadii: .init(
@@ -29,13 +34,17 @@ struct CounterCounter: View {
                             topTrailing: min(geometry.size.height * 0.2, 40)),
                                                style: .continuous)
                         .padding(.all, 0.0)
-                        .foregroundColor(number != 0 ? .white : .gray)
+                        .foregroundColor(add_amount == -1 ? (number != 1 ? .white : .gray) : (number != 0 ? .white : .gray))
                     }
                     
                     Button {
                         soft_pulse()
                         withAnimation {
-                            number -= 1
+                            if add_amount == -1 {
+                                number = number == 1 ? 2 : 1
+                            } else {
+                                number -= add_amount
+                            }
                         }
                         
                     } label: {
@@ -46,18 +55,18 @@ struct CounterCounter: View {
                             topTrailing: 00.0),
                                                style: .continuous)
                         .padding(.all, 0.0)
-                        .foregroundColor(number != 0 ? .white : .gray)
+                        .foregroundColor(add_amount == -1 ? (number != 1 ? .white : .gray) : (number != 0 ? .white : .gray))
                     }
                 }
                 .aspectRatio(7/10, contentMode: .fit)
                 
                 VStack (content: {
                     if icon != "NONE" {
-                        if number == 0 {
+                        if (number == 0 || (number == 1 && add_amount == -1)) {
                             Image(icon)
                                 .resizable(resizingMode: .stretch)
                                 .frame(width: geometry.size.height * 0.4857, height: geometry.size.height * 0.4857)
-                                .padding(.top, geometry.size.height * 0.1)
+                                .padding(.top, geometry.size.height * 0.05)
                                 .allowsHitTesting(false)
                             
                             
@@ -107,5 +116,5 @@ struct CounterCounter: View {
 }
 
 #Preview {
-    CounterCounter(icon: "UnknownIconIcon", number: .constant(0))
+    CounterCounter(icon: "UnknownIconIcon", add_amount: 1, number: .constant(0))
 }

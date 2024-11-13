@@ -8,7 +8,7 @@
 import SwiftUI
 import UIKit
 
-struct TaxCounter: View {
+struct CommanderCountCounter: View {
     @Binding var number: Int
     var block_color: Color
     var type: String
@@ -86,5 +86,5 @@ struct TaxCounter: View {
 }
 
 #Preview {
-    TaxCounter(number: .constant(10), block_color: .red, type: "count_by_one",player: Player(life_total: 30, name: "PLAYER 1"), current_game: ActiveGame(player_count: 4, starting_life: 40))
+    CommanderCountCounter(number: .constant(10), block_color: .red, type: "count_by_one",player: Player(life_total: 30, name: "PLAYER 1"), current_game: ActiveGame(player_count: 4, starting_life: 40))
 }

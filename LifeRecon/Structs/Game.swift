@@ -37,6 +37,8 @@ class ActiveGame: ObservableObject {
     @Published var showing_dungeon: Bool
     @Published var blur_background: Bool
     
+    @Published var commander_features_enabled: Bool
+    
     
     init(player_count: Int, starting_life: Int) {
         self.player_count = player_count
@@ -61,6 +63,7 @@ class ActiveGame: ObservableObject {
         self.keypad_current_text = ""
         self.showing_commander_damage = false
         self.showing_dungeon = false
+        self.commander_features_enabled = true
     }
     
     func new_player_count(new_number: Int) {

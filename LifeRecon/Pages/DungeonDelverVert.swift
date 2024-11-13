@@ -19,7 +19,7 @@ struct DungeonDelverVert: View {
                 Text("Dungeon Delver")
                     .font(.largeTitle)
                     .fontWeight(.heavy)
-                    .foregroundStyle(.red)
+                    .foregroundStyle(.orange)
                 Text("Choose a dungeon to venture into")
                     .padding(.bottom, 10.0)
                     .foregroundStyle(.white)

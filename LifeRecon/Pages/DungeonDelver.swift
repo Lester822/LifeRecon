@@ -17,7 +17,7 @@ struct DungeonDelver: View {
                 Text("Dungeon Delver")
                     .font(.largeTitle)
                     .fontWeight(.heavy)
-                    .foregroundStyle(.red)
+                    .foregroundStyle(.orange)
                 Text("Choose a dungeon to venture into")
                     .foregroundStyle(.white)
                 HStack {

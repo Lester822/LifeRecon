@@ -185,6 +185,30 @@ struct LifeBlock: View {
                                         }
                                     }
                                     
+                                    if player.commander_tax_1 != 0 {
+                                        player.active_counters.append("commandertax1")
+                                    } else if player.active_counters.contains("commandertax1") {
+                                        if let index = player.active_counters.firstIndex(of: "commandertax1") {
+                                            player.active_counters.remove(at: index)
+                                        }
+                                    }
+                                    
+                                    if player.commander_tax_2 != 0 {
+                                        player.active_counters.append("commandertax2")
+                                    } else if player.active_counters.contains("commandertax2") {
+                                        if let index = player.active_counters.firstIndex(of: "commandertax2") {
+                                            player.active_counters.remove(at: index)
+                                        }
+                                    }
+                                    
+                                    if player.commander_count > 1 {
+                                        player.active_counters.append("commandercount")
+                                    } else if player.active_counters.contains("commandercount") {
+                                        if let index = player.active_counters.firstIndex(of: "commandercount") {
+                                            player.active_counters.remove(at: index)
+                                        }
+                                    }
+                                    
                                     withAnimation {
                                         game.caller = player
                                         game.showing_player_menu = true

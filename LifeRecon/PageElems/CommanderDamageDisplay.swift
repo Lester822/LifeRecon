@@ -15,7 +15,7 @@ struct CommanderDamageDisplay: View {
                     
                     VStack {
                         if current_game.caller.rotation == -90 {
-                            TaxCounter(number: $player.commander_count, block_color: .orange, type: "commander_count", player: current_game.caller, current_game: current_game)
+                            CommanderCountCounter(number: $player.commander_count, block_color: .orange, type: "commander_count", player: current_game.caller, current_game: current_game)
                                 .frame(height: UIScreen.main.bounds.width * 0.25)
                             
                         } else {
@@ -62,7 +62,7 @@ struct CommanderDamageDisplay: View {
                     
                     VStack {
                         if current_game.caller.rotation == 90 {
-                            TaxCounter(number: $player.commander_count, block_color: .orange, type: "commander_count", player: current_game.caller, current_game: current_game)
+                            CommanderCountCounter(number: $player.commander_count, block_color: .orange, type: "commander_count", player: current_game.caller, current_game: current_game)
                                 //.ignoresSafeArea(false)
                                 .frame(height: UIScreen.main.bounds.width * 0.25)
                         } else {
@@ -100,7 +100,7 @@ struct CommanderDamageDisplay: View {
                         
                     }  // End of Frame Spacer Stack
                     
-                    TaxCounter(number: $player.commander_count, block_color: .orange, type: "commander_count", player: current_game.caller, current_game: current_game)
+                    CommanderCountCounter(number: $player.commander_count, block_color: .orange, type: "commander_count", player: current_game.caller, current_game: current_game)
                     //.ignoresSafeArea(false)
                         .padding(0)
                         .rotationEffect(Angle(degrees: 270))
@@ -118,7 +118,7 @@ struct CommanderDamageDisplay: View {
                             .rotationEffect(Angle(degrees: 270.0))
                         
                     }
-                    TaxCounter(number: $player.commander_count, block_color: .orange, type: "commander_count", player: current_game.caller, current_game: current_game)
+                    CommanderCountCounter(number: $player.commander_count, block_color: .orange, type: "commander_count", player: current_game.caller, current_game: current_game)
                     //.ignoresSafeArea(false)
                         .frame(height: UIScreen.main.bounds.width * 0.25)
                         .rotationEffect(Angle(degrees: 270))

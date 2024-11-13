@@ -16,7 +16,8 @@ struct MenuSelector: View {
         GeometryReader { geometry in
             ZStack {
                 RoundedRectangle(cornerRadius: geometry.size.width * 0.05)
-                    .opacity(0.5)
+                    .opacity(1)
+                    .foregroundStyle(.orange)
                 HStack {
                     Spacer()
                         .frame(width: geometry.size.width*0.05)

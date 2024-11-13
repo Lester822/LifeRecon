@@ -18,6 +18,7 @@ struct DungeonBackground: View {
             Image("DungeonWall")
                 .resizable()
                 .scaledToFill()
+                .scaleEffect(1.2)
             // Set the frame to the maximum dimension
                 .frame(width: maxDimension, height: maxDimension, alignment: .center)
             // Rotate the image before positioning

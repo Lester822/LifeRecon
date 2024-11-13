@@ -203,6 +203,9 @@ struct OptionalSettings: View {
                     player.has_initiative = false
                     player.has_cities_blessing = false
                     
+                    player.commander_tax_1 = 0
+                    player.commander_tax_2 = 0
+                    
                     for _ in current_game.players {
                         player.commander_damage.append([0])
                     }

@@ -20,7 +20,7 @@ struct PlayerMenu: View {
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 25.0)
-                .frame(width: UIScreen.main.bounds.height * 0.85, height: UIScreen.main.bounds.width * 0.8)
+                .frame(width: UIScreen.main.bounds.height * 0.85, height: UIScreen.main.bounds.width * 0.9)
                 .foregroundColor(.black)
                 .opacity(0.5)
                 .allowsHitTesting(true)
@@ -42,54 +42,15 @@ struct PlayerMenu: View {
                             .frame(width: UIScreen.main.bounds.width * 0.1168, height: UIScreen.main.bounds.width * 0.1168)
                     }
                 }
-                Spacer()
-                    .frame(height: UIScreen.main.bounds.width * 0.28)
+//                Spacer()
+//                    .frame(height: UIScreen.main.bounds.width * 0.28)
             }
             // Toggle Row End
             
             // Scroll Long Bar
+        
             
-            VStack {
-                
-                HStack {
-                    ScrollView(.vertical) {
-                        Button {
-                            withAnimation {
-                                current_game.showing_dungeon = true
-                            }
-                        } label: {
-                            MenuSelector(current_game: current_game, text: "Dungeon Delver", icon: "DungeonIcon")
-                                .frame(width: UIScreen.main.bounds.height * 0.2188, height: UIScreen.main.bounds.width * 0.1243, alignment: .center)
-                        }
-                        Button {
-                            print(UIScreen.main.bounds.height)
-                            print(UIScreen.main.bounds.width)
-                        } label: {
-                            MenuSelector(current_game: current_game, text: "Ring Tracker", icon: "RingIcon")
-                                .frame(width: UIScreen.main.bounds.height * 0.2188, height: UIScreen.main.bounds.width * 0.1243, alignment: .center)
-                        }
-                        Button {
-                            current_game.showing_player_menu = false
-                            current_game.blur_background = false
-                            current_game.showing_commander_damage = true
-                            
-                        } label: {
-                            MenuSelector(current_game: current_game, text: "Commander Damage", icon: "CommanderIcon")
-                                .frame(width: UIScreen.main.bounds.height * 0.2188, height: UIScreen.main.bounds.width * 0.1243, alignment: .center)
-                        }
-                        
-                    }
-                    .padding(10)
-                    .frame(height: UIScreen.main.bounds.width * 0.4975)
-                    
-                    Spacer()
-                        .frame(width: (UIScreen.main.bounds.height * 0.3432) + (UIScreen.main.bounds.height * 0.2188) + (UIScreen.main.bounds.height * 0.01)) // WIDTH OF CENTER THING + WIDTH OF MENU
-
-                }
-                
-            }
-            
-            
+    
             VStack {  // Main Contents Container
                 Spacer()
                     .frame(height: UIScreen.main.bounds.width * 0.0249)
@@ -112,100 +73,162 @@ struct PlayerMenu: View {
                     }
                 }
                 
-                Spacer()
-                    .frame(height: 30)
-                
                 HStack {
-                    Spacer()
-                        .frame(height: 1)
 
                     ScrollView(.horizontal) {
                         HStack {
+                            
+                            if current_game.commander_features_enabled  {
+                                if current_game.caller.active_counters.contains("commandercount") {
+                                    CounterCounter(icon: "CommanderCountIcon", add_amount: -1, number: $current_game.caller.commander_count)
+                                        .frame(width: UIScreen.main.bounds.height * 0.08)
+                                }
+                                if current_game.caller.active_counters.contains("commandertax1") {
+                                    CounterCounter(icon: "CommanderTax1", add_amount: 2, number: $current_game.caller.commander_tax_1)
+                                        .frame(width: UIScreen.main.bounds.height * 0.08)
+                                }
+                                
+                                if current_game.caller.active_counters.contains("commandertax2") {
+                                    if current_game.caller.commander_count > 1 {
+                                        CounterCounter(icon: "CommanderTax2", add_amount: 2, number: $current_game.caller.commander_tax_2)
+                                            .frame(width: UIScreen.main.bounds.height * 0.08)
+                                    }
+                                }
+                                
+                                
+                            }
+                            
                             if current_game.caller.active_counters.contains("poison") {
-                                CounterCounter(icon: "PoisonCount", number: $current_game.caller.poison_counters)
+                                CounterCounter(icon: "PoisonCount", add_amount: 1, number: $current_game.caller.poison_counters)
                                     .frame(width: UIScreen.main.bounds.height * 0.08)
                             }
                             
                             if current_game.caller.active_counters.contains("energy") {
-                                CounterCounter(icon: "EnergyCount", number: $current_game.caller.energy_counters)
+                                CounterCounter(icon: "EnergyCount", add_amount: 1, number: $current_game.caller.energy_counters)
                                     .frame(width: UIScreen.main.bounds.height * 0.08)
                             }
                             
                             if current_game.caller.active_counters.contains("storm") {
-                                CounterCounter(icon: "StormCount", number: $current_game.caller.storm_count)
+                                CounterCounter(icon: "StormCount", add_amount: 1, number: $current_game.caller.storm_count)
                                     .frame(width: UIScreen.main.bounds.height * 0.08)
                             }
                             
                             if current_game.caller.active_counters.contains("experience") {
-                                CounterCounter(icon: "ExperienceCount", number: $current_game.caller.experience_counters)
+                                CounterCounter(icon: "ExperienceCount", add_amount: 1, number: $current_game.caller.experience_counters)
                                     .frame(width: UIScreen.main.bounds.height * 0.08)
                             }
                             
                             if current_game.caller.active_counters.contains("rad") {
-                                CounterCounter(icon: "RadCount", number: $current_game.caller.rad_counters)
+                                CounterCounter(icon: "RadCount", add_amount: 1, number: $current_game.caller.rad_counters)
                                     .frame(width: UIScreen.main.bounds.height * 0.08)
                             }
                             
                             if current_game.caller.active_counters.contains("ticket") {
-                                CounterCounter(icon: "TicketCount", number: $current_game.caller.ticket_counters)
+                                CounterCounter(icon: "TicketCount", add_amount: 1, number: $current_game.caller.ticket_counters)
                                     .frame(width: UIScreen.main.bounds.height * 0.08)
                             }
                             
                             if current_game.caller.active_counters.contains("acorn") {
-                                CounterCounter(icon: "AcornCount", number: $current_game.caller.acorn_counters)
+                                CounterCounter(icon: "AcornCount", add_amount: 1, number: $current_game.caller.acorn_counters)
                                     .frame(width: UIScreen.main.bounds.height * 0.08)
                             }
                             
                             
                             // UNCLICKED SECTION
-                                                    
+                            if current_game.commander_features_enabled {
+                                if !current_game.caller.active_counters.contains("commandercount") {
+                                    CounterCounter(icon: "CommanderCountIcon", add_amount: -1, number: $current_game.caller.commander_count)
+                                        .frame(width: UIScreen.main.bounds.height * 0.08)
+                                }
+                                if !current_game.caller.active_counters.contains("commandertax1") {
+                                    CounterCounter(icon: "CommanderTax1", add_amount: 2, number: $current_game.caller.commander_tax_1)
+                                        .frame(width: UIScreen.main.bounds.height * 0.08)
+                                }
+                                if !current_game.caller.active_counters.contains("commandertax2") {
+                                    if current_game.caller.commander_count > 1 {
+                                        CounterCounter(icon: "CommanderTax2", add_amount: 2, number: $current_game.caller.commander_tax_2)
+                                            .frame(width: UIScreen.main.bounds.height * 0.08)
+                                    }
+                                }
+                               
+                            }
+                            
                             if !current_game.caller.active_counters.contains("poison") {
-                                CounterCounter(icon: "PoisonCount", number: $current_game.caller.poison_counters)
+                                CounterCounter(icon: "PoisonCount", add_amount: 1, number: $current_game.caller.poison_counters)
                                     .frame(width: UIScreen.main.bounds.height * 0.08)
                             }
                             
                             if !current_game.caller.active_counters.contains("energy") {
-                                CounterCounter(icon: "EnergyCount", number: $current_game.caller.energy_counters)
+                                CounterCounter(icon: "EnergyCount", add_amount: 1, number: $current_game.caller.energy_counters)
                                     .frame(width: UIScreen.main.bounds.height * 0.08)
                             }
                             
                             if !current_game.caller.active_counters.contains("storm") {
-                                CounterCounter(icon: "StormCount", number: $current_game.caller.storm_count)
+                                CounterCounter(icon: "StormCount", add_amount: 1, number: $current_game.caller.storm_count)
                                     .frame(width: UIScreen.main.bounds.height * 0.08)
                             }
                             
                             if !current_game.caller.active_counters.contains("experience") {
-                                CounterCounter(icon: "ExperienceCount", number: $current_game.caller.experience_counters)
+                                CounterCounter(icon: "ExperienceCount", add_amount: 1, number: $current_game.caller.experience_counters)
                                     .frame(width: UIScreen.main.bounds.height * 0.08)
                             }
                             
                             if !current_game.caller.active_counters.contains("rad") {
-                                CounterCounter(icon: "RadCount", number: $current_game.caller.rad_counters)
+                                CounterCounter(icon: "RadCount", add_amount: 1, number: $current_game.caller.rad_counters)
                                     .frame(width: UIScreen.main.bounds.height * 0.08)
                             }
                             
                             if !current_game.caller.active_counters.contains("ticket") {
-                                CounterCounter(icon: "TicketCount", number: $current_game.caller.ticket_counters)
+                                CounterCounter(icon: "TicketCount", add_amount: 1, number: $current_game.caller.ticket_counters)
                                     .frame(width: UIScreen.main.bounds.height * 0.08)
                             }
                             
                             if !current_game.caller.active_counters.contains("acorn") {
-                                CounterCounter(icon: "AcornCount", number: $current_game.caller.acorn_counters)
+                                CounterCounter(icon: "AcornCount", add_amount: 1, number: $current_game.caller.acorn_counters)
                                     .frame(width: UIScreen.main.bounds.height * 0.08)
                             }
                             
                         }
-                        .frame(height: UIScreen.main.bounds.width * 0.2488)
+                        .frame(height: UIScreen.main.bounds.width * 0.2488, alignment: .center)
                     }
-                    .frame(width: UIScreen.main.bounds.height * 0.3432, alignment: .center)
-                   .padding(.horizontal, 10.0)
-                    Spacer()
-                        .frame(width: UIScreen.main.bounds.height * 0.2288)
+                    .frame(width: UIScreen.main.bounds.height * 0.5432, alignment: .center)
+
                 }
                 
-                Spacer()
-                    .frame(height: UIScreen.main.bounds.width * 0.0995)
+//                Spacer()
+//                    .frame(height: UIScreen.main.bounds.width * 0.0995)
                 
+                ScrollView(.horizontal) {
+                    HStack {
+                        Button {
+                            withAnimation {
+                                current_game.showing_dungeon = true
+                            }
+                        } label: {
+                            MenuSelector(current_game: current_game, text: "Dungeon Delver", icon: "DungeonIcon")
+                                .frame(width: UIScreen.main.bounds.width * 0.397, height: UIScreen.main.bounds.height * 0.0586, alignment: .center)
+                        }
+                        Button {
+                            
+                        } label: {
+                            MenuSelector(current_game: current_game, text: "Ring Tracker", icon: "RingIcon")
+                                .frame(width: UIScreen.main.bounds.width * 0.397, height: UIScreen.main.bounds.height * 0.0586, alignment: .center)
+                        }
+                        Button {
+                            current_game.showing_player_menu = false
+                            current_game.blur_background = false
+                            current_game.showing_commander_damage = true
+                            
+                        } label: {
+                            MenuSelector(current_game: current_game, text: "Commander Damage", icon: "CommanderIcon")
+                                .frame(width: UIScreen.main.bounds.width * 0.397, height: UIScreen.main.bounds.height * 0.0586, alignment: .center)
+                        }
+                        
+                    }
+                    .frame(alignment: .center)
+                }
+                .frame(width: UIScreen.main.bounds.height * 0.5432, alignment: .center)
+                .padding(10)
                 
                     HStack { // Mana Floating
                         

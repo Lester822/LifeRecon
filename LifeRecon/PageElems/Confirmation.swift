@@ -84,6 +84,8 @@ struct Confirmation: View {
                 player.dungeon_position = ""
                 player.completed_dungeons = []
                 
+                player.commander_tax_1 = 0
+                player.commander_tax_2 = 0
                 for _ in current_game.players {
                     player.commander_damage.append([0])
                 }
