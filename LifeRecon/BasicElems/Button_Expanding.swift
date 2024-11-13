@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ExpandingButton: View {
+struct Button_Expanding: View {
     @ObservedObject var current_game: ActiveGame
     @State var mode = "circle"
     
@@ -61,5 +61,5 @@ struct ExpandingButton: View {
 }
 
 #Preview {
-    ExpandingButton(current_game: ActiveGame(player_count: 4, starting_life: 40), item_color: .red)
+    Button_Expanding(current_game: ActiveGame(player_count: 4, starting_life: 40), item_color: .red)
 }

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct LargeKey: View {
+struct Key_Large: View {
     let given_text: String
     let color: Color
     let background: Color
@@ -28,5 +28,5 @@ struct LargeKey: View {
 }
 
 #Preview {
-    LargeKey(given_text: "1", color: .black, background: Color(hue: 1.0, saturation: 0.0, brightness: 0.835))
+    Key_Large(given_text: "1", color: .black, background: Color(hue: 1.0, saturation: 0.0, brightness: 0.835))
 }

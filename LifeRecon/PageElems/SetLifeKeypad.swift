@@ -104,7 +104,7 @@ struct SetLifeKeypad: View {
                                 current_game.keypad_current_text = current_game.keypad_current_text + "1"
                             }
                         } label: {
-                            KeypadKey(given_text: "1", color: .black, background: Color(hue: 1.0, saturation: 0.0, brightness: 0.835))
+                            Key_Keypad(given_text: "1", color: .black, background: Color(hue: 1.0, saturation: 0.0, brightness: 0.835))
                         }
                         Button {
                             haptic_pulse()
@@ -112,7 +112,7 @@ struct SetLifeKeypad: View {
                                 current_game.keypad_current_text = current_game.keypad_current_text + "4"
                             }
                         } label: {
-                            KeypadKey(given_text: "4", color: .black, background: Color(hue: 1.0, saturation: 0.0, brightness: 0.835))
+                            Key_Keypad(given_text: "4", color: .black, background: Color(hue: 1.0, saturation: 0.0, brightness: 0.835))
                         }
                         Button {
                             haptic_pulse()
@@ -120,7 +120,7 @@ struct SetLifeKeypad: View {
                                 current_game.keypad_current_text = current_game.keypad_current_text + "7"
                             }
                         } label: {
-                            KeypadKey(given_text: "7", color: .black, background: Color(hue: 1.0, saturation: 0.0, brightness: 0.835))
+                            Key_Keypad(given_text: "7", color: .black, background: Color(hue: 1.0, saturation: 0.0, brightness: 0.835))
                         }
                         Button {
                             haptic_pulse()
@@ -128,7 +128,7 @@ struct SetLifeKeypad: View {
                                 print("BLANK")
                             }
                         } label: {
-                            BlankKey()
+                            Key_Blank()
                         }
                     })
                     VStack(content: {
@@ -138,7 +138,7 @@ struct SetLifeKeypad: View {
                                 current_game.keypad_current_text = current_game.keypad_current_text + "2"
                             }
                         } label: {
-                            KeypadKey(given_text: "2", color: .black, background: Color(hue: 1.0, saturation: 0.0, brightness: 0.835))
+                            Key_Keypad(given_text: "2", color: .black, background: Color(hue: 1.0, saturation: 0.0, brightness: 0.835))
                         }
                         Button {
                             haptic_pulse()
@@ -146,7 +146,7 @@ struct SetLifeKeypad: View {
                                 current_game.keypad_current_text = current_game.keypad_current_text + "5"
                             }
                         } label: {
-                            KeypadKey(given_text: "5", color: .black, background: Color(hue: 1.0, saturation: 0.0, brightness: 0.835))
+                            Key_Keypad(given_text: "5", color: .black, background: Color(hue: 1.0, saturation: 0.0, brightness: 0.835))
                         }
                         Button {
                             haptic_pulse()
@@ -154,7 +154,7 @@ struct SetLifeKeypad: View {
                                 current_game.keypad_current_text = current_game.keypad_current_text + "8"
                             }
                         } label: {
-                            KeypadKey(given_text: "8", color: .black, background: Color(hue: 1.0, saturation: 0.0, brightness: 0.835))
+                            Key_Keypad(given_text: "8", color: .black, background: Color(hue: 1.0, saturation: 0.0, brightness: 0.835))
                         }
                         Button {
                             haptic_pulse()
@@ -162,7 +162,7 @@ struct SetLifeKeypad: View {
                                 current_game.keypad_current_text = current_game.keypad_current_text + "0"
                             }
                         } label: {
-                            KeypadKey(given_text: "0", color: .black, background: Color(hue: 1.0, saturation: 0.0, brightness: 0.835))
+                            Key_Keypad(given_text: "0", color: .black, background: Color(hue: 1.0, saturation: 0.0, brightness: 0.835))
                         }
                     })
                     VStack(content: {
@@ -172,7 +172,7 @@ struct SetLifeKeypad: View {
                                 current_game.keypad_current_text = current_game.keypad_current_text + "3"
                             }
                         } label: {
-                            KeypadKey(given_text: "3", color: .black, background: Color(hue: 1.0, saturation: 0.0, brightness: 0.835))
+                            Key_Keypad(given_text: "3", color: .black, background: Color(hue: 1.0, saturation: 0.0, brightness: 0.835))
                         }
                         Button {
                             haptic_pulse()
@@ -180,7 +180,7 @@ struct SetLifeKeypad: View {
                                 current_game.keypad_current_text = current_game.keypad_current_text + "6"
                             }
                         } label: {
-                            KeypadKey(given_text: "6", color: .black, background: Color(hue: 1.0, saturation: 0.0, brightness: 0.835))
+                            Key_Keypad(given_text: "6", color: .black, background: Color(hue: 1.0, saturation: 0.0, brightness: 0.835))
                         }
                         Button {
                             haptic_pulse()
@@ -188,7 +188,7 @@ struct SetLifeKeypad: View {
                                 current_game.keypad_current_text = current_game.keypad_current_text + "9"
                             }
                         } label: {
-                            KeypadKey(given_text: "9", color: .black, background: Color(hue: 1.0, saturation: 0.0, brightness: 0.835))
+                            Key_Keypad(given_text: "9", color: .black, background: Color(hue: 1.0, saturation: 0.0, brightness: 0.835))
                         }
                         Button {
                             haptic_pulse()
@@ -196,7 +196,7 @@ struct SetLifeKeypad: View {
                                 current_game.keypad_current_text.removeLast()
                             }
                         } label: {
-                            KeypadKey(given_text: "←", color: .black, background: .white)
+                            Key_Keypad(given_text: "←", color: .black, background: .white)
                         }
                         
 
@@ -243,7 +243,7 @@ struct SetLifeKeypad: View {
                             }
                             current_game.current_rotation = 0
                         } label: {
-                            LargeKey(given_text: "Cancel", color: .red, background: Color(hue: 1.0, saturation: 0.0, brightness: 0.835))
+                            Key_Large(given_text: "Cancel", color: .red, background: Color(hue: 1.0, saturation: 0.0, brightness: 0.835))
                         }
                         .transition(.zoomIt)
                         Button {
@@ -287,7 +287,7 @@ struct SetLifeKeypad: View {
                             
                             
                         } label: {
-                            LargeKey(given_text: "Submit", color: .white, background: .red)
+                            Key_Large(given_text: "Submit", color: .white, background: .red)
                         }
                     })
 

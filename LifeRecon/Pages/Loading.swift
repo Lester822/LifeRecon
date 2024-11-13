@@ -31,7 +31,7 @@ struct Loading: View {
                     current_game.commander_features_enabled = true
                     
                 } label: {
-                    HomeScreenKey(given_text: "Start Game", color: .white, background: .black)
+                    Key_HomeScreen(given_text: "Start Game", color: .white, background: .black)
                 }
                 if current_game.in_progress == true {
                     Button {
@@ -60,7 +60,7 @@ struct Loading: View {
                             }
                         }
                     } label: {
-                        HomeScreenKey(given_text: "Resume Game", color: .white, background: .red)
+                        Key_HomeScreen(given_text: "Resume Game", color: .white, background: .red)
                     }
                 }
                 Spacer()

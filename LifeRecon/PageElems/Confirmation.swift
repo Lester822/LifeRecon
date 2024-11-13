@@ -34,7 +34,7 @@ struct Confirmation: View {
                         current_game.blur_background = false
                         
                     } label: {
-                        LargeKey(given_text: "No", color: .black, background: .white)
+                        Key_Large(given_text: "No", color: .black, background: .white)
                     }
                     
                     Button {
@@ -44,7 +44,7 @@ struct Confirmation: View {
                             reset_game()
                         }
                     } label: {
-                        LargeKey(given_text: "Yes", color: .black, background: .green)
+                        Key_Large(given_text: "Yes", color: .black, background: .green)
                     }
                     
                 }

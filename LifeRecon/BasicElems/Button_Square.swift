@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SquareButton: View {
+struct Button_Square: View {
     var button_color: Color
     var text_color: Color
     var title: String
@@ -44,5 +44,5 @@ struct SquareButton: View {
 }
 
 #Preview {
-    SquareButton(button_color:.black, text_color: .white, title: "Title", icon: "UnknownIconIcon")
+    Button_Square(button_color:.black, text_color: .white, title: "Title", icon: "UnknownIconIcon")
 }

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MenuSelector: View {
+struct Button_AdvancedFeatureSelection: View {
     @ObservedObject var current_game: ActiveGame
     var text: String
     var icon: String
@@ -43,7 +43,7 @@ struct MenuSelector: View {
 }
 
 #Preview {
-    MenuSelector(current_game: ActiveGame(player_count: 4, starting_life: 40), text: "Commander Menu That Takes Two", icon: "DungeonIcon")
+    Button_AdvancedFeatureSelection(current_game: ActiveGame(player_count: 4, starting_life: 40), text: "Commander Menu That Takes Two", icon: "DungeonIcon")
         .padding(10)
         .frame(width: UIScreen.main.bounds.width, height:UIScreen.main.bounds.width/4)
 }

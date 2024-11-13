@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SingleToggleCircle: View {
+struct Toggle_Single_Circle: View {
     @Binding var toggle: Bool
     var icon: String
     var type: String
@@ -78,5 +78,5 @@ struct SingleToggleCircle: View {
 }
 
 #Preview {
-    SingleToggleCircle(toggle: Binding.constant(true), icon: "UnknownIconIcon", type: "monarch", current_game: ActiveGame(player_count: 40, starting_life: 4))
+    Toggle_Single_Circle(toggle: Binding.constant(true), icon: "UnknownIconIcon", type: "monarch", current_game: ActiveGame(player_count: 40, starting_life: 4))
 }

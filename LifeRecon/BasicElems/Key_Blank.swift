@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct BlankKey: View {
+struct Key_Blank: View {
     var body: some View {
         RoundedRectangle(cornerRadius: 15)
             .frame(width: 60, height: 35)
@@ -16,5 +16,5 @@ struct BlankKey: View {
 }
 
 #Preview {
-    BlankKey()
+    Key_Blank()
 }

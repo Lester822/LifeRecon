@@ -8,12 +8,12 @@
 import SwiftUI
 import UIKit
 
-struct NumberCircle: View {
+struct Counter_CommanderCount: View {
     @Binding var number: Int
     var block_color: Color
+    var type: String
     @ObservedObject var player: Player
     @ObservedObject var current_game: ActiveGame
-    var type: String
     
     var body: some View {
         GeometryReader { geometry in
@@ -21,75 +21,70 @@ struct NumberCircle: View {
                 VStack(spacing: 0.0) {
                     Button {
                         soft_pulse()
-                        if type == "mana" {
+                        if type == "count_by_one" {
                             withAnimation(.easeIn(duration: 0.3)) {
                                 number += 1
                             }
-                        } else if type == "commander_damage" {
+                        } else if type == "commander_count" {
                             withAnimation(.easeIn(duration: 0.3)) {
-                                number += 1
-                                if player.subtract_life_with_cmdr_damage {
-                                    player.life_total -= 1
-                                }
+                                number = number == 2 ? 1 : 2
                             }
-                            
                         }
                         
                     } label: {
                         UnevenRoundedRectangle(cornerRadii: .init(
-                            topLeading: 5000.0,
+                            topLeading: geometry.size.width * 0.18,
                             bottomLeading: 00.0,
                             bottomTrailing: 00.0,
-                            topTrailing: 5000.0),
+                            topTrailing: geometry.size.width * 0.18),
                             style: .continuous)
                         .padding(.all, 0.0)
                         //.frame(height: geometry.size.width / 2)
                         .foregroundColor(block_color)
+                        .frame(width: geometry.size.width/1.8)
                     }
                     
                     Button {
                         soft_pulse()
-                        if type == "mana" {
+                        if type == "count_by_one" {
                             withAnimation(.easeIn(duration: 0.3)) {
                                 number -= 1
                             }
-                        } else if type == "commander_damage" {
+                        } else if type == "commander_count" {
                             withAnimation(.easeIn(duration: 0.3)) {
-                                number -= 1
-                                if player.subtract_life_with_cmdr_damage {
-                                    player.life_total += 1
-                                }
+                                number = number == 2 ? 1 : 2
                             }
                         }
-                        
                     } label: {
                         UnevenRoundedRectangle(cornerRadii: .init(
                             topLeading: 00.0,
-                            bottomLeading: 5000.0,
-                            bottomTrailing: 5000.0,
+                            bottomLeading: geometry.size.width * 0.18,
+                            bottomTrailing: geometry.size.width * 0.18,
                             topTrailing: 00.0),
                             style: .continuous)
                         .padding(.all, 0.0)
                         //.frame(height: geometry.size.width / 2)
                         .foregroundColor(block_color)
+                        .frame(width: geometry.size.width/1.8)
                     }
                 }
                 //.frame(width: geometry.size.width)
                 
                 Text(String(number))
-                    .font(.system(size: geometry.size.width * 0.3))
                     .fontWeight(.bold)
-                    .foregroundColor(type == "mana" ? Color.black : Color.white)
+                    .foregroundColor(Color.white)
                     .padding(0.0)
-                    
+                    .allowsHitTesting(false)
+                    .font(.system(size: geometry.size.width * 0.3))
             }
             .padding(0.0)
+            .frame(maxWidth: .infinity, alignment: .center)
             //.frame(width: geometry.size.width, height: geometry.size.width) // Ensure square shape
         }
-        .aspectRatio(1, contentMode: .fit) // Maintain aspect ratio
+        .aspectRatio(1.3, contentMode: .fit) // Maintain aspect ratio
     }
 }
 
 #Preview {
-    NumberCircle(number: .constant(10), block_color: .red, player: Player(life_total: 30, name: "PLAYER 1"), current_game: ActiveGame(player_count: 4, starting_life: 40), type: "test")
+    Counter_CommanderCount(number: .constant(10), block_color: .red, type: "count_by_one",player: Player(life_total: 30, name: "PLAYER 1"), current_game: ActiveGame(player_count: 4, starting_life: 40))
 }

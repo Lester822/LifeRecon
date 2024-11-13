@@ -31,13 +31,13 @@ struct PlayerMenu: View {
                     Spacer()
                         .frame(width: UIScreen.main.bounds.height * 0.75)
                     VStack {
-                        SingleToggleCircle(toggle: $current_game.caller.is_monarch, icon: "MonarchIcon", type: "monarch", current_game: current_game)
+                        Toggle_Single_Circle(toggle: $current_game.caller.is_monarch, icon: "MonarchIcon", type: "monarch", current_game: current_game)
                             .padding(.bottom, 3.0)
                             .frame(width: UIScreen.main.bounds.width * 0.1168, height: UIScreen.main.bounds.width * 0.1168)
-                        SingleToggleCircle(toggle: $current_game.caller.has_initiative, icon: "InitiativeIcon", type: "initiative", current_game: current_game)
+                        Toggle_Single_Circle(toggle: $current_game.caller.has_initiative, icon: "InitiativeIcon", type: "initiative", current_game: current_game)
                             .padding(.bottom, 3.0)
                             .frame(width: UIScreen.main.bounds.width * 0.1168, height: UIScreen.main.bounds.width * 0.1168)
-                        ToggleCircle(toggle: $current_game.caller.has_cities_blessing, icon: "CitiesBlessingIcon", current_game: current_game)
+                        Toggle_Circle(toggle: $current_game.caller.has_cities_blessing, icon: "CitiesBlessingIcon", current_game: current_game)
                             .padding(.bottom, 3.0)
                             .frame(width: UIScreen.main.bounds.width * 0.1168, height: UIScreen.main.bounds.width * 0.1168)
                     }
@@ -80,17 +80,17 @@ struct PlayerMenu: View {
                             
                             if current_game.commander_features_enabled  {
                                 if current_game.caller.active_counters.contains("commandercount") {
-                                    CounterCounter(icon: "CommanderCountIcon", add_amount: -1, number: $current_game.caller.commander_count)
+                                    Counter_GameCounters(icon: "CommanderCountIcon", add_amount: -1, number: $current_game.caller.commander_count)
                                         .frame(width: UIScreen.main.bounds.height * 0.08)
                                 }
                                 if current_game.caller.active_counters.contains("commandertax1") {
-                                    CounterCounter(icon: "CommanderTax1", add_amount: 2, number: $current_game.caller.commander_tax_1)
+                                    Counter_GameCounters(icon: "CommanderTax1", add_amount: 2, number: $current_game.caller.commander_tax_1)
                                         .frame(width: UIScreen.main.bounds.height * 0.08)
                                 }
                                 
                                 if current_game.caller.active_counters.contains("commandertax2") {
                                     if current_game.caller.commander_count > 1 {
-                                        CounterCounter(icon: "CommanderTax2", add_amount: 2, number: $current_game.caller.commander_tax_2)
+                                        Counter_GameCounters(icon: "CommanderTax2", add_amount: 2, number: $current_game.caller.commander_tax_2)
                                             .frame(width: UIScreen.main.bounds.height * 0.08)
                                     }
                                 }
@@ -99,37 +99,37 @@ struct PlayerMenu: View {
                             }
                             
                             if current_game.caller.active_counters.contains("poison") {
-                                CounterCounter(icon: "PoisonCount", add_amount: 1, number: $current_game.caller.poison_counters)
+                                Counter_GameCounters(icon: "PoisonCount", add_amount: 1, number: $current_game.caller.poison_counters)
                                     .frame(width: UIScreen.main.bounds.height * 0.08)
                             }
                             
                             if current_game.caller.active_counters.contains("energy") {
-                                CounterCounter(icon: "EnergyCount", add_amount: 1, number: $current_game.caller.energy_counters)
+                                Counter_GameCounters(icon: "EnergyCount", add_amount: 1, number: $current_game.caller.energy_counters)
                                     .frame(width: UIScreen.main.bounds.height * 0.08)
                             }
                             
                             if current_game.caller.active_counters.contains("storm") {
-                                CounterCounter(icon: "StormCount", add_amount: 1, number: $current_game.caller.storm_count)
+                                Counter_GameCounters(icon: "StormCount", add_amount: 1, number: $current_game.caller.storm_count)
                                     .frame(width: UIScreen.main.bounds.height * 0.08)
                             }
                             
                             if current_game.caller.active_counters.contains("experience") {
-                                CounterCounter(icon: "ExperienceCount", add_amount: 1, number: $current_game.caller.experience_counters)
+                                Counter_GameCounters(icon: "ExperienceCount", add_amount: 1, number: $current_game.caller.experience_counters)
                                     .frame(width: UIScreen.main.bounds.height * 0.08)
                             }
                             
                             if current_game.caller.active_counters.contains("rad") {
-                                CounterCounter(icon: "RadCount", add_amount: 1, number: $current_game.caller.rad_counters)
+                                Counter_GameCounters(icon: "RadCount", add_amount: 1, number: $current_game.caller.rad_counters)
                                     .frame(width: UIScreen.main.bounds.height * 0.08)
                             }
                             
                             if current_game.caller.active_counters.contains("ticket") {
-                                CounterCounter(icon: "TicketCount", add_amount: 1, number: $current_game.caller.ticket_counters)
+                                Counter_GameCounters(icon: "TicketCount", add_amount: 1, number: $current_game.caller.ticket_counters)
                                     .frame(width: UIScreen.main.bounds.height * 0.08)
                             }
                             
                             if current_game.caller.active_counters.contains("acorn") {
-                                CounterCounter(icon: "AcornCount", add_amount: 1, number: $current_game.caller.acorn_counters)
+                                Counter_GameCounters(icon: "AcornCount", add_amount: 1, number: $current_game.caller.acorn_counters)
                                     .frame(width: UIScreen.main.bounds.height * 0.08)
                             }
                             
@@ -137,16 +137,16 @@ struct PlayerMenu: View {
                             // UNCLICKED SECTION
                             if current_game.commander_features_enabled {
                                 if !current_game.caller.active_counters.contains("commandercount") {
-                                    CounterCounter(icon: "CommanderCountIcon", add_amount: -1, number: $current_game.caller.commander_count)
+                                    Counter_GameCounters(icon: "CommanderCountIcon", add_amount: -1, number: $current_game.caller.commander_count)
                                         .frame(width: UIScreen.main.bounds.height * 0.08)
                                 }
                                 if !current_game.caller.active_counters.contains("commandertax1") {
-                                    CounterCounter(icon: "CommanderTax1", add_amount: 2, number: $current_game.caller.commander_tax_1)
+                                    Counter_GameCounters(icon: "CommanderTax1", add_amount: 2, number: $current_game.caller.commander_tax_1)
                                         .frame(width: UIScreen.main.bounds.height * 0.08)
                                 }
                                 if !current_game.caller.active_counters.contains("commandertax2") {
                                     if current_game.caller.commander_count > 1 {
-                                        CounterCounter(icon: "CommanderTax2", add_amount: 2, number: $current_game.caller.commander_tax_2)
+                                        Counter_GameCounters(icon: "CommanderTax2", add_amount: 2, number: $current_game.caller.commander_tax_2)
                                             .frame(width: UIScreen.main.bounds.height * 0.08)
                                     }
                                 }
@@ -154,37 +154,37 @@ struct PlayerMenu: View {
                             }
                             
                             if !current_game.caller.active_counters.contains("poison") {
-                                CounterCounter(icon: "PoisonCount", add_amount: 1, number: $current_game.caller.poison_counters)
+                                Counter_GameCounters(icon: "PoisonCount", add_amount: 1, number: $current_game.caller.poison_counters)
                                     .frame(width: UIScreen.main.bounds.height * 0.08)
                             }
                             
                             if !current_game.caller.active_counters.contains("energy") {
-                                CounterCounter(icon: "EnergyCount", add_amount: 1, number: $current_game.caller.energy_counters)
+                                Counter_GameCounters(icon: "EnergyCount", add_amount: 1, number: $current_game.caller.energy_counters)
                                     .frame(width: UIScreen.main.bounds.height * 0.08)
                             }
                             
                             if !current_game.caller.active_counters.contains("storm") {
-                                CounterCounter(icon: "StormCount", add_amount: 1, number: $current_game.caller.storm_count)
+                                Counter_GameCounters(icon: "StormCount", add_amount: 1, number: $current_game.caller.storm_count)
                                     .frame(width: UIScreen.main.bounds.height * 0.08)
                             }
                             
                             if !current_game.caller.active_counters.contains("experience") {
-                                CounterCounter(icon: "ExperienceCount", add_amount: 1, number: $current_game.caller.experience_counters)
+                                Counter_GameCounters(icon: "ExperienceCount", add_amount: 1, number: $current_game.caller.experience_counters)
                                     .frame(width: UIScreen.main.bounds.height * 0.08)
                             }
                             
                             if !current_game.caller.active_counters.contains("rad") {
-                                CounterCounter(icon: "RadCount", add_amount: 1, number: $current_game.caller.rad_counters)
+                                Counter_GameCounters(icon: "RadCount", add_amount: 1, number: $current_game.caller.rad_counters)
                                     .frame(width: UIScreen.main.bounds.height * 0.08)
                             }
                             
                             if !current_game.caller.active_counters.contains("ticket") {
-                                CounterCounter(icon: "TicketCount", add_amount: 1, number: $current_game.caller.ticket_counters)
+                                Counter_GameCounters(icon: "TicketCount", add_amount: 1, number: $current_game.caller.ticket_counters)
                                     .frame(width: UIScreen.main.bounds.height * 0.08)
                             }
                             
                             if !current_game.caller.active_counters.contains("acorn") {
-                                CounterCounter(icon: "AcornCount", add_amount: 1, number: $current_game.caller.acorn_counters)
+                                Counter_GameCounters(icon: "AcornCount", add_amount: 1, number: $current_game.caller.acorn_counters)
                                     .frame(width: UIScreen.main.bounds.height * 0.08)
                             }
                             
@@ -205,13 +205,13 @@ struct PlayerMenu: View {
                                 current_game.showing_dungeon = true
                             }
                         } label: {
-                            MenuSelector(current_game: current_game, text: "Dungeon Delver", icon: "DungeonIcon")
+                            Button_AdvancedFeatureSelection(current_game: current_game, text: "Dungeon Delver", icon: "DungeonIcon")
                                 .frame(width: UIScreen.main.bounds.width * 0.397, height: UIScreen.main.bounds.height * 0.0586)
                         }
                         Button {
                             // Your action here
                         } label: {
-                            MenuSelector(current_game: current_game, text: "Ring Tracker", icon: "RingIcon")
+                            Button_AdvancedFeatureSelection(current_game: current_game, text: "Ring Tracker", icon: "RingIcon")
                                 .frame(width: UIScreen.main.bounds.width * 0.397, height: UIScreen.main.bounds.height * 0.0586)
                         }
                         if current_game.commander_features_enabled {
@@ -220,7 +220,7 @@ struct PlayerMenu: View {
                                 current_game.blur_background = false
                                 current_game.showing_commander_damage = true
                             } label: {
-                                MenuSelector(current_game: current_game, text: "Commander Damage", icon: "CommanderIcon")
+                                Button_AdvancedFeatureSelection(current_game: current_game, text: "Commander Damage", icon: "CommanderIcon")
                                     .frame(width: UIScreen.main.bounds.width * 0.397, height: UIScreen.main.bounds.height * 0.0586)
                             }
                         }
@@ -235,20 +235,20 @@ struct PlayerMenu: View {
                         Button {
                             
                         } label: {
-                            ToggleCircle(toggle: $current_game.caller.reset_floating_each_time, icon:"ResetManaOnClose", current_game: current_game)
+                            Toggle_Circle(toggle: $current_game.caller.reset_floating_each_time, icon:"ResetManaOnClose", current_game: current_game)
                                 .frame(width: UIScreen.main.bounds.width * 0.1168, height: UIScreen.main.bounds.width * 0.1168)
                         }
-                        NumberCircle(number: $current_game.caller.white_mana, block_color: magic_white, player: current_game.caller, current_game: current_game, type: "mana")
+                        Counter_Circle(number: $current_game.caller.white_mana, block_color: magic_white, player: current_game.caller, current_game: current_game, type: "mana")
                             .frame(width: UIScreen.main.bounds.width * 0.1493, height: UIScreen.main.bounds.width * 0.1493)
-                        NumberCircle(number: $current_game.caller.blue_mana, block_color: magic_blue, player: current_game.caller, current_game: current_game, type: "mana")
+                        Counter_Circle(number: $current_game.caller.blue_mana, block_color: magic_blue, player: current_game.caller, current_game: current_game, type: "mana")
                             .frame(width: UIScreen.main.bounds.width * 0.1493, height: UIScreen.main.bounds.width * 0.1493)
-                        NumberCircle(number: $current_game.caller.black_mana, block_color: magic_black, player: current_game.caller, current_game: current_game, type: "mana")
+                        Counter_Circle(number: $current_game.caller.black_mana, block_color: magic_black, player: current_game.caller, current_game: current_game, type: "mana")
                             .frame(width: UIScreen.main.bounds.width * 0.1493, height: UIScreen.main.bounds.width * 0.1493)
-                        NumberCircle(number: $current_game.caller.red_mana, block_color: magic_red, player: current_game.caller, current_game: current_game, type: "mana")
+                        Counter_Circle(number: $current_game.caller.red_mana, block_color: magic_red, player: current_game.caller, current_game: current_game, type: "mana")
                             .frame(width: UIScreen.main.bounds.width * 0.1493, height: UIScreen.main.bounds.width * 0.1493)
-                        NumberCircle(number: $current_game.caller.green_mana, block_color: magic_green, player: current_game.caller, current_game: current_game, type: "mana")
+                        Counter_Circle(number: $current_game.caller.green_mana, block_color: magic_green, player: current_game.caller, current_game: current_game, type: "mana")
                             .frame(width: UIScreen.main.bounds.width * 0.1493, height: UIScreen.main.bounds.width * 0.1493)
-                        NumberCircle(number: $current_game.caller.colorless_mana, block_color: magic_colorless, player: current_game.caller, current_game: current_game, type: "mana")
+                        Counter_Circle(number: $current_game.caller.colorless_mana, block_color: magic_colorless, player: current_game.caller, current_game: current_game, type: "mana")
                             .frame(width: UIScreen.main.bounds.width * 0.1493, height: UIScreen.main.bounds.width * 0.1493)
                         
                         Button {
@@ -338,14 +338,14 @@ struct PlayerMenu: View {
                         
                         
                     } label: {
-                        LargeKey(given_text: "Submit", color: .white, background: .red)
+                        Key_Large(given_text: "Submit", color: .white, background: .red)
                     }
                     
                     Button {  // Cancel Button
                         playerName = starting_name
                         isEditingName = false
                     } label: {
-                        LargeKey(given_text: "Cancel", color: .red, background: .white)
+                        Key_Large(given_text: "Cancel", color: .red, background: .white)
                     }
                 }  // Button stack end
                 

@@ -36,7 +36,7 @@ struct PlayerCount: View {
                         }
                         
                     } label: {
-                        SquareButton(button_color: .black, text_color: .white, title: "1", icon: "NONE")
+                        Button_Square(button_color: .black, text_color: .white, title: "1", icon: "NONE")
                     }
                     
                     
@@ -55,7 +55,7 @@ struct PlayerCount: View {
                            
                         }
                     } label: {
-                        SquareButton(button_color: .black, text_color: .white, title: "3", icon: "NONE")
+                        Button_Square(button_color: .black, text_color: .white, title: "3", icon: "NONE")
                         
                     }
                 }
@@ -75,7 +75,7 @@ struct PlayerCount: View {
                             }
                         }
                     } label: {
-                        SquareButton(button_color: .black, text_color: .white, title: "2", icon: "NONE")
+                        Button_Square(button_color: .black, text_color: .white, title: "2", icon: "NONE")
                     }
                     
                     Button {
@@ -94,7 +94,7 @@ struct PlayerCount: View {
                             
                         }
                     } label: {
-                        SquareButton(button_color: .black, text_color: .white, title: "4", icon: "NONE")
+                        Button_Square(button_color: .black, text_color: .white, title: "4", icon: "NONE")
                     }
 //                    Button {
 //                        withAnimation(.easeInOut(duration: 0.2)) {
@@ -156,7 +156,7 @@ struct OptionalSettings: View {
             Spacer()
                 .frame(height: 40.0)
             
-            ToggleCircle(toggle: $current_game.commander_features_enabled, icon: "UnknownIconIcon", current_game: current_game)
+            Toggle_Circle(toggle: $current_game.commander_features_enabled, icon: "UnknownIconIcon", current_game: current_game)
                 .frame(width: 50.0, height: 50.0)
             
             Button {
@@ -238,7 +238,7 @@ struct OptionalSettings: View {
                 }
                 
             } label: {
-                LargeKey(given_text: "Start", color: .white, background: .red)
+                Key_Large(given_text: "Start", color: .white, background: .red)
             }
         }
     }

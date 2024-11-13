@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct HomeScreenKey: View {
+struct Key_HomeScreen: View {
     let given_text: String
     let color: Color
     let background: Color
@@ -28,5 +28,5 @@ struct HomeScreenKey: View {
 }
 
 #Preview {
-    HomeScreenKey(given_text: "Start Game", color: .black, background: Color(hue: 1.0, saturation: 0.0, brightness: 0.835))
+    Key_HomeScreen(given_text: "Start Game", color: .black, background: Color(hue: 1.0, saturation: 0.0, brightness: 0.835))
 }

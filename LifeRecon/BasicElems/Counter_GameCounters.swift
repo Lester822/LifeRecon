@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CounterCounter: View {
+struct Counter_GameCounters: View {
     var icon: String
     var add_amount: Int
     @Binding var number: Int
@@ -116,5 +116,5 @@ struct CounterCounter: View {
 }
 
 #Preview {
-    CounterCounter(icon: "UnknownIconIcon", add_amount: 1, number: .constant(0))
+    Counter_GameCounters(icon: "UnknownIconIcon", add_amount: 1, number: .constant(0))
 }
