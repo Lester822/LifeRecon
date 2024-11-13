@@ -14,62 +14,66 @@ struct SingleToggleCircle: View {
     @ObservedObject var current_game: ActiveGame
     
     var body: some View {
-        ZStack {
+        GeometryReader { geometry in
             
-            Button {
-                haptic_pulse()
-                withAnimation {
-                    toggle.toggle()
-                }
+            ZStack {
                 
-                
-                for player in current_game.players {
-                    if player !== current_game.caller {
-                        if type == "monarch" {
-                            withAnimation {
-                                player.is_monarch = false
-                            }
-                        } else if type == "initiative" {
-                            withAnimation {
-                                player.has_initiative = false
+                Button {
+                    haptic_pulse()
+                    withAnimation {
+                        toggle.toggle()
+                    }
+                    
+                    
+                    for player in current_game.players {
+                        if player !== current_game.caller {
+                            if type == "monarch" {
+                                withAnimation {
+                                    player.is_monarch = false
+                                }
+                            } else if type == "initiative" {
+                                withAnimation {
+                                    player.has_initiative = false
+                                }
                             }
                         }
                     }
+                    
+                } label: {
+                    if toggle == true {
+                        Circle()
+                            .foregroundColor(.orange)
+                    } else {
+                        Circle()
+                            .foregroundColor(.black)
+                    }
+                    
+                }
+                VStack {
+                    Image(icon)
+                        .resizable(resizingMode: .stretch)
+                        .frame(width: geometry.size.height * 0.7, height: geometry.size.height * 0.7)
+                        .allowsHitTesting(false)
+                    Spacer()
+                        .frame(height: geometry.size.height * 0.06)
                 }
                 
-            } label: {
-                if toggle == true {
-                    Circle()
-                        .frame(width: 50.0, height: 50.0)
-                        .foregroundColor(.orange)
-                } else {
-                    Circle()
-                        .frame(width: 50.0, height: 50.0)
-                        .foregroundColor(.black)
+                
+                VStack {
+                    Spacer()
+                        .frame(height: geometry.size.height * 0.65)
+                    RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
+                        .frame(width: geometry.size.height * 0.2, height: geometry.size.height * 0.07)
+                        .foregroundColor(.white)
                 }
                 
+                
             }
-            VStack {
-                Image(icon)
-                    .resizable(resizingMode: .stretch)
-                    .frame(width: 35.0, height: 35.0)
-                    .allowsHitTesting(false)
-                Spacer()
-                    .frame(height: 3.0)
-            }
-            
-            
-            VStack {
-                Spacer()
-                    .frame(height: 35.0)
-                RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
-                    .frame(width: 10.0, height: 5.0)
-                    .foregroundColor(.white)
-            }
-            
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+            .aspectRatio(1, contentMode: .fit)
+            .padding(0.0)
             
         }
-        
     }
 }
 

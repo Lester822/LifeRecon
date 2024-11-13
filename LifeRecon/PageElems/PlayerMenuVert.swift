@@ -33,12 +33,11 @@ struct PlayerMenuVert: View {
             VStack {  // Main Contents Container
                 
                 HStack {
-                    
                     Spacer()
-                        .frame(width: 50.0, height: 50.0)
+                        .frame(width: UIScreen.main.bounds.width * 0.1243)
                     Text(playerName)
                         .bold()
-                        .font(.system(size: 25))
+                        .font(.system(size: UIScreen.main.bounds.width * 0.0621))
                         .onTapGesture {
                             isEditingName = true
                         }
@@ -48,15 +47,18 @@ struct PlayerMenuVert: View {
                     } label: {
                         Image("Settings")
                             .resizable(resizingMode: .stretch)
-                            .frame(width: 50.0, height: 50.0)
+                            .frame(width: UIScreen.main.bounds.width * 0.1243, height: UIScreen.main.bounds.width * 0.1243)
                     }
                 }
                 .padding(-5.0)
                 
                 HStack {
                     SingleToggleCircle(toggle: $current_game.caller.is_monarch, icon: "MonarchIcon", type: "monarch", current_game: current_game)
+                        .frame(width: UIScreen.main.bounds.height * 0.055, height: UIScreen.main.bounds.height * 0.055)
                     SingleToggleCircle(toggle: $current_game.caller.has_initiative, icon: "InitiativeIcon", type: "initiative", current_game: current_game)
+                        .frame(width: UIScreen.main.bounds.height * 0.055, height: UIScreen.main.bounds.height * 0.055)
                     ToggleCircle(toggle: $current_game.caller.has_cities_blessing, icon: "CitiesBlessingIcon", current_game: current_game)
+                        .frame(width: UIScreen.main.bounds.height * 0.055, height: UIScreen.main.bounds.height * 0.055)
                 }
                 
                 
@@ -128,35 +130,65 @@ struct PlayerMenuVert: View {
                     }
                 }
                 .frame(alignment: .center)
-                .padding(.horizontal, 200.0)
+                .padding(.horizontal, UIScreen.main.bounds.width * 0.4975)
                     
+                ScrollView(.vertical) {
+                    Button {
+                        withAnimation {
+                            current_game.showing_dungeon = true
+                        }
+                    } label: {
+                        MenuSelector(current_game: current_game, text: "Dungeon Delver", icon: "DungeonIcon")
+                            .frame(width: UIScreen.main.bounds.width * 0.597, height: UIScreen.main.bounds.height * 0.0686, alignment: .center)
+                    }
+                    Button {
+                        
+                    } label: {
+                        MenuSelector(current_game: current_game, text: "Ring Tracker", icon: "RingIcon")
+                            .frame(width: UIScreen.main.bounds.width * 0.597, height: UIScreen.main.bounds.height * 0.0686, alignment: .center)
+                    }
+                    Button {
+                        current_game.showing_player_menu = false
+                        current_game.blur_background = false
+                        current_game.showing_commander_damage = true
+                        
+                    } label: {
+                        MenuSelector(current_game: current_game, text: "Commander Damage", icon: "CommanderIcon")
+                            .frame(width: UIScreen.main.bounds.width * 0.597, height: UIScreen.main.bounds.height * 0.0686, alignment: .center)
+                    }
+                    
+                }
+                .padding(10)
+                .frame(height: UIScreen.main.bounds.height * 0.2288)
+                
                 Spacer()
-                    .frame(height: 10.0)
+                    .frame(height: UIScreen.main.bounds.height * 0.0114)
                 
                     HStack { // Mana Floating
                         
                         VStack {
                             HStack {
                                 NumberCircle(number: $current_game.caller.white_mana, block_color: .yellow, player: current_game.caller, current_game: current_game, type: "mana")
-                                    .frame(width: 80.0, height: 80.0)
+                                    .frame(width: UIScreen.main.bounds.height * 0.0915, height: UIScreen.main.bounds.height * 0.0915)
                                 NumberCircle(number: $current_game.caller.blue_mana, block_color: .blue, player: current_game.caller, current_game: current_game, type: "mana")
-                                    .frame(width: 80.0, height: 80.0)
+                                    .frame(width: UIScreen.main.bounds.height * 0.0915, height: UIScreen.main.bounds.height * 0.0915)
                                 NumberCircle(number: $current_game.caller.black_mana, block_color: .black, player: current_game.caller, current_game: current_game, type: "mana")
-                                    .frame(width: 80.0, height: 80.0)
+                                    .frame(width: UIScreen.main.bounds.height * 0.0915, height: UIScreen.main.bounds.height * 0.0915)
                             }
                             HStack {
                                 NumberCircle(number: $current_game.caller.red_mana, block_color: .red, player: current_game.caller, current_game: current_game, type: "mana")
-                                    .frame(width: 80.0, height: 80.0)
+                                    .frame(width: UIScreen.main.bounds.height * 0.0915, height: UIScreen.main.bounds.height * 0.0915)
                                 NumberCircle(number: $current_game.caller.green_mana, block_color: .green, player: current_game.caller, current_game: current_game, type: "mana")
-                                    .frame(width: 80.0, height: 80.0)
+                                    .frame(width: UIScreen.main.bounds.height * 0.0915, height: UIScreen.main.bounds.height * 0.0915)
                                 NumberCircle(number: $current_game.caller.colorless_mana, block_color: .gray, player: current_game.caller, current_game: current_game, type: "mana")
-                                    .frame(width: 80.0, height: 80.0)
+                                    .frame(width: UIScreen.main.bounds.height * 0.0915, height: UIScreen.main.bounds.height * 0.0915)
                             }
                             HStack {
                                 Button {
                                                             
                                 } label: {
                                     ToggleCircle(toggle: $current_game.caller.reset_floating_each_time, icon:"ResetManaOnClose", current_game: current_game)
+                                        .frame(width: UIScreen.main.bounds.height * 0.055, height: UIScreen.main.bounds.height * 0.055)
                                 }
                                 Button {
                                     haptic_pulse()
@@ -170,17 +202,8 @@ struct PlayerMenuVert: View {
                                 } label: {
                                     Image("EraseIcon")
                                         .resizable(resizingMode: .stretch)
-                                        .frame(width: 55.0, height: 55.0)
+                                        .frame(width: UIScreen.main.bounds.height * 0.0629, height: UIScreen.main.bounds.height * 0.0629)
                                 }
-                            }
-                            Button {
-                                withAnimation {
-                                    current_game.showing_dungeon = true
-                                }
-                            } label: {
-                                Image("DungeonIcon")
-                                    .resizable(resizingMode: .stretch)
-                                    .frame(width: 55.0, height: 55.0)
                             }
                         }
                     }

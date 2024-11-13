@@ -11,22 +11,38 @@ struct DungeonBackground: View {
     @ObservedObject var current_game: ActiveGame
     
     var body: some View {
-        Image("DungeonWall")
-            .allowsHitTesting(current_game.showing_dungeon)
-            .aspectRatio(contentMode: .fit)
-            .rotationEffect(current_game.caller.rotation == 0 || current_game.caller.rotation == 180 ? Angle(degrees: 90) : Angle(degrees: 0))
-            .brightness(-0.5)
-            .foregroundColor(.black)
-            .frame(width: UIScreen.main.bounds.width-1, height: UIScreen.main.bounds.height-1)
-            .blur(radius: 5.0)
-            .ignoresSafeArea(.all)
-            .rotationEffect(Angle(degrees: 90))
-            .onTapGesture {
-                withAnimation {
-                    current_game.showing_dungeon = false
+        GeometryReader { geometry in
+            // Determine the maximum dimension to cover the screen when rotated
+            let maxDimension = max(geometry.size.width, geometry.size.height)
+            
+            Image("DungeonWall")
+                .resizable()
+                .scaledToFill()
+            // Set the frame to the maximum dimension
+                .frame(width: maxDimension, height: maxDimension, alignment: .center)
+            // Rotate the image before positioning
+                .rotationEffect(
+                    current_game.caller.rotation == 0 || current_game.caller.rotation == 180
+                    ? Angle(degrees: 180)
+                    : Angle(degrees: 90),
+                    anchor: .center
+                )
+            // Center the image within the GeometryReader
+//                .position(x: geometry.size.width / 2, y: geometry.size.height / 2)
+                .brightness(-0.5)
+                .blur(radius: 5.0)
+                .onTapGesture {
+                    withAnimation {
+                        current_game.showing_dungeon = false
+                    }
                 }
-            }
+                .clipped()
+        }
+        // Extend the view to ignore safe area insets
+        .edgesIgnoringSafeArea(.all)
+        .allowsHitTesting(current_game.showing_dungeon)
     }
+    
 }
 
 #Preview {

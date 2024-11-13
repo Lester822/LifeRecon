@@ -50,6 +50,7 @@ struct MenuBar: View {
                         soft_pulse()
                         current_game.first_confirm_line = "Are you sure you want to"
                         current_game.confirm_message = "reset the game?"
+                        current_game.blur_background = true
                         current_game.showing_confirm =  true
                         current_game.confirm_action = "reset"
                     }

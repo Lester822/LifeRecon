@@ -33,14 +33,17 @@ struct PlayerMenu: View {
                     VStack {
                         SingleToggleCircle(toggle: $current_game.caller.is_monarch, icon: "MonarchIcon", type: "monarch", current_game: current_game)
                             .padding(.bottom, 3.0)
+                            .frame(width: UIScreen.main.bounds.width * 0.1168, height: UIScreen.main.bounds.width * 0.1168)
                         SingleToggleCircle(toggle: $current_game.caller.has_initiative, icon: "InitiativeIcon", type: "initiative", current_game: current_game)
                             .padding(.bottom, 3.0)
+                            .frame(width: UIScreen.main.bounds.width * 0.1168, height: UIScreen.main.bounds.width * 0.1168)
                         ToggleCircle(toggle: $current_game.caller.has_cities_blessing, icon: "CitiesBlessingIcon", current_game: current_game)
                             .padding(.bottom, 3.0)
+                            .frame(width: UIScreen.main.bounds.width * 0.1168, height: UIScreen.main.bounds.width * 0.1168)
                     }
                 }
                 Spacer()
-                    .frame(height: UIScreen.main.bounds.width * 0.33)
+                    .frame(height: UIScreen.main.bounds.width * 0.28)
             }
             // Toggle Row End
             
@@ -56,13 +59,14 @@ struct PlayerMenu: View {
                             }
                         } label: {
                             MenuSelector(current_game: current_game, text: "Dungeon Delver", icon: "DungeonIcon")
-                                .frame(width: 160.0, height: 50.0, alignment: .center)
+                                .frame(width: UIScreen.main.bounds.height * 0.2188, height: UIScreen.main.bounds.width * 0.1243, alignment: .center)
                         }
                         Button {
-                            
+                            print(UIScreen.main.bounds.height)
+                            print(UIScreen.main.bounds.width)
                         } label: {
                             MenuSelector(current_game: current_game, text: "Ring Tracker", icon: "RingIcon")
-                                .frame(width: 160.0, height: 50.0, alignment: .center)
+                                .frame(width: UIScreen.main.bounds.height * 0.2188, height: UIScreen.main.bounds.width * 0.1243, alignment: .center)
                         }
                         Button {
                             current_game.showing_player_menu = false
@@ -71,15 +75,15 @@ struct PlayerMenu: View {
                             
                         } label: {
                             MenuSelector(current_game: current_game, text: "Commander Damage", icon: "CommanderIcon")
-                                .frame(width: 160.0, height: 50.0, alignment: .center)
+                                .frame(width: UIScreen.main.bounds.height * 0.2188, height: UIScreen.main.bounds.width * 0.1243, alignment: .center)
                         }
                         
                     }
                     .padding(10)
-                    .frame(height: 200.0)
+                    .frame(height: UIScreen.main.bounds.width * 0.4975)
                     
                     Spacer()
-                        .frame(width: 300.0 + 200.0) // WIDTH OF CENTER THING + WIDTH OF MENU
+                        .frame(width: (UIScreen.main.bounds.height * 0.3432) + (UIScreen.main.bounds.height * 0.2188) + (UIScreen.main.bounds.height * 0.01)) // WIDTH OF CENTER THING + WIDTH OF MENU
 
                 }
                 
@@ -88,13 +92,13 @@ struct PlayerMenu: View {
             
             VStack {  // Main Contents Container
                 Spacer()
-                    .frame(height: 10.0)
+                    .frame(height: UIScreen.main.bounds.width * 0.0249)
                 HStack {
                     Spacer()
-                        .frame(width: 50.0, height: 50.0)
+                        .frame(width: UIScreen.main.bounds.width * 0.1243)
                     Text(playerName)
                         .bold()
-                        .font(.system(size: 25))
+                        .font(.system(size: UIScreen.main.bounds.width * 0.0621))
                         .onTapGesture {
                             isEditingName = true
                         }
@@ -104,7 +108,7 @@ struct PlayerMenu: View {
                     } label: {
                         Image("Settings")
                             .resizable(resizingMode: .stretch)
-                            .frame(width: 50.0, height: 50.0)
+                            .frame(width: UIScreen.main.bounds.width * 0.1243, height: UIScreen.main.bounds.width * 0.1243)
                     }
                 }
                 
@@ -178,14 +182,14 @@ struct PlayerMenu: View {
                             
                         }
                     }
-                    .frame(width: 300.0, alignment: .center)
+                    .frame(width: UIScreen.main.bounds.height * 0.3432, alignment: .center)
                    .padding(.horizontal, 10.0)
                     Spacer()
-                        .frame(width: 200.0)
+                        .frame(width: UIScreen.main.bounds.height * 0.2288)
                 }
                 
                 Spacer()
-                    .frame(height: 40.0)
+                    .frame(height: UIScreen.main.bounds.width * 0.0995)
                 
                 
                     HStack { // Mana Floating
@@ -194,19 +198,20 @@ struct PlayerMenu: View {
                             
                         } label: {
                             ToggleCircle(toggle: $current_game.caller.reset_floating_each_time, icon:"ResetManaOnClose", current_game: current_game)
+                                .frame(width: UIScreen.main.bounds.width * 0.1168, height: UIScreen.main.bounds.width * 0.1168)
                         }
                         NumberCircle(number: $current_game.caller.white_mana, block_color: .yellow, player: current_game.caller, current_game: current_game, type: "mana")
-                            .frame(width: 60.0, height: 60.0)
+                            .frame(width: UIScreen.main.bounds.width * 0.1493, height: UIScreen.main.bounds.width * 0.1493)
                         NumberCircle(number: $current_game.caller.blue_mana, block_color: .blue, player: current_game.caller, current_game: current_game, type: "mana")
-                            .frame(width: 60.0, height: 60.0)
+                            .frame(width: UIScreen.main.bounds.width * 0.1493, height: UIScreen.main.bounds.width * 0.1493)
                         NumberCircle(number: $current_game.caller.black_mana, block_color: .black, player: current_game.caller, current_game: current_game, type: "mana")
-                            .frame(width: 60.0, height: 60.0)
+                            .frame(width: UIScreen.main.bounds.width * 0.1493, height: UIScreen.main.bounds.width * 0.1493)
                         NumberCircle(number: $current_game.caller.red_mana, block_color: .red, player: current_game.caller, current_game: current_game, type: "mana")
-                            .frame(width: 60.0, height: 60.0)
+                            .frame(width: UIScreen.main.bounds.width * 0.1493, height: UIScreen.main.bounds.width * 0.1493)
                         NumberCircle(number: $current_game.caller.green_mana, block_color: .green, player: current_game.caller, current_game: current_game, type: "mana")
-                            .frame(width: 60.0, height: 60.0)
+                            .frame(width: UIScreen.main.bounds.width * 0.1493, height: UIScreen.main.bounds.width * 0.1493)
                         NumberCircle(number: $current_game.caller.colorless_mana, block_color: .gray, player: current_game.caller, current_game: current_game, type: "mana")
-                            .frame(width: 60.0, height: 60.0)
+                            .frame(width: UIScreen.main.bounds.width * 0.1493, height: UIScreen.main.bounds.width * 0.1493)
                         
                         Button {
                             haptic_pulse()
@@ -220,7 +225,7 @@ struct PlayerMenu: View {
                         } label: {
                             Image("EraseIcon")
                                 .resizable(resizingMode: .stretch)
-                                .frame(width: 55.0, height: 55.0)
+                                .frame(width: UIScreen.main.bounds.width * 0.1368, height: UIScreen.main.bounds.width * 0.1368)
                         }
                         
                         

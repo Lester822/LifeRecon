@@ -94,11 +94,10 @@ struct PageManager: View {
 
             if current_game.showing_dungeon == true {
                 DungeonDelverSwitcher(current_game: current_game, caller: current_game.caller)
-                    .allowsHitTesting(current_game.showing_dungeon)
                     .zIndex(1.2)
-                    .rotationEffect(Angle(degrees: current_game.caller.rotation))
                     .edgesIgnoringSafeArea(.all)
                     .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+                    .rotationEffect(Angle(degrees: current_game.caller.rotation))
                     .transition(.zoomEffect)
             }
             

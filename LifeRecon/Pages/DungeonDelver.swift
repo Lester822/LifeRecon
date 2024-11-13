@@ -124,10 +124,7 @@ struct DungeonDelver: View {
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
-            
         }
-        
-        
     }
 }
 

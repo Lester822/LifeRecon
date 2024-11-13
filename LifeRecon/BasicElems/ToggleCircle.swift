@@ -13,48 +13,52 @@ struct ToggleCircle: View {
     @ObservedObject var current_game: ActiveGame
     
     var body: some View {
-        ZStack {
-            
-            Button {
-                haptic_pulse()
-                withAnimation {
-                    toggle.toggle()
+        GeometryReader { geometry in
+            ZStack {
+                
+                Button {
+                    haptic_pulse()
+                    withAnimation {
+                        toggle.toggle()
+                    }
+                    
+                } label: {
+                    if toggle == true {
+                        Circle()
+                            .foregroundColor(.orange)
+                    } else {
+                        Circle()
+                            .foregroundColor(.black)
+                    }
+                    
                 }
                 
-            } label: {
-                if toggle == true {
-                    Circle()
-                        .frame(width: 50.0, height: 50.0)
-                        .foregroundColor(.orange)
-                } else {
-                    Circle()
-                        .frame(width: 50.0, height: 50.0)
-                        .foregroundColor(.black)
+                VStack {
+                    Image(icon)
+                        .resizable(resizingMode: .stretch)
+                        .frame(width: geometry.size.height * 0.7, height: geometry.size.height * 0.7)
+                        .allowsHitTesting(false)
+                    Spacer()
+                        .frame(height: geometry.size.height * 0.06)
                 }
                 
+                
+                VStack {
+                    Spacer()
+                        .frame(height: geometry.size.height * 0.65)
+                    RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
+                        .frame(width: geometry.size.height * 0.2, height: geometry.size.height * 0.07)
+                        .foregroundColor(.white)
+                }
+                
+                
             }
-            
-            VStack {
-                Image(icon)
-                    .resizable(resizingMode: .stretch)
-                    .frame(width: 35.0, height: 35.0)
-                    .allowsHitTesting(false)
-                Spacer()
-                    .frame(height: 3.0)
-            }
-            
-            
-            VStack {
-                Spacer()
-                    .frame(height: 35.0)
-                RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
-                    .frame(width: 10.0, height: 5.0)
-                    .foregroundColor(.white)
-            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+            .aspectRatio(1, contentMode: .fit)
+            .padding(0.0)
             
             
         }
-        
     }
 }
 
