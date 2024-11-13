@@ -79,7 +79,7 @@ struct NumberCircle: View {
                 Text(String(number))
                     .font(.system(size: geometry.size.width * 0.3))
                     .fontWeight(.bold)
-                    .foregroundColor(Color.white)
+                    .foregroundColor(type == "mana" ? Color.black : Color.white)
                     .padding(0.0)
                     
             }

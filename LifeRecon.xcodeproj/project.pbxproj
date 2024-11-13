@@ -38,6 +38,7 @@
 		F82E08F62BC5A57900C651AE /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82E08F52BC5A57900C651AE /* Game.swift */; };
 		F82E08F82BC5C0B600C651AE /* Test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F82E08F72BC5C0B600C651AE /* Test.storyboard */; };
 		F84D42172CAEDFE200AEFAD2 /* DungeonDelver.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84D42162CAEDFE200AEFAD2 /* DungeonDelver.swift */; };
+		F857CDFE2CE454BF00F1B0B0 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F857CDFD2CE454BF00F1B0B0 /* Colors.swift */; };
 		F86BD4FE2CAC3CC700E2392F /* DungeonElem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86BD4FD2CAC3CC700E2392F /* DungeonElem.swift */; };
 		F86BD5022CAC4D0300E2392F /* DungeonBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86BD5012CAC4D0300E2392F /* DungeonBackground.swift */; };
 		F8729EBE2BDC00ED00662855 /* FivePlayerGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8729EBD2BDC00ED00662855 /* FivePlayerGame.swift */; };
@@ -107,6 +108,7 @@
 		F82E08F52BC5A57900C651AE /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		F82E08F72BC5C0B600C651AE /* Test.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Test.storyboard; sourceTree = "<group>"; };
 		F84D42162CAEDFE200AEFAD2 /* DungeonDelver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DungeonDelver.swift; sourceTree = "<group>"; };
+		F857CDFD2CE454BF00F1B0B0 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		F86BD4FD2CAC3CC700E2392F /* DungeonElem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DungeonElem.swift; sourceTree = "<group>"; };
 		F86BD5012CAC4D0300E2392F /* DungeonBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DungeonBackground.swift; sourceTree = "<group>"; };
 		F8729EBD2BDC00ED00662855 /* FivePlayerGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FivePlayerGame.swift; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 			children = (
 				F81B6B732C320769005B98E4 /* Fonts */,
 				F8B234622BC57ED7009D6962 /* LifeReconApp.swift */,
+				F857CDFD2CE454BF00F1B0B0 /* Colors.swift */,
 				F82B69032C6847750058FAC0 /* PageManager.swift */,
 				F8D1BC172C0541FD00A163D8 /* Structs */,
 				F8D1BC162C0541B600A163D8 /* PageElems */,
@@ -433,6 +436,7 @@
 				F86BD4FE2CAC3CC700E2392F /* DungeonElem.swift in Sources */,
 				F81AC3DC2BC85D3500D65AB4 /* ThreePlayerGame.swift in Sources */,
 				F81132382CB0DE96001B8502 /* TaxCounter.swift in Sources */,
+				F857CDFE2CE454BF00F1B0B0 /* Colors.swift in Sources */,
 				F81132302CB055B8001B8502 /* MenuBar.swift in Sources */,
 				F82E08F62BC5A57900C651AE /* Game.swift in Sources */,
 				F86BD5022CAC4D0300E2392F /* DungeonBackground.swift in Sources */,

@@ -20,7 +20,7 @@ struct PlayerMenuVert: View {
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 25.0)
-                .frame(width: UIScreen.main.bounds.width * 0.85, height: UIScreen.main.bounds.height * 0.8)
+                .frame(width: UIScreen.main.bounds.width * 0.85, height: UIScreen.main.bounds.height * 0.85)
                 .foregroundColor(.black)
                 .opacity(0.5)
                 .allowsHitTesting(true)
@@ -70,30 +70,38 @@ struct PlayerMenuVert: View {
                         
                         if current_game.caller.active_counters.contains("poison") {
                             CounterCounter(icon: "PoisonCount", number: $current_game.caller.poison_counters)
+                                .frame(width: UIScreen.main.bounds.width * 0.1741)
+
                         }
                         
                         if current_game.caller.active_counters.contains("energy") {
                             CounterCounter(icon: "EnergyCount", number: $current_game.caller.energy_counters)
+                                .frame(width: UIScreen.main.bounds.width * 0.1741)
                         }
                         
                         if current_game.caller.active_counters.contains("storm") {
                             CounterCounter(icon: "StormCount", number: $current_game.caller.storm_count)
+                                .frame(width: UIScreen.main.bounds.width * 0.1741)
                         }
                         
                         if current_game.caller.active_counters.contains("experience") {
                             CounterCounter(icon: "ExperienceCount", number: $current_game.caller.experience_counters)
+                                .frame(width: UIScreen.main.bounds.width * 0.1741)
                         }
                         
                         if current_game.caller.active_counters.contains("rad") {
                             CounterCounter(icon: "RadCount", number: $current_game.caller.rad_counters)
+                                .frame(width: UIScreen.main.bounds.width * 0.1741)
                         }
                         
                         if current_game.caller.active_counters.contains("ticket") {
                             CounterCounter(icon: "TicketCount", number: $current_game.caller.ticket_counters)
+                                .frame(width: UIScreen.main.bounds.width * 0.1741)
                         }
                         
                         if current_game.caller.active_counters.contains("acorn") {
                             CounterCounter(icon: "AcornCount", number: $current_game.caller.acorn_counters)
+                                .frame(width: UIScreen.main.bounds.width * 0.1741)
                         }
                         
                         
@@ -101,37 +109,43 @@ struct PlayerMenuVert: View {
                                                 
                         if !current_game.caller.active_counters.contains("poison") {
                             CounterCounter(icon: "PoisonCount", number: $current_game.caller.poison_counters)
+                                .frame(width: UIScreen.main.bounds.width * 0.1741)
                         }
                         
                         if !current_game.caller.active_counters.contains("energy") {
                             CounterCounter(icon: "EnergyCount", number: $current_game.caller.energy_counters)
+                                .frame(width: UIScreen.main.bounds.width * 0.1741)
                         }
                         
                         if !current_game.caller.active_counters.contains("storm") {
                             CounterCounter(icon: "StormCount", number: $current_game.caller.storm_count)
+                                .frame(width: UIScreen.main.bounds.width * 0.1741)
                         }
                         
                         if !current_game.caller.active_counters.contains("experience") {
                             CounterCounter(icon: "ExperienceCount", number: $current_game.caller.experience_counters)
+                                .frame(width: UIScreen.main.bounds.width * 0.1741)
                         }
                         
                         if !current_game.caller.active_counters.contains("rad") {
                             CounterCounter(icon: "RadCount", number: $current_game.caller.rad_counters)
+                                .frame(width: UIScreen.main.bounds.width * 0.1741)
                         }
                         
                         if !current_game.caller.active_counters.contains("ticket") {
                             CounterCounter(icon: "TicketCount", number: $current_game.caller.ticket_counters)
+                                .frame(width: UIScreen.main.bounds.width * 0.1741)
                         }
                         
                         if !current_game.caller.active_counters.contains("acorn") {
                             CounterCounter(icon: "AcornCount", number: $current_game.caller.acorn_counters)
+                                .frame(width: UIScreen.main.bounds.width * 0.1741)
                         }
                         
                     }
                 }
-                .frame(alignment: .center)
-                .padding(.horizontal, UIScreen.main.bounds.width * 0.4975)
-                    
+                .frame(width: UIScreen.main.bounds.width * 0.597, height: UIScreen.main.bounds.height * 0.1144, alignment: .center)
+                
                 ScrollView(.vertical) {
                     Button {
                         withAnimation {
@@ -168,19 +182,19 @@ struct PlayerMenuVert: View {
                         
                         VStack {
                             HStack {
-                                NumberCircle(number: $current_game.caller.white_mana, block_color: .yellow, player: current_game.caller, current_game: current_game, type: "mana")
+                                NumberCircle(number: $current_game.caller.white_mana, block_color: magic_white, player: current_game.caller, current_game: current_game, type: "mana")
                                     .frame(width: UIScreen.main.bounds.height * 0.0915, height: UIScreen.main.bounds.height * 0.0915)
-                                NumberCircle(number: $current_game.caller.blue_mana, block_color: .blue, player: current_game.caller, current_game: current_game, type: "mana")
+                                NumberCircle(number: $current_game.caller.blue_mana, block_color: magic_blue, player: current_game.caller, current_game: current_game, type: "mana")
                                     .frame(width: UIScreen.main.bounds.height * 0.0915, height: UIScreen.main.bounds.height * 0.0915)
-                                NumberCircle(number: $current_game.caller.black_mana, block_color: .black, player: current_game.caller, current_game: current_game, type: "mana")
+                                NumberCircle(number: $current_game.caller.black_mana, block_color: magic_black, player: current_game.caller, current_game: current_game, type: "mana")
                                     .frame(width: UIScreen.main.bounds.height * 0.0915, height: UIScreen.main.bounds.height * 0.0915)
                             }
                             HStack {
-                                NumberCircle(number: $current_game.caller.red_mana, block_color: .red, player: current_game.caller, current_game: current_game, type: "mana")
+                                NumberCircle(number: $current_game.caller.red_mana, block_color: magic_red, player: current_game.caller, current_game: current_game, type: "mana")
                                     .frame(width: UIScreen.main.bounds.height * 0.0915, height: UIScreen.main.bounds.height * 0.0915)
-                                NumberCircle(number: $current_game.caller.green_mana, block_color: .green, player: current_game.caller, current_game: current_game, type: "mana")
+                                NumberCircle(number: $current_game.caller.green_mana, block_color: magic_green, player: current_game.caller, current_game: current_game, type: "mana")
                                     .frame(width: UIScreen.main.bounds.height * 0.0915, height: UIScreen.main.bounds.height * 0.0915)
-                                NumberCircle(number: $current_game.caller.colorless_mana, block_color: .gray, player: current_game.caller, current_game: current_game, type: "mana")
+                                NumberCircle(number: $current_game.caller.colorless_mana, block_color: magic_colorless, player: current_game.caller, current_game: current_game, type: "mana")
                                     .frame(width: UIScreen.main.bounds.height * 0.0915, height: UIScreen.main.bounds.height * 0.0915)
                             }
                             HStack {
@@ -207,6 +221,7 @@ struct PlayerMenuVert: View {
                             }
                         }
                     }
+                    .frame(width: UIScreen.main.bounds.width * 0.597)
                 }
             }
             .sheet(isPresented: $isEditingName) {
