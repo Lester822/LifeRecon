@@ -85,11 +85,20 @@ struct PageManager: View {
                     .transition(.zoomEffect)
             }
             
-            if current_game.showing_dungeon == true {
+            if current_game.showing_dungeon || current_game.showing_ring {
                 DungeonBackground(current_game: current_game)
-                    .allowsHitTesting(current_game.showing_dungeon)
+                    .allowsHitTesting(current_game.showing_dungeon || current_game.showing_ring)
                     .zIndex(1.1)
                     .transition(.fade)
+            }
+            
+            if current_game.showing_ring == true {
+                RingTrack(current_game: current_game, caller: current_game.caller)
+                    .zIndex(1.2)
+                    .edgesIgnoringSafeArea(.all)
+                    .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+                    .rotationEffect(Angle(degrees: current_game.caller.rotation))
+                    .transition(.zoomEffect)
             }
 
             if current_game.showing_dungeon == true {

@@ -28,7 +28,7 @@ struct Loading: View {
                     withAnimation {
                         current_game.current_page = "settings"
                     }
-                    current_game.commander_features_enabled = true
+                    current_game.commander_features_enabled = false
                     
                 } label: {
                     Key_HomeScreen(given_text: "Start Game", color: .white, background: .black)

@@ -47,6 +47,8 @@ class Player: ObservableObject {
     @Published var dungeon_position: String = ""
     @Published var completed_dungeons: Set<String> = []
     
+    @Published var ring_stage: Int = 0
+    
     @Published var background_color: Color = .red
     @Published var background_image: String = "NONE"
     

@@ -190,6 +190,9 @@ struct PlayerMenuVert: View {
                                 .frame(width: UIScreen.main.bounds.width * 0.597, height: UIScreen.main.bounds.height * 0.0686, alignment: .center)
                         }
                         Button {
+                            withAnimation {
+                                current_game.showing_ring = true
+                            }
                             
                         } label: {
                             Button_AdvancedFeatureSelection(current_game: current_game, text: "Ring Tracker", icon: "RingIcon")

@@ -156,8 +156,23 @@ struct OptionalSettings: View {
             Spacer()
                 .frame(height: 40.0)
             
-            Toggle_Circle(toggle: $current_game.commander_features_enabled, icon: "UnknownIconIcon", current_game: current_game)
-                .frame(width: 50.0, height: 50.0)
+            HStack {
+                Toggle_Checkbox(toggle: $current_game.commander_features_enabled, current_game: current_game)
+                    .frame(width: 40.0, height: 40.0)
+                Button {
+                    withAnimation {
+                        current_game.commander_features_enabled.toggle()
+                    }
+                } label: {
+                    Text("Commander Features")
+                        .foregroundStyle(.white)
+                        .font(.title2)
+                }
+                .buttonStyle(NoClickButton())
+                
+                
+            }
+            
             
             Button {
                 haptic_pulse()
@@ -202,6 +217,7 @@ struct OptionalSettings: View {
                     player.current_dungeon = ""
                     player.dungeon_position = ""
                     player.completed_dungeons = []
+                    player.ring_stage = 0
                     
                     player.is_monarch = false
                     player.has_initiative = false

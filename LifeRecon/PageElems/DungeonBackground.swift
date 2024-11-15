@@ -34,14 +34,16 @@ struct DungeonBackground: View {
                 .blur(radius: 5.0)
                 .onTapGesture {
                     withAnimation {
+                        current_game.showing_ring = false
                         current_game.showing_dungeon = false
+                        
                     }
                 }
                 .clipped()
         }
         // Extend the view to ignore safe area insets
         .edgesIgnoringSafeArea(.all)
-        .allowsHitTesting(current_game.showing_dungeon)
+        .allowsHitTesting(current_game.showing_dungeon || current_game.showing_ring)
     }
     
 }

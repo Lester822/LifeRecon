@@ -83,6 +83,7 @@ struct Confirmation: View {
                 player.current_dungeon = ""
                 player.dungeon_position = ""
                 player.completed_dungeons = []
+                player.ring_stage = 0
                 
                 player.commander_tax_1 = 0
                 player.commander_tax_2 = 0

@@ -36,6 +36,7 @@ class ActiveGame: ObservableObject {
     @Published var showing_commander_damage: Bool
     @Published var showing_dungeon: Bool
     @Published var blur_background: Bool
+    @Published var showing_ring: Bool
     
     @Published var commander_features_enabled: Bool
     
@@ -63,6 +64,7 @@ class ActiveGame: ObservableObject {
         self.keypad_current_text = ""
         self.showing_commander_damage = false
         self.showing_dungeon = false
+        self.showing_ring = false
         self.commander_features_enabled = true
     }
     

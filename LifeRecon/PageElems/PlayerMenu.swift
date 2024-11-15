@@ -209,7 +209,9 @@ struct PlayerMenu: View {
                                 .frame(width: UIScreen.main.bounds.width * 0.397, height: UIScreen.main.bounds.height * 0.0586)
                         }
                         Button {
-                            // Your action here
+                            withAnimation {
+                                current_game.showing_ring = true
+                            }
                         } label: {
                             Button_AdvancedFeatureSelection(current_game: current_game, text: "Ring Tracker", icon: "RingIcon")
                                 .frame(width: UIScreen.main.bounds.width * 0.397, height: UIScreen.main.bounds.height * 0.0586)
