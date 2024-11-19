@@ -39,7 +39,10 @@ struct MenuBar: View {
                     .frame(width: 125.0)
                 Button {
                     soft_pulse()
-                    print("test")
+                    withAnimation {
+                        current_game.showing_circle_menu = false
+                        current_game.showing_dice_tray = true
+                    }
                 } label: {
                     Image("Dice")
                         .resizable(resizingMode: .stretch)

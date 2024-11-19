@@ -126,7 +126,6 @@ struct LifeBlock: View {
                                 //let verticalMovement = gesture.translation.height
                                 let horizontalMovement = gesture.translation.width
                                 if (horizontalMovement < 0) {
-                                        print("OPEN PLAYER SETTINGS")
                                     haptic_pulse()
                                     
                                     if player.storm_count != 0 {

@@ -40,6 +40,9 @@ struct PlayerMenu: View {
                         Toggle_Circle(toggle: $current_game.caller.has_cities_blessing, icon: "CitiesBlessingIcon", current_game: current_game)
                             .padding(.bottom, 3.0)
                             .frame(width: UIScreen.main.bounds.width * 0.1168, height: UIScreen.main.bounds.width * 0.1168)
+                        DayNightToggle(toggle: $current_game.day_night, current_game: current_game)
+                            .padding(.bottom, 3.0)
+                            .frame(width: UIScreen.main.bounds.width * 0.1168, height: UIScreen.main.bounds.width * 0.1168)
                     }
                 }
 //                Spacer()

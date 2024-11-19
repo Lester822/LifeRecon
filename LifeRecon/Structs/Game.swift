@@ -30,6 +30,7 @@ class ActiveGame: ObservableObject {
     @Published var caller: Player
     
     @Published var showing_circle_menu: Bool
+    @Published var showing_dice_tray: Bool
     @Published var showing_confirm: Bool
     @Published var showing_keypad: Bool
     @Published var showing_player_menu: Bool
@@ -39,6 +40,8 @@ class ActiveGame: ObservableObject {
     @Published var showing_ring: Bool
     
     @Published var commander_features_enabled: Bool
+    
+    @Published var day_night: String = ""
     
     
     init(player_count: Int, starting_life: Int) {
@@ -66,6 +69,7 @@ class ActiveGame: ObservableObject {
         self.showing_dungeon = false
         self.showing_ring = false
         self.commander_features_enabled = true
+        self.showing_dice_tray = false
     }
     
     func new_player_count(new_number: Int) {

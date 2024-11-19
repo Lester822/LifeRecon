@@ -59,6 +59,8 @@ struct PlayerMenuVert: View {
                         .frame(width: UIScreen.main.bounds.height * 0.055, height: UIScreen.main.bounds.height * 0.055)
                     Toggle_Circle(toggle: $current_game.caller.has_cities_blessing, icon: "CitiesBlessingIcon", current_game: current_game)
                         .frame(width: UIScreen.main.bounds.height * 0.055, height: UIScreen.main.bounds.height * 0.055)
+                    DayNightToggle(toggle: $current_game.day_night, current_game: current_game)
+                        .frame(width: UIScreen.main.bounds.height * 0.055, height: UIScreen.main.bounds.height * 0.055)
                 }
                 
                 

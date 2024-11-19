@@ -41,6 +41,9 @@
 		F857CE072CE5197400F1B0B0 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = F857CE062CE5197400F1B0B0 /* Buttons.swift */; };
 		F857CE092CE51B1600F1B0B0 /* RingTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F857CE082CE51B1600F1B0B0 /* RingTrack.swift */; };
 		F857CE0D2CE51BE900F1B0B0 /* RingElem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F857CE0C2CE51BE900F1B0B0 /* RingElem.swift */; };
+		F857CE602CECEA8500F1B0B0 /* DayNightToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F857CE5F2CECEA8500F1B0B0 /* DayNightToggle.swift */; };
+		F857CE622CED345600F1B0B0 /* DiceTray.swift in Sources */ = {isa = PBXBuildFile; fileRef = F857CE612CED345600F1B0B0 /* DiceTray.swift */; };
+		F857CE642CED350700F1B0B0 /* DiceElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = F857CE632CED350700F1B0B0 /* DiceElement.swift */; };
 		F86BD4FE2CAC3CC700E2392F /* DungeonElem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86BD4FD2CAC3CC700E2392F /* DungeonElem.swift */; };
 		F86BD5022CAC4D0300E2392F /* DungeonBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86BD5012CAC4D0300E2392F /* DungeonBackground.swift */; };
 		F8729EBE2BDC00ED00662855 /* FivePlayerGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8729EBD2BDC00ED00662855 /* FivePlayerGame.swift */; };
@@ -113,6 +116,9 @@
 		F857CE062CE5197400F1B0B0 /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
 		F857CE082CE51B1600F1B0B0 /* RingTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingTrack.swift; sourceTree = "<group>"; };
 		F857CE0C2CE51BE900F1B0B0 /* RingElem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingElem.swift; sourceTree = "<group>"; };
+		F857CE5F2CECEA8500F1B0B0 /* DayNightToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayNightToggle.swift; sourceTree = "<group>"; };
+		F857CE612CED345600F1B0B0 /* DiceTray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceTray.swift; sourceTree = "<group>"; };
+		F857CE632CED350700F1B0B0 /* DiceElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceElement.swift; sourceTree = "<group>"; };
 		F86BD4FD2CAC3CC700E2392F /* DungeonElem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DungeonElem.swift; sourceTree = "<group>"; };
 		F86BD5012CAC4D0300E2392F /* DungeonBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DungeonBackground.swift; sourceTree = "<group>"; };
 		F8729EBD2BDC00ED00662855 /* FivePlayerGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FivePlayerGame.swift; sourceTree = "<group>"; };
@@ -230,10 +236,12 @@
 			isa = PBXGroup;
 			children = (
 				F811322F2CB055B8001B8502 /* MenuBar.swift */,
+				F857CE632CED350700F1B0B0 /* DiceElement.swift */,
 				F81210222CC22A1E00D77D3C /* Button_AdvancedFeatureSelection.swift */,
 				F88B27532C56AC8D00E19197 /* Button_Expanding.swift */,
 				F8D1BC1A2C05479200A163D8 /* Counter_Circle.swift */,
 				F82B69092C69314C0058FAC0 /* Toggle_Circle.swift */,
+				F857CE5F2CECEA8500F1B0B0 /* DayNightToggle.swift */,
 				F82B690B2C697D380058FAC0 /* Toggle_Single_Circle.swift */,
 				F81AC3DF2BC8632900D65AB4 /* Button_Square.swift */,
 				F82B69072C68547E0058FAC0 /* Counter_GameCounters.swift */,
@@ -270,6 +278,7 @@
 			isa = PBXGroup;
 			children = (
 				F82E08F12BC599CF00C651AE /* LifeBlock.swift */,
+				F857CE612CED345600F1B0B0 /* DiceTray.swift */,
 				F811322D2CAF38E2001B8502 /* LifeBlock-Flip.swift */,
 				F86BD4FD2CAC3CC700E2392F /* DungeonElem.swift */,
 				F81B6B762C367B60005B98E4 /* CommanderDamageDisplay.swift */,
@@ -445,6 +454,7 @@
 				F81132382CB0DE96001B8502 /* Counter_CommanderCount.swift in Sources */,
 				F81132302CB055B8001B8502 /* MenuBar.swift in Sources */,
 				F857CE0D2CE51BE900F1B0B0 /* RingElem.swift in Sources */,
+				F857CE622CED345600F1B0B0 /* DiceTray.swift in Sources */,
 				F82E08F62BC5A57900C651AE /* Game.swift in Sources */,
 				F86BD5022CAC4D0300E2392F /* DungeonBackground.swift in Sources */,
 				F811322E2CAF38E2001B8502 /* LifeBlock-Flip.swift in Sources */,
@@ -456,12 +466,14 @@
 				F81210232CC22A1E00D77D3C /* Button_AdvancedFeatureSelection.swift in Sources */,
 				F81AC3D82BC831BE00D65AB4 /* Key_Large.swift in Sources */,
 				F82B69042C6847750058FAC0 /* PageManager.swift in Sources */,
+				F857CE642CED350700F1B0B0 /* DiceElement.swift in Sources */,
 				F81AC3E62BC89F8500D65AB4 /* BackgroundRectangle.swift in Sources */,
 				F81AC3DE2BC85E6B00D65AB4 /* TwoPlayerGame.swift in Sources */,
 				F81AC3D42BC6E88200D65AB4 /* Key_Keypad.swift in Sources */,
 				F881E27D2BD20F6600A98031 /* OnePlayerGame.swift in Sources */,
 				F8D1BC192C05433F00A163D8 /* PlayerMenu.swift in Sources */,
 				F81AC3DA2BC85B8000D65AB4 /* Key_Small.swift in Sources */,
+				F857CE602CECEA8500F1B0B0 /* DayNightToggle.swift in Sources */,
 				F84D42172CAEDFE200AEFAD2 /* DungeonDelver.swift in Sources */,
 				F857CE072CE5197400F1B0B0 /* Buttons.swift in Sources */,
 				F857CE052CE5159400F1B0B0 /* Toggle_CheckBox.swift in Sources */,

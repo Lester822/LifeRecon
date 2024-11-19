@@ -55,6 +55,7 @@ struct Confirmation: View {
     
     func reset_game() {
         withAnimation {
+            current_game.day_night = ""
             current_game.showing_circle_menu = false
             current_game.showing_commander_damage = false
             current_game.blur_background = false
