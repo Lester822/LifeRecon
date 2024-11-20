@@ -9,9 +9,10 @@ import SwiftUI
 
 struct MenuBar: View {
     @ObservedObject var current_game: ActiveGame
+    let middle_gap: Bool
     
     var body: some View {
-        if current_game.showing_circle_menu {
+        if (current_game.showing_circle_menu || current_game.player_count == 1) {
             HStack {
                 Button {
                     soft_pulse()
@@ -34,14 +35,16 @@ struct MenuBar: View {
                         .frame(width: 50.0, height: 50.0)
                 }
 
+                if middle_gap {
+                    Spacer()
+                        .frame(width: 125.0)
+                }
                 
-                Spacer()
-                    .frame(width: 125.0)
                 Button {
                     soft_pulse()
                     withAnimation {
                         current_game.showing_circle_menu = false
-                        current_game.showing_dice_tray = true
+                        current_game.showing_dice_tray.toggle()
                     }
                 } label: {
                     Image("Dice")
@@ -68,5 +71,5 @@ struct MenuBar: View {
 }
 
 #Preview {
-    MenuBar(current_game: ActiveGame(player_count: 4, starting_life: 40))
+    MenuBar(current_game: ActiveGame(player_count: 4, starting_life: 40), middle_gap: true)
 }

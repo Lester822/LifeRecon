@@ -307,11 +307,6 @@ struct SetLifeKeypad: View {
 
                }}
 
-func haptic_pulse() {
-    let generator = UIImpactFeedbackGenerator(style: .medium)
-    generator.prepare()
-    generator.impactOccurred()
-}
 #Preview {
     SetLifeKeypad(current_game: ActiveGame(player_count: 4, starting_life: 40))
 }

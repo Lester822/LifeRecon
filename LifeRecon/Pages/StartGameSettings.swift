@@ -179,6 +179,7 @@ struct OptionalSettings: View {
                 current_game.in_progress = true
                 current_game.showing_circle_menu = false
                 current_game.showing_commander_damage = false
+                current_game.showing_dice_tray = false
                 current_game.day_night = ""
                 var index = 1
                 for player in current_game.players {

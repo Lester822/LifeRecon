@@ -25,7 +25,9 @@ struct ThreePlayerGame: View {
                         .edgesIgnoringSafeArea(.all)
                 })
                 
-                MenuBar(current_game: current_game)
+                MenuBar(current_game: current_game, middle_gap: true)
+                DiceTray(current_game: current_game, middle_gap: true)
+
        
                 HStack (spacing: 0.0, content: {
                     let life3 = LifeBlockA(player: current_game.players[2], game: current_game)

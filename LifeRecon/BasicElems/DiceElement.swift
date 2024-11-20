@@ -25,10 +25,8 @@ struct DiceElement: View {
                     
                     resetWorkItem?.cancel()
                     let workItem = DispatchWorkItem {
-                        withAnimation(.easeOut(duration: 0.2)) {
-                            withAnimation {
-                                value = -1
-                            }
+                        withAnimation {
+                            value = -1
                         }
                     }
                     resetWorkItem = workItem
@@ -38,11 +36,13 @@ struct DiceElement: View {
                         Image(icon)
                             .resizable(resizingMode: .stretch)
                             .frame(width: geometry.size.height, height: geometry.size.height)
+                            .transition(.zoomEffect)
                     } else {
                         Text(String(value))
                             .foregroundStyle(.white)
                             .fontWeight(.bold)
                             .font(.system(size: geometry.size.height * 0.6))
+                            .transition(.zoomEffect)
                     }
                 }
             }
