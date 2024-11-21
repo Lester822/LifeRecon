@@ -24,7 +24,7 @@ struct Loading: View {
                     withAnimation {
                         current_game.current_setting = "player_count"
                     }
-                    haptic_pulse()
+                    heavy_haptic_pulse()
                     withAnimation {
                         current_game.current_page = "settings"
                     }
@@ -36,7 +36,7 @@ struct Loading: View {
                 if current_game.in_progress == true {
                     Button {
                         withAnimation {
-                            haptic_pulse()
+                            heavy_haptic_pulse()
                             if current_game.player_count == 1 {
                                 withAnimation{
                                     current_game.current_page = "one_player"

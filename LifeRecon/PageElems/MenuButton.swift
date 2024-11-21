@@ -20,7 +20,7 @@ struct MenuButton: View {
                     current_game.showing_circle_menu.toggle()
                 }
             }
-            haptic_pulse()
+            medium_haptic_pulse()
             
         } label: {
             if current_game.day_night == "day" {

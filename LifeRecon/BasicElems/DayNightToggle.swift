@@ -16,7 +16,7 @@ struct DayNightToggle: View {
             ZStack {
                 
                 Button {
-                    haptic_pulse()
+                    medium_haptic_pulse()
                     withAnimation {
                         if toggle == "day" {
                             toggle = "night"

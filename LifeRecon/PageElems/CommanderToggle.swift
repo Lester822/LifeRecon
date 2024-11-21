@@ -25,7 +25,7 @@ struct CommanderToggleButton: View {
                     current_game.caller.subtract_life_with_cmdr_damage.toggle()
     //                current_game.blur_background.toggle()
                 }
-                haptic_pulse()
+                medium_haptic_pulse()
                 
             } label: {
                 Image(player.subtract_life_with_cmdr_damage ? "LifeLossCommanderDamageButton_On" : "LifeLossCommanderDamageButton")

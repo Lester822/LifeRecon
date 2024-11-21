@@ -160,6 +160,7 @@ struct OptionalSettings: View {
                 Toggle_Checkbox(toggle: $current_game.commander_features_enabled, current_game: current_game)
                     .frame(width: 40.0, height: 40.0)
                 Button {
+                    medium_haptic_pulse()
                     withAnimation {
                         current_game.commander_features_enabled.toggle()
                     }
@@ -175,7 +176,7 @@ struct OptionalSettings: View {
             
             
             Button {
-                haptic_pulse()
+                medium_haptic_pulse()
                 current_game.in_progress = true
                 current_game.showing_circle_menu = false
                 current_game.showing_commander_damage = false

@@ -38,7 +38,6 @@
 		F82E08F82BC5C0B600C651AE /* Test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F82E08F72BC5C0B600C651AE /* Test.storyboard */; };
 		F84D42172CAEDFE200AEFAD2 /* DungeonDelver.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84D42162CAEDFE200AEFAD2 /* DungeonDelver.swift */; };
 		F857CE052CE5159400F1B0B0 /* Toggle_CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = F857CE042CE5159400F1B0B0 /* Toggle_CheckBox.swift */; };
-		F857CE072CE5197400F1B0B0 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = F857CE062CE5197400F1B0B0 /* Buttons.swift */; };
 		F857CE092CE51B1600F1B0B0 /* RingTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F857CE082CE51B1600F1B0B0 /* RingTrack.swift */; };
 		F857CE0D2CE51BE900F1B0B0 /* RingElem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F857CE0C2CE51BE900F1B0B0 /* RingElem.swift */; };
 		F857CE602CECEA8500F1B0B0 /* DayNightToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F857CE5F2CECEA8500F1B0B0 /* DayNightToggle.swift */; };
@@ -113,7 +112,6 @@
 		F82E08F72BC5C0B600C651AE /* Test.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Test.storyboard; sourceTree = "<group>"; };
 		F84D42162CAEDFE200AEFAD2 /* DungeonDelver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DungeonDelver.swift; sourceTree = "<group>"; };
 		F857CE042CE5159400F1B0B0 /* Toggle_CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toggle_CheckBox.swift; sourceTree = "<group>"; };
-		F857CE062CE5197400F1B0B0 /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
 		F857CE082CE51B1600F1B0B0 /* RingTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingTrack.swift; sourceTree = "<group>"; };
 		F857CE0C2CE51BE900F1B0B0 /* RingElem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingElem.swift; sourceTree = "<group>"; };
 		F857CE5F2CECEA8500F1B0B0 /* DayNightToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayNightToggle.swift; sourceTree = "<group>"; };
@@ -303,7 +301,6 @@
 				F82B69032C6847750058FAC0 /* PageManager.swift */,
 				F82E08F52BC5A57900C651AE /* Game.swift */,
 				F82E08F32BC5A56000C651AE /* Player.swift */,
-				F857CE062CE5197400F1B0B0 /* Buttons.swift */,
 			);
 			path = Structs;
 			sourceTree = "<group>";
@@ -475,7 +472,6 @@
 				F81AC3DA2BC85B8000D65AB4 /* Key_Small.swift in Sources */,
 				F857CE602CECEA8500F1B0B0 /* DayNightToggle.swift in Sources */,
 				F84D42172CAEDFE200AEFAD2 /* DungeonDelver.swift in Sources */,
-				F857CE072CE5197400F1B0B0 /* Buttons.swift in Sources */,
 				F857CE052CE5159400F1B0B0 /* Toggle_CheckBox.swift in Sources */,
 				F8B234632BC57ED7009D6962 /* LifeReconApp.swift in Sources */,
 				F82B69082C68547E0058FAC0 /* Counter_GameCounters.swift in Sources */,
@@ -661,7 +657,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -690,7 +686,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

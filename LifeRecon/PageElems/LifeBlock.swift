@@ -8,7 +8,7 @@
 import SwiftUI
 import UIKit
 
-let BLOCK_CORNER = 30.0
+let BLOCK_CORNER = 40.0
 
 struct LifeBlock: View {
     @ObservedObject var player: Player
@@ -152,7 +152,7 @@ struct LifeBlock: View {
                                 //let verticalMovement = gesture.translation.height
                                 let horizontalMovement = gesture.translation.width
                                 if (horizontalMovement < 0) {
-                                    haptic_pulse()
+                                    medium_haptic_pulse()
                                     
                                     if player.storm_count != 0 {
                                         player.active_counters.append("storm")
@@ -319,6 +319,7 @@ struct LifeBlock: View {
                                     .frame(width: 30.0)
                                 if game.commander_features_enabled {
                                     Button {
+                                        soft_haptic_pulse()
                                         game.caller = player
                                         withAnimation {
                                             game.showing_commander_damage.toggle()

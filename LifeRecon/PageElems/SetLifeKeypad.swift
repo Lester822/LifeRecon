@@ -99,7 +99,7 @@ struct SetLifeKeypad: View {
                         //.frame(width: 60.0)
                     VStack(content: {
                         Button {
-                            haptic_pulse()
+                            medium_haptic_pulse()
                             if current_game.keypad_current_text.count < 8 {
                                 current_game.keypad_current_text = current_game.keypad_current_text + "1"
                             }
@@ -107,7 +107,7 @@ struct SetLifeKeypad: View {
                             Key_Keypad(given_text: "1", color: .black, background: Color(hue: 1.0, saturation: 0.0, brightness: 0.835))
                         }
                         Button {
-                            haptic_pulse()
+                            medium_haptic_pulse()
                             if current_game.keypad_current_text.count < 8 {
                                 current_game.keypad_current_text = current_game.keypad_current_text + "4"
                             }
@@ -115,7 +115,7 @@ struct SetLifeKeypad: View {
                             Key_Keypad(given_text: "4", color: .black, background: Color(hue: 1.0, saturation: 0.0, brightness: 0.835))
                         }
                         Button {
-                            haptic_pulse()
+                            medium_haptic_pulse()
                             if current_game.keypad_current_text.count < 8 {
                                 current_game.keypad_current_text = current_game.keypad_current_text + "7"
                             }
@@ -123,7 +123,7 @@ struct SetLifeKeypad: View {
                             Key_Keypad(given_text: "7", color: .black, background: Color(hue: 1.0, saturation: 0.0, brightness: 0.835))
                         }
                         Button {
-                            haptic_pulse()
+                            medium_haptic_pulse()
                             if current_game.keypad_current_text.count < 8 {
                                 print("BLANK")
                             }
@@ -133,7 +133,7 @@ struct SetLifeKeypad: View {
                     })
                     VStack(content: {
                         Button {
-                            haptic_pulse()
+                            medium_haptic_pulse()
                             if current_game.keypad_current_text.count < 8 {
                                 current_game.keypad_current_text = current_game.keypad_current_text + "2"
                             }
@@ -141,7 +141,7 @@ struct SetLifeKeypad: View {
                             Key_Keypad(given_text: "2", color: .black, background: Color(hue: 1.0, saturation: 0.0, brightness: 0.835))
                         }
                         Button {
-                            haptic_pulse()
+                            medium_haptic_pulse()
                             if current_game.keypad_current_text.count < 8 {
                                 current_game.keypad_current_text = current_game.keypad_current_text + "5"
                             }
@@ -149,7 +149,7 @@ struct SetLifeKeypad: View {
                             Key_Keypad(given_text: "5", color: .black, background: Color(hue: 1.0, saturation: 0.0, brightness: 0.835))
                         }
                         Button {
-                            haptic_pulse()
+                            medium_haptic_pulse()
                             if current_game.keypad_current_text.count < 8 {
                                 current_game.keypad_current_text = current_game.keypad_current_text + "8"
                             }
@@ -157,7 +157,7 @@ struct SetLifeKeypad: View {
                             Key_Keypad(given_text: "8", color: .black, background: Color(hue: 1.0, saturation: 0.0, brightness: 0.835))
                         }
                         Button {
-                            haptic_pulse()
+                            medium_haptic_pulse()
                             if current_game.keypad_current_text.count < 8 {
                                 current_game.keypad_current_text = current_game.keypad_current_text + "0"
                             }
@@ -167,7 +167,7 @@ struct SetLifeKeypad: View {
                     })
                     VStack(content: {
                         Button {
-                            haptic_pulse()
+                            medium_haptic_pulse()
                             if current_game.keypad_current_text.count < 8 {
                                 current_game.keypad_current_text = current_game.keypad_current_text + "3"
                             }
@@ -175,7 +175,7 @@ struct SetLifeKeypad: View {
                             Key_Keypad(given_text: "3", color: .black, background: Color(hue: 1.0, saturation: 0.0, brightness: 0.835))
                         }
                         Button {
-                            haptic_pulse()
+                            medium_haptic_pulse()
                             if current_game.keypad_current_text.count < 8 {
                                 current_game.keypad_current_text = current_game.keypad_current_text + "6"
                             }
@@ -183,7 +183,7 @@ struct SetLifeKeypad: View {
                             Key_Keypad(given_text: "6", color: .black, background: Color(hue: 1.0, saturation: 0.0, brightness: 0.835))
                         }
                         Button {
-                            haptic_pulse()
+                            medium_haptic_pulse()
                             if current_game.keypad_current_text.count < 8 {
                                 current_game.keypad_current_text = current_game.keypad_current_text + "9"
                             }
@@ -191,7 +191,7 @@ struct SetLifeKeypad: View {
                             Key_Keypad(given_text: "9", color: .black, background: Color(hue: 1.0, saturation: 0.0, brightness: 0.835))
                         }
                         Button {
-                            haptic_pulse()
+                            medium_haptic_pulse()
                             if current_game.keypad_current_text.count > 0 {
                                 current_game.keypad_current_text.removeLast()
                             }
@@ -236,7 +236,7 @@ struct SetLifeKeypad: View {
 
                     HStack (content: {
                         Button {
-                            haptic_pulse()
+                            medium_haptic_pulse()
                             withAnimation {
                                 current_game.showing_keypad = false
                                 current_game.blur_background = false
@@ -247,7 +247,7 @@ struct SetLifeKeypad: View {
                         }
                         .transition(.zoomIt)
                         Button {
-                            haptic_pulse()
+                            medium_haptic_pulse()
                             
                             if current_game.current_operation == "+" {
                                 if let given_number = Int(current_game.keypad_current_text) {

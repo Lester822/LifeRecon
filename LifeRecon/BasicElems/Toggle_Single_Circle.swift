@@ -19,7 +19,7 @@ struct Toggle_Single_Circle: View {
             ZStack {
                 
                 Button {
-                    haptic_pulse()
+                    medium_haptic_pulse()
                     withAnimation {
                         toggle.toggle()
                     }

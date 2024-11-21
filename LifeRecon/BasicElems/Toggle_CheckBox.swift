@@ -16,7 +16,7 @@ struct Toggle_Checkbox: View {
             ZStack {
                 
                 Button {
-                    haptic_pulse()
+                    medium_haptic_pulse()
                     withAnimation {
                         toggle.toggle()
                     }

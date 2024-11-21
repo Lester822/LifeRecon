@@ -49,7 +49,7 @@ struct LifeBlockA: View {
                     if player.vertical_increment {
                         VStack (spacing: 0.0, content: {
                             Button {
-                                modifyLife(by: 1)
+                                modifyLife(by: -1)
                                 
                             } label: {
                                 UnevenRoundedRectangle(cornerRadii: .init(
@@ -66,7 +66,7 @@ struct LifeBlockA: View {
                             .buttonStyle(OpacityButton())
                             
                             Button {
-                                modifyLife(by: -1)
+                                modifyLife(by: 1)
                             } label: {
                                 UnevenRoundedRectangle(cornerRadii: .init(
                                     topLeading: 0.0,
@@ -85,7 +85,7 @@ struct LifeBlockA: View {
                     } else {
                         HStack (spacing: 0.0, content: {
                             Button {
-                                modifyLife(by: 1)
+                                modifyLife(by: -1)
                                 
                             } label: {
                                 UnevenRoundedRectangle(cornerRadii: .init(
@@ -102,7 +102,7 @@ struct LifeBlockA: View {
                             .buttonStyle(OpacityButton())
                             
                             Button {
-                                modifyLife(by: -1)
+                                modifyLife(by: 1)
                             } label: {
                                 UnevenRoundedRectangle(cornerRadii: .init(
                                     topLeading: 0.0,
@@ -152,7 +152,7 @@ struct LifeBlockA: View {
                                 let horizontalMovement = gesture.translation.height
                                 if (horizontalMovement > 0) {
                                         print("OPEN PLAYER SETTINGS")
-                                    haptic_pulse()
+                                    medium_haptic_pulse()
                                     
                                     if player.storm_count != 0 {
                                         player.active_counters.append("storm")
@@ -312,6 +312,7 @@ struct LifeBlockA: View {
                             if game.commander_features_enabled {
                                 Button {
                                     game.caller = player
+                                    soft_haptic_pulse()
                                     withAnimation {
                                         game.showing_commander_damage.toggle()
                                     }

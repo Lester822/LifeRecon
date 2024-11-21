@@ -18,7 +18,7 @@ struct Counter_GameCounters: View {
             ZStack (content: {
                 VStack(spacing: 0.0) {
                     Button {
-                        soft_pulse()
+                        soft_haptic_pulse()
                         withAnimation {
                             if add_amount == -1 {
                                 number = number == 1 ? 2 : 1
@@ -38,7 +38,7 @@ struct Counter_GameCounters: View {
                     }
                     
                     Button {
-                        soft_pulse()
+                        soft_haptic_pulse()
                         withAnimation {
                             if add_amount == -1 {
                                 number = number == 1 ? 2 : 1

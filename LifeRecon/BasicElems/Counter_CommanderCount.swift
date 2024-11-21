@@ -20,7 +20,7 @@ struct Counter_CommanderCount: View {
             ZStack {
                 VStack(spacing: 0.0) {
                     Button {
-                        soft_pulse()
+                        soft_haptic_pulse()
                         if type == "count_by_one" {
                             withAnimation(.easeIn(duration: 0.3)) {
                                 number += 1
@@ -45,7 +45,7 @@ struct Counter_CommanderCount: View {
                     }
                     
                     Button {
-                        soft_pulse()
+                        soft_haptic_pulse()
                         if type == "count_by_one" {
                             withAnimation(.easeIn(duration: 0.3)) {
                                 number -= 1

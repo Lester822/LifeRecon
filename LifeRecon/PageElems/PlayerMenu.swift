@@ -206,6 +206,7 @@ struct PlayerMenu: View {
                         Button {
                             withAnimation {
                                 current_game.showing_dungeon = true
+                                medium_haptic_pulse()
                             }
                         } label: {
                             Button_AdvancedFeatureSelection(current_game: current_game, text: "Dungeon Delver", icon: "DungeonIcon")
@@ -214,6 +215,7 @@ struct PlayerMenu: View {
                         Button {
                             withAnimation {
                                 current_game.showing_ring = true
+                                medium_haptic_pulse()
                             }
                         } label: {
                             Button_AdvancedFeatureSelection(current_game: current_game, text: "Ring Tracker", icon: "RingIcon")
@@ -224,6 +226,7 @@ struct PlayerMenu: View {
                                 current_game.showing_player_menu = false
                                 current_game.blur_background = false
                                 current_game.showing_commander_damage = true
+                                medium_haptic_pulse()
                             } label: {
                                 Button_AdvancedFeatureSelection(current_game: current_game, text: "Commander Damage", icon: "CommanderIcon")
                                     .frame(width: UIScreen.main.bounds.width * 0.397, height: UIScreen.main.bounds.height * 0.0586)
@@ -257,7 +260,7 @@ struct PlayerMenu: View {
                             .frame(width: UIScreen.main.bounds.width * 0.1493, height: UIScreen.main.bounds.width * 0.1493)
                         
                         Button {
-                            haptic_pulse()
+                            medium_haptic_pulse()
                             current_game.caller.white_mana = 0
                             current_game.caller.blue_mana = 0
                             current_game.caller.black_mana = 0

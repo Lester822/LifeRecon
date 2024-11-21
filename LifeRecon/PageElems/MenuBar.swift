@@ -15,7 +15,7 @@ struct MenuBar: View {
         if (current_game.showing_circle_menu || current_game.player_count == 1) {
             HStack {
                 Button {
-                    soft_pulse()
+                    soft_haptic_pulse()
                     print("test")
                 } label: {
                     Image("Settings")
@@ -23,7 +23,7 @@ struct MenuBar: View {
                         .frame(width: 50.0, height: 50.0)
                 }
                 Button {
-                    soft_pulse()
+                    soft_haptic_pulse()
                     withAnimation {
                         current_game.showing_circle_menu = false
                         current_game.blur_background = false
@@ -41,7 +41,7 @@ struct MenuBar: View {
                 }
                 
                 Button {
-                    soft_pulse()
+                    soft_haptic_pulse()
                     withAnimation {
                         current_game.showing_circle_menu = false
                         current_game.showing_dice_tray.toggle()
@@ -53,7 +53,7 @@ struct MenuBar: View {
                 }
                 Button {
                     withAnimation {
-                        soft_pulse()
+                        soft_haptic_pulse()
                         current_game.first_confirm_line = "Are you sure you want to"
                         current_game.confirm_message = "reset the game?"
                         current_game.blur_background = true

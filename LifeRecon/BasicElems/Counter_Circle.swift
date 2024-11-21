@@ -20,7 +20,7 @@ struct Counter_Circle: View {
             ZStack {
                 VStack(spacing: 0.0) {
                     Button {
-                        soft_pulse()
+                        soft_haptic_pulse()
                         if type == "mana" {
                             withAnimation(.easeIn(duration: 0.3)) {
                                 number += 1
@@ -48,7 +48,7 @@ struct Counter_Circle: View {
                     }
                     
                     Button {
-                        soft_pulse()
+                        soft_haptic_pulse()
                         if type == "mana" {
                             withAnimation(.easeIn(duration: 0.3)) {
                                 number -= 1
