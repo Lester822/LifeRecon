@@ -52,6 +52,8 @@ class Player: ObservableObject {
     @Published var background_color: Color = .red
     @Published var background_image: String = "NONE"
     
+    @Published var vertical_increment: Bool = false
+    
     init(life_total: Int, name: String) {
         self.life_total = life_total
         self.starting_life = life_total

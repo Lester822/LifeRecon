@@ -16,3 +16,10 @@ let magic_colorless = Color(UIColor(red: 204.00/255, green: 194.00/255, blue: 19
 
 let night_blue = Color(UIColor(red: 17.0/255, green: 23.0/255, blue: 138.0/255, alpha: 1.00))
 let day_yellow = Color(UIColor(red: 255.0/255, green: 204.0/255, blue: 0/255, alpha: 1.00))
+
+let base_red = Color(UIColor(red: 215.0/255, green: 64.0/255, blue: 64.0/255, alpha: 1.00))
+let base_blue = Color(UIColor(red: 49.0/255, green: 191.0/255, blue: 243.0/255, alpha: 1.00))
+let base_purple = Color(UIColor(red: 164.0/255, green: 132.0/255, blue: 233.0/255, alpha: 1.00))
+let base_orange = Color(UIColor(red: 255.0/255, green: 146.0/255, blue: 51.0/255, alpha: 1.00))
+let base_green = Color(UIColor(red: 83.0/255, green: 209.0/255, blue: 124.0/255, alpha: 1.00))
+let base_yellow = Color(UIColor(red: 238.0/255, green: 211.0/255, blue: 60.0/255, alpha: 1.00))

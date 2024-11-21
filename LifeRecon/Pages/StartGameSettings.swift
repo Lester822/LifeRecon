@@ -187,15 +187,15 @@ struct OptionalSettings: View {
                     player.name = "PLAYER " + String(index)
                     player.player_number = index
                     if index == 1 {
-                        player.background_color = .red
+                        player.background_color = base_red
                     } else if index == 2 {
-                        player.background_color = .blue
+                        player.background_color = base_blue
                     } else if index == 3 {
-                        player.background_color = .green
+                        player.background_color = base_green
                     } else if index == 4 {
-                        player.background_color = .yellow
+                        player.background_color = base_orange
                     } else if index == 5 {
-                        player.background_color = .purple
+                        player.background_color = base_purple
                     }
                     index += 1
                     player.white_mana = 0

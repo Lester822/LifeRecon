@@ -235,8 +235,6 @@
 		F8D1BC142C05412D00A163D8 /* BasicElems */ = {
 			isa = PBXGroup;
 			children = (
-				F811322F2CB055B8001B8502 /* MenuBar.swift */,
-				F857CE612CED345600F1B0B0 /* DiceTray.swift */,
 				F857CE632CED350700F1B0B0 /* DiceElement.swift */,
 				F81210222CC22A1E00D77D3C /* Button_AdvancedFeatureSelection.swift */,
 				F88B27532C56AC8D00E19197 /* Button_Expanding.swift */,
@@ -293,6 +291,8 @@
 				F81132352CB0DB2E001B8502 /* PlayMenuSwitcher.swift */,
 				F81AC3E52BC89F8500D65AB4 /* BackgroundRectangle.swift */,
 				F86BD5012CAC4D0300E2392F /* DungeonBackground.swift */,
+				F811322F2CB055B8001B8502 /* MenuBar.swift */,
+				F857CE612CED345600F1B0B0 /* DiceTray.swift */,
 			);
 			path = PageElems;
 			sourceTree = "<group>";

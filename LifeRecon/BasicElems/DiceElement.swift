@@ -19,6 +19,7 @@ struct DiceElement: View {
         GeometryReader { geometry in
             ZStack {
                 Button {
+                    haptic_pulse()
                     withAnimation {
                         value = Int.random(in: min_value..<max_value+1)
                     }

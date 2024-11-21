@@ -13,3 +13,9 @@ func haptic_pulse() {
     generator.prepare()
     generator.impactOccurred()
 }
+
+func soft_pulse() {
+    let generator = UIImpactFeedbackGenerator(style: .soft)
+    generator.prepare()
+    generator.impactOccurred()
+}

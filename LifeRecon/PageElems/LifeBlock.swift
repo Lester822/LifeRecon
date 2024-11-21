@@ -8,13 +8,7 @@
 import SwiftUI
 import UIKit
 
-struct OpacityButton: ButtonStyle {
-    func makeBody(configuration: Configuration) -> some View {
-        configuration.label
-            .opacity(configuration.isPressed ? 0.6 : 0.05)
-            .animation(.easeInOut(duration: 0.4), value: configuration.isPressed)
-    }
-}
+let BLOCK_CORNER = 30.0
 
 struct LifeBlock: View {
     @ObservedObject var player: Player
@@ -42,53 +36,92 @@ struct LifeBlock: View {
                         .aspectRatio(contentMode: .fill)
                         .rotationEffect(Angle(degrees: 90))
                         .frame(width: geometry.size.width - 10, height: geometry.size.height - 10) // Ensure the image fits within the padding
-                        .clipShape(RoundedRectangle(cornerRadius: 50.0)) // Clips the image to the rounded rectangle shape
+                        .clipShape(RoundedRectangle(cornerRadius: BLOCK_CORNER)) // Clips the image to the rounded rectangle shape
                         .clipped() // Ensures no overflow
                         .blur(radius: 2.0)
                         .allowsHitTesting(false)
                 } else {
-                    RoundedRectangle(cornerRadius: 50.0) // This is the actual background color
+                    RoundedRectangle(cornerRadius: BLOCK_CORNER) // This is the actual background color
                         .foregroundColor(player.background_color)
                         .padding([.top, .bottom, .trailing, .leading], 5.0)
                 }
                 
 
                 ZStack (content: {  // THIS IS THE ZSTACK FOR THE INTERACTABLE-PARTS
-                    HStack (spacing: 0.0, content: {
-                        Button {
-                            modifyLife(by: -1)
+                    if player.vertical_increment {
+                        HStack (spacing: 0.0, content: {
+                            Button {
+                                modifyLife(by: -1)
+                                
+                            } label: {
+                                UnevenRoundedRectangle(cornerRadii: .init(
+                                    topLeading: BLOCK_CORNER,
+                                    bottomLeading: BLOCK_CORNER,
+                                    bottomTrailing: 00.0,
+                                    topTrailing: 00.0),
+                                                       style: .continuous)
+                                .padding([.top, .leading, .bottom], 5.0)
+                                .padding(.trailing, 0.0)
+                                .foregroundColor(.black)
+                                //.opacity(0.05)
+                            }
+                            .buttonStyle(OpacityButton())
                             
-                        } label: {
-                            UnevenRoundedRectangle(cornerRadii: .init(
-                                topLeading: 50.0,
-                                bottomLeading: 50.0,
-                                bottomTrailing: 00.0,
-                                topTrailing: 00.0),
-                                                   style: .continuous)
-                            .padding([.top, .leading, .bottom], 5.0)
-                            .padding(.trailing, 0.0)
-                            .foregroundColor(.black)
-                            //.opacity(0.05)
-                        }
-                        .buttonStyle(OpacityButton())
-                        
-                        Button {
-                            modifyLife(by: 1)
-                        } label: {
-                            UnevenRoundedRectangle(cornerRadii: .init(
-                                topLeading: 0.0,
-                                bottomLeading: 0.0,
-                                bottomTrailing: 50.0,
-                                topTrailing: 50.0),
-                                                   style: .continuous)
-                            .padding([.top, .bottom, .trailing], 5.0)
-                            .padding(.leading, 0.0)
-                            .foregroundColor(.black)
-                            //.opacity(0.05)
-                        }
-                        .buttonStyle(OpacityButton())
-                        
-                    })
+                            Button {
+                                modifyLife(by: 1)
+                            } label: {
+                                UnevenRoundedRectangle(cornerRadii: .init(
+                                    topLeading: 0.0,
+                                    bottomLeading: 0.0,
+                                    bottomTrailing: BLOCK_CORNER,
+                                    topTrailing: BLOCK_CORNER),
+                                                       style: .continuous)
+                                .padding([.top, .bottom, .trailing], 5.0)
+                                .padding(.leading, 0.0)
+                                .foregroundColor(.black)
+                                //.opacity(0.05)
+                            }
+                            .buttonStyle(OpacityButton())
+                            
+                        })
+                    } else {
+                        VStack (spacing: 0.0, content: {
+                            Button {
+                                modifyLife(by: -1)
+                                
+                            } label: {
+                                UnevenRoundedRectangle(cornerRadii: .init(
+                                    topLeading: BLOCK_CORNER,
+                                    bottomLeading: 0.0,
+                                    bottomTrailing: 00.0,
+                                    topTrailing: BLOCK_CORNER),
+                                                       style: .continuous)
+                                .padding([.top, .leading, .bottom], 5.0)
+                                .padding(.trailing, 0.0)
+                                .foregroundColor(.black)
+                                //.opacity(0.05)
+                            }
+                            .buttonStyle(OpacityButton())
+                            
+                            Button {
+                                modifyLife(by: 1)
+                            } label: {
+                                UnevenRoundedRectangle(cornerRadii: .init(
+                                    topLeading: 0.0,
+                                    bottomLeading: BLOCK_CORNER,
+                                    bottomTrailing: BLOCK_CORNER,
+                                    topTrailing: 0.0),
+                                                       style: .continuous)
+                                .padding([.top, .bottom, .trailing], 5.0)
+                                .padding(.leading, 0.0)
+                                .foregroundColor(.black)
+                                //.opacity(0.05)
+                            }
+                            .buttonStyle(OpacityButton())
+                            
+                        })
+                    }
+                    
                     
                     HStack {
                         Text(String(player.life_total))
@@ -102,7 +135,7 @@ struct LifeBlock: View {
                             .rotationEffect(Angle(degrees: 90))
                             .scaleEffect(scale)
                             .animation(.easeInOut(duration: 0.3), value: scale)
-                            .gesture(TapGesture(count: 2).onEnded { _ in
+                            .gesture(LongPressGesture(minimumDuration: 0.2).onEnded { _ in
                                 let generator = UIImpactFeedbackGenerator(style: .heavy)
                                 generator.prepare()
                                 generator.impactOccurred()
@@ -115,13 +148,6 @@ struct LifeBlock: View {
                                 game.current_rotation = player.rotation
                                 game.caller = self.player
                             })
-//                            .gesture(LongPressGesture(minimumDuration: 0.2).onEnded { _ in
-//                                print("OPEN PLAYER SETTINGS")
-//                                withAnimation {
-//                                    game.caller = player
-//                                    game.showing_player_menu = true
-//                                }
-//                            })
                             .gesture(DragGesture().onEnded { gesture in
                                 //let verticalMovement = gesture.translation.height
                                 let horizontalMovement = gesture.translation.width
@@ -224,6 +250,7 @@ struct LifeBlock: View {
                                 .font(.system(size: 25))
                                 .fontWeight(.bold)
                                 .foregroundColor(.white)
+                                .allowsHitTesting(false)
                                 .opacity(changeOpacity)
                                 .offset(x: changeOffset)
                                 .animation(.easeIn(duration: 0.5), value: changeOpacity)
