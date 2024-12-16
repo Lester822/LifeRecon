@@ -38,10 +38,16 @@ class ActiveGame: ObservableObject {
     @Published var showing_dungeon: Bool
     @Published var blur_background: Bool
     @Published var showing_ring: Bool
+    @Published var showing_random_dice_menu: Bool = false
     
     @Published var commander_features_enabled: Bool
     
     @Published var day_night: String = ""
+    
+    @Published var random_high_value: Int = 1
+    @Published var random_choose_value: Int = -1
+    @Published var rollCounter = 0 // Add this line
+
     
     
     init(player_count: Int, starting_life: Int) {

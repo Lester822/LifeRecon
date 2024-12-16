@@ -136,7 +136,7 @@ struct StartingLife: View {
                 .foregroundStyle(.white)
             Spacer()
                 .frame(height: 40.0)
-            BasicKeypad(current_text: "40", current_game: current_game)
+            StartingLifekeypad(current_text: "40", current_game: current_game)
         }
     }
 }

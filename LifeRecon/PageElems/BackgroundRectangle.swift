@@ -11,9 +11,9 @@ struct BackgroundRectangle: View {
     @ObservedObject var current_game: ActiveGame
     var body: some View {
         Rectangle()
-            .foregroundColor(.black)
+            .foregroundStyle(.black)
             //.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-            .opacity(0.5)
+            .opacity(0.6)
             .ignoresSafeArea(.all)
             .onTapGesture {
                 withAnimation {
@@ -24,6 +24,7 @@ struct BackgroundRectangle: View {
                     current_game.showing_commander_damage = false
                     current_game.blur_background = false
                     current_game.showing_dungeon = false
+                    current_game.showing_random_dice_menu = false
                 }
                 
                 if current_game.caller.reset_floating_each_time == true {

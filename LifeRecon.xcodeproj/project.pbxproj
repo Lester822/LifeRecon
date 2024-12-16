@@ -50,7 +50,7 @@
 		F881E2792BD202D700A98031 /* Key_Blank.swift in Sources */ = {isa = PBXBuildFile; fileRef = F881E2782BD202D700A98031 /* Key_Blank.swift */; };
 		F881E27B2BD20DC700A98031 /* StartGameSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F881E27A2BD20DC700A98031 /* StartGameSettings.swift */; };
 		F881E27D2BD20F6600A98031 /* OnePlayerGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = F881E27C2BD20F6600A98031 /* OnePlayerGame.swift */; };
-		F881E27F2BD2177300A98031 /* BasicKeypad.swift in Sources */ = {isa = PBXBuildFile; fileRef = F881E27E2BD2177300A98031 /* BasicKeypad.swift */; };
+		F881E27F2BD2177300A98031 /* StartingLifekeypad.swift in Sources */ = {isa = PBXBuildFile; fileRef = F881E27E2BD2177300A98031 /* StartingLifekeypad.swift */; };
 		F88B27542C56AC8D00E19197 /* Button_Expanding.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88B27532C56AC8D00E19197 /* Button_Expanding.swift */; };
 		F8B234632BC57ED7009D6962 /* LifeReconApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B234622BC57ED7009D6962 /* LifeReconApp.swift */; };
 		F8B234672BC57ED8009D6962 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8B234662BC57ED8009D6962 /* Assets.xcassets */; };
@@ -61,6 +61,7 @@
 		F8D1BC132C04900500A163D8 /* Key_HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D1BC122C04900500A163D8 /* Key_HomeScreen.swift */; };
 		F8D1BC192C05433F00A163D8 /* PlayerMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D1BC182C05433F00A163D8 /* PlayerMenu.swift */; };
 		F8D1BC1B2C05479200A163D8 /* Counter_Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D1BC1A2C05479200A163D8 /* Counter_Circle.swift */; };
+		F8D2B0CF2CF6B4BD000B5005 /* SetRandomKeypad.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D2B0CE2CF6B4BD000B5005 /* SetRandomKeypad.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,7 +125,7 @@
 		F881E2782BD202D700A98031 /* Key_Blank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key_Blank.swift; sourceTree = "<group>"; };
 		F881E27A2BD20DC700A98031 /* StartGameSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartGameSettings.swift; sourceTree = "<group>"; };
 		F881E27C2BD20F6600A98031 /* OnePlayerGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnePlayerGame.swift; sourceTree = "<group>"; };
-		F881E27E2BD2177300A98031 /* BasicKeypad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicKeypad.swift; sourceTree = "<group>"; };
+		F881E27E2BD2177300A98031 /* StartingLifekeypad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartingLifekeypad.swift; sourceTree = "<group>"; };
 		F88B27532C56AC8D00E19197 /* Button_Expanding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button_Expanding.swift; sourceTree = "<group>"; };
 		F8B2345F2BC57ED7009D6962 /* LifeRecon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LifeRecon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8B234622BC57ED7009D6962 /* LifeReconApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeReconApp.swift; sourceTree = "<group>"; };
@@ -138,6 +139,7 @@
 		F8D1BC122C04900500A163D8 /* Key_HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key_HomeScreen.swift; sourceTree = "<group>"; };
 		F8D1BC182C05433F00A163D8 /* PlayerMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerMenu.swift; sourceTree = "<group>"; };
 		F8D1BC1A2C05479200A163D8 /* Counter_Circle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Counter_Circle.swift; sourceTree = "<group>"; };
+		F8D2B0CE2CF6B4BD000B5005 /* SetRandomKeypad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetRandomKeypad.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -283,7 +285,8 @@
 				F8729EBF2BDC091200662855 /* Confirmation.swift */,
 				F81AC3D12BC6E6B700D65AB4 /* SetLifeKeypad.swift */,
 				F857CE0C2CE51BE900F1B0B0 /* RingElem.swift */,
-				F881E27E2BD2177300A98031 /* BasicKeypad.swift */,
+				F881E27E2BD2177300A98031 /* StartingLifekeypad.swift */,
+				F8D2B0CE2CF6B4BD000B5005 /* SetRandomKeypad.swift */,
 				F8D1BC182C05433F00A163D8 /* PlayerMenu.swift */,
 				F81132312CB0D8AA001B8502 /* PlayerMenuVert.swift */,
 				F81132352CB0DB2E001B8502 /* PlayMenuSwitcher.swift */,
@@ -440,7 +443,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F810D4792CBD7A0D00EFF7D1 /* DungeonDelverSwitcher.swift in Sources */,
-				F881E27F2BD2177300A98031 /* BasicKeypad.swift in Sources */,
+				F881E27F2BD2177300A98031 /* StartingLifekeypad.swift in Sources */,
 				F857CE092CE51B1600F1B0B0 /* RingTrack.swift in Sources */,
 				F81AC3D22BC6E6B700D65AB4 /* SetLifeKeypad.swift in Sources */,
 				F82B69062C68497D0058FAC0 /* MenuButton.swift in Sources */,
@@ -464,6 +467,7 @@
 				F81AC3D82BC831BE00D65AB4 /* Key_Large.swift in Sources */,
 				F82B69042C6847750058FAC0 /* PageManager.swift in Sources */,
 				F857CE642CED350700F1B0B0 /* DiceElement.swift in Sources */,
+				F8D2B0CF2CF6B4BD000B5005 /* SetRandomKeypad.swift in Sources */,
 				F81AC3E62BC89F8500D65AB4 /* BackgroundRectangle.swift in Sources */,
 				F81AC3DE2BC85E6B00D65AB4 /* TwoPlayerGame.swift in Sources */,
 				F81AC3D42BC6E88200D65AB4 /* Key_Keypad.swift in Sources */,

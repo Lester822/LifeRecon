@@ -20,9 +20,10 @@ struct PlayerMenu: View {
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 25.0)
+                //.fill(LinearGradient(gradient: Gradient(colors: [.black, current_game.caller.background_color]), startPoint: .top, endPoint: .bottom))
                 .frame(width: UIScreen.main.bounds.height * 0.85, height: UIScreen.main.bounds.width * 0.9)
                 .foregroundColor(.black)
-                .opacity(0.5)
+                .opacity(0.6)
                 .allowsHitTesting(true)
             
             // Toggle Row

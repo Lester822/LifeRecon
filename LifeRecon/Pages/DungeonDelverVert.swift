@@ -80,6 +80,7 @@ struct DungeonDelverVert: View {
 //                    Spacer()
 //                        .frame(height: UIScreen.main.bounds.width*0.05)
                     DungeonElem(current_game: current_game)
+                    
                     if caller.dungeon_position == "" {
                         HStack {
                             Button {

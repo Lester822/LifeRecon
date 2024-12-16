@@ -64,8 +64,10 @@ struct MenuButton: View {
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 100.0, height: 100.0)
                     .foregroundStyle(.tint)
+                    
             }
         }
+        .buttonStyle(MenuButtonType())
     }
 }
 

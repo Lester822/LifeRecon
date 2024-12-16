@@ -54,11 +54,6 @@ struct PageManager: View {
                     .background(.black)
             }
             
-            if current_game.blur_background == true {
-                BackgroundRectangle(current_game: current_game)
-                    .transition(.fade)
-            }
-            
             if ["four_player", "three_player", "two_player"].contains(current_game.current_page) {
                 MenuButton(current_game: current_game)
                     .zIndex(0.5)
@@ -69,8 +64,21 @@ struct PageManager: View {
                     .zIndex(0.51)
             }
             
+            if current_game.blur_background == true {
+                BackgroundRectangle(current_game: current_game)
+                    .transition(.fade)
+                    .zIndex(0.52)
+            }
+            
             if current_game.showing_keypad == true {
                 SetLifeKeypad(current_game: current_game)
+                    .zIndex(/*@START_MENU_TOKEN@*/1.0/*@END_MENU_TOKEN@*/)
+                    .rotationEffect(Angle(degrees: current_game.current_rotation))
+                    .transition(.zoomEffect)
+            }
+            
+            if current_game.showing_random_dice_menu == true {
+                SetRandomKeypad(current_text: String(current_game.random_high_value), current_game: current_game)
                     .zIndex(/*@START_MENU_TOKEN@*/1.0/*@END_MENU_TOKEN@*/)
                     .rotationEffect(Angle(degrees: current_game.current_rotation))
                     .transition(.zoomEffect)
