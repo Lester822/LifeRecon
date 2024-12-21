@@ -20,6 +20,7 @@ struct OnePlayerGame: View {
                     life1
                 })
                 DiceTray(current_game: current_game, middle_gap: false)
+                GameResetBar(current_game: current_game, middle_gap: false)
                 MenuBar(current_game: current_game, middle_gap: false)
                 Spacer()
                     .frame(height: UIScreen.main.bounds.height * 0.05)

@@ -27,6 +27,7 @@ struct ThreePlayerGame: View {
                 
                 MenuBar(current_game: current_game, middle_gap: true)
                 DiceTray(current_game: current_game, middle_gap: true)
+                GameResetBar(current_game: current_game, middle_gap: true)
 
        
                 HStack (spacing: 0.0, content: {

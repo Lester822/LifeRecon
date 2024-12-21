@@ -22,7 +22,6 @@ struct LifeBlock: View {
     @State private var changeOpacity: Double = 0.0
     @State private var changeOffset: CGFloat =  -60
 
-    
     var body: some View {
         GeometryReader { geometry in
             ZStack {
@@ -365,9 +364,23 @@ struct LifeBlock: View {
                 })
                 
                 // Commander Damage Display
-                
+                if game.showing_commander_damage { // The overlay when commander damage is up to hide behind it
+                    RoundedRectangle(cornerRadius: BLOCK_CORNER)
+                        .foregroundColor(player.background_color)
+                        .padding([.top, .bottom, .trailing, .leading], 5.0)
+                        .transition(.fade)
+                        .allowsHitTesting(game.showing_commander_damage)
+                    if !(game.caller === player) {
+                        RoundedRectangle(cornerRadius: BLOCK_CORNER)
+                            .foregroundColor(.black)
+                            .padding([.top, .bottom, .trailing, .leading], 5.0)
+                            .opacity(0.5)
+                            .transition(.fade)
+                    }
+                }
                 if game.showing_commander_damage {
                     BackgroundRectangle(current_game: game)
+                        .opacity(0.1)
                 }
                 if game.showing_commander_damage {
                     ZStack {
@@ -379,6 +392,8 @@ struct LifeBlock: View {
                     .frame(width: geometry.size.width, height:geometry.size.height)
                     .transition(.zoomEffect)
                 }
+                
+                
                     
             }
             .frame(width: geometry.size.width, height: geometry.size.height)

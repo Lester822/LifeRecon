@@ -118,11 +118,11 @@ struct PageManager: View {
                     .transition(.zoomEffect)
             }
             
-            if current_game.showing_confirm == true {
-                Confirmation(current_game: current_game, confirm_text: "String")
-                    .transition(.zoomEffect)
-                    .zIndex(1.0)
-            }
+//            if current_game.showing_confirm == true {
+//                Confirmation(current_game: current_game, confirm_text: "String")
+//                    .transition(.zoomEffect)
+//                    .zIndex(1.0)
+//            }
         }
     }
 }

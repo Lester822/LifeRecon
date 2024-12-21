@@ -27,6 +27,7 @@ struct FourPlayerGame: View {
        
                 MenuBar(current_game: current_game, middle_gap: true)
                 DiceTray(current_game: current_game, middle_gap: true)
+                GameResetBar(current_game: current_game, middle_gap: true)
                 
                 HStack (spacing: 0.0, content: {
                     let life3 = LifeBlock(player: current_game.players[2], game: current_game)

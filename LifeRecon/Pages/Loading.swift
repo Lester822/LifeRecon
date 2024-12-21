@@ -8,7 +8,6 @@
 import SwiftUI
 import UIKit
 
-
 struct Loading: View {
     @ObservedObject var current_game: ActiveGame
     
@@ -60,7 +59,7 @@ struct Loading: View {
                             }
                         }
                     } label: {
-                        Key_HomeScreen(given_text: "Resume Game", color: .white, background: .red)
+                        Key_HomeScreen(given_text: "Resume Game", color: .black, background: .white)
                     }
                 }
                 Spacer()

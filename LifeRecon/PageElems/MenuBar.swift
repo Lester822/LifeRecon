@@ -44,6 +44,7 @@ struct MenuBar: View {
                     soft_haptic_pulse()
                     withAnimation {
                         current_game.showing_circle_menu = false
+                        current_game.showing_confirm = false
                         current_game.showing_dice_tray.toggle()
                     }
                 } label: {
@@ -54,11 +55,14 @@ struct MenuBar: View {
                 Button {
                     withAnimation {
                         soft_haptic_pulse()
-                        current_game.first_confirm_line = "Are you sure you want to"
-                        current_game.confirm_message = "reset the game?"
-                        current_game.blur_background = true
-                        current_game.showing_confirm =  true
-                        current_game.confirm_action = "reset"
+                        current_game.showing_circle_menu = false
+                        current_game.showing_dice_tray = false
+                        current_game.showing_confirm.toggle()
+//                        current_game.first_confirm_line = "Are you sure you want to"
+//                        current_game.confirm_message = "reset the game?"
+//                        current_game.blur_background = true
+//                        current_game.showing_confirm =  true
+//                        current_game.confirm_action = "reset"
                     }
                 } label: {
                     Image("Restart")

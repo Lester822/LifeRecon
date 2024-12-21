@@ -25,6 +25,10 @@
 		F81AC3E02BC8632900D65AB4 /* Button_Square.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81AC3DF2BC8632900D65AB4 /* Button_Square.swift */; };
 		F81AC3E62BC89F8500D65AB4 /* BackgroundRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81AC3E52BC89F8500D65AB4 /* BackgroundRectangle.swift */; };
 		F81B6B772C367B60005B98E4 /* CommanderDamageDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81B6B762C367B60005B98E4 /* CommanderDamageDisplay.swift */; };
+		F82940D32D1634950098FDDA /* GameResetBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82940D22D1634950098FDDA /* GameResetBar.swift */; };
+		F82940D52D163A1A0098FDDA /* ThreeTierButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82940D42D163A1A0098FDDA /* ThreeTierButton.swift */; };
+		F82940D72D164FF10098FDDA /* Counter_CommanderCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82940D62D164FF10098FDDA /* Counter_CommanderCounter.swift */; };
+		F82940D92D1657B80098FDDA /* Counter_CommanderDamageCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82940D82D1657B80098FDDA /* Counter_CommanderDamageCircle.swift */; };
 		F82B69042C6847750058FAC0 /* PageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82B69032C6847750058FAC0 /* PageManager.swift */; };
 		F82B69062C68497D0058FAC0 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82B69052C68497D0058FAC0 /* MenuButton.swift */; };
 		F82B69082C68547E0058FAC0 /* Counter_GameCounters.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82B69072C68547E0058FAC0 /* Counter_GameCounters.swift */; };
@@ -100,6 +104,10 @@
 		F81AC3DF2BC8632900D65AB4 /* Button_Square.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button_Square.swift; sourceTree = "<group>"; };
 		F81AC3E52BC89F8500D65AB4 /* BackgroundRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundRectangle.swift; sourceTree = "<group>"; };
 		F81B6B762C367B60005B98E4 /* CommanderDamageDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommanderDamageDisplay.swift; sourceTree = "<group>"; };
+		F82940D22D1634950098FDDA /* GameResetBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResetBar.swift; sourceTree = "<group>"; };
+		F82940D42D163A1A0098FDDA /* ThreeTierButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeTierButton.swift; sourceTree = "<group>"; };
+		F82940D62D164FF10098FDDA /* Counter_CommanderCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Counter_CommanderCounter.swift; sourceTree = "<group>"; };
+		F82940D82D1657B80098FDDA /* Counter_CommanderDamageCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Counter_CommanderDamageCircle.swift; sourceTree = "<group>"; };
 		F82B69032C6847750058FAC0 /* PageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageManager.swift; sourceTree = "<group>"; };
 		F82B69052C68497D0058FAC0 /* MenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
 		F82B69072C68547E0058FAC0 /* Counter_GameCounters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Counter_GameCounters.swift; sourceTree = "<group>"; };
@@ -236,15 +244,18 @@
 			isa = PBXGroup;
 			children = (
 				F857CE632CED350700F1B0B0 /* DiceElement.swift */,
+				F82940D42D163A1A0098FDDA /* ThreeTierButton.swift */,
 				F81210222CC22A1E00D77D3C /* Button_AdvancedFeatureSelection.swift */,
 				F88B27532C56AC8D00E19197 /* Button_Expanding.swift */,
 				F8D1BC1A2C05479200A163D8 /* Counter_Circle.swift */,
+				F82940D82D1657B80098FDDA /* Counter_CommanderDamageCircle.swift */,
 				F82B69092C69314C0058FAC0 /* Toggle_Circle.swift */,
 				F857CE5F2CECEA8500F1B0B0 /* DayNightToggle.swift */,
 				F82B690B2C697D380058FAC0 /* Toggle_Single_Circle.swift */,
 				F81AC3DF2BC8632900D65AB4 /* Button_Square.swift */,
 				F82B69072C68547E0058FAC0 /* Counter_GameCounters.swift */,
 				F81132372CB0DE96001B8502 /* Counter_CommanderCount.swift */,
+				F82940D62D164FF10098FDDA /* Counter_CommanderCounter.swift */,
 				F81AC3D92BC85B8000D65AB4 /* Key_Small.swift */,
 				F81AC3D72BC831BE00D65AB4 /* Key_Large.swift */,
 				F81AC3D32BC6E88200D65AB4 /* Key_Keypad.swift */,
@@ -293,6 +304,7 @@
 				F81AC3E52BC89F8500D65AB4 /* BackgroundRectangle.swift */,
 				F86BD5012CAC4D0300E2392F /* DungeonBackground.swift */,
 				F811322F2CB055B8001B8502 /* MenuBar.swift */,
+				F82940D22D1634950098FDDA /* GameResetBar.swift */,
 				F857CE612CED345600F1B0B0 /* DiceTray.swift */,
 			);
 			path = PageElems;
@@ -446,8 +458,10 @@
 				F881E27F2BD2177300A98031 /* StartingLifekeypad.swift in Sources */,
 				F857CE092CE51B1600F1B0B0 /* RingTrack.swift in Sources */,
 				F81AC3D22BC6E6B700D65AB4 /* SetLifeKeypad.swift in Sources */,
+				F82940D52D163A1A0098FDDA /* ThreeTierButton.swift in Sources */,
 				F82B69062C68497D0058FAC0 /* MenuButton.swift in Sources */,
 				F82E08EE2BC58A8E00C651AE /* Loading.swift in Sources */,
+				F82940D32D1634950098FDDA /* GameResetBar.swift in Sources */,
 				F81B6B772C367B60005B98E4 /* CommanderDamageDisplay.swift in Sources */,
 				F86BD4FE2CAC3CC700E2392F /* DungeonElem.swift in Sources */,
 				F81AC3DC2BC85D3500D65AB4 /* ThreePlayerGame.swift in Sources */,
@@ -457,6 +471,7 @@
 				F857CE622CED345600F1B0B0 /* DiceTray.swift in Sources */,
 				F82E08F62BC5A57900C651AE /* Game.swift in Sources */,
 				F86BD5022CAC4D0300E2392F /* DungeonBackground.swift in Sources */,
+				F82940D72D164FF10098FDDA /* Counter_CommanderCounter.swift in Sources */,
 				F811322E2CAF38E2001B8502 /* LifeBlock-Flip.swift in Sources */,
 				F82E08F02BC58BE500C651AE /* FourPlayerGame.swift in Sources */,
 				F881E2792BD202D700A98031 /* Key_Blank.swift in Sources */,
@@ -487,6 +502,7 @@
 				F810D47B2CC163CD00EFF7D1 /* CommanderToggle.swift in Sources */,
 				F8729EBE2BDC00ED00662855 /* FivePlayerGame.swift in Sources */,
 				F81AC3E02BC8632900D65AB4 /* Button_Square.swift in Sources */,
+				F82940D92D1657B80098FDDA /* Counter_CommanderDamageCircle.swift in Sources */,
 				F81132322CB0D8AA001B8502 /* PlayerMenuVert.swift in Sources */,
 				F810D4772CBD789600EFF7D1 /* DungeonDelverVert.swift in Sources */,
 				F82E08F22BC599CF00C651AE /* LifeBlock.swift in Sources */,

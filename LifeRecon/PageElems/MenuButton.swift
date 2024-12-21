@@ -13,8 +13,9 @@ struct MenuButton: View {
     var body: some View {
         Button {
             withAnimation {
-                if current_game.showing_dice_tray {
+                if current_game.showing_dice_tray || current_game.showing_confirm {
                     current_game.showing_dice_tray = false
+                    current_game.showing_confirm = false
                     current_game.showing_circle_menu = true
                 } else {
                     current_game.showing_circle_menu.toggle()
