@@ -1,9 +1,10 @@
 import SwiftUI
 
 struct ThreeActionButton: View {
-    let onTap: () -> Void
-    let onLongPress: () -> Void
-    let onSwipe: () -> Void
+    @ObservedObject var current_game: ActiveGame
+//    let onTap: () -> Void
+//    let onLongPress: () -> Void
+//    let onSwipe: () -> Void
     
     // Configuration
     private let longPressDuration: TimeInterval = 0.5
@@ -77,6 +78,18 @@ struct ThreeActionButton: View {
                     }
             )
         }
+    }
+    
+    func onTap() -> Void {
+        print("Tapped")
+    }
+    
+    func onLongPress() -> Void {
+        print("Long pressed")
+    }
+    
+    func onSwipe() -> Void {
+        print("Swiped")
     }
 }
 

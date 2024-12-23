@@ -247,12 +247,13 @@
 				F82940D42D163A1A0098FDDA /* ThreeTierButton.swift */,
 				F81210222CC22A1E00D77D3C /* Button_AdvancedFeatureSelection.swift */,
 				F88B27532C56AC8D00E19197 /* Button_Expanding.swift */,
+				F81AC3DF2BC8632900D65AB4 /* Button_Square.swift */,
+				F82B69092C69314C0058FAC0 /* Toggle_Circle.swift */,
+				F82B690B2C697D380058FAC0 /* Toggle_Single_Circle.swift */,
+				F857CE042CE5159400F1B0B0 /* Toggle_CheckBox.swift */,
+				F857CE5F2CECEA8500F1B0B0 /* DayNightToggle.swift */,
 				F8D1BC1A2C05479200A163D8 /* Counter_Circle.swift */,
 				F82940D82D1657B80098FDDA /* Counter_CommanderDamageCircle.swift */,
-				F82B69092C69314C0058FAC0 /* Toggle_Circle.swift */,
-				F857CE5F2CECEA8500F1B0B0 /* DayNightToggle.swift */,
-				F82B690B2C697D380058FAC0 /* Toggle_Single_Circle.swift */,
-				F81AC3DF2BC8632900D65AB4 /* Button_Square.swift */,
 				F82B69072C68547E0058FAC0 /* Counter_GameCounters.swift */,
 				F81132372CB0DE96001B8502 /* Counter_CommanderCount.swift */,
 				F82940D62D164FF10098FDDA /* Counter_CommanderCounter.swift */,
@@ -261,7 +262,6 @@
 				F81AC3D32BC6E88200D65AB4 /* Key_Keypad.swift */,
 				F881E2782BD202D700A98031 /* Key_Blank.swift */,
 				F8D1BC122C04900500A163D8 /* Key_HomeScreen.swift */,
-				F857CE042CE5159400F1B0B0 /* Toggle_CheckBox.swift */,
 			);
 			path = BasicElems;
 			sourceTree = "<group>";

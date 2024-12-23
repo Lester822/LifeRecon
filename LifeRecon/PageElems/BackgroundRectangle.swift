@@ -18,7 +18,6 @@ struct BackgroundRectangle: View {
             .onTapGesture {
                 withAnimation {
                     current_game.showing_keypad = false
-                    current_game.showing_circle_menu = false
                     current_game.showing_confirm = false
                     current_game.showing_player_menu = false
                     current_game.showing_commander_damage = false

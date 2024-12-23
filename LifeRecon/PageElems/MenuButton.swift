@@ -127,6 +127,7 @@ struct MenuButton: View {
     func onLongPress() -> Void {
         withAnimation {
             current_game.day_night = ""
+            heavy_haptic_pulse()
         }
     }
 }

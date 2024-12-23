@@ -332,8 +332,24 @@ struct LifeBlockA: View {
                 
                 // Commander Damage Display
                 
+                if game.showing_commander_damage { // The overlay when commander damage is up to hide behind it
+                    RoundedRectangle(cornerRadius: BLOCK_CORNER)
+                        .foregroundColor(player.background_color)
+                        .padding([.top, .bottom, .trailing, .leading], 5.0)
+                        .transition(.fade)
+                        .allowsHitTesting(game.showing_commander_damage)
+                    if !(game.caller === player) {
+                        RoundedRectangle(cornerRadius: BLOCK_CORNER)
+                            .foregroundColor(.black)
+                            .padding([.top, .bottom, .trailing, .leading], 5.0)
+                            .opacity(0.5)
+                            .transition(.fade)
+                    }
+                }
+                
                 if game.showing_commander_damage {
                     BackgroundRectangle(current_game: game)
+                        .opacity(0.1)
                 }
                 if game.showing_commander_damage {
                         ZStack {
