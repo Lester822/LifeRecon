@@ -136,7 +136,9 @@ struct DayNightToggle: View {
     
     func onLongPress() -> Void {
         withAnimation {
-            heavy_haptic_pulse()
+            if toggle == "day" || toggle == "night" {
+                heavy_haptic_pulse()
+            }
             toggle = ""
         }
     }

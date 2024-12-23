@@ -47,6 +47,9 @@ class ActiveGame: ObservableObject {
     @Published var random_high_value: Int = 1
     @Published var random_choose_value: Int = -1
     @Published var rollCounter = 0 // Add this line
+    
+    @Published var temporary_rotate = 0.0
+    @Published var temporary_rotate_applied = false
 
     
     

@@ -74,21 +74,21 @@ struct PageManager: View {
             if current_game.showing_keypad == true {
                 SetLifeKeypad(current_game: current_game)
                     .zIndex(/*@START_MENU_TOKEN@*/1.0/*@END_MENU_TOKEN@*/)
-                    .rotationEffect(Angle(degrees: current_game.current_rotation))
+                    .rotationEffect(current_game.temporary_rotate_applied == false ? Angle(degrees: current_game.current_rotation) : Angle(degrees: current_game.temporary_rotate - 90))
                     .transition(.zoomEffect)
             }
             
             if current_game.showing_random_dice_menu == true {
                 SetRandomKeypad(current_text: String(current_game.random_high_value), current_game: current_game)
                     .zIndex(/*@START_MENU_TOKEN@*/1.0/*@END_MENU_TOKEN@*/)
-                    .rotationEffect(Angle(degrees: current_game.current_rotation))
+                    .rotationEffect(current_game.temporary_rotate_applied == false ? Angle(degrees: current_game.current_rotation) : Angle(degrees: current_game.temporary_rotate - 90))
                     .transition(.zoomEffect)
             }
             
             if current_game.showing_player_menu == true {
                 PlayMenuSwitcher(current_game: current_game)
                     .zIndex(/*@START_MENU_TOKEN@*/1.0/*@END_MENU_TOKEN@*/)
-                    .rotationEffect(Angle(degrees: current_game.caller.rotation))
+                    .rotationEffect(current_game.temporary_rotate_applied == false ? Angle(degrees: current_game.caller.rotation) : Angle(degrees: current_game.temporary_rotate - 90))
                     .edgesIgnoringSafeArea(.all)
                     .frame(width: 10, height:10)
                     .transition(.zoomEffect)

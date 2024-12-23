@@ -117,8 +117,10 @@ struct MenuButton: View {
     func onSwipe() -> Void {
         withAnimation {
             if current_game.day_night == "day" {
+                light_haptic_pulse()
                 current_game.day_night = "night"
             } else if current_game.day_night == "night" {
+                light_haptic_pulse()
                 current_game.day_night = "day"
             }
         }
@@ -126,8 +128,12 @@ struct MenuButton: View {
     
     func onLongPress() -> Void {
         withAnimation {
+            if current_game.day_night == "day" || current_game.day_night == "night" {
+                heavy_haptic_pulse()
+            }
             current_game.day_night = ""
-            heavy_haptic_pulse()
+            
+            
         }
     }
 }

@@ -139,7 +139,6 @@ struct LifeBlockA: View {
                                 generator.prepare()
                                 generator.impactOccurred()
                                 print(game.current_rotation)
-                                game.showing_circle_menu = false
                                 withAnimation {
                                     game.showing_keypad = true
                                     game.blur_background = true
