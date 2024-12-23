@@ -32,6 +32,7 @@ struct Loading: View {
                 } label: {
                     Key_HomeScreen(given_text: "Start Game", color: .white, background: .black)
                 }
+                .buttonStyle(JumpButton())
                 if current_game.in_progress == true {
                     Button {
                         withAnimation {
@@ -59,8 +60,9 @@ struct Loading: View {
                             }
                         }
                     } label: {
-                        Key_HomeScreen(given_text: "Resume Game", color: .black, background: .white)
+                        Key_HomeScreen(given_text: "Resume Game", color: .white, background: .red)
                     }
+                    .buttonStyle(JumpButton())
                 }
                 Spacer()
                     .frame(height: 10)

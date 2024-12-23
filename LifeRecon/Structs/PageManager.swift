@@ -16,7 +16,7 @@ struct PageManager: View {
             
             if current_game.current_page == "home" {
                 Loading(current_game: current_game)
-                    .transition(.zoomIt)
+                    .transition(.zoomEffect)
             }
             
             if current_game.current_page == "settings" {
@@ -56,6 +56,7 @@ struct PageManager: View {
             
             if ["four_player", "three_player", "two_player"].contains(current_game.current_page) {
                 MenuButton(current_game: current_game)
+                    .frame(width: 100, height: 100)
                     .zIndex(0.5)
             }
             

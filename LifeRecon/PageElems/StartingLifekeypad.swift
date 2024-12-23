@@ -50,6 +50,7 @@ struct StartingLifekeypad: View {
                         } label: {
                             Key_Keypad(given_text: "1", color: .black, background: Color(hue: 1.0, saturation: 0.0, brightness: 0.835))
                         }
+                        .buttonStyle(JumpButton())
                         Button {
                             medium_haptic_pulse()
                             if first_entry == true {
@@ -62,6 +63,7 @@ struct StartingLifekeypad: View {
                         } label: {
                             Key_Keypad(given_text: "4", color: .black, background: Color(hue: 1.0, saturation: 0.0, brightness: 0.835))
                         }
+                        .buttonStyle(JumpButton())
                         Button {
                             medium_haptic_pulse()
                             if first_entry == true {
@@ -74,6 +76,7 @@ struct StartingLifekeypad: View {
                         } label: {
                             Key_Keypad(given_text: "7", color: .black, background: Color(hue: 1.0, saturation: 0.0, brightness: 0.835))
                         }
+                        .buttonStyle(JumpButton())
                         Button {
                             medium_haptic_pulse()
                             if current_text.count < 8 {
@@ -96,6 +99,7 @@ struct StartingLifekeypad: View {
                         } label: {
                             Key_Keypad(given_text: "2", color: .black, background: Color(hue: 1.0, saturation: 0.0, brightness: 0.835))
                         }
+                        .buttonStyle(JumpButton())
                         Button {
                             medium_haptic_pulse()
                             if first_entry == true {
@@ -108,6 +112,7 @@ struct StartingLifekeypad: View {
                         } label: {
                             Key_Keypad(given_text: "5", color: .black, background: Color(hue: 1.0, saturation: 0.0, brightness: 0.835))
                         }
+                        .buttonStyle(JumpButton())
                         Button {
                             medium_haptic_pulse()
                             if first_entry == true {
@@ -120,6 +125,7 @@ struct StartingLifekeypad: View {
                         } label: {
                             Key_Keypad(given_text: "8", color: .black, background: Color(hue: 1.0, saturation: 0.0, brightness: 0.835))
                         }
+                        .buttonStyle(JumpButton())
                         Button {
                             medium_haptic_pulse()
                             if first_entry == true {
@@ -132,6 +138,7 @@ struct StartingLifekeypad: View {
                         } label: {
                             Key_Keypad(given_text: "0", color: .black, background: Color(hue: 1.0, saturation: 0.0, brightness: 0.835))
                         }
+                        .buttonStyle(JumpButton())
                     })
                     VStack(content: {
                         Button {
@@ -146,6 +153,7 @@ struct StartingLifekeypad: View {
                         } label: {
                             Key_Keypad(given_text: "3", color: .black, background: Color(hue: 1.0, saturation: 0.0, brightness: 0.835))
                         }
+                        .buttonStyle(JumpButton())
                         Button {
                             medium_haptic_pulse()
                             if first_entry == true {
@@ -158,6 +166,7 @@ struct StartingLifekeypad: View {
                         } label: {
                             Key_Keypad(given_text: "6", color: .black, background: Color(hue: 1.0, saturation: 0.0, brightness: 0.835))
                         }
+                        .buttonStyle(JumpButton())
                         Button {
                             medium_haptic_pulse()
                             if first_entry == true {
@@ -170,6 +179,7 @@ struct StartingLifekeypad: View {
                         } label: {
                             Key_Keypad(given_text: "9", color: .black, background: Color(hue: 1.0, saturation: 0.0, brightness: 0.835))
                         }
+                        .buttonStyle(JumpButton())
                         Button {
                             medium_haptic_pulse()
                             if current_text.count > 0 {
@@ -178,11 +188,8 @@ struct StartingLifekeypad: View {
                         } label: {
                             Key_Keypad(given_text: "←", color: .black, background: .white)
                         }
-                        
-
+                        .buttonStyle(JumpButton())
                     })
-
-                                    
                 })
 //                Spacer()
 //                    .frame(height: 30)
@@ -203,21 +210,12 @@ struct StartingLifekeypad: View {
                         } label: {
                             Key_Large(given_text: "Submit", color: .white, background: .red)
                         }
+                        .buttonStyle(JumpButton())
                     })
-
-
                 })
-                
-                
-
-                
-                
             })
-            
-
-        
         })
-               }}
+    }}
 
 
 #Preview {

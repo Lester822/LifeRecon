@@ -24,6 +24,7 @@ struct PlayerCount: View {
                 VStack {
                     
                     Button {
+                        current_game.in_progress = false
                         withAnimation(.easeInOut(duration: 0.2)) {
                             current_game.players[0].rotation = 0
                             let generator = UIImpactFeedbackGenerator(style: .medium)
@@ -38,9 +39,11 @@ struct PlayerCount: View {
                     } label: {
                         Button_Square(button_color: .black, text_color: .white, title: "1", icon: "NONE")
                     }
+                    .buttonStyle(JumpButton())
                     
                     
                     Button {
+                        current_game.in_progress = false
                         withAnimation(.easeInOut(duration: 0.2)) {
                             current_game.players[0].rotation = 90
                             current_game.players[1].rotation = -90
@@ -58,11 +61,13 @@ struct PlayerCount: View {
                         Button_Square(button_color: .black, text_color: .white, title: "3", icon: "NONE")
                         
                     }
+                    .buttonStyle(JumpButton())
                 }
                 
                 VStack {
                     
                     Button {
+                        current_game.in_progress = false
                         withAnimation(.easeInOut(duration: 0.2)) {
                             current_game.players[0].rotation = 180
                             current_game.players[1].rotation = 0
@@ -77,8 +82,10 @@ struct PlayerCount: View {
                     } label: {
                         Button_Square(button_color: .black, text_color: .white, title: "2", icon: "NONE")
                     }
+                    .buttonStyle(JumpButton())
                     
                     Button {
+                        current_game.in_progress = false
                         withAnimation(.easeInOut(duration: 0.2)) {
                             current_game.players[0].rotation = 90
                             current_game.players[1].rotation = -90
@@ -96,6 +103,7 @@ struct PlayerCount: View {
                     } label: {
                         Button_Square(button_color: .black, text_color: .white, title: "4", icon: "NONE")
                     }
+                    .buttonStyle(JumpButton())
 //                    Button {
 //                        withAnimation(.easeInOut(duration: 0.2)) {
 //                            current_game.players[0].rotation = 90
@@ -118,6 +126,18 @@ struct PlayerCount: View {
 
                 }
             }
+            Spacer()
+                .frame(height: 40.0)
+            Button {
+                heavy_haptic_pulse()
+                current_game.current_page = "home"
+            } label: {
+                Image("BackButton")
+                    .resizable(resizingMode: .stretch)
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: UIScreen.main.bounds.width * 0.1668, height: UIScreen.main.bounds.width * 0.1668)
+            }
+            .buttonStyle(JumpButton())
         }
     }
 }
@@ -137,6 +157,20 @@ struct StartingLife: View {
             Spacer()
                 .frame(height: 40.0)
             StartingLifekeypad(current_text: "40", current_game: current_game)
+            Spacer()
+                .frame(height: 40.0)
+            Button {
+                withAnimation {
+                    heavy_haptic_pulse()
+                    current_game.current_setting = "player_count"
+                }
+            } label: {
+                Image("BackButton")
+                    .resizable(resizingMode: .stretch)
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: UIScreen.main.bounds.width * 0.1668, height: UIScreen.main.bounds.width * 0.1668)
+            }
+            .buttonStyle(JumpButton())
         }
     }
 }
@@ -259,6 +293,20 @@ struct OptionalSettings: View {
             } label: {
                 Key_Large(given_text: "Start", color: .white, background: .red)
             }
+            Spacer()
+                .frame(height: 40.0)
+            Button {
+                withAnimation {
+                    heavy_haptic_pulse()
+                    current_game.current_setting = "starting_life"
+                }
+            } label: {
+                Image("BackButton")
+                    .resizable(resizingMode: .stretch)
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: UIScreen.main.bounds.width * 0.1668, height: UIScreen.main.bounds.width * 0.1668)
+            }
+            .buttonStyle(JumpButton())
         }
     }
 }
