@@ -9,6 +9,7 @@ import SwiftUI
 
 struct FourPlayerGame: View {
     @ObservedObject var current_game: ActiveGame
+    
     var body: some View {
         ZStack (content: {
             Rectangle()
@@ -41,9 +42,7 @@ struct FourPlayerGame: View {
                 })
             })
         })
-
             .padding(-10)
-            
     }
 }
 

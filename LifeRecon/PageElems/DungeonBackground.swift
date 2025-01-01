@@ -40,6 +40,38 @@ struct DungeonBackground: View {
                     }
                 }
                 .clipped()
+                .gesture(
+                    DragGesture().onEnded { gesture in
+                            
+                        let horizontalMovement = gesture.translation.width
+                        let verticalMovement = gesture.translation.height
+                        
+                        let angleInRadians = atan2(verticalMovement, horizontalMovement)
+                        var angleInDegrees = angleInRadians * 180 / .pi  // convert to degrees
+                        
+                        print("Radians: \(angleInRadians), Degrees: \(angleInDegrees)")
+                        
+                        
+                        if ROTATE_SNAP == true {
+                            // 1) Snap angleInDegrees to nearest multiple of 90
+                            // Use “toNearestOrAwayFromZero” if you want the conventional "round halves up" style:
+                            angleInDegrees = (angleInDegrees / 90.0).rounded(.toNearestOrAwayFromZero) * 90.0
+
+                            // 2) Wrap to [-180, 180]
+                            if angleInDegrees - current_game.temporary_rotate > 180 {
+                                angleInDegrees -= 360
+                            } else if angleInDegrees - current_game.temporary_rotate < -180 {
+                                angleInDegrees += 360
+                            }
+                        }
+                        
+                        withAnimation {
+                            current_game.temporary_rotate_applied = true
+                            current_game.temporary_rotate = angleInDegrees
+                        }
+                    }
+                )
+            
         }
         // Extend the view to ignore safe area insets
         .edgesIgnoringSafeArea(.all)

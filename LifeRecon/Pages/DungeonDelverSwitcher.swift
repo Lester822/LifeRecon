@@ -12,10 +12,18 @@ struct DungeonDelverSwitcher: View {
     @ObservedObject var caller: Player
     
     var body: some View {
-        if current_game.caller.rotation == 90 || current_game.caller.rotation == -90 {
-            DungeonDelver(current_game: current_game, caller: caller)
+        if (current_game.caller.rotation == current_game.temporary_rotate-90) {
+            if (current_game.caller.rotation == 90 || current_game.caller.rotation == -90) {
+                DungeonDelver(current_game: current_game, caller: caller)
+            } else {
+                DungeonDelverVert(current_game: current_game, caller: caller)
+            }
         } else {
-            DungeonDelverVert(current_game: current_game, caller: caller)
+            if (Int(abs(current_game.temporary_rotate)) % 180 == 0) {
+                DungeonDelver(current_game: current_game, caller: caller)
+            } else {
+                DungeonDelverVert(current_game: current_game, caller: caller)
+            }
         }
     }
 }

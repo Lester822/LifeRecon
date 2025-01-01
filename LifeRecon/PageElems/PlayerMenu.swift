@@ -9,12 +9,14 @@ import SwiftUI
 
 struct PlayerMenu: View {
     @ObservedObject var current_game: ActiveGame
-    @State private var isEditingName = false
-    @State private var playerName: String
+    @ObservedObject var current_player: Player
+    @State private var showing_player_settings = false
+    @State private var player_name: String
     
     init(current_game: ActiveGame) {
         self.current_game = current_game
-        self._playerName = State(initialValue: current_game.caller.name)
+        self._player_name = State(initialValue: current_game.caller.name)
+        self.current_player = current_game.caller
     }
     
     var body: some View {
@@ -61,15 +63,15 @@ struct PlayerMenu: View {
                 HStack {
                     Spacer()
                         .frame(width: UIScreen.main.bounds.width * 0.1243)
-                    Text(playerName)
+                    Text(player_name)
                         .bold()
                         .font(.system(size: UIScreen.main.bounds.width * 0.0621))
                         .onTapGesture {
-                            isEditingName = true
+                            showing_player_settings = true
                         }
                         .foregroundColor(.white)
                     Button {
-                        isEditingName = true
+                        showing_player_settings = true
                     } label: {
                         Image("Settings")
                             .resizable(resizingMode: .stretch)
@@ -280,29 +282,26 @@ struct PlayerMenu: View {
                     
                 }
             }
-            .sheet(isPresented: $isEditingName) {
-                NameEditView(starting_name: playerName, playerName: $playerName, isEditingName: $isEditingName) {
-                    current_game.caller.name = playerName
+            .sheet(isPresented: $showing_player_settings) {
+                PlayerSettingsPage(player: current_game.caller, current_game: current_game, editing_name: player_name, player_name: $player_name, showing_player_settings: $showing_player_settings) {
+                    current_game.caller.name = player_name
                     
                 }
             }
         }
     }
     
-    struct NameEditView: View {
-        @State var starting_name: String
-        @Binding var playerName: String
-        @Binding var isEditingName: Bool
-        @FocusState private var isTextFieldFocused: Bool
+    struct PlayerSettingsPage: View {
+        @State var player: Player
+        @State var current_game: ActiveGame
+        @State var editing_name: String
+        @Binding var player_name: String
+        @Binding var showing_player_settings: Bool
         var onCommit: () -> Void
         
         func cleanup() {
-            //        if playerName.count > 10 {
-            //            let index = playerName.index(playerName.startIndex, offsetBy: 15)
-            //            playerName = String(playerName[..<index]) + "..."
-            //        }
-            if playerName.replacingOccurrences(of: " ", with: "") == "" {
-                playerName = starting_name
+            if !(editing_name.replacingOccurrences(of: " ", with: "") == "") {
+                player_name = editing_name
             }
             return
         }
@@ -310,55 +309,68 @@ struct PlayerMenu: View {
         var body: some View {
             
             VStack {
-                Text("Change Name")
+                Text("Player Settings")
                     .font(.largeTitle)
                     .fontWeight(.heavy)
-                Text("Change your player name")
+                
+                Spacer()
+                    .frame(height: UIScreen.main.bounds.height * 0.05)
+                
+                Text("Player Name")
+                    .font(.title2)
+                    .fontWeight(.bold)
+
                 ZStack {
                     RoundedRectangle(cornerRadius: 25.0)
+                        .padding(.horizontal, 20.0)
                         .frame(height: 50)
                         .foregroundColor(Color(red: 69, green: 69, blue: 69))
                         .overlay(
                             RoundedRectangle(cornerRadius: 25.0)
-                                .stroke(Color.red, lineWidth: 5)
+                                .stroke(.red, lineWidth: 5)
+                                .padding(.horizontal, 20.0)
                         )
-                    TextField("Enter name", text: $playerName, onCommit: {
-                        isEditingName = false
-                        cleanup()
-                        onCommit()
-                        
-                        
-                    })
-                    //.textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding()
-                    .foregroundColor(.gray)
-                    .focused($isTextFieldFocused) // Bind the focus state to the text field
-                    //.onAppear {
-                    //isTextFieldFocused = true // Set the focus //when the view appears
-                    //}
-                }
-                
-                
-                HStack {  // Button stack
-                    Button { // Submit Button
-                        isEditingName = false
-                        cleanup()
-                        onCommit()
-                        
-                        
-                    } label: {
-                        Key_Large(given_text: "Submit", color: .white, background: .red)
+                    
+                    HStack {
+                        TextField("Enter name", text: $editing_name, onCommit: {
+                            cleanup()
+                            onCommit()
+                        })
+                        .padding(.horizontal, 35.0)
+                        .foregroundColor(.gray)
+                        Spacer()
+                            .frame(width: (UIScreen.main.bounds.width * 0.02) + 100)
                     }
                     
-                    Button {  // Cancel Button
-                        playerName = starting_name
-                        isEditingName = false
-                    } label: {
-                        Key_Large(given_text: "Cancel", color: .red, background: .white)
+                    HStack {
+                        Spacer()
+                        Button { // Submit Button
+                            soft_haptic_pulse()
+                            cleanup()
+                            onCommit()
+                        } label: {
+                            Key_LargeRounded(given_text: "Apply", color: .white, background: .red)
+                        }
+                        .buttonStyle(JumpGreenButton())
+                        Spacer()
+                            .frame(width: (UIScreen.main.bounds.width * 0.02) + 20)
                     }
-                }  // Button stack end
+                    
+                }
                 
-                .padding()
+                HStack { // VERTICAL VS HORIZONTAL
+                    Text("Increment Direction")
+                        .multilineTextAlignment(.trailing)
+                        .font(.title2)
+                        .fontWeight(.bold)
+                        .padding(.leading, 10.0)
+                    Spacer()
+                        .frame(width: 20.0)
+                    Toggle_DualToggle(text_for_true: "Vertical", text_for_false: "Horizontal", toggle: $player.vertical_increment, current_game: current_game, player: player)
+                        .frame(width: UIScreen.main.bounds.width * 0.5, height: UIScreen.main.bounds.height * 0.05)
+                    
+                } // VERTICAL VS HORIZONTAL
+                
             }
             .padding()
         }

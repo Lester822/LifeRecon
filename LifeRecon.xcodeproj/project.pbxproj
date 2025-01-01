@@ -62,6 +62,11 @@
 		F8B234742BC57ED9009D6962 /* LifeReconTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B234732BC57ED9009D6962 /* LifeReconTests.swift */; };
 		F8B2347E2BC57ED9009D6962 /* LifeReconUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B2347D2BC57ED9009D6962 /* LifeReconUITests.swift */; };
 		F8B234802BC57ED9009D6962 /* LifeReconUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B2347F2BC57ED9009D6962 /* LifeReconUITestsLaunchTests.swift */; };
+		F8C2737E2D24BF8600149A30 /* AppSettingsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C2737D2D24BF8600149A30 /* AppSettingsPage.swift */; };
+		F8C273802D24BF8700149A30 /* GameSettingsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C2737F2D24BF8700149A30 /* GameSettingsPage.swift */; };
+		F8C273822D24C66900149A30 /* InfoPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C273812D24C66900149A30 /* InfoPage.swift */; };
+		F8C273842D24CEE200149A30 /* Toggle_DualToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C273832D24CEE200149A30 /* Toggle_DualToggle.swift */; };
+		F8C273862D2507CD00149A30 /* Key_LargeRounded.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C273852D2507CD00149A30 /* Key_LargeRounded.swift */; };
 		F8D1BC132C04900500A163D8 /* Key_HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D1BC122C04900500A163D8 /* Key_HomeScreen.swift */; };
 		F8D1BC192C05433F00A163D8 /* PlayerMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D1BC182C05433F00A163D8 /* PlayerMenu.swift */; };
 		F8D1BC1B2C05479200A163D8 /* Counter_Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D1BC1A2C05479200A163D8 /* Counter_Circle.swift */; };
@@ -144,6 +149,11 @@
 		F8B234792BC57ED9009D6962 /* LifeReconUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LifeReconUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8B2347D2BC57ED9009D6962 /* LifeReconUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeReconUITests.swift; sourceTree = "<group>"; };
 		F8B2347F2BC57ED9009D6962 /* LifeReconUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeReconUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F8C2737D2D24BF8600149A30 /* AppSettingsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsPage.swift; sourceTree = "<group>"; };
+		F8C2737F2D24BF8700149A30 /* GameSettingsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSettingsPage.swift; sourceTree = "<group>"; };
+		F8C273812D24C66900149A30 /* InfoPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoPage.swift; sourceTree = "<group>"; };
+		F8C273832D24CEE200149A30 /* Toggle_DualToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toggle_DualToggle.swift; sourceTree = "<group>"; };
+		F8C273852D2507CD00149A30 /* Key_LargeRounded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key_LargeRounded.swift; sourceTree = "<group>"; };
 		F8D1BC122C04900500A163D8 /* Key_HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key_HomeScreen.swift; sourceTree = "<group>"; };
 		F8D1BC182C05433F00A163D8 /* PlayerMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerMenu.swift; sourceTree = "<group>"; };
 		F8D1BC1A2C05479200A163D8 /* Counter_Circle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Counter_Circle.swift; sourceTree = "<group>"; };
@@ -248,6 +258,7 @@
 				F81210222CC22A1E00D77D3C /* Button_AdvancedFeatureSelection.swift */,
 				F88B27532C56AC8D00E19197 /* Button_Expanding.swift */,
 				F81AC3DF2BC8632900D65AB4 /* Button_Square.swift */,
+				F8C273832D24CEE200149A30 /* Toggle_DualToggle.swift */,
 				F82B69092C69314C0058FAC0 /* Toggle_Circle.swift */,
 				F82B690B2C697D380058FAC0 /* Toggle_Single_Circle.swift */,
 				F857CE042CE5159400F1B0B0 /* Toggle_CheckBox.swift */,
@@ -259,6 +270,7 @@
 				F82940D62D164FF10098FDDA /* Counter_CommanderCounter.swift */,
 				F81AC3D92BC85B8000D65AB4 /* Key_Small.swift */,
 				F81AC3D72BC831BE00D65AB4 /* Key_Large.swift */,
+				F8C273852D2507CD00149A30 /* Key_LargeRounded.swift */,
 				F81AC3D32BC6E88200D65AB4 /* Key_Keypad.swift */,
 				F881E2782BD202D700A98031 /* Key_Blank.swift */,
 				F8D1BC122C04900500A163D8 /* Key_HomeScreen.swift */,
@@ -270,6 +282,9 @@
 			isa = PBXGroup;
 			children = (
 				F84D42162CAEDFE200AEFAD2 /* DungeonDelver.swift */,
+				F8C2737D2D24BF8600149A30 /* AppSettingsPage.swift */,
+				F8C273812D24C66900149A30 /* InfoPage.swift */,
+				F8C2737F2D24BF8700149A30 /* GameSettingsPage.swift */,
 				F857CE082CE51B1600F1B0B0 /* RingTrack.swift */,
 				F810D4762CBD789600EFF7D1 /* DungeonDelverVert.swift */,
 				F810D4782CBD7A0D00EFF7D1 /* DungeonDelverSwitcher.swift */,
@@ -481,6 +496,7 @@
 				F81210232CC22A1E00D77D3C /* Button_AdvancedFeatureSelection.swift in Sources */,
 				F81AC3D82BC831BE00D65AB4 /* Key_Large.swift in Sources */,
 				F82B69042C6847750058FAC0 /* PageManager.swift in Sources */,
+				F8C273862D2507CD00149A30 /* Key_LargeRounded.swift in Sources */,
 				F857CE642CED350700F1B0B0 /* DiceElement.swift in Sources */,
 				F8D2B0CF2CF6B4BD000B5005 /* SetRandomKeypad.swift in Sources */,
 				F81AC3E62BC89F8500D65AB4 /* BackgroundRectangle.swift in Sources */,
@@ -497,9 +513,13 @@
 				F81132362CB0DB2E001B8502 /* PlayMenuSwitcher.swift in Sources */,
 				F881E27B2BD20DC700A98031 /* StartGameSettings.swift in Sources */,
 				F8D1BC1B2C05479200A163D8 /* Counter_Circle.swift in Sources */,
+				F8C273822D24C66900149A30 /* InfoPage.swift in Sources */,
+				F8C273842D24CEE200149A30 /* Toggle_DualToggle.swift in Sources */,
+				F8C2737E2D24BF8600149A30 /* AppSettingsPage.swift in Sources */,
 				F88B27542C56AC8D00E19197 /* Button_Expanding.swift in Sources */,
 				F82E08F42BC5A56000C651AE /* Player.swift in Sources */,
 				F810D47B2CC163CD00EFF7D1 /* CommanderToggle.swift in Sources */,
+				F8C273802D24BF8700149A30 /* GameSettingsPage.swift in Sources */,
 				F8729EBE2BDC00ED00662855 /* FivePlayerGame.swift in Sources */,
 				F81AC3E02BC8632900D65AB4 /* Button_Square.swift in Sources */,
 				F82940D92D1657B80098FDDA /* Counter_CommanderDamageCircle.swift in Sources */,

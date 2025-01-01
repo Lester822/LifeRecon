@@ -190,23 +190,18 @@ struct OptionalSettings: View {
             Spacer()
                 .frame(height: 40.0)
             
-            HStack {
-                Toggle_Checkbox(toggle: $current_game.commander_features_enabled, current_game: current_game)
-                    .frame(width: 40.0, height: 40.0)
-                Button {
-                    medium_haptic_pulse()
-                    withAnimation {
-                        current_game.commander_features_enabled.toggle()
-                    }
-                } label: {
-                    Text("Commander Features")
-                        .foregroundStyle(.white)
-                        .font(.title2)
-                }
-                .buttonStyle(NoClickButton())
+            HStack { // Commander Features
+                Text("Commander Features")
+                    .multilineTextAlignment(.trailing)
+                    .font(.title2)
+                    .fontWeight(.bold)
+                    .padding(.leading, 10.0)
+                Spacer()
+                    .frame(width: 20.0)
+                Toggle_DualToggle(text_for_true: "On", text_for_false: "Off", toggle: $current_game.commander_features_enabled, current_game: current_game, player: Player(life_total: 40, name: "No"))
+                    .frame(width: UIScreen.main.bounds.width * 0.5, height: UIScreen.main.bounds.height * 0.05)
                 
-                
-            }
+            } // Commander Features
             
             
             Button {

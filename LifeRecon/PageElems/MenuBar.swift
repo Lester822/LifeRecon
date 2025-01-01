@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MenuBar: View {
     @ObservedObject var current_game: ActiveGame
+    @State private var showing_game_settings = false
     let middle_gap: Bool
     
     var body: some View {
@@ -16,7 +17,7 @@ struct MenuBar: View {
             HStack {
                 Button {
                     soft_haptic_pulse()
-                    print("test")
+                    showing_game_settings = true
                 } label: {
                     Image("Settings")
                         .resizable(resizingMode: .stretch)
@@ -68,6 +69,11 @@ struct MenuBar: View {
                     Image("Restart")
                         .resizable(resizingMode: .stretch)
                         .frame(width: 50.0, height: 50.0)
+                }
+            }
+            .sheet(isPresented: $showing_game_settings) {
+                GameSettingsPage(current_game: current_game, current_player: Player(life_total: 40, name: "Name"), showing_game_settings: $showing_game_settings) {
+                        
                 }
             }
         }

@@ -10,6 +10,8 @@ import UIKit
 
 struct Loading: View {
     @ObservedObject var current_game: ActiveGame
+    @State private var showing_app_settings = false
+    @State private var showing_app_info = false
     
     var body: some View {
         ZStack {
@@ -67,15 +69,35 @@ struct Loading: View {
                 Spacer()
                     .frame(height: 10)
                 HStack{
-                    Image("Settings")
-                        .resizable(resizingMode: .stretch)
-                        .frame(width: 50.0, height: 50.0)
-                    Image("Info")
-                        .resizable(resizingMode: .stretch)
-                        .frame(width: 50.0, height: 50.0)
+                    Button {
+                        showing_app_settings = true
+                    } label : {
+                        Image("Settings")
+                            .resizable(resizingMode: .stretch)
+                            .frame(width: 50.0, height: 50.0)
+                    }
+                    Button {
+                        showing_app_info = true
+                    } label : {
+                        Image("Info")
+                            .resizable(resizingMode: .stretch)
+                            .frame(width: 50.0, height: 50.0)
+                    }
+                    
                 }
                 
             })
+            .sheet(isPresented: $showing_app_settings) {
+                AppSettingsPage(showing_app_settings: $showing_app_settings) {
+                    
+                }
+            }
+            .sheet(isPresented: $showing_app_info) {
+                InfoPage(showing_app_settings: $showing_app_info) {
+                    
+                }
+            }
+            
             VStack {
                 Spacer()
                 Image("ReconLogo")

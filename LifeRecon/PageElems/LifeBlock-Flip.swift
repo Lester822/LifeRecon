@@ -235,13 +235,15 @@ struct LifeBlockA: View {
                                     
                                     withAnimation {
                                         game.caller = player
+                                        game.temporary_rotate = game.caller.rotation + 90
+                                        game.temporary_rotate_applied = false
                                         game.showing_player_menu = true
                                         game.blur_background = true
                                     }
                                 }
                             })
-                        
                     }
+                    
                     VStack {
                         if recent_change != 0 {
                             Text(recent_change > 0 ? "+\(recent_change)" : "\(recent_change)")

@@ -10,6 +10,7 @@ import SwiftUI
 struct Toggle_Checkbox: View {
     @Binding var toggle: Bool
     @ObservedObject var current_game: ActiveGame
+    @ObservedObject var player: Player
     
     var body: some View {
         GeometryReader { geometry in
@@ -47,5 +48,5 @@ struct Toggle_Checkbox: View {
 }
 
 #Preview {
-    Toggle_Checkbox(toggle: Binding.constant(true), current_game: ActiveGame(player_count: 40, starting_life: 4))
+    Toggle_Checkbox(toggle: Binding.constant(true), current_game: ActiveGame(player_count: 40, starting_life: 4), player: Player(life_total: 40, name: "Error 109"))
 }

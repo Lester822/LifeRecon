@@ -9,12 +9,14 @@ import SwiftUI
 
 struct PlayerMenuVert: View {
     @ObservedObject var current_game: ActiveGame
+    @ObservedObject var current_player: Player
     @State private var isEditingName = false
     @State private var playerName: String
     
     init(current_game: ActiveGame) {
         self.current_game = current_game
         self._playerName = State(initialValue: current_game.caller.name)
+        self.current_player = current_game.caller
     }
     
     var body: some View {
@@ -272,7 +274,7 @@ struct PlayerMenuVert: View {
                 }
             }
             .sheet(isPresented: $isEditingName) {
-                NameEditView(starting_name: playerName, playerName: $playerName, isEditingName: $isEditingName) {
+                PlayerSettingsPage(player: current_game.caller, current_game: current_game, editing_name: playerName, player_name: $playerName, showing_player_settings: $isEditingName) {
                     current_game.caller.name = playerName
                     
                 }

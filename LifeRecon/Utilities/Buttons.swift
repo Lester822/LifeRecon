@@ -22,6 +22,13 @@ struct JumpButton: ButtonStyle {
     }
 }
 
+struct JumpGreenButton: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .scaleEffect(configuration.isPressed ? 0.95 : 1)
+    }
+}
+
 struct MenuButtonType: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label

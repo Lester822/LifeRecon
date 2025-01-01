@@ -105,8 +105,8 @@ struct PageManager: View {
                 RingTrack(current_game: current_game, caller: current_game.caller)
                     .zIndex(1.2)
                     .edgesIgnoringSafeArea(.all)
+                    .rotationEffect(current_game.temporary_rotate_applied == false ? Angle(degrees: current_game.caller.rotation) : Angle(degrees: current_game.temporary_rotate - 90))
                     .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-                    .rotationEffect(Angle(degrees: current_game.caller.rotation))
                     .transition(.zoomEffect)
             }
 
@@ -114,8 +114,8 @@ struct PageManager: View {
                 DungeonDelverSwitcher(current_game: current_game, caller: current_game.caller)
                     .zIndex(1.2)
                     .edgesIgnoringSafeArea(.all)
+                    .rotationEffect(current_game.temporary_rotate_applied == false ? Angle(degrees: current_game.caller.rotation) : Angle(degrees: current_game.temporary_rotate-90))
                     .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-                    .rotationEffect(Angle(degrees: current_game.caller.rotation))
                     .transition(.zoomEffect)
             }
             
