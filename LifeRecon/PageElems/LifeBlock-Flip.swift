@@ -49,7 +49,7 @@ struct LifeBlockA: View {
                     if player.vertical_increment {
                         VStack (spacing: 0.0, content: {
                             Button {
-                                modifyLife(by: -1)
+                                modifyLife(by: 1)
                                 
                             } label: {
                                 UnevenRoundedRectangle(cornerRadii: .init(
@@ -66,7 +66,7 @@ struct LifeBlockA: View {
                             .buttonStyle(OpacityButton())
                             
                             Button {
-                                modifyLife(by: 1)
+                                modifyLife(by: -1)
                             } label: {
                                 UnevenRoundedRectangle(cornerRadii: .init(
                                     topLeading: 0.0,

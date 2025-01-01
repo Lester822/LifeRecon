@@ -242,9 +242,10 @@ struct OptionalSettings: View {
                     player.energy_counters = 0
                     player.ticket_counters = 0
                     player.acorn_counters = 0
-                    player.reset_floating_each_time = false
                     
+                    player.reset_floating_each_time = false
                     player.subtract_life_with_cmdr_damage = false
+                    player.vertical_increment = false
                     
                     player.current_dungeon = ""
                     player.dungeon_position = ""
