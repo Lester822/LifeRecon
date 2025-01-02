@@ -18,6 +18,7 @@ struct GameResetBar: View {
                     Spacer()
                         .frame(height: 5.0)
                     Button {
+                        heavy_haptic_pulse()
                         withAnimation {
                             current_game.showing_confirm = false
                             current_game.showing_circle_menu = false
@@ -38,6 +39,7 @@ struct GameResetBar: View {
                 }
                 
                 Button {
+                    soft_haptic_pulse()
                     withAnimation {
                         current_game.last_confirm = false
                         current_game.showing_confirm = false

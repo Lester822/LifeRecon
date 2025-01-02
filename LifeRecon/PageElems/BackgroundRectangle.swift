@@ -22,7 +22,6 @@ struct BackgroundRectangle: View {
                     current_game.temporary_rotate_applied = false
                     current_game.temporary_rotate = 0.0
                     current_game.showing_keypad = false
-                    current_game.showing_confirm = false
                     current_game.showing_player_menu = false
                     current_game.showing_commander_damage = false
                     current_game.blur_background = false
@@ -51,9 +50,6 @@ struct BackgroundRectangle: View {
                     
                     let angleInRadians = atan2(verticalMovement, horizontalMovement)
                     var angleInDegrees = angleInRadians * 180 / .pi  // convert to degrees
-                    
-                    print("Radians: \(angleInRadians), Degrees: \(angleInDegrees)")
-                    
                     
                     if ROTATE_SNAP == true {
                         // 1) Snap angleInDegrees to nearest multiple of 90

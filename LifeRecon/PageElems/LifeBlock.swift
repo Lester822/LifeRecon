@@ -95,8 +95,8 @@ struct LifeBlock: View {
                                     bottomTrailing: 00.0,
                                     topTrailing: BLOCK_CORNER),
                                                        style: .continuous)
-                                .padding([.top, .leading, .bottom], 5.0)
-                                .padding(.trailing, 0.0)
+                                .padding([.top, .leading, .trailing], 5.0)
+                                .padding(.bottom, 0.0)
                                 .foregroundColor(.black)
                                 //.opacity(0.05)
                             }
@@ -111,8 +111,8 @@ struct LifeBlock: View {
                                     bottomTrailing: BLOCK_CORNER,
                                     topTrailing: 0.0),
                                                        style: .continuous)
-                                .padding([.top, .bottom, .trailing], 5.0)
-                                .padding(.leading, 0.0)
+                                .padding([.leading, .bottom, .trailing], 5.0)
+                                .padding(.top, 0.0)
                                 .foregroundColor(.black)
                                 //.opacity(0.05)
                             }
